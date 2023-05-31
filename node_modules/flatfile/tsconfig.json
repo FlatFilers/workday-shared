@@ -1,0 +1,23 @@
+{
+    "extends": "@flatfile/ts-config-platform-sdk/base.json",
+    "include": [
+        "./src"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules",
+        "./node_modules",
+        "./node_modules/*",
+    ],
+    "compilerOptions": {
+        "lib": [
+            "ESNext"
+        ],
+        "module": "ESNext",
+        "target": "es2020",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+    },
+}
