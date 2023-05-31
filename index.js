@@ -1,78 +1,356 @@
 import { recordHook } from "@flatfile/plugin-record-hook";
-import api from "@flatfile/api"
+import api from "@flatfile/api";
+import { blueprint } from "./blueprint/blueprint";
+import { companies } from "./reference_data/companies";
+import { locations } from "./reference_data/locations";
+import { cost_centers } from "./reference_data/cost_centers";
+import { jobs } from "./reference_data/jobs";
+import { ExcelExtractor } from "@flatfile/plugin-xlsx-extractor";
+import { DedupeRecords } from "./actions/dedupe.records";
+import { employeeValidations } from "./validations/employeeValidations";
+import axios from 'axios';
 
 export default function (listener) {
-  /**
-   * Part 1 example
-   */
-
   listener.on("**", (event) => {
+    // logging all events in the environment
     console.log(
-      `-> My event listener received an event: ${JSON.stringify(event)}`
+      `-> My event listener received an event: ${JSON.stringify(event.topic)}`
     );
   });
 
-  /**
-   * Part 2 example
-   */
+  // SET UP THE SPACE
+  listener.filter({ job: "space:configure" }, (configure) => {
+    // Add an event listener for the 'job:created' event with a filter on 'space:configure'
+    configure.on("job:ready", async (event) => {
+      // Destructure the 'context' object from the event object to get the necessary IDs
+      const { spaceId, environmentId, jobId } = event.context;
 
-  const validEmailAddress = /^[\w\d.-]+@[\w\d]+\.\w+$/;
+      // Acknowledge the job with progress and info using api.jobs.ack
+      const updateJob = await api.jobs.ack(jobId, {
+        info: "Creating Space",
+        progress: 10,
+      });
 
+      // ADD CUSTOM MARKDOWN PAGE TO SPACE
+      const createDoc = await api.documents.create(spaceId, {
+        title: "Getting Started",
+        body:
+          "# Welcome\n" +
+          "### Say hello to your first customer Space in the new Flatfile!\n" +
+          "We've customized the colors in this Space to fit your brand; however, we can very easily change these for you if you need a different aesthetic or desire a co-branded experience for your customers.\n" +
+          "Let's begin by first getting acquainted with what you're seeing in your Space initially.\n" +
+          "---\n",
+      });
+
+      // CREATE WORKBOOK FROM BLUEPRINT
+      const createWorkbook = await api.workbooks.create({
+        spaceId: spaceId,
+        environmentId: environmentId,
+        labels: ["primary"],
+        name: "Worker + Org Import",
+        sheets: blueprint,
+        // Workbook-level action. We will set this up when we integrate later
+        // actions: [
+        //   {
+        //     operation: 'submit',
+        //     slug: 'submit',
+        //     mode: 'foreground',
+        //     label: 'Submit',
+        //     type: 'string',
+        //     description: 'Send a webhook to the app',
+        //     primary: true,
+        //   },
+        // ],
+      });
+
+      const workbookId = createWorkbook.data?.id;
+
+      // ADD WORKBOOK TO SPACE AND SET THEME
+      if (workbookId) {
+        // Need to refresh until update to Spaces to poll for changes
+        const updatedSpace = await api.spaces.update(spaceId, {
+          environmentId: environmentId,
+          primaryWorkbookId: workbookId,
+          metadata: {
+            theme: {
+              root: {
+                primaryColor: "#005CB9",
+                dangerColor: "#F44336",
+                warningColor: "#FF9800",
+              },
+              sidebar: {
+                logo: "https://www.workday.com/content/dam/web/en-us/images/icons/general/workday-logo.svg",
+                textColor: "#fff",
+                titleColor: "#fff",
+                focusBgColor: "#E5832D",
+                focusTextColor: "#fff",
+                backgroundColor: "#005CB9",
+                footerTextColor: "#fff",
+                textUltralightColor: "#F6C84F",
+              },
+              table: {
+                inputs: {
+                  radio: {
+                    color: "#005CB9",
+                  },
+                  checkbox: {
+                    color: "#005CB9",
+                  },
+                },
+                filters: {
+                  color: "#000",
+                  active: {
+                    color: "#fff",
+                    backgroundColor: "#005CB9",
+                  },
+                  error: {
+                    activeBackgroundColor: "#F44336",
+                  },
+                },
+                column: {
+                  header: {
+                    fontSize: "14px",
+                    backgroundColor: "#F0F1F2",
+                    color: "#000",
+                    dragHandle: {
+                      idle: "#005CB9",
+                      dragging: "#005CB9",
+                    },
+                  },
+                },
+                fontFamily: "'Proxima Nova', 'Helvetica', sans-serif",
+                indexColumn: {
+                  backgroundColor: "#F0F1F2",
+                  selected: {
+                    color: "#000",
+                    backgroundColor: "#F0F1F2",
+                  },
+                },
+                cell: {
+                  selected: {
+                    backgroundColor: "#F9DB75",
+                  },
+                  active: {
+                    borderColor: "#E5832D",
+                    spinnerColor: "#E5832D",
+                  },
+                },
+                boolean: {
+                  toggleChecked: "#005CB9",
+                },
+                loading: {
+                  color: "#005CB9",
+                },
+              },
+            },
+          },
+        });
+      }
+
+      // Acknowledging that the Space is now set up
+      const updateJob3 = await api.jobs.complete(jobId, {
+        info: "This space is completed.",
+      });
+    });
+    // Handle the 'job:failed' event
+    configure.on("job:failed", async (event) => {
+      console.log("Space Config Failed: " + JSON.stringify(event));
+    });
+
+    configure.on("job:completed", async (event) => {
+      // can enter stuff here if job compeleted
+    });
+  });
+
+  // SEED THE WORKBOOK WITH DATA workbook:created
+  // listener.on("workbook:created", async (event) => {
+  //   const workbookId = event.context.workbookId;
+  //   const workbook = await api.workbooks.get(workbookId);
+  //   const workbookName = workbook.data.name
+
+  //   if (workbookName.includes("Worker + Org Import")) {
+  //   // COMPANIES
+  //   const companiesSheet = workbook.data!.sheets!.find((s) =>
+  //     s.config!.slug!.includes("companies")
+  //   )!;
+
+  //   if (companiesSheet) {
+  //     const companiesId = companiesSheet.id;
+  //     const request1 = companies.map(({ CompanyName, Reference_ID }) => ({
+  //       name: { value: CompanyName },
+  //       id: { value: Reference_ID },
+  //     }));
+  //     const insertCompanies = await api.records.insert(companiesId, request1);
+  //   }
+
+  //   // LOCATIONS
+  //   const locationsSheet = workbook.data!.sheets!.find((s) =>
+  //     s.config!.slug!.includes("locations")
+  //   )!;
+
+  //   if (locationsSheet) {
+  //     const locationsId = locationsSheet.id;
+  //     const request2 = locations.map(({ LocationName, LocationId }) => ({
+  //       name: { value: LocationName },
+  //       id: { value: LocationId },
+  //     }));
+  //     const insertLocations = await api.records.insert(locationsId, request2);
+  //   }
+
+  //   // COST CENTERS
+  //   const ccSheet = workbook.data!.sheets!.find((s) =>
+  //     s.config!.slug!.includes("cost_centers")
+  //   )!;
+
+  //   if (ccSheet) {
+  //     const ccId = ccSheet.id;
+  //     const request3 = cost_centers.map(
+  //       ({ CostCenterName, CostCenterCode }) => ({
+  //         name: { value: CostCenterName },
+  //         id: { value: CostCenterCode },
+  //       })
+  //     );
+  //     const insertCostCenters = await api.records.insert(ccId, request3);
+  //   }
+
+  //   // JOBS
+  //   const jobsSheet = workbook.data!.sheets!.find((s) =>
+  //     s.config!.slug!.includes("jobs")
+  //   )!;
+
+  //   if (jobsSheet) {
+  //     const jobsId = jobsSheet.id;
+  //     const request4 = jobs.map(
+  //       ({ JobCode, JobTitle, Department, Classification, Pay_Rate_Type }) => ({
+  //         code: { value: JobCode },
+  //         title: { value: JobTitle },
+  //         department: { value: Department },
+  //         classification: { value: Classification },
+  //         pay_rate_type: { value: Pay_Rate_Type },
+  //       })
+  //     );
+  //     const insertJobs = await api.records.insert(jobsId, request4);
+  //   }
+  // }
+  // });
+
+
+  // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
+
+  // WORKERS
   listener.use(
-    recordHook("contacts", (record) => {
-      const value = record.get("firstName")?.toString();
-      if (value) {
-        record.set("firstName", value.toLowerCase());
-      }
-
-      if (!validEmailAddress.test(String(record.get("email")))) {
-        record.addError("email", "Invalid email address");
-      }
-
+    // When a record is processed, invoke the 'employeeValidations' function to validate the record
+    recordHook('workers', (record) => {
+      const results = employeeValidations(record);
+      // Log the results of the validations to the console as a JSON string
+      console.log('Employees Hooks: ' + JSON.stringify(results));
+      // Return the record
       return record;
     })
   );
 
-  /**
-   * Part 3 example
-   */
+  // RUN ACTIONS TRIGGERED BY USERS
 
-  listener.filter({ job: 'workbook:submitAction' }, (configure) => {
-    configure.on('job:ready', async (event) => {
-      const { jobId } = event.context;
+  // DEDUPE FROM WORKERS SHEET
+  listener.filter({ job: "sheet:dedupeWorkers" }, (configure) => {
+    configure.on("job:ready", async (event) => {
+      const { jobId, sheetId } = event.context;
+
+      try {
+        await api.jobs.ack(jobId, {
+          info: "Deduplicating Workers...",
+          progress: 10, //optional
+        });
+
+        // Call the dedupeEmployees function with the records
+        await new DedupeRecords(sheetId, "Applicant_ID").dedupeRecords();
+
+        await api.jobs.complete(jobId, {
+          info: "This job is now complete.",
+        });
+      } catch (error) {
+        console.log(`Error: ${JSON.stringify(error, null, 2)}`);
+
+        await api.jobs.fail(jobId, {
+          info: "This job did not work.",
+        });
+      }
+    });
+  });
+
+  // TRIMMING ALL
+  // listener.on("commit:created", async (event) => {
+    // event.context.sheet.records.value
+    // for each value in each record
+    // run .trim()
+  // })
+
+  // SUBMIT A WEBHOOK WITH THE WORKBOOK ID
+  // note that this will need to be updated when we switch to workbook-level action
+  listener.filter({ job: "sheet:submit" }, (configure) => {
+    configure.on("job:ready", async (event) => {
+      const { sheetId, jobId } = event.context;
       try {
         await api.jobs.ack(jobId, {
           info: 'Starting job to submit action to webhook.site',
           progress: 10
         });
-        const webhookReceiver = 'https://webhook.site/c83648d4-bf0c-4bb1-acb7-9c170dad4388';
-        // copy your https://webhook.site URL for testing
-        await fetch(webhookReceiver, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ ...event.payload, method: "fetch" }),
-        })
+
+        const url = 'https://webhook.site/a25c6e8d-91c7-4e9e-b111-32b8d1ba1fa9'
+        const payload = JSON.stringify(sheetId, null, 2)
+        const payload2 = api.records.get(sheetId)
+
+        axios.post(
+          url,
+          { data: payload2 },
+          { headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } }
+        )
 
         await api.jobs.complete(jobId, {
-          outcome:{
-            message:"Data was successfully submitted to webbook.site. Go check it out!"
-          }
+          outcome: {
+            message: "Data was successfully submitted to webhook.site. Go check it out!",
+          },
         });
-      }
-      catch (error) {
+      } catch (error) {
         console.log(`webhook.site[error]: ${JSON.stringify(error, null, 2)}`);
 
         await api.jobs.fail(jobId, {
-          outcome:{
-            message:"This job failed probably because it couldn't find the webhook.site url."
+          outcome: {
+            message: "This job failed probably because it couldn't find the webhook.site url."
           }
         });
       }
+    });
+  });
 
+  // BUILD SUP ORG
+  listener.filter({ job: "sheet:buildOrg" }, (configure) => {
+    configure.on("job:ready", async (event) => {
+      const { jobId, sheetId } = event.context;
 
-    })
-  })
+      try {
+        await api.jobs.ack(jobId, {
+          info: "Gettin started.",
+          progress: 10, //optional
+        });
 
+        //do your work here
+
+        await api.jobs.complete(jobId, {
+          info: "This job is now complete.",
+        });
+      } catch (error) {
+        console.log(`Error: ${JSON.stringify(error, null, 2)}`);
+
+        await api.jobs.fail(jobId, {
+          info: "This job did not work.",
+        });
+      }
+    });
+  });
+
+  // PARSE XLSX FILES
+  listener.on("file:created", async (event) => {
+    return new ExcelExtractor(event).runExtraction();
+  });
 }
