@@ -4,7 +4,7 @@
   "description": "A quickstart for the Flatfile platform.",
   "main": "index.js",
   "scripts": {
-    "dev": "flatfile develop index.ts"
+    "dev": "flatfile develop index.js"
   },
   "keywords": [],
   "author": "",

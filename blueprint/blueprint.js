@@ -431,13 +431,22 @@ export const blueprint = [
                 primary: false
             },
             {
-                //build sup org
-                operation: 'buildOrg',
+                //validate reporting structure
+                operation: 'validateReportingStructure',
                 mode: 'background',
-                label: 'Build Sup Org',
-                description: 'Builds the supervisory org from worker data',
+                label: 'Validate Reporting Structure',
+                description: 'Validates the Employee to Manager reporting structure',
                 primary: false
             },
+            {
+                //build supervisory organization structure
+                operation: 'buildSupOrgStructure',
+                mode: 'background',
+                label: 'Build Supervisory Org Structure',
+                description: 'Validates the Employee to Manager reporting structure',
+                primary: false
+            },
+
             {
                 //submit a webhook
                 operation: 'submit',
