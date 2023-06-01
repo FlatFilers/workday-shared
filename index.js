@@ -11,8 +11,8 @@ import { employeeValidations } from "./validations/employeeValidations";
 import axios from 'axios';
 
 export default function (listener) {
+  // logging all events in the environment
   listener.on("**", (event) => {
-    // logging all events in the environment
     console.log(
       `-> My event listener received an event: ${JSON.stringify(event.topic)}`
     );
@@ -163,76 +163,76 @@ export default function (listener) {
   });
 
   // SEED THE WORKBOOK WITH DATA workbook:created
-  // listener.on("workbook:created", async (event) => {
-  //   const workbookId = event.context.workbookId;
-  //   const workbook = await api.workbooks.get(workbookId);
-  //   const workbookName = workbook.data.name
+  listener.on("workbook:created", async (event) => {
+    const workbookId = event.context.workbookId;
+    const workbook = await api.workbooks.get(workbookId);
+    const workbookName = workbook.data.name
 
-  //   if (workbookName.includes("Worker + Org Import")) {
-  //   // COMPANIES
-  //   const companiesSheet = workbook.data!.sheets!.find((s) =>
-  //     s.config!.slug!.includes("companies")
-  //   )!;
+    if (workbookName.includes("Worker + Org Import")) {
+    // COMPANIES
+    const companiesSheet = workbook.data.sheets.find((s) =>
+      s.config.slug.includes("companies")
+    );
 
-  //   if (companiesSheet) {
-  //     const companiesId = companiesSheet.id;
-  //     const request1 = companies.map(({ CompanyName, Reference_ID }) => ({
-  //       name: { value: CompanyName },
-  //       id: { value: Reference_ID },
-  //     }));
-  //     const insertCompanies = await api.records.insert(companiesId, request1);
-  //   }
+    if (companiesSheet) {
+      const companiesId = companiesSheet.id;
+      const request1 = companies.map(({ CompanyName, Reference_ID }) => ({
+        name: { value: CompanyName },
+        id: { value: Reference_ID },
+      }));
+      const insertCompanies = await api.records.insert(companiesId, request1);
+    }
 
-  //   // LOCATIONS
-  //   const locationsSheet = workbook.data!.sheets!.find((s) =>
-  //     s.config!.slug!.includes("locations")
-  //   )!;
+    // LOCATIONS
+    const locationsSheet = workbook.data.sheets.find((s) =>
+      s.config.slug.includes("locations")
+    );
 
-  //   if (locationsSheet) {
-  //     const locationsId = locationsSheet.id;
-  //     const request2 = locations.map(({ LocationName, LocationId }) => ({
-  //       name: { value: LocationName },
-  //       id: { value: LocationId },
-  //     }));
-  //     const insertLocations = await api.records.insert(locationsId, request2);
-  //   }
+    if (locationsSheet) {
+      const locationsId = locationsSheet.id;
+      const request2 = locations.map(({ LocationName, LocationId }) => ({
+        name: { value: LocationName },
+        id: { value: LocationId },
+      }));
+      const insertLocations = await api.records.insert(locationsId, request2);
+    }
 
-  //   // COST CENTERS
-  //   const ccSheet = workbook.data!.sheets!.find((s) =>
-  //     s.config!.slug!.includes("cost_centers")
-  //   )!;
+    // COST CENTERS
+    const ccSheet = workbook.data.sheets.find((s) =>
+      s.config.slug.includes("cost_centers")
+    );
 
-  //   if (ccSheet) {
-  //     const ccId = ccSheet.id;
-  //     const request3 = cost_centers.map(
-  //       ({ CostCenterName, CostCenterCode }) => ({
-  //         name: { value: CostCenterName },
-  //         id: { value: CostCenterCode },
-  //       })
-  //     );
-  //     const insertCostCenters = await api.records.insert(ccId, request3);
-  //   }
+    if (ccSheet) {
+      const ccId = ccSheet.id;
+      const request3 = cost_centers.map(
+        ({ CostCenterName, CostCenterCode }) => ({
+          name: { value: CostCenterName },
+          id: { value: CostCenterCode },
+        })
+      );
+      const insertCostCenters = await api.records.insert(ccId, request3);
+    }
 
-  //   // JOBS
-  //   const jobsSheet = workbook.data!.sheets!.find((s) =>
-  //     s.config!.slug!.includes("jobs")
-  //   )!;
+    // JOBS
+    const jobsSheet = workbook.data.sheets.find((s) =>
+      s.config.slug.includes("jobs")
+    );
 
-  //   if (jobsSheet) {
-  //     const jobsId = jobsSheet.id;
-  //     const request4 = jobs.map(
-  //       ({ JobCode, JobTitle, Department, Classification, Pay_Rate_Type }) => ({
-  //         code: { value: JobCode },
-  //         title: { value: JobTitle },
-  //         department: { value: Department },
-  //         classification: { value: Classification },
-  //         pay_rate_type: { value: Pay_Rate_Type },
-  //       })
-  //     );
-  //     const insertJobs = await api.records.insert(jobsId, request4);
-  //   }
-  // }
-  // });
+    if (jobsSheet) {
+      const jobsId = jobsSheet.id;
+      const request4 = jobs.map(
+        ({ JobCode, JobTitle, Department, Classification, Pay_Rate_Type }) => ({
+          code: { value: JobCode },
+          title: { value: JobTitle },
+          department: { value: Department },
+          classification: { value: Classification },
+          pay_rate_type: { value: Pay_Rate_Type },
+        })
+      );
+      const insertJobs = await api.records.insert(jobsId, request4);
+    }
+  }
+  });
 
 
   // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
