@@ -152,6 +152,13 @@ export class SupervisoryOrgStructureBuilder {
     finalRecords.forEach((record) => {
       if (record.manager_id.value === record.superior_code.value) {
         record.superior_code.value = '' // Update the value property of superior_code
+      } else {
+        const correspondingRecord = finalRecords.find(
+          (r) => r.manager_id.value === record.superior_code.value
+        )
+        if (correspondingRecord) {
+          record.superior_code.value = correspondingRecord.code.value
+        }
       }
     })
 
