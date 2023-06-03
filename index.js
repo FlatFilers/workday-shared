@@ -5,6 +5,8 @@ import { ExcelExtractor } from '@flatfile/plugin-xlsx-extractor'
 import { DedupeRecords } from './actions/dedupe.records'
 import { employeeValidations } from './validations/employeeValidations'
 const { authenticateAndFetchLocations } = require('./reference_data/locations')
+import { validateReportingStructure } from './actions/validateReportingStructure'
+import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
 import axios from 'axios'
 
 export default function (listener) {
@@ -260,6 +262,84 @@ export default function (listener) {
         })
       } catch (error) {
         console.log(`Error: ${JSON.stringify(error, null, 2)}`)
+
+        await api.jobs.fail(jobId, {
+          info: 'This job did not work.',
+        })
+      }
+    })
+  })
+
+  // VALIDATE REPORTING STRUCTURE FROM WORKERS SHEET
+  listener.filter({ job: 'sheet:validateReportingStructure' }, (configure) => {
+    configure.on('job:ready', async (event) => {
+      const { jobId, sheetId } = event.context
+
+      try {
+        await api.jobs.ack(jobId, {
+          info: 'Validating Reporting Structure...',
+          progress: 10, //optional
+        })
+
+        // Call the 'get' method of api.records with the sheetId
+        const response = await api.records.get(sheetId)
+
+        // Check if the response is valid and contains records
+        if (response?.data?.records) {
+          // Get the records from the response data
+          const records = response.data.records
+
+          // Call the validateReportingStructure function with the records
+          const reportingErrors = validateReportingStructure(records)
+
+          // Update the records if there are any reporting errors
+          if (reportingErrors.length > 0) {
+            await api.records.update(sheetId, reportingErrors)
+            console.log('Records updated successfully.')
+            // For example, you can send them as a notification or store them in a database
+          } else {
+            console.log('No records found for updating.')
+          }
+        } else {
+          console.log('No records found in the response.')
+        }
+
+        await api.jobs.complete(jobId, {
+          info: 'This job is now complete.',
+        })
+      } catch (error) {
+        console.log(`Error: ${JSON.stringify(error, null, 2)}`)
+
+        await api.jobs.fail(jobId, {
+          info: 'This job did not work.',
+        })
+      }
+    })
+  })
+
+  // CREATE SUPERVISORY ORG STRUCTURE FROM WORKERS SHEET
+  listener.filter({ job: 'sheet:buildSupOrgStructure' }, (configure) => {
+    configure.on('job:ready', async (event) => {
+      const { jobId, sheetId, workbookId } = event.context
+
+      try {
+        await api.jobs.ack(jobId, {
+          info: 'Deduplicating Workers...',
+          progress: 10, // optional
+        })
+
+        // Instantiate the SupervisoryOrgStructureBuilder and call the buildSupervisoryOrgStructure method
+        const orgStructureBuilder = new SupervisoryOrgStructureBuilder(
+          workbookId,
+          sheetId
+        )
+        await orgStructureBuilder.buildSupervisoryOrgStructure()
+
+        await api.jobs.complete(jobId, {
+          info: 'This job is now complete.',
+        })
+      } catch (error) {
+        console.error('Error:', error)
 
         await api.jobs.fail(jobId, {
           info: 'This job did not work.',
