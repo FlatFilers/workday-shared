@@ -430,14 +430,23 @@ export const blueprint = [
                 description: 'This will merge duplicate worker IDs together, retaining the most recent value',
                 primary: false
             },
-            {
-                //build sup org
-                operation: 'buildOrg',
-                mode: 'background',
-                label: 'Build Sup Org',
-                description: 'Builds the supervisory org from worker data',
-                primary: false
-            },
+      {
+        //validate reporting structure
+        operation: 'validateReportingStructure',
+        mode: 'background',
+        label: 'Validate Reporting Structure',
+        description: 'Validates the Employee to Manager reporting structure',
+        primary: false,
+      },
+      {
+        //build supervisory organization structure
+        operation: 'buildSupOrgStructure',
+        mode: 'background',
+        label: 'Build Supervisory Org Structure',
+        description:
+          'Builds the Employee to Manager reporting structure in Supervisory Orgs sheet',
+        primary: false,
+      },
             {
                 //submit a webhook
                 operation: 'submit',
