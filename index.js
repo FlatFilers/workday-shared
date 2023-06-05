@@ -8,6 +8,7 @@ const { authenticateAndFetchLocations } = require('./reference_data/locations')
 import { validateReportingStructure } from './actions/validateReportingStructure'
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
 import axios from 'axios'
+require('dotenv').config()
 
 export default function (listener) {
   // logging all events in the environment
@@ -324,7 +325,7 @@ export default function (listener) {
 
       try {
         await api.jobs.ack(jobId, {
-          info: 'Deduplicating Workers...',
+          info: 'Building Supervisory Organization Structure...',
           progress: 10, // optional
         })
 
@@ -395,32 +396,6 @@ export default function (listener) {
             message:
               "This job failed probably because it couldn't find the webhook.site url.",
           },
-        })
-      }
-    })
-  })
-
-  // BUILD SUP ORG
-  listener.filter({ job: 'sheet:buildOrg' }, (configure) => {
-    configure.on('job:ready', async (event) => {
-      const { jobId, sheetId } = event.context
-
-      try {
-        await api.jobs.ack(jobId, {
-          info: 'Gettin started.',
-          progress: 10, //optional
-        })
-
-        //do your work here
-
-        await api.jobs.complete(jobId, {
-          info: 'This job is now complete.',
-        })
-      } catch (error) {
-        console.log(`Error: ${JSON.stringify(error, null, 2)}`)
-
-        await api.jobs.fail(jobId, {
-          info: 'This job did not work.',
         })
       }
     })
