@@ -1,6 +1,7 @@
 const axios = require('axios')
 const xml2js = require('xml2js')
 import api from '@flatfile/api'
+require('dotenv').config()
 
 const soapEndpoint =
   'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Human_Resources/v41.0'
@@ -54,8 +55,8 @@ async function authenticateAndFetchLocations() {
           <soapenv:Header>
             <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
               <wsse:UsernameToken>
-                <wsse:Username>cfrederickson-impl@flatfile_dpt1</wsse:Username>
-                <wsse:Password>NFY2edf.xvn9jbq2bqy</wsse:Password>
+                <wsse:Username>${process.env.USERNAME}</wsse:Username>
+                <wsse:Password>${process.env.PASSWORD}</wsse:Password>
               </wsse:UsernameToken>
             </wsse:Security>
           </soapenv:Header>
