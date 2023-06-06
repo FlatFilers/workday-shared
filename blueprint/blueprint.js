@@ -447,6 +447,15 @@ export const blueprint = [
           'Builds the Employee to Manager reporting structure in Supervisory Orgs sheet',
         primary: false,
       },
+      {
+        //refresh locations from Workday
+        operation: 'refreshLocationsData',
+        mode: 'background',
+        label: 'Refresh Location Data from Workday',
+        description:
+          'Refreshs Locations sheet with values from Workday tenant',
+        primary: false,
+      },
             {
                 //submit a webhook
                 operation: 'submit',

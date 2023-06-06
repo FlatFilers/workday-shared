@@ -9,6 +9,7 @@ import { validateReportingStructure } from './actions/validateReportingStructure
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
 import axios from 'axios'
 require('dotenv').config()
+import { clearAndPopulateLocations } from './actions/clearAndPopulateLocations'
 
 export default function (listener) {
   // logging all events in the environment
@@ -335,6 +336,33 @@ export default function (listener) {
           sheetId
         )
         await orgStructureBuilder.buildSupervisoryOrgStructure()
+
+        await api.jobs.complete(jobId, {
+          info: 'This job is now complete.',
+        })
+      } catch (error) {
+        console.error('Error:', error)
+
+        await api.jobs.fail(jobId, {
+          info: 'This job did not work.',
+        })
+      }
+    })
+  })
+
+  // REFRESH LOCATIONS SHEET WITH DATA
+  listener.filter({ job: 'sheet:refreshLocationsData' }, (configure) => {
+    configure.on('job:ready', async (event) => {
+      const { jobId, sheetId, workbookId } = event.context
+
+      try {
+        await api.jobs.ack(jobId, {
+          info: 'Refreshing Locations Data...',
+          progress: 10, // optional
+        })
+
+        // Call the clearAndPopulateLocations function
+        await clearAndPopulateLocations(event)
 
         await api.jobs.complete(jobId, {
           info: 'This job is now complete.',
