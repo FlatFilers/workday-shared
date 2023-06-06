@@ -50,18 +50,15 @@ export default function (listener) {
         labels: ['primary'],
         name: 'Worker + Org Import',
         sheets: blueprint,
-        // Workbook-level action. We will set this up when we integrate later
-        // actions: [
-        //   {
-        //     operation: 'submit',
-        //     slug: 'submit',
-        //     mode: 'foreground',
-        //     label: 'Submit',
-        //     type: 'string',
-        //     description: 'Send a webhook to the app',
-        //     primary: true,
-        //   },
-        // ],
+        actions: [
+          {
+            operation: 'submitAction',
+            mode: 'foreground',
+            label: 'Submit',
+            description: 'Send a webhook to the app',
+            primary: true,
+          },
+        ],
       })
 
       const workbookId = createWorkbook.data?.id
@@ -385,44 +382,61 @@ export default function (listener) {
   // })
 
   // SUBMIT A WEBHOOK WITH THE WORKBOOK ID
-  // note that this will need to be updated when we switch to workbook-level action
-  listener.filter({ job: 'sheet:submit' }, (configure) => {
+
+  listener.filter({ job: 'workbook:submitAction' }, (configure) => {
     configure.on('job:ready', async (event) => {
-      const { sheetId, jobId } = event.context
+      const { jobId, workbookId } = event.context
+
+      //get all sheets
+      const sheets = await api.sheets.list({ workbookId })
+
+      const records = {}
+      for (const [index, element] of sheets.data.entries()) {
+        records[`Sheet[${index}]`] = await api.records.get(element.id)
+      }
+
       try {
         await api.jobs.ack(jobId, {
           info: 'Starting job to submit action to webhook.site',
           progress: 10,
         })
 
-        const url = 'https://webhook.site/a25c6e8d-91c7-4e9e-b111-32b8d1ba1fa9'
-        const payload = JSON.stringify(sheetId, null, 2)
-        const payload2 = api.records.get(sheetId)
+        const webhookReceiver =
+          process.env.WEBHOOK_SITE_URL ||
+          'https://webhook.site/e8702d78-58c2-4f47-9b11-8ab39ff9da9e'
 
-        axios.post(
-          url,
-          { data: payload2 },
+        const response = await axios.post(
+          webhookReceiver,
+          {
+            ...event.payload,
+            method: 'axios',
+            sheets,
+            records,
+          },
           {
             headers: {
               'Content-Type': 'application/json',
-              Accept: 'application/json',
             },
           }
         )
 
-        await api.jobs.complete(jobId, {
-          outcome: {
-            message:
-              'Data was successfully submitted to webhook.site. Go check it out!',
-          },
-        })
+        if (response.status === 200) {
+          await api.jobs.complete(jobId, {
+            outcome: {
+              message:
+                'Data was successfully submitted to webhook.site. Go check it out!',
+            },
+          })
+        } else {
+          throw new Error('Failed to submit data to webhook.site')
+        }
       } catch (error) {
         console.log(`webhook.site[error]: ${JSON.stringify(error, null, 2)}`)
 
         await api.jobs.fail(jobId, {
           outcome: {
             message:
-              "This job failed probably because it couldn't find the webhook.site url.",
+              "This job failed probably because it couldn't find the webhook.site URL.",
           },
         })
       }
