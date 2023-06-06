@@ -1,6 +1,6 @@
 {
   "name": "flatfile",
-  "version": "3.4.9",
+  "version": "3.4.10",
   "description": "",
   "main": "./dist/index.js",
   "bin": {
@@ -18,7 +18,7 @@
     "test": "jest --runInBand --forceExit --passWithNoTests"
   },
   "dependencies": {
-    "@flatfile/cross-env-config": "^0.0.3",
+    "@flatfile/cross-env-config": "^0.0.4",
     "@rollup/plugin-commonjs": "^23.0.3",
     "@rollup/plugin-json": "^5.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
