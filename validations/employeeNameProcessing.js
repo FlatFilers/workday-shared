@@ -1,6 +1,16 @@
 import { isNil, isNotNil } from './common/helpers'
 import { parseFullName } from 'parse-full-name'
 
+function cleanName(name) {
+  return name.trim().replace(/\s+/g, ' ');
+}
+
+function toTitleCase(name) {
+  return name.replace(/\w\S*/g, (word) => {
+    return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+  });
+}
+
 // Function to concatenate names
 export function concatenateNames(record) {
   try {
@@ -8,11 +18,16 @@ export function concatenateNames(record) {
 
     // Retrieving field values from the record
     const full = record.get('Legal_Full_Name')
-    const first = record.get('Legal_First_Name')
-    const middle = record.get('Legal_Middle_Name')
-    const last = record.get('Legal_Last_Name')
+    let first = record.get('Legal_First_Name')
+    let middle = record.get('Legal_Middle_Name')
+    let last = record.get('Legal_Last_Name')
     const manager = record.getLinks('Organization_Reference_ID')
     const mgrName = manager?.[0]?.Legal_Full_Name
+
+    // Clean and normalize the names
+    first = cleanName(first);
+    middle = cleanName(middle);
+    last = cleanName(last);
 
     // Logging the field values
     console.log('Legal_Full_Name:', full)
@@ -29,6 +44,10 @@ export function concatenateNames(record) {
         record.set('Legal_Full_Name', `${first} ${middle} ${last}`)
       }
     }
+
+    // Normalize the full name
+    const normalizedFullName = toTitleCase(record.get('Legal_Full_Name'));
+    record.set('Legal_Full_Name', normalizedFullName);
 
     // Setting Organization_Descriptor field if manager and manager name are present
     if (isNotNil(manager) && isNotNil(mgrName)) {
