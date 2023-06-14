@@ -230,13 +230,35 @@ export default function (listener) {
 
   // WORKERS
   listener.use(
-    // When a record is processed, invoke the 'employeeValidations' function to validate the record
     recordHook('workers', (record) => {
-      const results = employeeValidations(record)
-      // Log the results of the validations to the console as a JSON string
-      console.log('Employees Hooks: ' + JSON.stringify(results))
-      // Return the record
-      return record
+      if (!record) {
+        console.error('Received undefined or null record, skipping...')
+        return
+      }
+
+      try {
+        const results = employeeValidations(record)
+
+        // Use a safe stringify function to prevent circular reference errors
+        try {
+          console.log('Employees Hooks: ' + JSON.stringify(results))
+        } catch (error) {
+          console.error('Error stringifying results:', error)
+        }
+
+        return record
+      } catch (error) {
+        console.error(
+          `Error occurred during validation of record ${JSON.stringify(
+            record
+          )}:`,
+          error.message,
+          'Stack trace:',
+          error.stack
+        )
+        // Handle or rethrow the error as needed, for example:
+        // throw error;
+      }
     })
   )
 
