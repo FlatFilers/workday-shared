@@ -3,7 +3,6 @@
 
 import EmailValidator from 'email-validator'
 import { isNotNil, isNil } from './common/helpers'
-import {ParseSSN} from 'ssn'
 
 const validateContactInfo = (record) => {
   // work email validation
@@ -23,10 +22,7 @@ const validateContactInfo = (record) => {
       }
     } else {
       // If the email address is null or undefined, add a warning message to the record indicating that the field is recommended
-      record.addError(
-        'Email_Address',
-        'Work Email Address is required.'
-      )
+      record.addError('Email_Address', 'Work Email Address is required.')
     }
   } catch (error) {
     // If an exception occurs during execution of the function, add an error message to the record with the error details
@@ -64,21 +60,6 @@ const validateContactInfo = (record) => {
       `Error validating contact information: ${error.message}`
     )
   }
-  // NEEDS WORK SSN validation
-  // try {
-  //   const ssn = record.get('National_ID');
-  //   let parseSSN = new ParseSSN(ssn).value();
-  //   let formattedSSN = parseSSN.value().toFormattedString()
-  //   if (parseSSN) {
-  //     record.set('National_ID',formattedSSN)
-  //   }
-  // } catch (error) {
-  //   // If an exception occurs during execution of the function, add an error message to the record with the error details
-  //   record.addError(
-  //     'National_ID',
-  //     `Error validating SSN: ${error.message}`
-  //   )
-  // }
 }
 
 export default validateContactInfo
