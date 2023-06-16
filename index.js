@@ -10,9 +10,13 @@ import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStr
 import axios from 'axios'
 require('dotenv').config()
 import { clearAndPopulateLocations } from './actions/clearAndPopulateLocations'
+import { createPage } from './workflow/welcome-page'
+import { retrieveBlueprint } from './workflow/retrieve-blueprint'
+import { isNil, isNotNil } from './validations/common/helpers'
 
 export default function (listener) {
-  // logging all events in the environment
+  // LOG ALL EVENTS IN THE ENVIRONMENT
+  // This is safe to remove, just useful for development
   listener.on('**', (event) => {
     console.log(
       `-> My event listener received an event: ${JSON.stringify(event.topic)}`
@@ -23,25 +27,38 @@ export default function (listener) {
   listener.filter({ job: 'space:configure' }, (configure) => {
     // Add an event listener for the 'job:created' event with a filter on 'space:configure'
     configure.on('job:ready', async (event) => {
+
       // Destructure the 'context' object from the event object to get the necessary IDs
-      const { spaceId, environmentId, jobId } = event.context
+      const { spaceId, environmentId, jobId } = event.context;
+      const space = await api.spaces.get(spaceId);
 
       // Acknowledge the job with progress and info using api.jobs.ack
-      const updateJob = await api.jobs.ack(jobId, {
+      await api.jobs.ack(jobId, {
         info: 'Creating Space',
         progress: 10,
       })
 
       // ADD CUSTOM MARKDOWN PAGE TO SPACE
-      const createDoc = await api.documents.create(spaceId, {
-        title: 'Getting Started',
-        body:
-          '# Welcome\n' +
-          '### Say hello to your first customer Space in the new Flatfile!\n' +
-          "We've customized the colors in this Space to fit your brand; however, we can very easily change these for you if you need a different aesthetic or desire a co-branded experience for your customers.\n" +
-          "Let's begin by first getting acquainted with what you're seeing in your Space initially.\n" +
-          '---\n',
-      })
+      const page = await createPage(spaceId);
+
+      // GET & SAVE CREDS FOR WORKDAY TENANT
+      // assumes username and password have been set on the space metadata
+      let username, password;
+      if (isNil(space.data.metadata?.creds?.username) || isNil(space.data.metadata?.creds?.password)) {
+        username = process.env.USERNAME
+        password = process.env.PASSWORD
+      } else {
+        username = space.data.metadata?.creds?.username || {}
+        password = space.data.metadata?.creds?.username || {}
+      }
+      console.log(JSON.stringify(username))
+
+      // PLACEHOLDER FOR ANDY TO AUTOGEN THE BLUEPRINT
+      const dynamicBlueprint = retrieveBlueprint(username,password,environmentId);
+      // Safety check for the dynamic blueprint, else fall back to static blueprint
+      if (isNotNil(dynamicBlueprint)) {
+        blueprint = dynamicBlueprint
+      }
 
       // CREATE WORKBOOK FROM BLUEPRINT
       const createWorkbook = await api.workbooks.create({
@@ -63,13 +80,17 @@ export default function (listener) {
 
       const workbookId = createWorkbook.data?.id
 
-      // ADD WORKBOOK TO SPACE AND SET THEME
+      // ADD WORKBOOK TO SPACE, SET THEME, AND SAVE CREDS
       if (workbookId) {
         // Need to refresh until update to Spaces to poll for changes
         const updatedSpace = await api.spaces.update(spaceId, {
           environmentId: environmentId,
           primaryWorkbookId: workbookId,
           metadata: {
+            creds: {
+              username: username,
+              password: password,
+            },
             theme: {
               root: {
                 primaryColor: '#005CB9',
@@ -143,10 +164,12 @@ export default function (listener) {
             },
           },
         })
+        console.log(JSON.stringify(updatedSpace,null,2))
       }
+      
 
       // Acknowledging that the Space is now set up
-      const updateJob3 = await api.jobs.complete(jobId, {
+      await api.jobs.complete(jobId, {
         info: 'This space is completed.',
       })
     })
@@ -161,35 +184,35 @@ export default function (listener) {
   })
 
   // SEED THE WORKBOOK WITH DATA workbook:created
-
   listener.on('workbook:created', async (event) => {
     const workbookId = event.context.workbookId
     const workbook = await api.workbooks.get(workbookId)
     const workbookName = workbook.data.name
+    const spaceId = workbook.data.spaceId
 
-    console.log('Received workbook:created event')
-    console.log('Workbook ID:', workbookId)
-    console.log('Workbook Name:', workbookName)
+    // console.log('Received workbook:created event')
+    // console.log('Workbook ID:', workbookId)
+    // console.log('Workbook Name:', workbookName)
 
     if (workbookName.includes('Worker + Org Import')) {
-      console.log('Workbook matches the expected name')
+      // console.log('Workbook matches the expected name')
 
       const locationsSheet = workbook.data.sheets.find((s) =>
         s.config.slug.includes('locations')
       )
 
       if (locationsSheet) {
-        console.log('Locations sheet found')
+        // console.log('Locations sheet found')
         const locationsId = locationsSheet.id
 
         try {
-          console.log('Fetching location data...')
-          const locationData = await authenticateAndFetchLocations() // Fetch location data using the authenticateAndFetchLocations function
-          console.log('Location Data Prior to Preparing Request:', locationData)
+          // console.log('Fetching location data...')
+          const locationData = await authenticateAndFetchLocations(spaceId) // Fetch location data using the authenticateAndFetchLocations function
+          // console.log('Location Data Prior to Preparing Request:', locationData)
 
           if (locationData) {
-            console.log('Location data fetched successfully')
-            console.log('Location Data:', locationData)
+            // console.log('Location data fetched successfully')
+            // console.log('Location Data:', locationData)
 
             const request = locationData.map(
               ({ locationName, locationID }) => ({
@@ -199,15 +222,15 @@ export default function (listener) {
               })
             )
 
-            console.log('Request:', request) // Log the prepared request
+            // console.log('Request:', request) // Log the prepared request
 
             try {
-              console.log('Inserting location data...')
+              // console.log('Inserting location data...')
               const insertLocations = await api.records.insert(
                 locationsId,
                 request
               )
-              console.log('Location data inserted:', insertLocations)
+              // console.log('Location data inserted:', insertLocations)
             } catch (error) {
               console.error('Error inserting location data:', error.message)
               console.error('Error Details:', error)

@@ -37,10 +37,12 @@ async function waitForJobCompletion(jobId) {
   throw new Error('Location job timed out')
 }
 
-async function authenticateAndFetchLocations() {
+async function authenticateAndFetchLocations(spaceId) {
   const pageSize = 100 // Number of records to retrieve per page
   let offset = 0 // Initial offset
   const allLocations = [] // Array to store all locations
+  const space = await api.spaces.get(spaceId)
+  const { username, password } = space.data.metadata?.creds
 
   try {
     while (true) {
@@ -55,8 +57,8 @@ async function authenticateAndFetchLocations() {
           <soapenv:Header>
             <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
               <wsse:UsernameToken>
-                <wsse:Username>${process.env.USERNAME}</wsse:Username>
-                <wsse:Password>${process.env.PASSWORD}</wsse:Password>
+                <wsse:Username>${username}</wsse:Username>
+                <wsse:Password>${password}</wsse:Password>
               </wsse:UsernameToken>
             </wsse:Security>
           </soapenv:Header>
