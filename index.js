@@ -27,10 +27,9 @@ export default function (listener) {
   listener.filter({ job: 'space:configure' }, (configure) => {
     // Add an event listener for the 'job:created' event with a filter on 'space:configure'
     configure.on('job:ready', async (event) => {
-
       // Destructure the 'context' object from the event object to get the necessary IDs
-      const { spaceId, environmentId, jobId } = event.context;
-      const space = await api.spaces.get(spaceId);
+      const { spaceId, environmentId, jobId } = event.context
+      const space = await api.spaces.get(spaceId)
 
       // Acknowledge the job with progress and info using api.jobs.ack
       await api.jobs.ack(jobId, {
@@ -39,22 +38,29 @@ export default function (listener) {
       })
 
       // ADD CUSTOM MARKDOWN PAGE TO SPACE
-      const page = await createPage(spaceId);
+      const page = await createPage(spaceId)
 
       // GET & SAVE CREDS FOR WORKDAY TENANT
       // assumes username and password have been set on the space metadata
-      let username, password;
-      if (isNil(space.data.metadata?.creds?.username) || isNil(space.data.metadata?.creds?.password)) {
+      let username, password
+      if (
+        isNil(space.data.metadata?.creds?.username) ||
+        isNil(space.data.metadata?.creds?.password)
+      ) {
         username = process.env.USERNAME
         password = process.env.PASSWORD
       } else {
         username = space.data.metadata?.creds?.username || {}
-        password = space.data.metadata?.creds?.username || {}
+        password = space.data.metadata?.creds?.password || {}
       }
       console.log(JSON.stringify(username))
 
       // PLACEHOLDER FOR ANDY TO AUTOGEN THE BLUEPRINT
-      const dynamicBlueprint = retrieveBlueprint(username,password,environmentId);
+      const dynamicBlueprint = retrieveBlueprint(
+        username,
+        password,
+        environmentId
+      )
       // Safety check for the dynamic blueprint, else fall back to static blueprint
       if (isNotNil(dynamicBlueprint)) {
         blueprint = dynamicBlueprint
@@ -164,9 +170,8 @@ export default function (listener) {
             },
           },
         })
-        console.log(JSON.stringify(updatedSpace,null,2))
+        console.log(JSON.stringify(updatedSpace, null, 2))
       }
-      
 
       // Acknowledging that the Space is now set up
       await api.jobs.complete(jobId, {
