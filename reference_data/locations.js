@@ -43,12 +43,7 @@ async function authenticateAndFetchLocations(spaceId) {
   let offset = 0 // Initial offset
   const allLocations = [] // Array to store all locations
   const space = await api.spaces.get(spaceId)
-  const { username, password } = space.data.metadata?.creds
-  const { tenantUrl } = space.data.metadata?.tenantUrl
-  // Extract the tenant name from the Tenant URL
-  const tenantName = tenantUrl.split('.')[1]
-  // Append the tenant name to the username
-  const soapUsername = `${username}@${tenantName}`
+  const { username, password, tenantUrl } = space.data.metadata?.creds
 
   try {
     while (true) {
@@ -63,7 +58,7 @@ async function authenticateAndFetchLocations(spaceId) {
           <soapenv:Header>
             <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
               <wsse:UsernameToken>
-                <wsse:Username>${soapUsername}</wsse:Username>
+                <wsse:Username>${username}@${tenantUrl}</wsse:Username>
                 <wsse:Password>${password}</wsse:Password>
               </wsse:UsernameToken>
             </wsse:Security>

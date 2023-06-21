@@ -43,18 +43,20 @@ export default function (listener) {
 
       // GET & SAVE CREDS FOR WORKDAY TENANT
       // assumes username and password have been set on the space metadata
-      let username, password
+      let username, password, tenantUrl
       if (
         isNil(space.data.metadata?.creds?.username) ||
-        isNil(space.data.metadata?.creds?.password)
+        isNil(space.data.metadata?.creds?.password) ||
+        isNil(space.data.metadata?.creds?.tenantUrl)
       ) {
-        username = process.env.USERNAME
+        username = process.env.USERNAME.split('@')[0]
         password = process.env.PASSWORD
+        tenantUrl = process.env.USERNAME.split('@')[1]
       } else {
         username = space.data.metadata?.creds?.username || {}
         password = space.data.metadata?.creds?.password || {}
+        tenantUrl = space.data.metadata?.creds?.tenantUrl || {}
       }
-      console.log(JSON.stringify(username))
 
       // PLACEHOLDER FOR ANDY TO AUTOGEN THE BLUEPRINT
       const dynamicBlueprint = retrieveBlueprint(
@@ -97,6 +99,7 @@ export default function (listener) {
             creds: {
               username: username,
               password: password,
+              tenantUrl: tenantUrl
             },
             theme: {
               root: {
@@ -171,7 +174,6 @@ export default function (listener) {
             },
           },
         })
-        console.log(JSON.stringify(updatedSpace, null, 2))
 
         // CREATE AND INVITE GUESTS
         await createAndInviteGuests(updatedSpace, event)
