@@ -13,6 +13,7 @@ import { clearAndPopulateLocations } from './actions/clearAndPopulateLocations'
 import { createPage } from './workflow/welcome-page'
 import { retrieveBlueprint } from './workflow/retrieve-blueprint'
 import { isNil, isNotNil } from './validations/common/helpers'
+import { createAndInviteGuests } from './guests/createAndInviteGuests'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -171,6 +172,9 @@ export default function (listener) {
           },
         })
         console.log(JSON.stringify(updatedSpace, null, 2))
+
+        // CREATE AND INVITE GUESTS
+        await createAndInviteGuests(updatedSpace, event)
       }
 
       // Acknowledging that the Space is now set up
