@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "flatfile develop index.js",
-    "demploy": "npx flatfile@latest deploy index.js"
+    "deploy": "npx flatfile@latest deploy index.js"
   },
   "keywords": [],
   "author": "",
