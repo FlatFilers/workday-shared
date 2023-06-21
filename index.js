@@ -10,6 +10,9 @@ import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStr
 import axios from 'axios'
 require('dotenv').config()
 import { clearAndPopulateLocations } from './actions/clearAndPopulateLocations'
+import { companies } from './reference_data/companies'
+import { cost_centers } from './reference_data/cost_centers'
+import { jobs } from './reference_data/jobs'
 
 export default function (listener) {
   // logging all events in the environment
@@ -163,9 +166,22 @@ export default function (listener) {
   // SEED THE WORKBOOK WITH DATA workbook:created
 
   listener.on('workbook:created', async (event) => {
+    if (!event.context || !event.context.workbookId) {
+      console.error('Event context or workbookId missing')
+      return
+    }
+
     const workbookId = event.context.workbookId
-    const workbook = await api.workbooks.get(workbookId)
-    const workbookName = workbook.data.name
+    let workbook
+    try {
+      workbook = await api.workbooks.get(workbookId)
+    } catch (error) {
+      console.error('Error getting workbook:', error.message)
+      return
+    }
+
+    const workbookName =
+      workbook.data && workbook.data.name ? workbook.data.name : ''
 
     console.log('Received workbook:created event')
     console.log('Workbook ID:', workbookId)
@@ -173,6 +189,77 @@ export default function (listener) {
 
     if (workbookName.includes('Worker + Org Import')) {
       console.log('Workbook matches the expected name')
+
+      const sheets =
+        workbook.data && workbook.data.sheets ? workbook.data.sheets : []
+
+      // COMPANIES
+      const companiesSheet = sheets.find((s) =>
+        s.config.slug.includes('companies')
+      )
+      if (companiesSheet && Array.isArray(companies)) {
+        const companiesId = companiesSheet.id
+        const request1 = companies.map(({ CompanyName, Reference_ID }) => ({
+          name: { value: CompanyName },
+          id: { value: Reference_ID },
+        }))
+
+        try {
+          const insertCompanies = await api.records.insert(
+            companiesId,
+            request1
+          )
+        } catch (error) {
+          console.error('Error inserting companies:', error.message)
+        }
+      }
+
+      // COST CENTERS
+      const ccSheet = sheets.find((s) => s.config.slug.includes('cost_centers'))
+      if (ccSheet && Array.isArray(cost_centers)) {
+        const ccId = ccSheet.id
+        const request3 = cost_centers.map(
+          ({ CostCenterName, CostCenterCode }) => ({
+            name: { value: CostCenterName },
+            id: { value: CostCenterCode },
+          })
+        )
+
+        try {
+          const insertCostCenters = await api.records.insert(ccId, request3)
+        } catch (error) {
+          console.error('Error inserting cost centers:', error.message)
+        }
+      }
+
+      // Jobs
+      const jobsSheet = sheets.find((s) => s.config.slug.includes('jobs'))
+      if (jobsSheet && Array.isArray(jobs)) {
+        const jobsId = jobsSheet.id
+        const request4 = jobs.map(
+          ({
+            JobCode,
+            JobTitle,
+            Department,
+            Classification,
+            Pay_Rate_Type,
+          }) => ({
+            code: { value: JobCode },
+            title: { value: JobTitle },
+            department: { value: Department },
+            classification: { value: Classification },
+            pay_rate_type: { value: Pay_Rate_Type },
+          })
+        )
+
+        try {
+          const insertJobs = await api.records.insert(jobsId, request4)
+        } catch (error) {
+          console.error('Error inserting jobs:', error.message)
+        }
+      }
+
+      //Locations
 
       const locationsSheet = workbook.data.sheets.find((s) =>
         s.config.slug.includes('locations')
