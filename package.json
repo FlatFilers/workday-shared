@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@flatfile/api": "^1.5.10",
+    "@flatfile/api": "*",
     "@flatfile/configure": "*",
     "@flatfile/hooks": "*",
     "@flatfile/listener": "*",
