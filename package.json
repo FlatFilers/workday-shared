@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "flatfile develop index.js",
-    "deploy": "npx flatfile@latest deploy index.js"
+    "deploy": "npx flatfile@latest deploy index.js",
+    "quickstart:dev": "npx flatfile@latest develop index.js --token sk_0osdnSZfCKWucaoB7I2brdZyYeldOwTW",
+    "eric:dev": "npx flatfile@latest develop index.js --token sk_5wGTfRNn3MWOS5HLrlivvZRiXGn5GCtV"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +24,7 @@
     "axios": "^1.4.0",
     "dotenv": "^16.1.3",
     "email-validator": "^2.0.4",
-    "flatfile": "^3.4.10",
+    "flatfile": "*",
     "jest": "^29.5.0",
     "moment": "^2.29.4",
     "node-fetch": "^3.3.1",
