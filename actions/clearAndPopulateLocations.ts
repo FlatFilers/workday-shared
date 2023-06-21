@@ -7,6 +7,8 @@ async function clearAndPopulateLocations(event) {
     const workbookId = event.context.workbookId
     // Retrieve the workbook details
     const workbook = await api.workbooks.get(workbookId)
+    console.log('Workbook:', workbook)
+
     // Find the sheet with "locations" in its slug
     const locationsSheet = workbook.data.sheets.find((s) =>
       s.config.slug.includes('locations')
@@ -18,15 +20,29 @@ async function clearAndPopulateLocations(event) {
 
       console.log('Fetching location data...')
       // Fetch location data from the source (e.g., API)
-      const locationData = await authenticateAndFetchLocations()
+      const locationData = await authenticateAndFetchLocations(
+        event.context.spaceId
+      )
+      console.log('Fetched location data:', locationData)
 
       if (locationData) {
+        locationData.forEach((loc, index) => {
+          if (!loc.locationName || !loc.locationID) {
+            console.log(
+              `Undefined locationName or locationID at index ${index}:`,
+              loc
+            )
+          }
+        })
+
         console.log('Location data fetched successfully')
         console.log('Location Data:', locationData)
 
         console.log('Deleting existing records from the locations sheet...')
         // Get the existing records from the locations sheet
         const existingRecords = await api.records.get(locationsId)
+        console.log('Existing records:', existingRecords)
+
         // Extract the record IDs to delete
         const recordIdsToDelete = existingRecords.data.records.map(
           (record) => record.id
@@ -60,7 +76,7 @@ async function clearAndPopulateLocations(event) {
         console.log('Inserting location data...')
         // Insert the location data into the locations sheet
         const insertLocations = await api.records.insert(locationsId, request)
-        console.log('Location data inserted:', insertLocations)
+        console.log('Inserted records:', insertLocations)
 
         console.log('All location data inserted.')
       } else {
