@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "flatfile develop index.js",
-    "demploy": "npx flatfile@latest deploy index.js"
+    "deploy": "npx flatfile@latest deploy index.js",
+    "quickstart:dev": "npx flatfile@latest develop index.js --token sk_0osdnSZfCKWucaoB7I2brdZyYeldOwTW",
+    "eric:dev": "npx flatfile@latest develop index.js --token sk_5wGTfRNn3MWOS5HLrlivvZRiXGn5GCtV"
   },
   "keywords": [],
   "author": "",
