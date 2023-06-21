@@ -102,7 +102,7 @@ export default function (listener) {
             creds: {
               username: username,
               password: password,
-              tenantUrl: tenantUrl
+              tenantUrl: tenantUrl,
             },
             theme: {
               root: {
@@ -212,11 +212,11 @@ export default function (listener) {
       console.error('Error getting workbook:', error.message)
       return
     }
-    
+
     const workbookName =
       workbook.data && workbook.data.name ? workbook.data.name : ''
-    const spaceId = workbook.data && workbook.data.spaceId ? workbook.data.spaceId : ''
-    
+    const spaceId =
+      workbook.data && workbook.data.spaceId ? workbook.data.spaceId : ''
 
     // console.log('Received workbook:created event')
     // console.log('Workbook ID:', workbookId)
