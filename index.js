@@ -351,36 +351,20 @@ export default function (listener) {
   // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
 
   // WORKERS
+
   listener.use(
-    recordHook('workers', (record) => {
-      if (!record) {
-        console.error('Received undefined or null record, skipping...')
-        return
-      }
-
+    recordHook('workers', async (record, event) => {
       try {
-        const results = employeeValidations(record)
-
-        // Use a safe stringify function to prevent circular reference errors
-        try {
-          console.log('Employees Hooks: ' + JSON.stringify(results))
-        } catch (error) {
-          console.error('Error stringifying results:', error)
-        }
-
-        return record
+        // Call the employeeValidations function which now includes assignBeerToRecord
+        await employeeValidations(record)
       } catch (error) {
-        console.error(
-          `Error occurred during validation of record ${JSON.stringify(
-            record
-          )}:`,
-          error.message,
-          'Stack trace:',
-          error.stack
-        )
-        // Handle or rethrow the error as needed, for example:
-        // throw error;
+        // Handle errors that might occur within employeeValidations
+        console.error('Error in employeeValidations:', error)
+      } finally {
+        // Clean up or perform any necessary actions after the try/catch block
       }
+
+      return record
     })
   )
 

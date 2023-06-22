@@ -5,8 +5,10 @@ import { formatRecordDates } from './common/dateFormatting'
 import { isNotNil, isNil } from './common/helpers'
 import { concatenateNames, splitFullName } from './employeeNameProcessing'
 import validateAndFormatSSN from './validateAndFormatSSN'
+import { checkApiForExistingWorkers } from './apiValidation'
 
-export function employeeValidations(record) {
+export async function employeeValidations(record) {
+  // The function itself must be async to use await inside it
   // Validates that the input is a record object
   if (!record || typeof record !== 'object') {
     throw new Error('Invalid record input. Expecting a valid record object.')
@@ -71,6 +73,13 @@ export function employeeValidations(record) {
     vlookup(record, 'Job_Profile_Reference_ID', 'title', 'Job_Title')
   } catch (error) {
     console.log('Error occurred during vlookup:', error)
+  }
+
+  // Run API call to assign beer
+  try {
+    await checkApiForExistingWorkers(record) // Now we wait for checkApiForExistingWorkers to finish before moving on
+  } catch (error) {
+    console.log('Error occurred during assigned beer API call:', error)
   }
 
   // Returns the validated and processed record
