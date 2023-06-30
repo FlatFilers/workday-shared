@@ -659,7 +659,7 @@ export const blueprint = [
         key: 'code',
         label: 'Job Code',
         type: 'string',
-        constraints: [{ type: 'unique', primary: true }],
+        constraints: [{ type: 'unique', type: 'required', primary: true }],
       },
       {
         key: 'title',
