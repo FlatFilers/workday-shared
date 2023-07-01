@@ -596,6 +596,7 @@ export const blueprint = [
   {
     name: 'Companies',
     slug: 'companies',
+    readonly: true,
     access: [],
     fields: [
       {
