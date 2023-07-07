@@ -358,7 +358,7 @@ export default function (listener) {
 
       // Retrieve the sheetId from the event context
       const sheetId = event.context.sheetId
-      console.log(`Retrieved sheetId: ${sheetId}`) // Log the retrieved sheetId
+      console.log(`Retrieved sheetId from event: ${sheetId}`) // Log the retrieved sheetId
 
       // Fetch the sheet from the API
       const sheet = await api.sheets.get(sheetId)
@@ -386,12 +386,33 @@ export default function (listener) {
         }
         console.log(`Successfully fetched ${fields.length} fields.`)
 
+        // Fetch data from the new API endpoint once per sheet
+        console.log('Calling API endpoint...')
+        const getResponse = await axios.get(
+          'https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001'
+        )
+        console.log(
+          'Finished calling new API endpoint. Processing the response...'
+        )
+
+        // Check if the response is as expected
+        if (!getResponse || !getResponse.data) {
+          console.log('Failed to fetch employees data from the API')
+          return
+        }
+
+        // Extract the list of employees from the response data
+        const employees = getResponse.data
+
+        // Log the number of employees fetched
+        console.log(`Successfully fetched ${employees.length} employees.`)
+
         // Call the RecordHook function with event and a handler
         await RecordHook(event, async (record, event) => {
           console.log("Inside RecordHook's handler function") // Log inside the handler function
           try {
-            // Call the employeeValidations function with the fields
-            await employeeValidations(record, fields)
+            // Pass the fetched employees to the employeeValidations function along with the record
+            await employeeValidations(record, fields, employees)
           } catch (error) {
             // Handle errors that might occur within employeeValidations
             console.error('Error in employeeValidations:', error)
@@ -412,7 +433,8 @@ export default function (listener) {
     }
   })
 
-  // listener.use(
+  //
+  //listener.use(
   //   recordHook('workers', async (record, event, sheetId) => {
   //     try {
   //       console.log('Sheet ID:', sheetId) // Log the sheetId value

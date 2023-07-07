@@ -7,7 +7,7 @@ import { concatenateNames, splitFullName } from './employeeNameProcessing'
 import validateAndFormatSSN from './validateAndFormatSSN'
 import { checkApiForExistingWorkers } from './apiValidation'
 
-export async function employeeValidations(record, fields) {
+export async function employeeValidations(record, fields, employees) {
   // The function itself must be async to use await inside it
   // Validates that the input is a record object
   if (!record || typeof record !== 'object') {
@@ -89,13 +89,13 @@ export async function employeeValidations(record, fields) {
     console.log('Error occurred during vlookup:', error)
   }
 
-  // Run API call to check for existing workers
+  // Run API check for existing workers
   try {
     console.log('Checking API for existing workers...')
-    await checkApiForExistingWorkers(record)
+    await checkApiForExistingWorkers(record, employees)
     console.log('API check completed successfully.')
   } catch (error) {
-    console.log('Error occurred during API call:', error)
+    console.log('Error occurred during API check:', error)
   }
 
   // Returns the validated and processed record

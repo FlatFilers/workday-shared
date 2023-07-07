@@ -1,15 +1,5 @@
-import axios from 'axios'
-
-export async function checkApiForExistingWorkers(record) {
+export async function checkApiForExistingWorkers(record, employees) {
   try {
-    // Fetch data from the new API endpoint
-    const getResponse = await axios.get(
-      'https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001'
-    )
-
-    // Extract the list of employees from the response data
-    const employees = getResponse.data
-
     // Get the current value of the Applicant_ID field
     let applicantId = record.get('Applicant_ID')
 
@@ -39,10 +29,10 @@ export async function checkApiForExistingWorkers(record) {
       )
     }
   } catch (error) {
-    console.log('Error occurred during API call:', error) // Log any errors that occurred during the API call
-    // If an error occurred during the API call, add an error to the Applicant_ID field
-    record.set('Applicant_ID', 'Failed')
-    record.addError('Applicant_ID', "Couldn't get data from the API.")
+    console.log('Error occurred during API check:', error) // Log any errors that occurred during the check
+    // If an error occurred during the check, add an error to the Applicant_ID field
+    record.set('Applicant_ID', 'API Check Failed')
+    record.addError('Applicant_ID', "Couldn't process data from the API.")
   }
 
   return record

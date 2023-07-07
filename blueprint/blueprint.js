@@ -654,7 +654,7 @@ export const blueprint = [
   {
     name: 'Job Codes',
     slug: 'jobs',
-    access: [],
+    //access: [],
     fields: [
       {
         key: 'code',
