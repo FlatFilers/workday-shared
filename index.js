@@ -46,7 +46,7 @@ export default function (listener) {
 
       // GET & SAVE CREDS FOR WORKDAY TENANT
       // assumes username and password have been set on the space metadata
-      let username, password, tenantUrl
+      let username, password, tenantUrl, serviceUrl
       if (
         isNil(space.data.metadata?.creds?.username) ||
         isNil(space.data.metadata?.creds?.password) ||
@@ -55,10 +55,12 @@ export default function (listener) {
         username = process.env.USERNAME.split('@')[0]
         password = process.env.PASSWORD
         tenantUrl = process.env.USERNAME.split('@')[1]
+        serviceUrl = process.env.SERVICEURL
       } else {
         username = space.data.metadata?.creds?.username || {}
         password = space.data.metadata?.creds?.password || {}
         tenantUrl = space.data.metadata?.creds?.tenantUrl || {}
+        serviceUrl = space.data.metadata?.creds?.serviceUrl || {}
       }
 
       // PLACEHOLDER FOR ANDY TO AUTOGEN THE BLUEPRINT
@@ -103,6 +105,7 @@ export default function (listener) {
               username: username,
               password: password,
               tenantUrl: tenantUrl,
+              serviceUrl: serviceUrl,
             },
             theme: {
               root: {

@@ -4,8 +4,9 @@ import api from '@flatfile/api'
 require('dotenv').config()
 
 //will need to be dynamically updated based on tenant URL
-const soapEndpoint =
-  'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Human_Resources/v41.0'
+// const soapEndpoint =
+//   'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Human_Resources/v41.0'
+const webService = '/Human_Resources/v41.0'
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -43,7 +44,10 @@ async function authenticateAndFetchLocations(spaceId) {
   let offset = 0 // Initial offset
   const allLocations = [] // Array to store all locations
   const space = await api.spaces.get(spaceId)
-  const { username, password, tenantUrl } = space.data.metadata?.creds
+  const { username, password, tenantUrl, serviceUrl } = space.data.metadata?.creds
+  const soapEndpoint = serviceUrl + tenantUrl + webService
+
+  //console.log(JSON.stringify(space.data.metadata))
 
   try {
     while (true) {
@@ -65,6 +69,11 @@ async function authenticateAndFetchLocations(spaceId) {
           </soapenv:Header>
           <soapenv:Body>
             <wd:Get_Locations_Request xmlns:wd="urn:com.workday/bsvc" version="v40.1">
+              <wd:Request_Criteria>
+                <wd:Location_Usage_Reference>
+                  <wd:ID wd:type="Location_Usage_ID">BUSINESS SITE</wd:ID>
+                </wd:Location_Usage_Reference>
+              </wd:Request_Criteria>
               <wd:Response_Filter>
                 <wd:Page>${offset / pageSize + 1}</wd:Page>
                 <wd:Count>${pageSize}</wd:Count>
