@@ -630,6 +630,16 @@ export const blueprint = [
         constraints: [{ type: 'unique' }],
       },
     ],
+    actions: [
+      {
+        //refresh locations from Workday
+        operation: 'refreshLocationsData',
+        mode: 'background',
+        label: 'Refresh Location Data from Workday',
+        description: 'Refreshs Locations sheet with values from Workday tenant',
+        primary: false,
+      },
+    ],
   },
   {
     name: 'Cost Centers',

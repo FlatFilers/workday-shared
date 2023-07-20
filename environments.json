@@ -1,0 +1,50 @@
+[
+    {
+        "ID": "us_env_CAsl36HU",
+        "Account ID": "us_acc_yQDal2of",
+        "Name": "development",
+        "Is Production": false,
+        "Guest Authentication": "",
+        "Features": {
+            "billingEnabled": false
+        },
+        "PUBLIC_KEY": "pk_vpCOftq0bicFk7qC0rNWeIlQxkht458J",
+        "SECRET_KEY": "sk_4yIuc55Wk77KvOhYQ4IyI6oVK0oCydaz"
+    },
+    {
+        "ID": "us_env_ah7Z8URc",
+        "Account ID": "us_acc_yQDal2of",
+        "Name": "production",
+        "Is Production": true,
+        "Guest Authentication": "",
+        "Features": {
+            "billingEnabled": false
+        },
+        "PUBLIC_KEY": "pk_jywyO7a1pszkzP9kmzepfVM7CQxp04yF",
+        "SECRET_KEY": "sk_E6ejpJ5DNIUa57gsBcSKVdBV3y1pabsN"
+    },
+    {
+        "ID": "us_env_fCAeHbrd",
+        "Account ID": "us_acc_yQDal2of",
+        "Name": "eric-deploy",
+        "Is Production": false,
+        "Guest Authentication": "",
+        "Features": {
+            "billingEnabled": false
+        },
+        "PUBLIC_KEY": "pk_k66gFmy0BbUJMRi1Ad8Q9TnvfN2FvKGy",
+        "SECRET_KEY": "sk_5wGTfRNn3MWOS5HLrlivvZRiXGn5GCtV"
+    },
+    {
+        "ID": "us_env_t8hz394P",
+        "Account ID": "us_acc_yQDal2of",
+        "Name": "QUICKSTART",
+        "Is Production": false,
+        "Guest Authentication": "magic_link",
+        "Features": {
+            "billingEnabled": false
+        },
+        "PUBLIC_KEY": "pk_PP8N7Fg4T1AxaxQn4ROsBxTh6lHh1CcF",
+        "SECRET_KEY": "sk_0osdnSZfCKWucaoB7I2brdZyYeldOwTW"
+    }
+]
