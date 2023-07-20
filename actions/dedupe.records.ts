@@ -1,183 +1,106 @@
 import api, { Flatfile } from "@flatfile/api";
 
 export class DedupeRecords {
-  /**
-   * The identifier of the sheet being processed.
-   */
   private readonly sheetId: string;
-
-  /**
-   * The unique identifier key used for deduplication.
-   */
   private readonly mergeKey: string;
-
-  /**
-   * A map to store records unique by the merge key.
-   */
   private uniqueRecordsByID: Map<string, any> = new Map();
-
-  /**
-   * An array to store the IDs of duplicate records to be deleted.
-   */
   private recordIdsToDelete: string[] = [];
 
-  /**
-   * An array to store records to be updated after merging duplicate records.
-   */
-  private recordsToUpdate: Flatfile.Records = [];
-
-  /**
-   * @param sheetId - The identifier of the sheet being processed.
-   * @param mergeKey - The unique identifier key used for deduplication.
-   */
   constructor(sheetId: string, mergeKey: string) {
     this.sheetId = sheetId;
     this.mergeKey = mergeKey;
   }
 
-  /**
-   * The main function to deduplicate records.
-   */
   public async dedupeRecords() {
-    const allRecords = await this.getAllRecords();
-    await this.processRecords(allRecords);
-    await this.deleteRemainingRecords();
-    await this.updateRemainingRecords();
+    try {
+      const allRecords = await this.getAllRecords();
+      await this.processRecords(allRecords);
+      await this.deleteAndUpdateRecords();
+    } catch (error) {
+      console.error(`Failed to deduplicate records: ${error}`);
+    }
   }
 
-  /**
-   * A method to fetch all records, handling pagination as necessary.
-   */
   private async getAllRecords() {
-    const recordsResponse = await api.records.get(this.sheetId, {
-      includeCounts: true,
-    });
+    let recordsResponse = await api.records.get(this.sheetId, { includeCounts: true });
     const total = recordsResponse?.data?.counts?.total;
-    const pages = total && Math.ceil(total / 1000);
+    const pageSize = recordsResponse?.data?.records?.length;
+    const pages = total && Math.ceil(total / pageSize);
     const additionalPages: Flatfile.RecordWithLinks[] = [];
 
     for (let i = 2; i <= pages; i++) {
-      const moreRecords = await api.records.get(this.sheetId, {
-        includeCounts: true,
-        pageNumber: i,
-      });
+      const moreRecords = await api.records.get(this.sheetId, { includeCounts: true, pageNumber: i });
       if (moreRecords.data?.records) {
         additionalPages.push(...moreRecords.data.records);
       }
     }
 
-    return additionalPages.length > 0
-      ? recordsResponse?.data?.records?.concat(additionalPages)
-      : recordsResponse?.data?.records;
+    return [...(recordsResponse?.data?.records || []), ...additionalPages];
   }
 
-  /**
-   * Merge old and new record values.
-   * @param oldValues - The original record values.
-   * @param newValues - The new record values.
-   */
-  private mergeValues(oldValues, newValues) {
-    let merged = { ...oldValues };
-    for (let key in newValues) {
-      let newValue = newValues[key].value;
-      newValue = newValue === "" ? null : newValue;
-      if (newValue !== null && newValue !== undefined) {
-        merged[key] = newValues[key];
+  private mergeValues(existingRecordValues: Record<string, any>, newRecordValues: Record<string, any>) {
+    let mergedValues = {...existingRecordValues};
+  
+    for (let key in newRecordValues) {
+      let newValue = newRecordValues[key]?.value;
+      let existingValue = existingRecordValues[key]?.value;
+  
+      if ((newValue !== null && newValue !== '') || existingValue === null || existingValue === '') {
+        mergedValues[key] = newRecordValues[key];
       }
     }
-    return merged;
+  
+    return mergedValues;
   }
+  
 
-  /**
-   * Process each record and handle duplicates.
-   * @param allRecords - All records from the sheet.
-   */
   private async processRecords(allRecords: Flatfile.RecordWithLinks[]) {
     for (const record of allRecords) {
       const uniqueId = record.values[this.mergeKey]?.value?.toString();
-      if (this.uniqueRecordsByID.has(uniqueId)) {
-        await this.handleDuplicateRecord(uniqueId, record);
-      } else {
-        this.handleUniqueRecord(uniqueId, record);
+      if (uniqueId) {
+        if (this.uniqueRecordsByID.has(uniqueId)) {
+          this.handleDuplicateRecord(uniqueId, record);
+        } else {
+          this.uniqueRecordsByID.set(uniqueId, record);
+        }
       }
     }
   }
 
-  /**
-   * Handle a record that is determined to be a duplicate.
-   * @param uniqueId - The uniqueId of the record.
-   * @param record - The record to be processed.
-   */
-  private async handleDuplicateRecord(
-    uniqueId: string,
-    record: Flatfile.RecordWithLinks
-  ) {
+  private handleDuplicateRecord(uniqueId: string, newRecord: Flatfile.RecordWithLinks) {
     const existingRecord = this.uniqueRecordsByID.get(uniqueId);
-    const newRecordNonNullValues = {
-      id: record.id,
-      values: Object.fromEntries(
-        Object.entries(record.values).filter(([_, val]) => val.value !== null)
-      ),
-    };
+    const mergedValues = this.mergeValues(existingRecord.values, newRecord.values);
     this.recordIdsToDelete.push(existingRecord.id);
-    const uniqueRecordValues = this.mergeValues(
-      existingRecord.values,
-      newRecordNonNullValues.values
-    );
-    this.uniqueRecordsByID.set(uniqueId, {
-      ...existingRecord,
-      id: record.id,
-      values: uniqueRecordValues,
-      count: existingRecord.count + 1,
-    });
-
-    if (this.recordIdsToDelete.length >= 100) {
-      await api.records.delete(this.sheetId, { ids: this.recordIdsToDelete });
-      this.recordIdsToDelete = [];
-    }
+    this.uniqueRecordsByID.set(uniqueId, { ...newRecord, values: mergedValues });
   }
 
-  /**
-   * Handle a record that is determined to be unique.
-   * @param uniqueId - The uniqueId of the record.
-   * @param record - The record to be processed.
-   */
-  private handleUniqueRecord(
-    uniqueId: string,
-    record: Flatfile.RecordWithLinks
-  ) {
-    this.uniqueRecordsByID.set(uniqueId, {
-      id: record.id,
-      values: record.values,
-      count: 1,
-    });
-  }
+  private async deleteAndUpdateRecords() {
+    const recordBatches = Array.from(this.uniqueRecordsByID.values())
+      .map(record => ({ id: record.id, values: record.values }))
+      .reduce((resultArray, item, index) => { 
+        const chunkIndex = Math.floor(index/1000);
+        if(!resultArray[chunkIndex]) {
+          resultArray[chunkIndex] = []
+        }
+        resultArray[chunkIndex].push(item);
+        return resultArray
+      }, []);
 
-  /**
-   * Delete any remaining records in the delete queue.
-   */
-  private async deleteRemainingRecords() {
-    if (this.recordIdsToDelete.length > 0) {
-      await api.records.delete(this.sheetId, { ids: this.recordIdsToDelete });
-    }
-  }
+    const deletionBatches = this.recordIdsToDelete.reduce((resultArray, item, index) => { 
+        const chunkIndex = Math.floor(index/1000);
+        if(!resultArray[chunkIndex]) {
+          resultArray[chunkIndex] = []
+        }
+        resultArray[chunkIndex].push(item);
+        return resultArray
+      }, []);
 
-  /**
-   * Update any remaining records in the update queue.
-   */
-  private async updateRemainingRecords() {
-    for (let [_uniqueId, record] of this.uniqueRecordsByID) {
-      if (record.count > 1) {
-        this.recordsToUpdate.push({
-          id: record.id,
-          values: record.values,
-        });
-      }
+    for (const ids of deletionBatches) {
+      await api.records.delete(this.sheetId, { ids });
     }
 
-    while (this.recordsToUpdate.length) {
-      const batch = this.recordsToUpdate.splice(0, 1000);
-      await api.records.update(this.sheetId, batch);
+    for (const records of recordBatches) {
+      await api.records.update(this.sheetId, records);
     }
   }
 }
