@@ -4,7 +4,6 @@ import { blueprint } from './blueprint/blueprint'
 import { ExcelExtractor } from '@flatfile/plugin-xlsx-extractor'
 import { DedupeRecords } from './actions/dedupe.records'
 import { employeeValidations } from './validations/employeeValidations'
-const { authenticateAndFetchLocations } = require('./reference_data/locations')
 import { validateReportingStructure } from './actions/validateReportingStructure'
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
 import axios from 'axios'
@@ -17,6 +16,9 @@ import { createAndInviteGuests } from './guests/createAndInviteGuests'
 import { companies } from './reference_data/companies'
 import { cost_centers } from './reference_data/cost_centers'
 import { jobs } from './reference_data/jobs'
+import { locationsMetadata } from './soapRequest/soapMetadata'
+import { authenticateAndFetchData } from './soapRequest/authenticateAndFetchData'
+import { costCentersMetadata } from './soapRequest/soapMetadata'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -250,21 +252,52 @@ export default function (listener) {
       }
 
       // COST CENTERS
-      const ccSheet = sheets.find((s) => s.config.slug.includes('cost_centers'))
-      if (ccSheet && Array.isArray(cost_centers)) {
-        const ccId = ccSheet.id
-        const request3 = cost_centers.map(
-          ({ CostCenterName, CostCenterCode }) => ({
-            name: { value: CostCenterName },
-            id: { value: CostCenterCode },
-          })
-        )
+      const costCentersSheet = workbook.data.sheets.find((s) =>
+        s.config.slug.includes('cost_centers')
+      )
+
+      if (costCentersSheet) {
+        console.log('Cost Centers sheet found')
+        const costCentersId = costCentersSheet.id
 
         try {
-          const insertCostCenters = await api.records.insert(ccId, request3)
+          console.log('Fetching cost center data...')
+          const costCenterData = await authenticateAndFetchData(
+            spaceId,
+            costCentersMetadata
+          ) // Fetch cost center data using the authenticateAndFetchData function
+
+          if (costCenterData) {
+            console.log(
+              `Fetched ${costCenterData.length} cost center records successfully`
+            )
+
+            const request = costCenterData.map(({ name, id }) => ({
+              name: { value: name },
+              id: { value: id },
+              // Include other fields if necessary
+            }))
+
+            try {
+              console.log('Inserting cost center data...')
+              const insertCostCenters = await api.records.insert(
+                costCentersId,
+                request
+              )
+              console.log(
+                `Inserted ${insertCostCenters.length} cost center records successfully`
+              )
+            } catch (error) {
+              console.error('Error inserting cost center data:', error.message)
+            }
+          } else {
+            console.error('Error: Failed to fetch cost center data')
+          }
         } catch (error) {
-          console.error('Error inserting cost centers:', error.message)
+          console.error('Error fetching cost center data:', error.message)
         }
+      } else {
+        console.error('Error: Cost Centers sheet not found')
       }
 
       // Jobs
@@ -294,55 +327,56 @@ export default function (listener) {
         }
       }
 
-      //Locations
+      //     //Locations
 
-      const locationsSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('locations')
-      )
+      //     const locationsSheet = workbook.data.sheets.find((s) =>
+      //       s.config.slug.includes('locations')
+      //     )
 
-      if (locationsSheet) {
-        // console.log('Locations sheet found')
-        const locationsId = locationsSheet.id
+      //     if (locationsSheet) {
+      //       console.log('Locations sheet found')
+      //       const locationsId = locationsSheet.id
 
-        try {
-          // console.log('Fetching location data...')
-          const locationData = await authenticateAndFetchLocations(spaceId) // Fetch location data using the authenticateAndFetchLocations function
-          // console.log('Location Data Prior to Preparing Request:', locationData)
+      //       try {
+      //         // console.log('Fetching location data...')
+      //         const locationData = await authenticateAndFetchData(
+      //           spaceId,
+      //           locationsMetadata
+      //         ) // Fetch location data using the authenticateAndFetchLocations function
+      //         console.log('Location Data Prior to Preparing Request:', locationData)
 
-          if (locationData) {
-            // console.log('Location data fetched successfully')
-            // console.log('Location Data:', locationData)
+      //         if (locationData) {
+      //           console.log('Location data fetched successfully')
+      //           console.log('Location Data:', locationData)
 
-            const request = locationData.map(
-              ({ locationName, locationID }) => ({
-                name: { value: locationName },
-                id: { value: locationID },
-                // Include other fields if necessary
-              })
-            )
+      //           const request = locationData.map(({ name, id }) => ({
+      //             name: { value: name },
+      //             id: { value: id },
+      //             // Include other fields if necessary
+      //           }))
 
-            // console.log('Request:', request) // Log the prepared request
+      //           console.log('Request:', request) // Log the prepared request
 
-            try {
-              // console.log('Inserting location data...')
-              const insertLocations = await api.records.insert(
-                locationsId,
-                request
-              )
-              // console.log('Location data inserted:', insertLocations)
-            } catch (error) {
-              console.error('Error inserting location data:', error.message)
-              console.error('Error Details:', error)
-            }
-          } else {
-            console.error('Error: Failed to fetch location data')
-          }
-        } catch (error) {
-          console.error('Error fetching location data:', error.message)
-        }
-      } else {
-        console.error('Error: Locations sheet not found')
-      }
+      //           try {
+      //             // console.log('Inserting location data...')
+      //             const insertLocations = await api.records.insert(
+      //               locationsId,
+      //               request
+      //             )
+      //             // console.log('Location data inserted:', insertLocations)
+      //           } catch (error) {
+      //             console.error('Error inserting location data:', error.message)
+      //             console.error('Error Details:', error)
+      //           }
+      //         } else {
+      //           console.error('Error: Failed to fetch location data')
+      //         }
+      //       } catch (error) {
+      //         console.error('Error fetching location data:', error.message)
+      //       }
+      //     } else {
+      //       console.error('Error: Locations sheet not found')
+      //     }
     } else {
       console.log('Workbook does not match the expected name')
     }
