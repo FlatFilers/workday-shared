@@ -17,6 +17,7 @@ import { createAndInviteGuests } from './guests/createAndInviteGuests'
 import { companies } from './reference_data/companies'
 import { cost_centers } from './reference_data/cost_centers'
 import { jobs } from './reference_data/jobs'
+import csvZip from './actions/csvZip'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -86,6 +87,13 @@ export default function (listener) {
             label: 'Submit',
             description: 'Send a webhook to the app',
             primary: true,
+          },
+          {
+            operation: 'downloadCSV',
+            mode: 'foreground',
+            label: 'Download ZIP File of Workbook Data',
+            description: 'Downloads ZIP File of Workbook Data',
+            primary: false,
           },
         ],
       })
@@ -587,6 +595,8 @@ export default function (listener) {
     })
   })
 
+  //Download Data to Excel Workbook
+  listener.use(csvZip)
   // PARSE XLSX FILES
   listener.on('file:created', async (event) => {
     return new ExcelExtractor(event).runExtraction()
