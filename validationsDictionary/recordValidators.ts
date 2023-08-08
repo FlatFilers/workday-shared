@@ -1,90 +1,75 @@
-import {
-  checkForError,
-  checkBoolean,
-  checkDateFormat,
-  isAlphanumeric,
-  isComplexPwd,
-  isInteger,
-  isNumeric,
-  isValidEmail,
-  isValidPhoneNumber,
-  isValidUrl,
-} from './validations'
-
-import {
-  shouldValidateAsAlphanumeric,
-  shouldValidateAsComplexPwd,
-  shouldValidateAsInteger,
-  shouldValidateAsEmail,
-  shouldValidateAsPhoneNumber,
-  shouldValidateAsUrl,
-} from './fieldRules'
+import * as validations from './validations'
+import * as fieldRules from './fieldRules'
+import * as idValidations from './idValidations'
 
 function validateRecord(record, fields) {
+  const NATIONAL_ID_PATTERN = /.*National_ID_Country_Ref.*_ID$/
+
   // Loop through all fields
   fields.forEach((field) => {
-    // Get the current value of the field
     const fieldValue = record.get(field.key)
+    const country = record.get('COUNTRY')
 
-    // Universal check for errors
-    const errorCheckMessage = checkForError(fieldValue)
+    const errorCheckMessage = validations.checkForError(fieldValue)
     if (errorCheckMessage) {
       record.addError(field.key, errorCheckMessage)
     }
 
-    // Validations based on field type
-    switch (field.type) {
-      case 'boolean':
-        const { error, info } = checkBoolean(fieldValue)
-        if (error) record.addError(field.key, error)
-        if (info) record.addInfo(field.key, info)
-        break
-      case 'date':
-        const dateFormatError = checkDateFormat(fieldValue)
-        if (dateFormatError) record.addError(field.key, dateFormatError)
-        break
-      case 'number':
-        const numericError = isNumeric(fieldValue)
-        if (numericError) record.addError(field.key, numericError)
-        break
-      default:
-        break
+    // Use a mapping for cleaner code
+    const fieldTypeToValidationMap = {
+      boolean: validations.checkBoolean,
+      date: validations.checkDateFormat,
+      number: validations.isNumeric,
     }
 
-    // Custom field rules and validations
-    if (shouldValidateAsAlphanumeric(field)) {
-      const alphanumericError = isAlphanumeric(fieldValue)
-      if (alphanumericError) record.addError(field.key, alphanumericError)
-    }
-
-    if (shouldValidateAsComplexPwd(field)) {
-      const passwordComplexityError = isComplexPwd(fieldValue)
-      if (passwordComplexityError)
-        record.addError(field.key, passwordComplexityError)
-    }
-
-    if (shouldValidateAsInteger(field)) {
-      const integerError = isInteger(fieldValue)
-      if (integerError) record.addError(field.key, integerError)
-    }
-    if (shouldValidateAsEmail(field)) {
-      const emailValidationError = isValidEmail(fieldValue)
-      if (emailValidationError) {
-        record.addError(field.key, emailValidationError)
+    const validationFunc = fieldTypeToValidationMap[field.type]
+    if (validationFunc) {
+      const error = validationFunc(fieldValue)
+      if (error) {
+        record.addError(field.key, error)
       }
     }
-    if (shouldValidateAsPhoneNumber(field)) {
-      const phoneNumberError = isValidPhoneNumber(fieldValue)
 
-      if (phoneNumberError) {
-        record.addError(field.key, phoneNumberError)
+    const fieldRuleToValidationMap = {
+      shouldValidateAsAlphanumeric: validations.isAlphanumeric,
+      shouldValidateAsComplexPwd: validations.isComplexPwd,
+      shouldValidateAsInteger: validations.isInteger,
+      shouldValidateAsEmail: validations.isValidEmail,
+      shouldValidateAsPhoneNumber: validations.isValidPhoneNumber,
+      shouldValidateAsUrl: validations.isValidUrl,
+    }
+
+    for (const [rule, validation] of Object.entries(fieldRuleToValidationMap)) {
+      if (fieldRules[rule](field)) {
+        const error = validation(fieldValue)
+        if (error) {
+          record.addError(field.key, error)
+        }
       }
     }
-    // If the field meets the URL criteria, apply the ISVALIDURL validation
-    if (shouldValidateAsUrl(field)) {
-      const urlError = isValidUrl(fieldValue)
-      if (urlError) {
-        record.addError(field.key, urlError)
+
+    if (field.name.match(NATIONAL_ID_PATTERN)) {
+      const countryToIDValidationMap = {
+        USA: idValidations.isValidSSN,
+        CAN: idValidations.isValidSIN,
+      }
+
+      const validationFunc = countryToIDValidationMap[country]
+      if (validationFunc) {
+        const error = validationFunc(fieldValue)
+        if (error) {
+          record.addError(field.key, error)
+        }
+      }
+
+      const ssidError = idValidations.isValidSSID(fieldValue)
+      if (ssidError) {
+        record.addError(field.key, ssidError)
+      }
+
+      const svnrError = idValidations.isValidSVNR(fieldValue)
+      if (svnrError) {
+        record.addError(field.key, svnrError)
       }
     }
   })
