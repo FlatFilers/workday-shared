@@ -1,0 +1,3729 @@
+[
+  {
+    "name": "Import Budget",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Import_Budget\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "import_budget",
+    "fields": [
+      {
+        "key": "Budget_Reference_ID",
+        "label": "Budget Reference ID",
+        "type": "string",
+        "description": "Budget",
+        "metadata": {
+          "wd_field_name": "Budget_Reference_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Budget_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Plan_ID"
+          ],
+          "sample_value": "PLAN_001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Budget",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Import_Mode_Reference_ID",
+        "label": "Import Mode Reference ID",
+        "type": "string",
+        "description": "Budget Web Service Import Mode",
+        "metadata": {
+          "wd_field_name": "Import_Mode_Reference_ID",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Import_Mode_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Budget_Import_Mode_ID"
+          ],
+          "sample_value": "REPLACE_ALL",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Budget Web Service Import Mode",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Import_Mode_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Submit",
+        "label": "Submit",
+        "type": "boolean",
+        "description": "Submit Action",
+        "metadata": {
+          "wd_field_name": "Submit",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Submit",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Submit Action",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Submit"
+        }
+      },
+      {
+        "key": "Budget_Structure_Reference_ID",
+        "label": "Budget Structure Reference ID",
+        "type": "string",
+        "description": "Budget Structure defined for the entry",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Budget_Structure_Reference_ID",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Budget_Structure_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Budget_Structure_ID"
+          ],
+          "sample_value": "BUDGET",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Budget Structure defined for the entry",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Structure_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Budget_Name_Reference_ID",
+        "label": "Budget Name Reference ID",
+        "type": "string",
+        "description": "Name of Budget Activity",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Budget_Name_Reference_ID",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Budget_Name_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Award_Proposal_ID",
+            "Award_Reference_ID",
+            "Custom_Budget_ID",
+            "Project_Budget_ID"
+          ],
+          "sample_value": "AWARD-16-48",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Name of Budget Activity",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Name_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Budget_Name_Reference_ID_Type",
+        "label": "Budget Name Reference ID Type",
+        "type": "enum",
+        "description": "Name of Budget Activity",
+        "config": {
+          "options": [
+            {
+              "value": "Award_Proposal_ID",
+              "label": "Award_Proposal_ID"
+            },
+            {
+              "value": "Award_Reference_ID",
+              "label": "Award_Reference_ID"
+            },
+            {
+              "value": "Custom_Budget_ID",
+              "label": "Custom_Budget_ID"
+            },
+            {
+              "value": "Project_Budget_ID",
+              "label": "Project_Budget_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Budget_Name_Reference_ID_Type",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Budget_Name_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Award_Proposal_ID",
+            "Award_Reference_ID",
+            "Custom_Budget_ID",
+            "Project_Budget_ID"
+          ],
+          "sample_value": "Award_Reference_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Name of Budget Activity",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Name_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Budget_Memo",
+        "label": "Budget Memo",
+        "type": "string",
+        "description": "Memo",
+        "metadata": {
+          "wd_field_name": "Budget_Memo",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Budget_Memo",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Memo",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Memo"
+        }
+      },
+      {
+        "key": "Budget_Period_Reference_ID",
+        "label": "Budget Period Reference ID",
+        "type": "string",
+        "description": "If a Budget Period Reference exists, you don't need to configure the Year and Fiscal Time Interval Reference on the Budget Lines Data.",
+        "metadata": {
+          "wd_field_name": "Budget_Period_Reference_ID",
+          "csv_file_name": "Import_Budget",
+          "csv_header": "Budget_Period_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Budget_Period_ID"
+          ],
+          "sample_value": "Jan_2022_Budget_Global_Modern_Services_Inc_USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "If a Budget Period Reference exists, you don't need to configure the Year and Fiscal Time Interval Reference on the Budget Lines Data.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Period_Reference/wd:ID"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Import Budget Details",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Import_Budget\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "import_budget_details",
+    "fields": [
+      {
+        "key": "Budget_Reference_ID",
+        "label": "Budget Reference ID",
+        "type": "string",
+        "description": "Budget",
+        "metadata": {
+          "wd_field_name": "Budget_Reference_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Budget_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Plan_ID"
+          ],
+          "sample_value": "PLAN_001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Budget",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Line_Order",
+        "label": "Line Order",
+        "type": "string",
+        "description": "Optional line order. If specified, lines will be sorted by this value when displayed and when invoice is printed.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Line_Order",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Line_Order",
+          "required/optional": "Design Requirement",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "a",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Optional line order. If specified, lines will be sorted by this value when displayed and when invoice is printed.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Line_Order"
+        }
+      },
+      {
+        "key": "Company_Reference_ID",
+        "label": "Company Reference ID",
+        "type": "string",
+        "description": "Company or Company Hierarchy",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Company_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Company_Reference_ID"
+          ],
+          "sample_value": "Global_Modern_Services_Inc_USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COMPNY",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Company or Company Hierarchy",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Company_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Company_Reference_ID_Type",
+        "label": "Company Reference ID Type",
+        "type": "string",
+        "description": "Company or Company Hierarchy",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID_Type",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Company_Reference_ID_Type",
+          "required/optional": "Required",
+          "type_value": [
+            "Company_Reference_ID",
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID",
+            "Region_Reference_ID"
+          ],
+          "sample_value": "Company_Reference_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MATCHVALUE_COMPNY",
+            "MATCHVALUE_COSTC",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Company or Company Hierarchy",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Company_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Year",
+        "label": "Year",
+        "type": "number",
+        "description": "4 Digit numeric field that contains Fiscal Year Number (ie: 2008, 2009, etc). The combination of the Fiscal Year Number and the Fiscal Schedule determine the Fiscal Year for a company. Note that Fiscal Year Reference is not used for Budget since for Budget, the Company's configured Fiscal Schedule is used in all cases to determine the Fiscal Year.",
+        "metadata": {
+          "wd_field_name": "Year",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Year",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "2022",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "4 Digit numeric field that contains Fiscal Year Number (ie: 2008, 2009, etc). The combination of the Fiscal Year Number and the Fiscal Schedule determine the Fiscal Year for a company. Note that Fiscal Year Reference is not used for Budget since for Budget, the Company's configured Fiscal Schedule is used in all cases to determine the Fiscal Year.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Year"
+        }
+      },
+      {
+        "key": "Fiscal_Time_Interval_Reference_ID",
+        "label": "Fiscal Time Interval Reference ID",
+        "type": "string",
+        "description": "Reference to an existing Fiscal Posting Interval, Fiscal Summary Interval, Award Posting Interval. The Fiscal Summary Interval is used for the Award Summary Interval. If the Budget is being entered by Fiscal Summary Schedules, provide the first the Summary Interval, otherwise provide the Posting Interval.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Time_Interval_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Fiscal_Time_Interval_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Posting_Interval_ID",
+            "Fiscal_Posting_Interval_ID",
+            "Fiscal_Summary_Interval_ID",
+            "Fiscal_Summary_Schedule_ID"
+          ],
+          "sample_value": "JAN",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to an existing Fiscal Posting Interval, Fiscal Summary Interval, Award Posting Interval. The Fiscal Summary Interval is used for the Award Summary Interval. If the Budget is being entered by Fiscal Summary Schedules, provide the first the Summary Interval, otherwise provide the Posting Interval.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Fiscal_Time_Interval_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Fiscal_Time_Interval_Reference_ID_Type",
+        "label": "Fiscal Time Interval Reference ID Type",
+        "type": "enum",
+        "description": "Reference to an existing Fiscal Posting Interval, Fiscal Summary Interval, Award Posting Interval. The Fiscal Summary Interval is used for the Award Summary Interval. If the Budget is being entered by Fiscal Summary Schedules, provide the first the Summary Interval, otherwise provide the Posting Interval.",
+        "config": {
+          "options": [
+            {
+              "value": "Award_Posting_Interval_ID",
+              "label": "Award_Posting_Interval_ID"
+            },
+            {
+              "value": "Fiscal_Posting_Interval_ID",
+              "label": "Fiscal_Posting_Interval_ID"
+            },
+            {
+              "value": "Fiscal_Summary_Interval_ID",
+              "label": "Fiscal_Summary_Interval_ID"
+            },
+            {
+              "value": "Fiscal_Summary_Schedule_ID",
+              "label": "Fiscal_Summary_Schedule_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Fiscal_Time_Interval_Reference_ID_Type",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Fiscal_Time_Interval_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Award_Posting_Interval_ID",
+            "Fiscal_Posting_Interval_ID",
+            "Fiscal_Summary_Interval_ID",
+            "Fiscal_Summary_Schedule_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to an existing Fiscal Posting Interval, Fiscal Summary Interval, Award Posting Interval. The Fiscal Summary Interval is used for the Award Summary Interval. If the Budget is being entered by Fiscal Summary Schedules, provide the first the Summary Interval, otherwise provide the Posting Interval.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Fiscal_Time_Interval_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID",
+        "label": "Ledger Account or Ledger Account Summary Reference ID",
+        "type": "string",
+        "description": "Ledger Accounts or Summary Accounts for line",
+        "metadata": {
+          "wd_field_name": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Ledger_Account_ID"
+          ],
+          "sample_value": "Corporate",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Ledger Accounts or Summary Accounts for line",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Ledger_Account_or_Ledger_Account_Summary_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_Type",
+        "label": "Ledger Account or Ledger Account Summary Reference ID Type",
+        "type": "enum",
+        "description": "Ledger Accounts or Summary Accounts for line",
+        "config": {
+          "options": [
+            {
+              "value": "Ledger_Account_ID",
+              "label": "Ledger_Account_ID"
+            },
+            {
+              "value": "Ledger_Account_Summary_ID",
+              "label": "Ledger_Account_Summary_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_Type",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Ledger_Account_ID",
+            "Ledger_Account_Summary_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Ledger Accounts or Summary Accounts for line",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Ledger_Account_or_Ledger_Account_Summary_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Book_Code_Reference_ID",
+        "label": "Book Code Reference ID",
+        "type": "string",
+        "description": "Book code is allowed as a dimension on Financial, Award, Award Proposal &amp; Project Plan Structures",
+        "metadata": {
+          "wd_field_name": "Book_Code_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Book_Code_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Book_Code_ID"
+          ],
+          "sample_value": "Top_Level_Accounting_Adjustments",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Book code is allowed as a dimension on Financial, Award, Award Proposal &amp; Project Plan Structures",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Book_Code_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Budget_Currency_Reference_ID",
+        "label": "Budget Currency Reference ID",
+        "type": "string",
+        "description": "Reference to the Currency of the transaction for the Budget Entry",
+        "metadata": {
+          "wd_field_name": "Budget_Currency_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Budget_Currency_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Currency_ID"
+          ],
+          "sample_value": "USD",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to the Currency of the transaction for the Budget Entry",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Budget_Currency_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Budget_Currency_Reference_ID_Type",
+        "label": "Budget Currency Reference ID Type",
+        "type": "enum",
+        "description": "Reference to the Currency of the transaction for the Budget Entry",
+        "config": {
+          "options": [
+            {
+              "value": "Currency_ID",
+              "label": "Currency_ID"
+            },
+            {
+              "value": "Currency_Numeric_Code",
+              "label": "Currency_Numeric_Code"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Budget_Currency_Reference_ID_Type",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Budget_Currency_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Currency_ID",
+            "Currency_Numeric_Code"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to the Currency of the transaction for the Budget Entry",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Budget_Currency_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Budget_Debit_Amount",
+        "label": "Budget Debit Amount",
+        "type": "number",
+        "description": "The debit amount in the transaction currency.",
+        "metadata": {
+          "wd_field_name": "Budget_Debit_Amount",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Budget_Debit_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "The debit amount in the transaction currency.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Budget_Debit_Amount"
+        }
+      },
+      {
+        "key": "Budget_Credit_Amount",
+        "label": "Budget Credit Amount",
+        "type": "number",
+        "description": "The credit amount in the transaction currency.",
+        "metadata": {
+          "wd_field_name": "Budget_Credit_Amount",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Budget_Credit_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "The credit amount in the transaction currency.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Budget_Credit_Amount"
+        }
+      },
+      {
+        "key": "Quantity",
+        "label": "Quantity",
+        "type": "number",
+        "description": "Amount for unit of measure or time.",
+        "metadata": {
+          "wd_field_name": "Quantity",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Quantity",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Amount for unit of measure or time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Quantity"
+        }
+      },
+      {
+        "key": "Unit_of_Time_Reference_ID",
+        "label": "Unit of Time Reference ID",
+        "type": "string",
+        "description": "Unit of Measure or Unit of Time.",
+        "metadata": {
+          "wd_field_name": "Unit_of_Time_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Unit_of_Time_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Unit_of_Time_ID"
+          ],
+          "sample_value": "DAYS",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Unit of Measure or Unit of Time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Unit_of_Time_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Accounting_Worktag_Reference_ID",
+        "label": "Accounting Worktag Reference ID",
+        "type": "string",
+        "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+        "metadata": {
+          "wd_field_name": "Accounting_Worktag_Reference_ID",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Accounting_Worktag_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_1_ID"
+          ],
+          "sample_value": "Small_Business",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Accounting_Worktag_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Accounting_Worktag_Reference_ID_Type",
+        "label": "Accounting Worktag Reference ID Type",
+        "type": "enum",
+        "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+        "config": {
+          "options": [
+            {
+              "value": "Academic_Level_ID",
+              "label": "Academic_Level_ID"
+            },
+            {
+              "value": "Academic_Period_ID",
+              "label": "Academic_Period_ID"
+            },
+            {
+              "value": "Academic_Person_ID",
+              "label": "Academic_Person_ID"
+            },
+            {
+              "value": "Academic_Unit_ID",
+              "label": "Academic_Unit_ID"
+            },
+            {
+              "value": "Ad_hoc_Payee_ID",
+              "label": "Ad_hoc_Payee_ID"
+            },
+            {
+              "value": "Allocation_Pool_Hierarchy_ID",
+              "label": "Allocation_Pool_Hierarchy_ID"
+            },
+            {
+              "value": "Allocation_Pool_ID",
+              "label": "Allocation_Pool_ID"
+            },
+            {
+              "value": "Alternate_Supplier_Contract_ID",
+              "label": "Alternate_Supplier_Contract_ID"
+            },
+            {
+              "value": "Applicant_ID",
+              "label": "Applicant_ID"
+            },
+            {
+              "value": "Application_Grouping_ID",
+              "label": "Application_Grouping_ID"
+            },
+            {
+              "value": "Appropriation_Hierarchy_ID",
+              "label": "Appropriation_Hierarchy_ID"
+            },
+            {
+              "value": "Appropriation_ID",
+              "label": "Appropriation_ID"
+            },
+            {
+              "value": "Asset_Adjustment_Reason_Reference_ID",
+              "label": "Asset_Adjustment_Reason_Reference_ID"
+            },
+            {
+              "value": "Asset_Adjustment_Type_Reference_ID",
+              "label": "Asset_Adjustment_Type_Reference_ID"
+            },
+            {
+              "value": "Asset_Impairment_Reason_ID",
+              "label": "Asset_Impairment_Reason_ID"
+            },
+            {
+              "value": "Bank_Account_ID",
+              "label": "Bank_Account_ID"
+            },
+            {
+              "value": "Business_Asset_Cost_Adjustment_Reason_ID",
+              "label": "Business_Asset_Cost_Adjustment_Reason_ID"
+            },
+            {
+              "value": "Business_Unit_Hierarchy_ID",
+              "label": "Business_Unit_Hierarchy_ID"
+            },
+            {
+              "value": "Business_Unit_ID",
+              "label": "Business_Unit_ID"
+            },
+            {
+              "value": "Calculation_Compensation_Basis_ID",
+              "label": "Calculation_Compensation_Basis_ID"
+            },
+            {
+              "value": "Candidate_ID",
+              "label": "Candidate_ID"
+            },
+            {
+              "value": "Cash_Activity_Category_ID",
+              "label": "Cash_Activity_Category_ID"
+            },
+            {
+              "value": "Catalog_Item_ID",
+              "label": "Catalog_Item_ID"
+            },
+            {
+              "value": "Company_Reference_ID",
+              "label": "Company_Reference_ID"
+            },
+            {
+              "value": "Compensation_Basis_ID",
+              "label": "Compensation_Basis_ID"
+            },
+            {
+              "value": "Compensation_Grade_ID",
+              "label": "Compensation_Grade_ID"
+            },
+            {
+              "value": "Contingent_Worker_ID",
+              "label": "Contingent_Worker_ID"
+            },
+            {
+              "value": "Contingent_Worker_Type_ID",
+              "label": "Contingent_Worker_Type_ID"
+            },
+            {
+              "value": "Corporate_Credit_Card_Account_ID",
+              "label": "Corporate_Credit_Card_Account_ID"
+            },
+            {
+              "value": "Cost_Center_Reference_ID",
+              "label": "Cost_Center_Reference_ID"
+            },
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Custom_Worktag_06_ID",
+              "label": "Custom_Worktag_06_ID"
+            },
+            {
+              "value": "Custom_Worktag_07_ID",
+              "label": "Custom_Worktag_07_ID"
+            },
+            {
+              "value": "Custom_Worktag_08_ID",
+              "label": "Custom_Worktag_08_ID"
+            },
+            {
+              "value": "Custom_Worktag_09_ID",
+              "label": "Custom_Worktag_09_ID"
+            },
+            {
+              "value": "Custom_Worktag_1_ID",
+              "label": "Custom_Worktag_1_ID"
+            },
+            {
+              "value": "Custom_Worktag_10_ID",
+              "label": "Custom_Worktag_10_ID"
+            },
+            {
+              "value": "Custom_Worktag_11_ID",
+              "label": "Custom_Worktag_11_ID"
+            },
+            {
+              "value": "Custom_Worktag_12_ID",
+              "label": "Custom_Worktag_12_ID"
+            },
+            {
+              "value": "Custom_Worktag_13_ID",
+              "label": "Custom_Worktag_13_ID"
+            },
+            {
+              "value": "Custom_Worktag_14_ID",
+              "label": "Custom_Worktag_14_ID"
+            },
+            {
+              "value": "Custom_Worktag_15_ID",
+              "label": "Custom_Worktag_15_ID"
+            },
+            {
+              "value": "Custom_Worktag_2_ID",
+              "label": "Custom_Worktag_2_ID"
+            },
+            {
+              "value": "Custom_Worktag_3_ID",
+              "label": "Custom_Worktag_3_ID"
+            },
+            {
+              "value": "Custom_Worktag_4_ID",
+              "label": "Custom_Worktag_4_ID"
+            },
+            {
+              "value": "Custom_Worktag_5_ID",
+              "label": "Custom_Worktag_5_ID"
+            },
+            {
+              "value": "Customer_Category_ID",
+              "label": "Customer_Category_ID"
+            },
+            {
+              "value": "Customer_Contract_Alternate_Reference_ID",
+              "label": "Customer_Contract_Alternate_Reference_ID"
+            },
+            {
+              "value": "Customer_Contract_Reference_ID",
+              "label": "Customer_Contract_Reference_ID"
+            },
+            {
+              "value": "Customer_Group_ID",
+              "label": "Customer_Group_ID"
+            },
+            {
+              "value": "Customer_ID",
+              "label": "Customer_ID"
+            },
+            {
+              "value": "Customer_Reference_ID",
+              "label": "Customer_Reference_ID"
+            },
+            {
+              "value": "Deduction_Code",
+              "label": "Deduction_Code"
+            },
+            {
+              "value": "Deduction_Recipient_ID",
+              "label": "Deduction_Recipient_ID"
+            },
+            {
+              "value": "Donor_ID",
+              "label": "Donor_ID"
+            },
+            {
+              "value": "Earning_Code",
+              "label": "Earning_Code"
+            },
+            {
+              "value": "Employee_ID",
+              "label": "Employee_ID"
+            },
+            {
+              "value": "Employee_Type_ID",
+              "label": "Employee_Type_ID"
+            },
+            {
+              "value": "Ethnicity_ID",
+              "label": "Ethnicity_ID"
+            },
+            {
+              "value": "Exemption_Code",
+              "label": "Exemption_Code"
+            },
+            {
+              "value": "Expense_Item_Group_ID",
+              "label": "Expense_Item_Group_ID"
+            },
+            {
+              "value": "Expense_Item_ID",
+              "label": "Expense_Item_ID"
+            },
+            {
+              "value": "External_Committee_Member_ID",
+              "label": "External_Committee_Member_ID"
+            },
+            {
+              "value": "External_Sourceable_ID",
+              "label": "External_Sourceable_ID"
+            },
+            {
+              "value": "Financial_Aid_Award_Year_ID",
+              "label": "Financial_Aid_Award_Year_ID"
+            },
+            {
+              "value": "Financial_Institution_ID",
+              "label": "Financial_Institution_ID"
+            },
+            {
+              "value": "Financial_Institution_Reference_ID",
+              "label": "Financial_Institution_Reference_ID"
+            },
+            {
+              "value": "Fringe_Basis_ID",
+              "label": "Fringe_Basis_ID"
+            },
+            {
+              "value": "Fund_Hierarchy_ID",
+              "label": "Fund_Hierarchy_ID"
+            },
+            {
+              "value": "Fund_ID",
+              "label": "Fund_ID"
+            },
+            {
+              "value": "Funding_Source_Name",
+              "label": "Funding_Source_Name"
+            },
+            {
+              "value": "Gender_Code",
+              "label": "Gender_Code"
+            },
+            {
+              "value": "Gift_Hierarchy_ID",
+              "label": "Gift_Hierarchy_ID"
+            },
+            {
+              "value": "Gift_Reference_ID",
+              "label": "Gift_Reference_ID"
+            },
+            {
+              "value": "Grant_Hierarchy_ID",
+              "label": "Grant_Hierarchy_ID"
+            },
+            {
+              "value": "Grant_ID",
+              "label": "Grant_ID"
+            },
+            {
+              "value": "Internal_Service_Provider_ID",
+              "label": "Internal_Service_Provider_ID"
+            },
+            {
+              "value": "Internal_Service_Provider_Reference_ID",
+              "label": "Internal_Service_Provider_Reference_ID"
+            },
+            {
+              "value": "Investment_Pool_ID",
+              "label": "Investment_Pool_ID"
+            },
+            {
+              "value": "Investment_Profile_ID",
+              "label": "Investment_Profile_ID"
+            },
+            {
+              "value": "Investor_ID",
+              "label": "Investor_ID"
+            },
+            {
+              "value": "Is_Manager_ID",
+              "label": "Is_Manager_ID"
+            },
+            {
+              "value": "Is_People_Manager",
+              "label": "Is_People_Manager"
+            },
+            {
+              "value": "ISO_3166-1_Alpha-2_Code",
+              "label": "ISO_3166-1_Alpha-2_Code"
+            },
+            {
+              "value": "ISO_3166-1_Alpha-3_Code",
+              "label": "ISO_3166-1_Alpha-3_Code"
+            },
+            {
+              "value": "ISO_3166-1_Numeric-3_Code",
+              "label": "ISO_3166-1_Numeric-3_Code"
+            },
+            {
+              "value": "Job_Category_ID",
+              "label": "Job_Category_ID"
+            },
+            {
+              "value": "Job_Family_Group_ID",
+              "label": "Job_Family_Group_ID"
+            },
+            {
+              "value": "Job_Family_ID",
+              "label": "Job_Family_ID"
+            },
+            {
+              "value": "Job_Level_ID",
+              "label": "Job_Level_ID"
+            },
+            {
+              "value": "Job_Profile_ID",
+              "label": "Job_Profile_ID"
+            },
+            {
+              "value": "Job_Requisition_ID",
+              "label": "Job_Requisition_ID"
+            },
+            {
+              "value": "Lease_Expense_Recognition_ID",
+              "label": "Lease_Expense_Recognition_ID"
+            },
+            {
+              "value": "Loan_ID",
+              "label": "Loan_ID"
+            },
+            {
+              "value": "Location_ID",
+              "label": "Location_ID"
+            },
+            {
+              "value": "Management_Level_ID",
+              "label": "Management_Level_ID"
+            },
+            {
+              "value": "Miscellaneous_Payee_Category_ID",
+              "label": "Miscellaneous_Payee_Category_ID"
+            },
+            {
+              "value": "Miscellaneous_Payee_ID",
+              "label": "Miscellaneous_Payee_ID"
+            },
+            {
+              "value": "NI_Category_Letter",
+              "label": "NI_Category_Letter"
+            },
+            {
+              "value": "Object_Class_ID",
+              "label": "Object_Class_ID"
+            },
+            {
+              "value": "Opportunity_Reference_ID",
+              "label": "Opportunity_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            },
+            {
+              "value": "Pay_Rate_Type_ID",
+              "label": "Pay_Rate_Type_ID"
+            },
+            {
+              "value": "Payroll_Federal_Authority_Tax_Code",
+              "label": "Payroll_Federal_Authority_Tax_Code"
+            },
+            {
+              "value": "Payroll_Income_Code",
+              "label": "Payroll_Income_Code"
+            },
+            {
+              "value": "Payroll_Local_City_Authority_Tax_Code",
+              "label": "Payroll_Local_City_Authority_Tax_Code"
+            },
+            {
+              "value": "Payroll_Local_County_Authority_Tax_Code",
+              "label": "Payroll_Local_County_Authority_Tax_Code"
+            },
+            {
+              "value": "Payroll_Local_Other_Authority_Tax_Code",
+              "label": "Payroll_Local_Other_Authority_Tax_Code"
+            },
+            {
+              "value": "Payroll_Local_School_District_Authority_Tax_Code",
+              "label": "Payroll_Local_School_District_Authority_Tax_Code"
+            },
+            {
+              "value": "Payroll_State_Authority_Tax_Code",
+              "label": "Payroll_State_Authority_Tax_Code"
+            },
+            {
+              "value": "Petty_Cash_Account_ID",
+              "label": "Petty_Cash_Account_ID"
+            },
+            {
+              "value": "Position_ID",
+              "label": "Position_ID"
+            },
+            {
+              "value": "Position_Time_Type_ID",
+              "label": "Position_Time_Type_ID"
+            },
+            {
+              "value": "Program_Hierarchy_ID",
+              "label": "Program_Hierarchy_ID"
+            },
+            {
+              "value": "Program_ID",
+              "label": "Program_ID"
+            },
+            {
+              "value": "Program_of_Study_ID",
+              "label": "Program_of_Study_ID"
+            },
+            {
+              "value": "Project_Hierarchy_ID",
+              "label": "Project_Hierarchy_ID"
+            },
+            {
+              "value": "Project_ID",
+              "label": "Project_ID"
+            },
+            {
+              "value": "Project_Plan_ID",
+              "label": "Project_Plan_ID"
+            },
+            {
+              "value": "Project_Worker_Role_ID",
+              "label": "Project_Worker_Role_ID"
+            },
+            {
+              "value": "Proposal_Grant_ID",
+              "label": "Proposal_Grant_ID"
+            },
+            {
+              "value": "Prospect_ID",
+              "label": "Prospect_ID"
+            },
+            {
+              "value": "Prospect_Reference_ID",
+              "label": "Prospect_Reference_ID"
+            },
+            {
+              "value": "Purchase_Item_Group_ID",
+              "label": "Purchase_Item_Group_ID"
+            },
+            {
+              "value": "Purchase_Item_ID",
+              "label": "Purchase_Item_ID"
+            },
+            {
+              "value": "Receivable_Writeoff_Reason_ID",
+              "label": "Receivable_Writeoff_Reason_ID"
+            },
+            {
+              "value": "Region_Reference_ID",
+              "label": "Region_Reference_ID"
+            },
+            {
+              "value": "Resource_Category_Hierarchy_ID",
+              "label": "Resource_Category_Hierarchy_ID"
+            },
+            {
+              "value": "Revenue_Category_Hierarchy_ID",
+              "label": "Revenue_Category_Hierarchy_ID"
+            },
+            {
+              "value": "Revenue_Category_ID",
+              "label": "Revenue_Category_ID"
+            },
+            {
+              "value": "Rubric_Value_ID",
+              "label": "Rubric_Value_ID"
+            },
+            {
+              "value": "Run_Category_ID",
+              "label": "Run_Category_ID"
+            },
+            {
+              "value": "Salary_Over_The_Cap_Type_ID",
+              "label": "Salary_Over_The_Cap_Type_ID"
+            },
+            {
+              "value": "Sales_Item_Group_ID",
+              "label": "Sales_Item_Group_ID"
+            },
+            {
+              "value": "Sales_Item_ID",
+              "label": "Sales_Item_ID"
+            },
+            {
+              "value": "Spend_Category_ID",
+              "label": "Spend_Category_ID"
+            },
+            {
+              "value": "Sponsor_ID",
+              "label": "Sponsor_ID"
+            },
+            {
+              "value": "Sponsor_Reference_ID",
+              "label": "Sponsor_Reference_ID"
+            },
+            {
+              "value": "Sponsor_Type_ID",
+              "label": "Sponsor_Type_ID"
+            },
+            {
+              "value": "Student_Application_Residency_Status_ID",
+              "label": "Student_Application_Residency_Status_ID"
+            },
+            {
+              "value": "Student_Award_Item_ID",
+              "label": "Student_Award_Item_ID"
+            },
+            {
+              "value": "Student_Charge_Item_ID",
+              "label": "Student_Charge_Item_ID"
+            },
+            {
+              "value": "Student_Course_ID",
+              "label": "Student_Course_ID"
+            },
+            {
+              "value": "Student_Course_Section_ID",
+              "label": "Student_Course_Section_ID"
+            },
+            {
+              "value": "Student_ID",
+              "label": "Student_ID"
+            },
+            {
+              "value": "Student_Recruiting_Campaign_ID",
+              "label": "Student_Recruiting_Campaign_ID"
+            },
+            {
+              "value": "Student_Recruiting_Event_ID",
+              "label": "Student_Recruiting_Event_ID"
+            },
+            {
+              "value": "Student_Sponsor_Contract_ID",
+              "label": "Student_Sponsor_Contract_ID"
+            },
+            {
+              "value": "Student_Waiver_Item_ID",
+              "label": "Student_Waiver_Item_ID"
+            },
+            {
+              "value": "Supplier_Category_ID",
+              "label": "Supplier_Category_ID"
+            },
+            {
+              "value": "Supplier_Contract_ID",
+              "label": "Supplier_Contract_ID"
+            },
+            {
+              "value": "Supplier_Contract_ID_External",
+              "label": "Supplier_Contract_ID_External"
+            },
+            {
+              "value": "Supplier_Group_ID",
+              "label": "Supplier_Group_ID"
+            },
+            {
+              "value": "Supplier_ID",
+              "label": "Supplier_ID"
+            },
+            {
+              "value": "Supplier_Reference_ID",
+              "label": "Supplier_Reference_ID"
+            },
+            {
+              "value": "Tax_Applicability_ID",
+              "label": "Tax_Applicability_ID"
+            },
+            {
+              "value": "Tax_Authority_ID",
+              "label": "Tax_Authority_ID"
+            },
+            {
+              "value": "Tax_Authority_Reference_ID",
+              "label": "Tax_Authority_Reference_ID"
+            },
+            {
+              "value": "Tax_Category_ID",
+              "label": "Tax_Category_ID"
+            },
+            {
+              "value": "Tax_Code_ID",
+              "label": "Tax_Code_ID"
+            },
+            {
+              "value": "Tax_Point_Date_Type_ID",
+              "label": "Tax_Point_Date_Type_ID"
+            },
+            {
+              "value": "Tax_Rate_ID",
+              "label": "Tax_Rate_ID"
+            },
+            {
+              "value": "Tax_Recoverability_Object_ID",
+              "label": "Tax_Recoverability_Object_ID"
+            },
+            {
+              "value": "Third_Party_ID",
+              "label": "Third_Party_ID"
+            },
+            {
+              "value": "Withholding_Order_Case_ID",
+              "label": "Withholding_Order_Case_ID"
+            },
+            {
+              "value": "Withholding_Tax_Code_ID",
+              "label": "Withholding_Tax_Code_ID"
+            },
+            {
+              "value": "Withholding_Tax_Rate_ID",
+              "label": "Withholding_Tax_Rate_ID"
+            },
+            {
+              "value": "Work_Function_ID",
+              "label": "Work_Function_ID"
+            },
+            {
+              "value": "Work_Shift_ID",
+              "label": "Work_Shift_ID"
+            },
+            {
+              "value": "Workday_Deduction_Code",
+              "label": "Workday_Deduction_Code"
+            },
+            {
+              "value": "Workday_Earning_Code",
+              "label": "Workday_Earning_Code"
+            },
+            {
+              "value": "Worker_Type_ID",
+              "label": "Worker_Type_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Accounting_Worktag_Reference_ID_Type",
+          "csv_file_name": "Import_Budget_Details",
+          "csv_header": "Accounting_Worktag_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Academic_Level_ID",
+            "Academic_Period_ID",
+            "Academic_Person_ID",
+            "Academic_Unit_ID",
+            "Ad_hoc_Payee_ID",
+            "Allocation_Pool_Hierarchy_ID",
+            "Allocation_Pool_ID",
+            "Alternate_Supplier_Contract_ID",
+            "Applicant_ID",
+            "Application_Grouping_ID",
+            "Appropriation_Hierarchy_ID",
+            "Appropriation_ID",
+            "Asset_Adjustment_Reason_Reference_ID",
+            "Asset_Adjustment_Type_Reference_ID",
+            "Asset_Impairment_Reason_ID",
+            "Bank_Account_ID",
+            "Business_Asset_Cost_Adjustment_Reason_ID",
+            "Business_Unit_Hierarchy_ID",
+            "Business_Unit_ID",
+            "Calculation_Compensation_Basis_ID",
+            "Candidate_ID",
+            "Cash_Activity_Category_ID",
+            "Catalog_Item_ID",
+            "Company_Reference_ID",
+            "Compensation_Basis_ID",
+            "Compensation_Grade_ID",
+            "Contingent_Worker_ID",
+            "Contingent_Worker_Type_ID",
+            "Corporate_Credit_Card_Account_ID",
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Custom_Worktag_06_ID",
+            "Custom_Worktag_07_ID",
+            "Custom_Worktag_08_ID",
+            "Custom_Worktag_09_ID",
+            "Custom_Worktag_1_ID",
+            "Custom_Worktag_10_ID",
+            "Custom_Worktag_11_ID",
+            "Custom_Worktag_12_ID",
+            "Custom_Worktag_13_ID",
+            "Custom_Worktag_14_ID",
+            "Custom_Worktag_15_ID",
+            "Custom_Worktag_2_ID",
+            "Custom_Worktag_3_ID",
+            "Custom_Worktag_4_ID",
+            "Custom_Worktag_5_ID",
+            "Customer_Category_ID",
+            "Customer_Contract_Alternate_Reference_ID",
+            "Customer_Contract_Reference_ID",
+            "Customer_Group_ID",
+            "Customer_ID",
+            "Customer_Reference_ID",
+            "Deduction_Code",
+            "Deduction_Recipient_ID",
+            "Donor_ID",
+            "Earning_Code",
+            "Employee_ID",
+            "Employee_Type_ID",
+            "Ethnicity_ID",
+            "Exemption_Code",
+            "Expense_Item_Group_ID",
+            "Expense_Item_ID",
+            "External_Committee_Member_ID",
+            "External_Sourceable_ID",
+            "Financial_Aid_Award_Year_ID",
+            "Financial_Institution_ID",
+            "Financial_Institution_Reference_ID",
+            "Fringe_Basis_ID",
+            "Fund_Hierarchy_ID",
+            "Fund_ID",
+            "Funding_Source_Name",
+            "Gender_Code",
+            "Gift_Hierarchy_ID",
+            "Gift_Reference_ID",
+            "Grant_Hierarchy_ID",
+            "Grant_ID",
+            "Internal_Service_Provider_ID",
+            "Internal_Service_Provider_Reference_ID",
+            "Investment_Pool_ID",
+            "Investment_Profile_ID",
+            "Investor_ID",
+            "Is_Manager_ID",
+            "Is_People_Manager",
+            "ISO_3166-1_Alpha-2_Code",
+            "ISO_3166-1_Alpha-3_Code",
+            "ISO_3166-1_Numeric-3_Code",
+            "Job_Category_ID",
+            "Job_Family_Group_ID",
+            "Job_Family_ID",
+            "Job_Level_ID",
+            "Job_Profile_ID",
+            "Job_Requisition_ID",
+            "Lease_Expense_Recognition_ID",
+            "Loan_ID",
+            "Location_ID",
+            "Management_Level_ID",
+            "Miscellaneous_Payee_Category_ID",
+            "Miscellaneous_Payee_ID",
+            "NI_Category_Letter",
+            "Object_Class_ID",
+            "Opportunity_Reference_ID",
+            "Organization_Reference_ID",
+            "Pay_Rate_Type_ID",
+            "Payroll_Federal_Authority_Tax_Code",
+            "Payroll_Income_Code",
+            "Payroll_Local_City_Authority_Tax_Code",
+            "Payroll_Local_County_Authority_Tax_Code",
+            "Payroll_Local_Other_Authority_Tax_Code",
+            "Payroll_Local_School_District_Authority_Tax_Code",
+            "Payroll_State_Authority_Tax_Code",
+            "Petty_Cash_Account_ID",
+            "Position_ID",
+            "Position_Time_Type_ID",
+            "Program_Hierarchy_ID",
+            "Program_ID",
+            "Program_of_Study_ID",
+            "Project_Hierarchy_ID",
+            "Project_ID",
+            "Project_Plan_ID",
+            "Project_Worker_Role_ID",
+            "Proposal_Grant_ID",
+            "Prospect_ID",
+            "Prospect_Reference_ID",
+            "Purchase_Item_Group_ID",
+            "Purchase_Item_ID",
+            "Receivable_Writeoff_Reason_ID",
+            "Region_Reference_ID",
+            "Resource_Category_Hierarchy_ID",
+            "Revenue_Category_Hierarchy_ID",
+            "Revenue_Category_ID",
+            "Rubric_Value_ID",
+            "Run_Category_ID",
+            "Salary_Over_The_Cap_Type_ID",
+            "Sales_Item_Group_ID",
+            "Sales_Item_ID",
+            "Spend_Category_ID",
+            "Sponsor_ID",
+            "Sponsor_Reference_ID",
+            "Sponsor_Type_ID",
+            "Student_Application_Residency_Status_ID",
+            "Student_Award_Item_ID",
+            "Student_Charge_Item_ID",
+            "Student_Course_ID",
+            "Student_Course_Section_ID",
+            "Student_ID",
+            "Student_Recruiting_Campaign_ID",
+            "Student_Recruiting_Event_ID",
+            "Student_Sponsor_Contract_ID",
+            "Student_Waiver_Item_ID",
+            "Supplier_Category_ID",
+            "Supplier_Contract_ID",
+            "Supplier_Contract_ID_External",
+            "Supplier_Group_ID",
+            "Supplier_ID",
+            "Supplier_Reference_ID",
+            "Tax_Applicability_ID",
+            "Tax_Authority_ID",
+            "Tax_Authority_Reference_ID",
+            "Tax_Category_ID",
+            "Tax_Code_ID",
+            "Tax_Point_Date_Type_ID",
+            "Tax_Rate_ID",
+            "Tax_Recoverability_Object_ID",
+            "Third_Party_ID",
+            "Withholding_Order_Case_ID",
+            "Withholding_Tax_Code_ID",
+            "Withholding_Tax_Rate_ID",
+            "Work_Function_ID",
+            "Work_Shift_ID",
+            "Workday_Deduction_Code",
+            "Workday_Earning_Code",
+            "Worker_Type_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Import_Budget_High_Volume_Request/wd:Budget_Data/wd:Budget_Lines_Data/wd:Accounting_Worktag_Reference/wd:ID@Type"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Budget Template",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Budget_Template\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "budget_template",
+    "fields": [
+      {
+        "key": "Plan_Template_ID",
+        "label": "Plan Template ID",
+        "type": "string",
+        "description": "Plan Template ID",
+        "metadata": {
+          "wd_field_name": "Plan_Template_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Plan_Template_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "BUDGET_TEMPLATE-16-1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Plan Template ID",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Plan_Template_ID"
+        }
+      },
+      {
+        "key": "Company_Reference_ID_1",
+        "label": "Company Reference ID 1",
+        "type": "string",
+        "description": "Reference field for Company.",
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Company_Reference_ID_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Company_Reference_ID",
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID",
+            "Region_Reference_ID"
+          ],
+          "sample_value": "Global_Modern_Services_Inc_USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MATCHVALUE_COMPNY",
+            "MATCHVALUE_COSTC"
+          ],
+          "category": null,
+          "description": "Reference field for Company.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Company_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Plan_Structure_Reference_ID",
+        "label": "Plan Structure Reference ID",
+        "type": "string",
+        "description": "Reference field for Plan Structure.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Plan_Structure_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Plan_Structure_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Budget_Structure_ID"
+          ],
+          "sample_value": "BUDGET",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Plan Structure.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Plan_Structure_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Is_Inactive",
+        "label": "Is Inactive",
+        "type": "boolean",
+        "description": "Inactivates the plan to remove the plan from all prompts and disable all associated related actions.",
+        "metadata": {
+          "wd_field_name": "Is_Inactive",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Is_Inactive",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Inactivates the plan to remove the plan from all prompts and disable all associated related actions.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Is_Inactive"
+        }
+      },
+      {
+        "key": "Organization_As_Of_Date_Reference",
+        "label": "Organization As Of Date Reference",
+        "type": "date",
+        "description": "Determines which organizations are available to select in your Top Plan Hierarchy.",
+        "metadata": {
+          "wd_field_name": "Organization_As_Of_Date_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Organization_As_Of_Date_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "YYYY-MM-DD"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Determines which organizations are available to select in your Top Plan Hierarchy.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Organization_As_Of_Date_Reference"
+        }
+      },
+      {
+        "key": "Top_Plan_Hierarchy_Reference_ID",
+        "label": "Top Plan Hierarchy Reference ID",
+        "type": "string",
+        "description": "Reference field for Top Plan Hierarchy.",
+        "metadata": {
+          "wd_field_name": "Top_Plan_Hierarchy_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Top_Plan_Hierarchy_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COSTC"
+          ],
+          "category": null,
+          "description": "Reference field for Top Plan Hierarchy.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Top_Plan_Hierarchy_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Top_Plan_Hierarchy_Reference_ID_Type",
+        "label": "Top Plan Hierarchy Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Top Plan Hierarchy.",
+        "config": {
+          "options": [
+            {
+              "value": "Cost_Center_Reference_ID",
+              "label": "Cost_Center_Reference_ID"
+            },
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Top_Plan_Hierarchy_Reference_ID_Type",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Top_Plan_Hierarchy_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Top Plan Hierarchy.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Top_Plan_Hierarchy_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Include_All_Organizations_Under_Top_Plan_Hierarchy_Reference",
+        "label": "Include All Organizations Under Top Plan Hierarchy Reference",
+        "type": "boolean",
+        "description": "Makes all organizations within the top plan hierarchy plannable organizations.",
+        "metadata": {
+          "wd_field_name": "Include_All_Organizations_Under_Top_Plan_Hierarchy_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Include_All_Organizations_Under_Top_Plan_Hierarchy_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Makes all organizations within the top plan hierarchy plannable organizations.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Include_All_Organizations_Under_Top_Plan_Hierarchy_Reference"
+        }
+      },
+      {
+        "key": "Organizations_Reference_ID_1",
+        "label": "Organizations Reference ID 1",
+        "type": "string",
+        "description": "Reference field for Organizations.",
+        "metadata": {
+          "wd_field_name": "Organizations_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Organizations_Reference_ID_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MATCHVALUE_COSTC"
+          ],
+          "category": null,
+          "description": "Reference field for Organizations.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Organizations_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Organizations_Reference_ID_Type",
+        "label": "Organizations Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Organizations.",
+        "config": {
+          "options": [
+            {
+              "value": "Cost_Center_Reference_ID",
+              "label": "Cost_Center_Reference_ID"
+            },
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Organizations_Reference_ID_Type",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Organizations_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Organizations.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Organizations_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Roll_Up_Subordinate_Reference",
+        "label": "Roll Up Subordinate Reference",
+        "type": "boolean",
+        "description": "Enables the plan for all subordinate organizations within the top plan hierarchy. Use only when Supervisory Organization is the organizing dimension.",
+        "metadata": {
+          "wd_field_name": "Roll_Up_Subordinate_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Roll_Up_Subordinate_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Enables the plan for all subordinate organizations within the top plan hierarchy. Use only when Supervisory Organization is the organizing dimension.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Roll_Up_Subordinate_Reference"
+        }
+      },
+      {
+        "key": "Statistic_Type_Reference_ID_1",
+        "label": "Statistic Type Reference ID 1",
+        "type": "string",
+        "description": "Reference field for Statistic Type.",
+        "metadata": {
+          "wd_field_name": "Statistic_Type_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Statistic_Type_Reference_ID_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Budget_Statistic_Type_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Statistic Type.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Statistic_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Entry_Type_Reference_ID",
+        "label": "Entry Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Entry Type.",
+        "metadata": {
+          "wd_field_name": "Entry_Type_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Entry_Type_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Budget_Type_ID"
+          ],
+          "sample_value": "BUDGET_TYPE-16-1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Entry Type.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Entry_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Budget_Source_Reference_ID",
+        "label": "Budget Source Reference ID",
+        "type": "string",
+        "description": "Reference field for Budget Source.",
+        "metadata": {
+          "wd_field_name": "Budget_Source_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Budget_Source_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Proposal_ID",
+            "Award_Reference_ID",
+            "Custom_Budget_ID",
+            "Project_Budget_ID"
+          ],
+          "sample_value": "2007 Budget - Global Modern Services, Inc. (USA) - Budget",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Budget Source.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Source_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Budget_Source_Reference_ID_Type",
+        "label": "Budget Source Reference ID Type",
+        "type": "string",
+        "description": "Reference field for Budget Source.",
+        "metadata": {
+          "wd_field_name": "Budget_Source_Reference_ID_Type",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Budget_Source_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Proposal_ID",
+            "Award_Reference_ID",
+            "Custom_Budget_ID",
+            "Project_Budget_ID"
+          ],
+          "sample_value": "Custom_Budget_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Budget Source.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Source_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Budget_Source_ID",
+        "label": "Budget Source ID",
+        "type": "string",
+        "description": "Budget Source ID",
+        "metadata": {
+          "wd_field_name": "Budget_Source_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Budget_Source_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "2007 Budget - Global Modern Services, Inc. (USA) - Budget",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Budget Source ID",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Source_ID"
+        }
+      },
+      {
+        "key": "Plan_Name",
+        "label": "Plan Name",
+        "type": "string",
+        "description": "Plan name for Financial, Headcount, or Project plan types.",
+        "metadata": {
+          "wd_field_name": "Plan_Name",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Plan_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "2007 Budget - Global Modern Services, Inc. (USA)",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Plan name for Financial, Headcount, or Project plan types.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Plan_Name"
+        }
+      },
+      {
+        "key": "Default_Reporting_Currency_Reference_ID",
+        "label": "Default Reporting Currency Reference ID",
+        "type": "string",
+        "description": "Reference field for Default Reporting Currency.",
+        "metadata": {
+          "wd_field_name": "Default_Reporting_Currency_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Default_Reporting_Currency_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Currency_ID"
+          ],
+          "sample_value": "USD",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Default Reporting Currency.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Default_Reporting_Currency_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Enable_Multicurrency_Reference",
+        "label": "Enable Multicurrency Reference",
+        "type": "boolean",
+        "description": "Allows plan lines in currencies other than the company base currency.",
+        "metadata": {
+          "wd_field_name": "Enable_Multicurrency_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Enable_Multicurrency_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Allows plan lines in currencies other than the company base currency.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Enable_Multicurrency_Reference"
+        }
+      },
+      {
+        "key": "Currency_Rate_Type_Reference_ID",
+        "label": "Currency Rate Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Currency Rate Type.",
+        "metadata": {
+          "wd_field_name": "Currency_Rate_Type_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Currency_Rate_Type_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Currency_Rate_Type_ID"
+          ],
+          "sample_value": "CURRENT",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Currency Rate Type.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Currency_Rate_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Currency_Rate_Type_For_Budget_Spend_Reference_ID",
+        "label": "Currency Rate Type For Budget Spend Reference ID",
+        "type": "string",
+        "description": "Reference field for Currency Rate Type For Budget Spend.",
+        "metadata": {
+          "wd_field_name": "Currency_Rate_Type_For_Budget_Spend_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Currency_Rate_Type_For_Budget_Spend_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Currency_Rate_Type_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Currency Rate Type For Budget Spend.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Currency_Rate_Type_For_Budget_Spend_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Default_Balanced_Amendment_Reference",
+        "label": "Default Balanced Amendment Reference",
+        "type": "boolean",
+        "description": "Sets the default value when creating amendments for this plan or budget.",
+        "metadata": {
+          "wd_field_name": "Default_Balanced_Amendment_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Default_Balanced_Amendment_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Sets the default value when creating amendments for this plan or budget.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Default_Balanced_Amendment_Reference"
+        }
+      },
+      {
+        "key": "Enable_For_Allocations_Reference",
+        "label": "Enable For Allocations Reference",
+        "type": "boolean",
+        "description": "Enable the plan or budget as a source or target when creating allocations.",
+        "metadata": {
+          "wd_field_name": "Enable_For_Allocations_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Enable_For_Allocations_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Enable the plan or budget as a source or target when creating allocations.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Enable_For_Allocations_Reference"
+        }
+      },
+      {
+        "key": "Validate_Expense_Account_Amendments_Reference",
+        "label": "Validate Expense Account Amendments Reference",
+        "type": "string",
+        "description": "Validate if budget amendments on expense accounts are less than current spend.",
+        "metadata": {
+          "wd_field_name": "Validate_Expense_Account_Amendments_Reference",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Validate_Expense_Account_Amendments_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Warning",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Validate if budget amendments on expense accounts are less than current spend.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Validate_Expense_Account_Amendments_Reference"
+        }
+      },
+      {
+        "key": "Currency_Rate_Type_For_Budget_Reference_ID",
+        "label": "Currency Rate Type For Budget Reference ID",
+        "type": "string",
+        "description": "Reference field for Currency Rate Type For Budget.",
+        "metadata": {
+          "wd_field_name": "Currency_Rate_Type_For_Budget_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Currency_Rate_Type_For_Budget_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Currency_Rate_Type_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Currency Rate Type For Budget.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Currency_Rate_Type_For_Budget_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Project_Reference_ID",
+        "label": "Project Reference ID",
+        "type": "string",
+        "description": "Reference field for Project.",
+        "metadata": {
+          "wd_field_name": "Project_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Project_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Project_ID"
+          ],
+          "sample_value": "New_Corporate_Headquarters",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Project.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Project_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Plan_Calculation_Type_Reference_ID",
+        "label": "Plan Calculation Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Plan Calculation Type.",
+        "metadata": {
+          "wd_field_name": "Plan_Calculation_Type_Reference_ID",
+          "csv_file_name": "Budget_Template",
+          "csv_header": "Plan_Calculation_Type_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Plan_Calculation_Type_Detail_for_Project_ID"
+          ],
+          "sample_value": "PROJECT_BUDGET_CALCULATION_TYPE_DETAIL-16-4",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Plan Calculation Type.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Plan_Calculation_Type_Reference/wd:ID"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Budget Template Line",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Budget_Template\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "budget_template_line",
+    "fields": [
+      {
+        "key": "Plan_Template_ID",
+        "label": "Plan Template ID",
+        "type": "string",
+        "description": "Plan Template ID",
+        "metadata": {
+          "wd_field_name": "Plan_Template_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Plan_Template_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "BUDGET_TEMPLATE-16-1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Plan Template ID",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Plan_Template_ID"
+        }
+      },
+      {
+        "key": "Fiscal_Year_Reference_ID",
+        "label": "Fiscal Year Reference ID",
+        "type": "string",
+        "description": "Reference field for Fiscal Year.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Year_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "Fiscal_Year_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fiscal_Year_ID"
+          ],
+          "sample_value": "2020",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Fiscal Year.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:Fiscal_Year_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Fiscal_Year_parent_id",
+        "label": "Fiscal Year parent id",
+        "type": "string",
+        "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Year_Reference_ID_parent_id",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "Fiscal_Year_parent_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Standard_Corporate_Schedule",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:Fiscal_Year_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "From_Year_Reference_ID",
+        "label": "From Year Reference ID",
+        "type": "string",
+        "description": "Reference field for From Year.",
+        "metadata": {
+          "wd_field_name": "From_Year_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "From_Year_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fiscal_Year_ID"
+          ],
+          "sample_value": "2007",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for From Year.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:From_Year_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "From_Year_Reference_ID_parent_id",
+        "label": "From Year Reference ID parent id",
+        "type": "string",
+        "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+        "metadata": {
+          "wd_field_name": "From_Year_Reference_ID_parent_id",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "From_Year_Reference_ID_parent_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Standard_Corporate_Schedule",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:From_Year_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "From_Summary_Period_Reference_ID",
+        "label": "From Summary Period Reference ID",
+        "type": "string",
+        "description": "Reference field for From Summary Period.",
+        "metadata": {
+          "wd_field_name": "From_Summary_Period_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "From_Summary_Period_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fiscal_Summary_Interval_ID"
+          ],
+          "sample_value": "Annual",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for From Summary Period.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:From_Summary_Period_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "From_Fiscal_Posting_Interval_Reference_ID",
+        "label": "From Fiscal Posting Interval Reference ID",
+        "type": "string",
+        "description": "Reference field for From Fiscal Posting Interval.",
+        "metadata": {
+          "wd_field_name": "From_Fiscal_Posting_Interval_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "From_Fiscal_Posting_Interval_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Posting_Interval_ID",
+            "Fiscal_Posting_Interval_ID"
+          ],
+          "sample_value": "JAN",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for From Fiscal Posting Interval.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:From_Fiscal_Posting_Interval_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "From_Fiscal_Posting_Interval_Reference_ID_Type",
+        "label": "From Fiscal Posting Interval Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for From Fiscal Posting Interval.",
+        "config": {
+          "options": [
+            {
+              "value": "Award_Posting_Interval_ID",
+              "label": "Award_Posting_Interval_ID"
+            },
+            {
+              "value": "Fiscal_Posting_Interval_ID",
+              "label": "Fiscal_Posting_Interval_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "From_Fiscal_Posting_Interval_Reference_ID_Type",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "From_Fiscal_Posting_Interval_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Award_Posting_Interval_ID",
+            "Fiscal_Posting_Interval_ID"
+          ],
+          "sample_value": "Fiscal_Posting_Interval_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for From Fiscal Posting Interval.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:From_Fiscal_Posting_Interval_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Virtual_Parent_Project_Budget_Start_Date_Reference",
+        "label": "Virtual Parent Project Budget Start Date Reference",
+        "type": "date",
+        "description": "Start Date for the virtual parent project plan type budget (YYYY-MM-DD).",
+        "metadata": {
+          "wd_field_name": "Virtual_Parent_Project_Budget_Start_Date_Reference",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "Virtual_Parent_Project_Budget_Start_Date_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "YYYY-MM-DD"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Start Date for the virtual parent project plan type budget (YYYY-MM-DD).",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:Virtual_Parent_Project_Budget_Start_Date_Reference"
+        }
+      },
+      {
+        "key": "To_Year_Reference_ID",
+        "label": "To Year Reference ID",
+        "type": "string",
+        "description": "Reference field for To Year.",
+        "metadata": {
+          "wd_field_name": "To_Year_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "To_Year_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fiscal_Year_ID"
+          ],
+          "sample_value": "2007",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for To Year.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:To_Year_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "To_Year_Reference_ID_parent_id",
+        "label": "To Year Reference ID parent id",
+        "type": "string",
+        "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+        "metadata": {
+          "wd_field_name": "To_Year_Reference_ID_parent_id",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "To_Year_Reference_ID_parent_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Standard_Corporate_Schedule",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:To_Year_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "To_Summary_Period_Reference_ID",
+        "label": "To Summary Period Reference ID",
+        "type": "string",
+        "description": "Reference field for To Summary Period.",
+        "metadata": {
+          "wd_field_name": "To_Summary_Period_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "To_Summary_Period_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fiscal_Summary_Interval_ID"
+          ],
+          "sample_value": "Annual",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for To Summary Period.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:To_Summary_Period_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "To_Fiscal_Posting_Interval_Reference_ID",
+        "label": "To Fiscal Posting Interval Reference ID",
+        "type": "string",
+        "description": "Reference field for To Fiscal Posting Interval.",
+        "metadata": {
+          "wd_field_name": "To_Fiscal_Posting_Interval_Reference_ID",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "To_Fiscal_Posting_Interval_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Posting_Interval_ID",
+            "Fiscal_Posting_Interval_ID"
+          ],
+          "sample_value": "DEC",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for To Fiscal Posting Interval.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:To_Fiscal_Posting_Interval_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "To_Fiscal_Posting_Interval_Reference_ID_Type",
+        "label": "To Fiscal Posting Interval Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for To Fiscal Posting Interval.",
+        "config": {
+          "options": [
+            {
+              "value": "Award_Posting_Interval_ID",
+              "label": "Award_Posting_Interval_ID"
+            },
+            {
+              "value": "Fiscal_Posting_Interval_ID",
+              "label": "Fiscal_Posting_Interval_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "To_Fiscal_Posting_Interval_Reference_ID_Type",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "To_Fiscal_Posting_Interval_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Award_Posting_Interval_ID",
+            "Fiscal_Posting_Interval_ID"
+          ],
+          "sample_value": "Fiscal_Posting_Interval_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for To Fiscal Posting Interval.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:To_Fiscal_Posting_Interval_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Virtual_Parent_Project_Budget_End_Date_Reference",
+        "label": "Virtual Parent Project Budget End Date Reference",
+        "type": "date",
+        "description": "End Date for the virtual parent project plan type budget (YYYY-MM-DD).",
+        "metadata": {
+          "wd_field_name": "Virtual_Parent_Project_Budget_End_Date_Reference",
+          "csv_file_name": "Budget_Template_Line",
+          "csv_header": "Virtual_Parent_Project_Budget_End_Date_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "YYYY-MM-DD"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "End Date for the virtual parent project plan type budget (YYYY-MM-DD).",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Budget_Data/wd:Virtual_Parent_Project_Budget_End_Date_Reference"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Budget Template Virtual Children",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Budget_Template\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "budget_template_virtual_children",
+    "fields": [
+      {
+        "key": "Plan_Template_ID",
+        "label": "Plan Template ID",
+        "type": "string",
+        "description": "Plan Template ID",
+        "metadata": {
+          "wd_field_name": "Plan_Template_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Plan_Template_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "BUDGET_TEMPLATE-16-1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Plan Template ID",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Plan_Template_ID"
+        }
+      },
+      {
+        "key": "Linked_Virtual_Children_Budgets_Reference_ID",
+        "label": "Linked Virtual Children Budgets Reference ID",
+        "type": "string",
+        "description": "Reference field for Linked Virtual Children Budgets.",
+        "metadata": {
+          "wd_field_name": "Linked_Virtual_Children_Budgets_Reference_ID",
+          "csv_file_name": "Budget_Template_Virtual_Children",
+          "csv_header": "Linked_Virtual_Children_Budgets_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Plan_ID"
+          ],
+          "sample_value": "BUDGET-6-106",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Linked Virtual Children Budgets.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Budget_Template_Request/wd:Budget_Template_Data/wd:Linked_Virtual_Children_Budgets_Reference/wd:ID"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Budgetary Control Option Lines",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Budgetary_Control_Options_for_Budget\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "budgetary_control_option_lines",
+    "fields": [
+      {
+        "key": "Line_Order",
+        "label": "Line Order",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Line_Order",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Line_Order",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Company_Reference_ID_Type",
+        "label": "Company Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Company.",
+        "config": {
+          "options": [
+            {
+              "value": "Company_Reference_ID",
+              "label": "Company_Reference_ID"
+            },
+            {
+              "value": "Cost_Center_Reference_ID",
+              "label": "Cost_Center_Reference_ID"
+            },
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            },
+            {
+              "value": "Region_Reference_ID",
+              "label": "Region_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID_Type",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Company_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Company_Reference_ID",
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID",
+            "Region_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Company.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Company_Reference_ID",
+        "label": "Company Reference ID",
+        "type": "string",
+        "description": "Reference field for Company.",
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Company_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Company_Reference_ID",
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID",
+            "Region_Reference_ID"
+          ],
+          "sample_value": "Global_Modern_Services_Inc_USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COMPNY",
+            "MATCHVALUE_COSTC"
+          ],
+          "category": null,
+          "description": "Reference field for Company.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Ledger_Account_or_Summary_Reference_ID_Type",
+        "label": "Ledger Account or Summary Reference ID Type",
+        "type": "string",
+        "description": "Reference field for Ledger Account or Ledger Account Summary.",
+        "metadata": {
+          "wd_field_name": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_Type",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Ledger_Account_or_Summary_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Ledger_Account_ID",
+            "Ledger_Account_Summary_ID"
+          ],
+          "sample_value": "Ledger_Account_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Ledger Account or Ledger Account Summary.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Ledger_Account_or_Summary_Reference_ID",
+        "label": "Ledger Account or Summary Reference ID",
+        "type": "string",
+        "description": "Reference field for Ledger Account or Ledger Account Summary.",
+        "metadata": {
+          "wd_field_name": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Ledger_Account_or_Summary_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Ledger_Account_ID",
+            "Ledger_Account_Summary_ID"
+          ],
+          "sample_value": "1800",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Ledger Account or Ledger Account Summary.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_par_type",
+        "label": "Ledger Account or Ledger Account Summary Reference ID par type",
+        "type": "string",
+        "description": "For types that require a parent reference, the unique identifier type of a parent object.",
+        "metadata": {
+          "wd_field_name": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_parent_type",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_par_type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, the unique identifier type of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_par_id",
+        "label": "Ledger Account or Ledger Account Summary Reference ID par id",
+        "type": "string",
+        "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+        "metadata": {
+          "wd_field_name": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_parent_id",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Ledger_Account_or_Ledger_Account_Summary_Reference_ID_par_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Book_Code_Reference_ID",
+        "label": "Book Code Reference ID",
+        "type": "string",
+        "description": "Reference field for Book Code.",
+        "metadata": {
+          "wd_field_name": "Book_Code_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Book_Code_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Book_Code_ID"
+          ],
+          "sample_value": "Local_GAAP_Adjustments",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Book Code.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Budget_Check_Option_Reference_ID",
+        "label": "Budget Check Option Reference ID",
+        "type": "string",
+        "description": "Reference field for Budget Check Option.",
+        "metadata": {
+          "wd_field_name": "Budget_Check_Option_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Budget_Check_Option_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Budget_Check_Option_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Budget Check Option.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Tolerance_Percentage",
+        "label": "Tolerance Percentage",
+        "type": "number",
+        "metadata": {
+          "wd_field_name": "Tolerance_Percentage",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Tolerance_Percentage",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": null,
+          "xpath": null
+        }
+      },
+      {
+        "key": "Tolerance_Amount",
+        "label": "Tolerance Amount",
+        "type": "number",
+        "metadata": {
+          "wd_field_name": "Tolerance_Amount",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Tolerance_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": null,
+          "xpath": null
+        }
+      },
+      {
+        "key": "Accounting_Worktag_Reference_ID_Type_1",
+        "label": "Accounting Worktag Reference ID Type 1",
+        "type": "string",
+        "description": "Reference field for Accounting Worktag.",
+        "metadata": {
+          "wd_field_name": "Accounting_Worktag_Reference_ID_Type",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Accounting_Worktag_Reference_ID_Type_1",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Accounting Worktag.",
+          "cardinality": "[0..*]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Accounting_Worktag_Reference_ID_1",
+        "label": "Accounting Worktag Reference ID 1",
+        "type": "string",
+        "description": "Reference field for Accounting Worktag.",
+        "metadata": {
+          "wd_field_name": "Accounting_Worktag_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Accounting_Worktag_Reference_ID_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Lookup"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Accounting Worktag.",
+          "cardinality": "[0..*]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Accounting_Worktag_parent_type_1",
+        "label": "Accounting Worktag parent type 1",
+        "type": "string",
+        "description": "For types that require a parent reference, the unique identifier type of a parent object.",
+        "metadata": {
+          "wd_field_name": "Accounting_Worktag_Reference_ID_parent_type",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Accounting_Worktag_parent_type_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, the unique identifier type of a parent object.",
+          "cardinality": "[0..*]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Accounting_Worktag_parent_id_1",
+        "label": "Accounting Worktag parent id 1",
+        "type": "string",
+        "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+        "metadata": {
+          "wd_field_name": "Accounting_Worktag_Reference_ID_parent_id",
+          "csv_file_name": "Budgetary_Control_Option_Lines",
+          "csv_header": "Accounting_Worktag_parent_id_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+          "cardinality": "[0..*]",
+          "xpath": null
+        }
+      }
+    ]
+  },
+  {
+    "name": "Budgetary Control Options",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Budgetary_Control_Options_for_Budget\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "budgetary_control_options",
+    "fields": [
+      {
+        "key": "Budgetary_Control_Options_ID",
+        "label": "Budgetary Control Options ID",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Budgetary_Control_Options_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Budgetary_Control_Options_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Budgetary_Control_Options_for",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Budget_Template_Reference_ID",
+        "label": "Budget Template Reference ID",
+        "type": "string",
+        "description": "Reference field for Budget Template.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Budget_Template_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Budget_Template_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Plan_Template_ID"
+          ],
+          "sample_value": "BUDGET_TEMPLATE-16-13",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Budget Template.",
+          "cardinality": "[1..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Fiscal_Year_Reference_ID_Type",
+        "label": "Fiscal Year Reference ID Type",
+        "type": "string",
+        "description": "Reference field for Fiscal Year.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Year_Reference_ID_Type",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Fiscal_Year_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Year_Reference_ID",
+            "Fiscal_Year_ID"
+          ],
+          "sample_value": "Fiscal_Year_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Fiscal Year.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Fiscal_Year_Reference_ID",
+        "label": "Fiscal Year Reference ID",
+        "type": "string",
+        "description": "Reference field for Fiscal Year.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Year_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Fiscal_Year_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Year_Reference_ID",
+            "Fiscal_Year_ID"
+          ],
+          "sample_value": "2012",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Fiscal Year.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Fiscal_Year_Reference_ID_parent_type",
+        "label": "Fiscal Year Reference ID parent type",
+        "type": "string",
+        "description": "For types that require a parent reference, the unique identifier type of a parent object.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Year_Reference_ID_parent_type",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Fiscal_Year_Reference_ID_parent_type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Fiscal_Schedule_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, the unique identifier type of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Fiscal_Year_Reference_ID_parent_id",
+        "label": "Fiscal Year Reference ID parent id",
+        "type": "string",
+        "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+        "metadata": {
+          "wd_field_name": "Fiscal_Year_Reference_ID_parent_id",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Fiscal_Year_Reference_ID_parent_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Standard_Corporate_Schedule",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "For types that require a parent reference, contains a unique identifier for an instance of a parent object.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Award_Contract_Reference_ID",
+        "label": "Award Contract Reference ID",
+        "type": "string",
+        "description": "Reference field for Award Contract.",
+        "metadata": {
+          "wd_field_name": "Award_Contract_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Award_Contract_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Award_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Award Contract.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Budget_Check_Option_Reference_ID",
+        "label": "Budget Check Option Reference ID",
+        "type": "string",
+        "description": "Reference field for Budget Check Option.",
+        "metadata": {
+          "wd_field_name": "Budget_Check_Option_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Budget_Check_Option_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Budget_Check_Option_ID"
+          ],
+          "sample_value": "CONTROL",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Budget Check Option.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Evaluation_Date_Reference_ID",
+        "label": "Evaluation Date Reference ID",
+        "type": "string",
+        "description": "Reference field for Evaluation Date.",
+        "metadata": {
+          "wd_field_name": "Evaluation_Date_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Evaluation_Date_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Evaluation_Date_ID"
+          ],
+          "sample_value": "BUDGET_DATE",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Evaluation Date.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Cumulative_Control_Periods_for_Business_Plan_Duration",
+        "label": "Cumulative Control Periods for Business Plan Duration",
+        "type": "boolean",
+        "metadata": {
+          "wd_field_name": "Cumulative_Control_Periods_for_Business_Plan_Duration",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Cumulative_Control_Periods_for_Business_Plan_Duration",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Control_By_Period",
+        "label": "Control By Period",
+        "type": "boolean",
+        "metadata": {
+          "wd_field_name": "Control_By_Period",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Control_By_Period",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Valid_Fiscal_Award_Summary_Schedules_Reference_ID",
+        "label": "Valid Fiscal Award Summary Schedules Reference ID",
+        "type": "string",
+        "description": "Reference field for Fiscal Award Summary Schedules Valid for Budget Control Periods.",
+        "metadata": {
+          "wd_field_name": "Fiscal__Award_Summary_Schedules_Valid_for_Budget_Control_Periods_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Valid_Fiscal_Award_Summary_Schedules_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fiscal_Summary_Schedule_ID"
+          ],
+          "sample_value": "FISCAL_SUMMARY_SCHEDULE-4-3",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Fiscal Award Summary Schedules Valid for Budget Control Periods.",
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Control_By_Duration",
+        "label": "Control By Duration",
+        "type": "boolean",
+        "metadata": {
+          "wd_field_name": "Control_By_Duration",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Control_By_Duration",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Include_Reserved_Journal_Lines",
+        "label": "Include Reserved Journal Lines",
+        "type": "boolean",
+        "metadata": {
+          "wd_field_name": "Include_Reserved_Journal_Lines",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Include_Reserved_Journal_Lines",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..1]",
+          "xpath": null
+        }
+      },
+      {
+        "key": "Allow_Budget_Check_Override",
+        "label": "Allow Budget Check Override",
+        "type": "boolean",
+        "metadata": {
+          "wd_field_name": "Allow Budget Check Override",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Allow_Budget_Check_Override",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": null,
+          "xpath": null
+        }
+      },
+      {
+        "key": "Allow_Credit_Transactions_to_Pass",
+        "label": "Allow Credit Transactions to Pass",
+        "type": "boolean",
+        "metadata": {
+          "wd_field_name": "Allow Credit Transactions to Pass",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Allow_Credit_Transactions_to_Pass",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": null,
+          "cardinality": null,
+          "xpath": null
+        }
+      },
+      {
+        "key": "Ledger_Types_for_Budget_Check_Reference_ID_1",
+        "label": "Ledger Types for Budget Check Reference ID 1",
+        "type": "string",
+        "description": "Reference field for Ledger Types for Budget Check.",
+        "metadata": {
+          "wd_field_name": "Ledger_Types_for_Budget_Check_Reference_ID",
+          "csv_file_name": "Budgetary_Control_Options",
+          "csv_header": "Ledger_Types_for_Budget_Check_Reference_ID_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Ledger_Type_ID"
+          ],
+          "sample_value": "LEDGER_TYPE-6-3",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Ledger Types for Budget Check.",
+          "cardinality": "[0..*]",
+          "xpath": null
+        }
+      }
+    ]
+  }
+]

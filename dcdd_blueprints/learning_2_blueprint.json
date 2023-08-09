@@ -1,0 +1,334 @@
+[
+  {
+    "name": "Put Translatable Tenant Data Public",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Translatable_Tenant_Data_Public\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "put_translatable_tenant_data_public",
+    "fields": [
+      {
+        "key": "User_Language_Reference_ID",
+        "label": "User Language Reference ID",
+        "type": "string",
+        "description": "Reference field for User Language.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "User_Language_Reference_ID",
+          "csv_header": "User_Language_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "User_Language_ID"
+          ],
+          "sample_value": "en_US",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for User Language.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:User_Language_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Class_Name",
+        "label": "Class Name",
+        "type": "string",
+        "description": "Name of the object.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Class_Name",
+          "csv_header": "Class_Name",
+          "required/optional": "Required",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Name of the object.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Class_Name"
+        }
+      },
+      {
+        "key": "Object_Name",
+        "label": "Object Name",
+        "type": "string",
+        "description": "Attribute name of the object.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Name",
+          "csv_header": "Object_Name",
+          "required/optional": "Required",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Employee Type",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Attribute name of the object.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Attribute_Reference/wd:Name"
+        }
+      },
+      {
+        "key": "Instance_Reference_ID",
+        "label": "Instance Reference ID",
+        "type": "string",
+        "description": "Reference field for Instance.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Instance_Reference_ID",
+          "csv_header": "Instance_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [],
+          "sample_value": "Apprentice_Fixed_Term",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Instance.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Instance_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Instance_Reference_ID_Type",
+        "label": "Instance Reference ID Type",
+        "type": "string",
+        "description": "Reference field for Instance.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Instance_Reference_ID_Type",
+          "csv_header": "Instance_Reference_ID_Type",
+          "required/optional": "Required",
+          "type_value": [],
+          "sample_value": "Employee_Type_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Instance.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Instance_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "parent_type",
+        "label": "parent type",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Instance_Reference_ID_parent_type",
+          "csv_header": "parent_type",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Instance_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "parent_id",
+        "label": "parent id",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Instance_Reference_ID_Type",
+          "csv_header": "parent_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Instance_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Base_Value",
+        "label": "Base Value",
+        "type": "string",
+        "description": "Plain text base value.",
+        "metadata": {
+          "wd_field_name": "Base_Value",
+          "csv_header": "Base_Value",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Apprentice",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Plain text base value.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Base_Value"
+        }
+      },
+      {
+        "key": "Translated_Value",
+        "label": "Translated Value",
+        "type": "string",
+        "description": "Enter the translated value of the instance in the corresponding User Language and in plain text.",
+        "metadata": {
+          "wd_field_name": "Translated_Value",
+          "csv_header": "Translated_Value",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Aprendiza",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Enter the translated value of the instance in the corresponding User Language and in plain text.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Translated_Value"
+        }
+      },
+      {
+        "key": "Rich_Base_Value",
+        "label": "Rich Base Value",
+        "type": "string",
+        "description": "Rich text base value.",
+        "metadata": {
+          "wd_field_name": "Rich_Base_Value",
+          "csv_header": "Rich_Base_Value",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Rich text base value.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Rich_Base_Value"
+        }
+      },
+      {
+        "key": "Translated_Rich_Value",
+        "label": "Translated Rich Value",
+        "type": "string",
+        "description": "Enter the translated value of the instance in the corresponding User Language and in rich text.",
+        "metadata": {
+          "wd_field_name": "Translated_Rich_Value",
+          "csv_header": "Translated_Rich_Value",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Enter the translated value of the instance in the corresponding User Language and in rich text.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Translated_Rich_Value"
+        }
+      },
+      {
+        "key": "Effective_Date",
+        "label": "Effective Date",
+        "type": "date",
+        "description": "Effective Date",
+        "metadata": {
+          "wd_field_name": "Effective_Date",
+          "csv_header": "Effective_Date",
+          "required/optional": "Optional",
+          "type_value": [
+            "YYYY-MM-DD"
+          ],
+          "sample_value": "2021-01-01",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK",
+            "OTHER_DATES_AFTER_ARE_PRIOR_TO_THIS"
+          ],
+          "category": null,
+          "description": "Effective Date",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Effective_Date"
+        }
+      },
+      {
+        "key": "Translation_Status",
+        "label": "Translation Status",
+        "type": "string",
+        "description": "Translation Status",
+        "metadata": {
+          "wd_field_name": "Translation_Status",
+          "csv_header": "Translation_Status",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Translation Status",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Translatable_Tenant_Data_Public_Request/wd:Translatable_Tenant_Data_Public_Data/wd:Translated_Value_for_Instance_Data/wd:Translation_Status"
+        }
+      }
+    ]
+  }
+]
