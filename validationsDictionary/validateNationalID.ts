@@ -10,20 +10,22 @@ function validateNationalID(record, field, country) {
 
   const validationFunc = countryToIDValidationMap[country]
   if (validationFunc) {
-    const error = validationFunc(fieldValue)
-    if (error) {
-      record.addError(field.key, error)
+    const validationResult = validationFunc(fieldValue, country)
+    if (validationResult.error) {
+      record.addError(field.key, validationResult.error)
     }
   }
 
-  const ssidError = idValidations.isValidSSID(fieldValue)
-  if (ssidError) {
-    record.addError(field.key, ssidError)
-  }
+  if (country !== 'USA' && country !== 'CAN') {
+    const ssidValidationResult = idValidations.isValidSSID(fieldValue, country)
+    if (ssidValidationResult.error) {
+      record.addError(field.key, ssidValidationResult.error)
+    }
 
-  const svnrError = idValidations.isValidSVNR(fieldValue)
-  if (svnrError) {
-    record.addError(field.key, svnrError)
+    const svnrValidationResult = idValidations.isValidSVNR(fieldValue, country)
+    if (svnrValidationResult.error) {
+      record.addError(field.key, svnrValidationResult.error)
+    }
   }
 }
 

@@ -1,7 +1,10 @@
 import * as moment from 'moment'
 
-// Type for validation errors
-type ValidationError = string | null
+// Type for ValidationResult
+type ValidationResult = {
+  error?: string
+  info?: string
+}
 
 // Common error message format helper
 function formatError(value: any, message: string): string {
@@ -10,18 +13,31 @@ function formatError(value: any, message: string): string {
 
 // ---------- BOOLEAN VALIDATIONS ----------
 
-function checkBoolean(value: string): { error?: string; info?: string } {
+// ---------- BOOLEAN VALIDATIONS ----------
+
+function checkBoolean(
+  value: any,
+  record: any,
+  fieldKey: string
+): ValidationResult {
+  if (value === null) {
+    return {}
+  }
+  const stringValue = String(value)
+  const lowercasedValue = stringValue.toLowerCase()
   const acceptableValues = ['true', 'false', 'yes', 'no', '1', '0']
 
-  if (!acceptableValues.includes(value.toLowerCase())) {
+  if (!acceptableValues.includes(lowercasedValue)) {
     return { error: formatError(value, 'does not contain a boolean value.') }
   }
 
-  if (['yes', '1'].includes(value.toLowerCase())) {
+  if (['yes', '1'].includes(lowercasedValue)) {
+    record.set(fieldKey, true) // Set the boolean value in the record
     return { info: `Mapped incoming value "${value}" to "true".` }
   }
 
-  if (['no', '0'].includes(value.toLowerCase())) {
+  if (['no', '0'].includes(lowercasedValue)) {
+    record.set(fieldKey, false) // Set the boolean value in the record
     return { info: `Mapped incoming value "${value}" to "false".` }
   }
 
@@ -41,46 +57,63 @@ const errorStrings = [
   'Circular Reference',
 ]
 
-function checkForError(value: string): ValidationError {
+function checkForError(value: any): ValidationResult {
+  if (value === null) {
+    return {}
+  }
+  if (typeof value !== 'string' || value === null) {
+    return {}
+  }
   for (const error of errorStrings) {
     if (value.includes(error)) {
-      return formatError(value, 'must not contain any error values.')
+      return { error: formatError(value, 'must not contain any error values.') }
     }
   }
-  return null
+  return {}
 }
 
 // ---------- DATE VALIDATIONS ----------
 
-function checkDateFormat(value: string): ValidationError {
-  if (!moment(value, 'YYYY-MM-DD', true).isValid()) {
-    return formatError(
-      value,
-      'does not match the required date format (yyyy-MM-dd).'
-    )
+function checkDateFormat(value: string): ValidationResult {
+  if (value === null) {
+    return {}
   }
-  return null
+  if (!moment(value, 'YYYY-MM-DD', true).isValid()) {
+    return {
+      error: formatError(
+        value,
+        'does not match the required date format (yyyy-MM-dd).'
+      ),
+    }
+  }
+  return {}
 }
 
 // ---------- ALPHANUMERIC VALIDATIONS ----------
 
-function isAlphanumeric(value: string): ValidationError {
+function isAlphanumeric(value: string): ValidationResult {
   const alphanumericPattern = /^[a-zA-Z0-9]+$/
+  if (value === null) {
+    return {}
+  }
 
   if (!alphanumericPattern.test(value)) {
-    return formatError(value, 'is not alphanumeric.')
+    return { error: formatError(value, 'is not alphanumeric.') }
   }
-  return null
+  return {}
 }
 
 // ---------- PASSWORD COMPLEXITY VALIDATIONS ----------
 
-function isComplexPwd(value: string): ValidationError {
+function isComplexPwd(value: string): ValidationResult {
   const hasUppercase = /[A-Z]/.test(value)
   const hasLowercase = /[a-z]/.test(value)
   const hasNumber = /\d/.test(value)
   const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value)
   const minLength = 8
+  if (value === null) {
+    return {}
+  }
 
   if (
     !hasUppercase ||
@@ -89,65 +122,83 @@ function isComplexPwd(value: string): ValidationError {
     !hasSpecialChar ||
     value.length < minLength
   ) {
-    return formatError(value, 'does not meet the complexity requirements.')
+    return {
+      error: formatError(value, 'does not meet the complexity requirements.'),
+    }
   }
-  return null
+  return {}
 }
 
 // ---------- INTEGER VALIDATIONS ----------
 
-function isInteger(value: any): ValidationError {
-  if (Number.isInteger(Number(value))) {
-    return null
+function isInteger(value: any): ValidationResult {
+  if (value === null) {
+    return {}
   }
-  return formatError(value, 'is not a valid integer.')
+  if (Number.isInteger(Number(value))) {
+    return {}
+  }
+  return { error: formatError(value, 'is not a valid integer.') }
 }
 
 // ---------- NUMERIC VALIDATIONS ----------
 
-function isNumeric(value: any): ValidationError {
-  if (!isNaN(Number(value))) {
-    return null
+function isNumeric(value: any): ValidationResult {
+  if (value === null) {
+    return {}
   }
-  return formatError(value, 'is not a valid number.')
+  if (!isNaN(Number(value))) {
+    return {}
+  }
+  return { error: formatError(value, 'is not a valid number.') }
 }
 
 // ---------- EMAIL VALIDATIONS ----------
 
-function isValidEmail(value: string): ValidationError {
+function isValidEmail(value: string): ValidationResult {
   // A basic regular expression for email validation
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+  if (value === null) {
+    return {}
+  }
 
   if (!emailPattern.test(value)) {
-    return formatError(value, 'is not a valid email address.')
+    return { error: formatError(value, 'is not a valid email address.') }
   }
-  return null // The value is a valid email
+  return {} // The value is a valid email
 }
 
 // ---------- PHONE VALIDATIONS ----------
 
-function isValidPhoneNumber(value: string): ValidationError {
+function isValidPhoneNumber(value: string): ValidationResult {
+  if (value === null) {
+    return {}
+  }
   const phonePattern = /^[0-9]{10,15}$/
 
   if (!phonePattern.test(value) && value !== null && value !== '') {
-    return formatError(
-      value,
-      'does not contain a valid Phone Number. Must not have any non-numeric values in Phone Numbers, and must be 10 digits minimum.'
-    )
+    return {
+      error: formatError(
+        value,
+        'does not contain a valid Phone Number. Must not have any non-numeric values in Phone Numbers, and must be 10 digits minimum.'
+      ),
+    }
   }
-  return null // The value is a valid phone number
+  return {} // The value is a valid phone number
 }
 
 // ---------- URL VALIDATIONS ----------
 
-function isValidUrl(value: string): ValidationError {
+function isValidUrl(value: string): ValidationResult {
+  if (value === null) {
+    return {}
+  }
   const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
 
-  if (urlPattern.test(value)) {
-    return null // The value is a valid URL
-  } else {
-    return formatError(value, 'is not a valid URL.')
+  if (!urlPattern.test(value)) {
+    return { error: formatError(value, 'is not a valid URL.') }
   }
+  return {} // The value is a valid URL
 }
 
 // Grouped export

@@ -1,9 +1,9 @@
-import { recordHook } from '@flatfile/plugin-record-hook'
+import { RecordHook } from '@flatfile/plugin-record-hook'
 import api from '@flatfile/api'
 import { blueprint } from './blueprint/blueprint'
 import { ExcelExtractor } from '@flatfile/plugin-xlsx-extractor'
 import { DedupeRecords } from './actions/dedupe.records'
-import { employeeValidations } from './validations/employeeValidations'
+import { validateRecord } from './validationsDictionary/recordValidators'
 const { authenticateAndFetchLocations } = require('./reference_data/locations')
 import { validateReportingStructure } from './actions/validateReportingStructure'
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
@@ -349,40 +349,61 @@ export default function (listener) {
   })
 
   // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
+  listener.on('commit:created', async (event) => {
+    try {
+      console.log('commit:created event triggered') // Log when the event is triggered
 
-  // WORKERS
-  listener.use(
-    recordHook('workers', (record) => {
-      if (!record) {
-        console.error('Received undefined or null record, skipping...')
+      // Retrieve the sheetId from the event context
+      const sheetId = event.context.sheetId
+      console.log(`Retrieved sheetId from event: ${sheetId}`) // Log the retrieved sheetId
+
+      // Fetch the sheet from the API
+      const sheet = await api.sheets.get(sheetId)
+
+      // Only log that the sheet was fetched successfully
+      if (!sheet) {
+        console.log(`Failed to fetch sheet with id: ${sheetId}`)
         return
       }
+      console.log(`Sheet with id: ${sheetId} fetched successfully.`)
 
-      try {
-        const results = employeeValidations(record)
+      // Verify that the sheetSlug matches 'workers'
+      if (sheet.data.config?.slug === 'workers') {
+        console.log(
+          "Confirmed: sheetSlug matches 'workers'. Proceeding to call RecordHook..."
+        ) // Log before calling RecordHook
 
-        // Use a safe stringify function to prevent circular reference errors
-        try {
-          console.log('Employees Hooks: ' + JSON.stringify(results))
-        } catch (error) {
-          console.error('Error stringifying results:', error)
+        // Get the fields from the sheet response
+        const fields = sheet.data.config?.fields
+
+        // Log only the number of fields retrieved
+        if (!fields) {
+          console.log('No fields were fetched.')
+          return
         }
+        console.log(`Successfully fetched ${fields.length} fields.`)
 
-        return record
-      } catch (error) {
-        console.error(
-          `Error occurred during validation of record ${JSON.stringify(
-            record
-          )}:`,
-          error.message,
-          'Stack trace:',
-          error.stack
+        // Call the RecordHook function with event and a handler
+        await RecordHook(event, async (record, event) => {
+          console.log("Inside RecordHook's handler function") // Log inside the handler function
+          try {
+            await validateRecord(record, fields) // Using the validateRecord function here
+          } catch (error) {
+            console.error('Error in validateRecord:', error)
+          }
+          console.log("Exiting RecordHook's handler function") // Log when exiting the handler function
+          return record
+        })
+        console.log('Finished calling RecordHook') // Log after calling RecordHook
+      } else {
+        console.log(
+          "Failed: sheetSlug does not match 'workers'. Aborting RecordHook call..."
         )
-        // Handle or rethrow the error as needed, for example:
-        // throw error;
       }
-    })
-  )
+    } catch (error) {
+      console.error('Error in commit:created event handler:', error)
+    }
+  })
 
   // RUN ACTIONS TRIGGERED BY USERS
 
