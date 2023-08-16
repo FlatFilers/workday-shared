@@ -14,6 +14,7 @@ import { retrieveBlueprint } from './workflow/retrieve-blueprint'
 import { isNil, isNotNil } from './validations/common/helpers'
 import { createAndInviteGuests } from './guests/createAndInviteGuests'
 import { jobs } from './reference_data/jobs'
+import csvZip from './actions/csvZip'
 import { locationsMetadata } from './soapRequest/soapMetadata'
 import { authenticateAndFetchData } from './soapRequest/authenticateAndFetchData'
 import { costCentersMetadata } from './soapRequest/soapMetadata'
@@ -88,6 +89,13 @@ export default function (listener) {
             label: 'Submit',
             description: 'Send a webhook to the app',
             primary: true,
+          },
+          {
+            operation: 'downloadCSV',
+            mode: 'foreground',
+            label: 'Download ZIP File of Workbook Data',
+            description: 'Downloads ZIP File of Workbook Data',
+            primary: false,
           },
         ],
       })
@@ -669,6 +677,8 @@ export default function (listener) {
     })
   })
 
+  //Download Data to Excel Workbook
+  listener.use(csvZip)
   // PARSE XLSX FILES
   listener.on('file:created', async (event) => {
     return new ExcelExtractor(event).runExtraction()
