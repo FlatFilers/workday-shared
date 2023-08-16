@@ -1,0 +1,1262 @@
+[
+  {
+    "name": "Submit Ad Hoc Put-Away",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Submit_Ad_Hoc_Put-Away\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "submit_ad_hoc_put-away",
+    "fields": [
+      {
+        "key": "Inventory_Site_Reference_ID",
+        "label": "Inventory Site Reference ID",
+        "type": "string",
+        "description": "Inventory Site Reference",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Inventory_Site_Reference_ID",
+          "csv_header": "Inventory_Site_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Location_ID"
+          ],
+          "sample_value": "San_Francisco",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Inventory Site Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Site_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "External_ID",
+        "label": "External ID",
+        "type": "string",
+        "description": "Contains the Unique External ID. This field allows WS users to uniquely identify every WS call with a unique ID.",
+        "metadata": {
+          "wd_field_name": "External_ID",
+          "csv_header": "External_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains the Unique External ID. This field allows WS users to uniquely identify every WS call with a unique ID.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:External_ID"
+        }
+      },
+      {
+        "key": "Item_Reference_ID",
+        "label": "Item Reference ID",
+        "type": "string",
+        "description": "Item Reference",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Item_Reference_ID",
+          "csv_header": "Item_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Purchase_Item_ID"
+          ],
+          "sample_value": "SERVER",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Item Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Item_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Item_Lot_Reference_ID",
+        "label": "Item Lot Reference ID",
+        "type": "string",
+        "description": "Reference to an existing Item Lot",
+        "metadata": {
+          "wd_field_name": "Item_Lot_Reference_ID",
+          "csv_header": "Item_Lot_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Item_Lot_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to an existing Item Lot",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Item_Lot_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Quantity",
+        "label": "Quantity",
+        "type": "number",
+        "description": "Quantity",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Quantity",
+          "csv_header": "Quantity",
+          "required/optional": "Required",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Quantity",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Quantity"
+        }
+      },
+      {
+        "key": "Serial_Identifier",
+        "label": "Serial Identifier",
+        "type": "string",
+        "description": "Serial Identifier",
+        "metadata": {
+          "wd_field_name": "Serial_Identifier",
+          "csv_header": "Serial_Identifier",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Serial Identifier",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Item_Serial_Line_Data/wd:Serial_Identifier"
+        }
+      },
+      {
+        "key": "Stocking_Unit_of_Measure_Reference_ID",
+        "label": "Stocking Unit of Measure Reference ID",
+        "type": "string",
+        "description": "Stocking Unit of Measure Reference",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Stocking_Unit_of_Measure_Reference_ID",
+          "csv_header": "Stocking_Unit_of_Measure_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "UN_CEFACT_Common_Code_ID"
+          ],
+          "sample_value": "LBR",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Stocking Unit of Measure Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Stocking_Unit_of_Measure_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Stocking_Unit_of_Measure_Reference_ID_Type",
+        "label": "Stocking Unit of Measure Reference ID Type",
+        "type": "enum",
+        "description": "Stocking Unit of Measure Reference",
+        "config": {
+          "options": [
+            {
+              "value": "UN_CEFACT_Common_Code_ID",
+              "label": "UN_CEFACT_Common_Code_ID"
+            },
+            {
+              "value": "UOM_EDI_Code_ID",
+              "label": "UOM_EDI_Code_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Stocking_Unit_of_Measure_Reference_ID_Type",
+          "csv_header": "Stocking_Unit_of_Measure_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "UN_CEFACT_Common_Code_ID",
+            "UOM_EDI_Code_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Stocking Unit of Measure Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Stocking_Unit_of_Measure_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Consigned",
+        "label": "Consigned",
+        "type": "boolean",
+        "description": "Whether or not the item is consigned",
+        "metadata": {
+          "wd_field_name": "Consigned",
+          "csv_header": "Consigned",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Whether or not the item is consigned",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Consigned"
+        }
+      },
+      {
+        "key": "Location_Reference_ID",
+        "label": "Location Reference ID",
+        "type": "string",
+        "description": "Location Reference",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Location_Reference_ID",
+          "csv_header": "Location_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Location_ID"
+          ],
+          "sample_value": "San_Francisco",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_LOCATIONID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Location Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Location_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Location_Reference_ID_Type",
+        "label": "Location Reference ID Type",
+        "type": "enum",
+        "description": "Location Reference",
+        "config": {
+          "options": [
+            {
+              "value": "Inventory_Storage_Location_ID",
+              "label": "Inventory_Storage_Location_ID"
+            },
+            {
+              "value": "Location_ID",
+              "label": "Location_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Location_Reference_ID_Type",
+          "csv_header": "Location_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Inventory_Storage_Location_ID",
+            "Location_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Location Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Location_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Supplier_Reference_ID",
+        "label": "Supplier Reference ID",
+        "type": "string",
+        "description": "Supplier for the consigned item (applicable only if the 'consigned' flag is true)",
+        "metadata": {
+          "wd_field_name": "Supplier_Reference_ID",
+          "csv_header": "Supplier_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Supplier for the consigned item (applicable only if the 'consigned' flag is true)",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Supplier_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Supplier_Reference_ID_Type",
+        "label": "Supplier Reference ID Type",
+        "type": "enum",
+        "description": "Supplier for the consigned item (applicable only if the 'consigned' flag is true)",
+        "config": {
+          "options": [
+            {
+              "value": "External_Sourceable_ID",
+              "label": "External_Sourceable_ID"
+            },
+            {
+              "value": "Supplier_ID",
+              "label": "Supplier_ID"
+            },
+            {
+              "value": "Supplier_Reference_ID",
+              "label": "Supplier_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Supplier_Reference_ID_Type",
+          "csv_header": "Supplier_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "External_Sourceable_ID",
+            "Supplier_ID",
+            "Supplier_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Supplier for the consigned item (applicable only if the 'consigned' flag is true)",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Supplier_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Unit_Cost",
+        "label": "Unit Cost",
+        "type": "number",
+        "description": "Unit Cost",
+        "metadata": {
+          "wd_field_name": "Unit_Cost",
+          "csv_header": "Unit_Cost",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Unit Cost",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Unit_Cost"
+        }
+      },
+      {
+        "key": "Currency_Reference_ID",
+        "label": "Currency Reference ID",
+        "type": "string",
+        "description": "Currency Reference",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Currency_Reference_ID",
+          "csv_header": "Currency_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Currency_ID"
+          ],
+          "sample_value": "USD",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Currency Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Currency_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Currency_Reference_ID_Type",
+        "label": "Currency Reference ID Type",
+        "type": "enum",
+        "description": "Currency Reference",
+        "config": {
+          "options": [
+            {
+              "value": "Currency_ID",
+              "label": "Currency_ID"
+            },
+            {
+              "value": "Currency_Numeric_Code",
+              "label": "Currency_Numeric_Code"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Currency_Reference_ID_Type",
+          "csv_header": "Currency_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Currency_ID",
+            "Currency_Numeric_Code"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Currency Reference",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Currency_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Worktags_Reference_ID",
+        "label": "Worktags Reference ID",
+        "type": "string",
+        "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+        "metadata": {
+          "wd_field_name": "Worktags_Reference_ID",
+          "csv_header": "Worktags_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Worktags_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worktags_Reference_ID_Type",
+        "label": "Worktags Reference ID Type",
+        "type": "enum",
+        "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+        "config": {
+          "options": [
+            {
+              "value": "Academic_Level_ID",
+              "label": "Academic_Level_ID"
+            },
+            {
+              "value": "Academic_Period_ID",
+              "label": "Academic_Period_ID"
+            },
+            {
+              "value": "Academic_Person_ID",
+              "label": "Academic_Person_ID"
+            },
+            {
+              "value": "Academic_Unit_ID",
+              "label": "Academic_Unit_ID"
+            },
+            {
+              "value": "Ad_hoc_Payee_ID",
+              "label": "Ad_hoc_Payee_ID"
+            },
+            {
+              "value": "Allocation_Pool_ID",
+              "label": "Allocation_Pool_ID"
+            },
+            {
+              "value": "Alternate_Supplier_Contract_ID",
+              "label": "Alternate_Supplier_Contract_ID"
+            },
+            {
+              "value": "Applicant_ID",
+              "label": "Applicant_ID"
+            },
+            {
+              "value": "Application_Grouping_ID",
+              "label": "Application_Grouping_ID"
+            },
+            {
+              "value": "Appropriation_ID",
+              "label": "Appropriation_ID"
+            },
+            {
+              "value": "Asset_Adjustment_Reason_Reference_ID",
+              "label": "Asset_Adjustment_Reason_Reference_ID"
+            },
+            {
+              "value": "Asset_Adjustment_Type_Reference_ID",
+              "label": "Asset_Adjustment_Type_Reference_ID"
+            },
+            {
+              "value": "Asset_Impairment_Reason_ID",
+              "label": "Asset_Impairment_Reason_ID"
+            },
+            {
+              "value": "Bank_Account_ID",
+              "label": "Bank_Account_ID"
+            },
+            {
+              "value": "Business_Asset_Cost_Adjustment_Reason_ID",
+              "label": "Business_Asset_Cost_Adjustment_Reason_ID"
+            },
+            {
+              "value": "Business_Unit_ID",
+              "label": "Business_Unit_ID"
+            },
+            {
+              "value": "Candidate_ID",
+              "label": "Candidate_ID"
+            },
+            {
+              "value": "Cash_Activity_Category_ID",
+              "label": "Cash_Activity_Category_ID"
+            },
+            {
+              "value": "Catalog_Item_ID",
+              "label": "Catalog_Item_ID"
+            },
+            {
+              "value": "Company_Reference_ID",
+              "label": "Company_Reference_ID"
+            },
+            {
+              "value": "Compensation_Grade_ID",
+              "label": "Compensation_Grade_ID"
+            },
+            {
+              "value": "Contingent_Worker_ID",
+              "label": "Contingent_Worker_ID"
+            },
+            {
+              "value": "Contingent_Worker_Type_ID",
+              "label": "Contingent_Worker_Type_ID"
+            },
+            {
+              "value": "Corporate_Credit_Card_Account_ID",
+              "label": "Corporate_Credit_Card_Account_ID"
+            },
+            {
+              "value": "Cost_Center_Reference_ID",
+              "label": "Cost_Center_Reference_ID"
+            },
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Custom_Worktag_06_ID",
+              "label": "Custom_Worktag_06_ID"
+            },
+            {
+              "value": "Custom_Worktag_07_ID",
+              "label": "Custom_Worktag_07_ID"
+            },
+            {
+              "value": "Custom_Worktag_08_ID",
+              "label": "Custom_Worktag_08_ID"
+            },
+            {
+              "value": "Custom_Worktag_09_ID",
+              "label": "Custom_Worktag_09_ID"
+            },
+            {
+              "value": "Custom_Worktag_1_ID",
+              "label": "Custom_Worktag_1_ID"
+            },
+            {
+              "value": "Custom_Worktag_10_ID",
+              "label": "Custom_Worktag_10_ID"
+            },
+            {
+              "value": "Custom_Worktag_11_ID",
+              "label": "Custom_Worktag_11_ID"
+            },
+            {
+              "value": "Custom_Worktag_12_ID",
+              "label": "Custom_Worktag_12_ID"
+            },
+            {
+              "value": "Custom_Worktag_13_ID",
+              "label": "Custom_Worktag_13_ID"
+            },
+            {
+              "value": "Custom_Worktag_14_ID",
+              "label": "Custom_Worktag_14_ID"
+            },
+            {
+              "value": "Custom_Worktag_15_ID",
+              "label": "Custom_Worktag_15_ID"
+            },
+            {
+              "value": "Custom_Worktag_2_ID",
+              "label": "Custom_Worktag_2_ID"
+            },
+            {
+              "value": "Custom_Worktag_3_ID",
+              "label": "Custom_Worktag_3_ID"
+            },
+            {
+              "value": "Custom_Worktag_4_ID",
+              "label": "Custom_Worktag_4_ID"
+            },
+            {
+              "value": "Custom_Worktag_5_ID",
+              "label": "Custom_Worktag_5_ID"
+            },
+            {
+              "value": "Customer_Category_ID",
+              "label": "Customer_Category_ID"
+            },
+            {
+              "value": "Customer_Contract_Alternate_Reference_ID",
+              "label": "Customer_Contract_Alternate_Reference_ID"
+            },
+            {
+              "value": "Customer_Contract_Reference_ID",
+              "label": "Customer_Contract_Reference_ID"
+            },
+            {
+              "value": "Customer_ID",
+              "label": "Customer_ID"
+            },
+            {
+              "value": "Customer_Reference_ID",
+              "label": "Customer_Reference_ID"
+            },
+            {
+              "value": "Deduction_Recipient_ID",
+              "label": "Deduction_Recipient_ID"
+            },
+            {
+              "value": "Donor_ID",
+              "label": "Donor_ID"
+            },
+            {
+              "value": "Employee_ID",
+              "label": "Employee_ID"
+            },
+            {
+              "value": "Employee_Type_ID",
+              "label": "Employee_Type_ID"
+            },
+            {
+              "value": "Ethnicity_ID",
+              "label": "Ethnicity_ID"
+            },
+            {
+              "value": "Expense_Item_ID",
+              "label": "Expense_Item_ID"
+            },
+            {
+              "value": "External_Committee_Member_ID",
+              "label": "External_Committee_Member_ID"
+            },
+            {
+              "value": "External_Sourceable_ID",
+              "label": "External_Sourceable_ID"
+            },
+            {
+              "value": "Financial_Institution_ID",
+              "label": "Financial_Institution_ID"
+            },
+            {
+              "value": "Financial_Institution_Reference_ID",
+              "label": "Financial_Institution_Reference_ID"
+            },
+            {
+              "value": "Fringe_Basis_ID",
+              "label": "Fringe_Basis_ID"
+            },
+            {
+              "value": "Fund_ID",
+              "label": "Fund_ID"
+            },
+            {
+              "value": "Funding_Source_Name",
+              "label": "Funding_Source_Name"
+            },
+            {
+              "value": "Gender_Code",
+              "label": "Gender_Code"
+            },
+            {
+              "value": "Gift_Reference_ID",
+              "label": "Gift_Reference_ID"
+            },
+            {
+              "value": "Grant_ID",
+              "label": "Grant_ID"
+            },
+            {
+              "value": "Internal_Service_Provider_ID",
+              "label": "Internal_Service_Provider_ID"
+            },
+            {
+              "value": "Internal_Service_Provider_Reference_ID",
+              "label": "Internal_Service_Provider_Reference_ID"
+            },
+            {
+              "value": "Investment_Pool_ID",
+              "label": "Investment_Pool_ID"
+            },
+            {
+              "value": "Investment_Profile_ID",
+              "label": "Investment_Profile_ID"
+            },
+            {
+              "value": "Investor_ID",
+              "label": "Investor_ID"
+            },
+            {
+              "value": "Job_Category_ID",
+              "label": "Job_Category_ID"
+            },
+            {
+              "value": "Job_Level_ID",
+              "label": "Job_Level_ID"
+            },
+            {
+              "value": "Job_Profile_ID",
+              "label": "Job_Profile_ID"
+            },
+            {
+              "value": "Job_Requisition_ID",
+              "label": "Job_Requisition_ID"
+            },
+            {
+              "value": "Loan_ID",
+              "label": "Loan_ID"
+            },
+            {
+              "value": "Location_ID",
+              "label": "Location_ID"
+            },
+            {
+              "value": "Management_Level_ID",
+              "label": "Management_Level_ID"
+            },
+            {
+              "value": "Miscellaneous_Payee_ID",
+              "label": "Miscellaneous_Payee_ID"
+            },
+            {
+              "value": "Object_Class_ID",
+              "label": "Object_Class_ID"
+            },
+            {
+              "value": "Opportunity_Reference_ID",
+              "label": "Opportunity_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            },
+            {
+              "value": "Pay_Rate_Type_ID",
+              "label": "Pay_Rate_Type_ID"
+            },
+            {
+              "value": "Petty_Cash_Account_ID",
+              "label": "Petty_Cash_Account_ID"
+            },
+            {
+              "value": "Position_ID",
+              "label": "Position_ID"
+            },
+            {
+              "value": "Position_Time_Type_ID",
+              "label": "Position_Time_Type_ID"
+            },
+            {
+              "value": "Program_ID",
+              "label": "Program_ID"
+            },
+            {
+              "value": "Program_of_Study_ID",
+              "label": "Program_of_Study_ID"
+            },
+            {
+              "value": "Project_ID",
+              "label": "Project_ID"
+            },
+            {
+              "value": "Project_Plan_ID",
+              "label": "Project_Plan_ID"
+            },
+            {
+              "value": "Project_Worker_Role_ID",
+              "label": "Project_Worker_Role_ID"
+            },
+            {
+              "value": "Proposal_Grant_ID",
+              "label": "Proposal_Grant_ID"
+            },
+            {
+              "value": "Prospect_ID",
+              "label": "Prospect_ID"
+            },
+            {
+              "value": "Prospect_Reference_ID",
+              "label": "Prospect_Reference_ID"
+            },
+            {
+              "value": "Purchase_Item_ID",
+              "label": "Purchase_Item_ID"
+            },
+            {
+              "value": "Receivable_Writeoff_Reason_ID",
+              "label": "Receivable_Writeoff_Reason_ID"
+            },
+            {
+              "value": "Region_Reference_ID",
+              "label": "Region_Reference_ID"
+            },
+            {
+              "value": "Revenue_Category_ID",
+              "label": "Revenue_Category_ID"
+            },
+            {
+              "value": "Run_Category_ID",
+              "label": "Run_Category_ID"
+            },
+            {
+              "value": "Salary_Over_The_Cap_Type_ID",
+              "label": "Salary_Over_The_Cap_Type_ID"
+            },
+            {
+              "value": "Sales_Item_ID",
+              "label": "Sales_Item_ID"
+            },
+            {
+              "value": "Spend_Category_ID",
+              "label": "Spend_Category_ID"
+            },
+            {
+              "value": "Sponsor_ID",
+              "label": "Sponsor_ID"
+            },
+            {
+              "value": "Sponsor_Reference_ID",
+              "label": "Sponsor_Reference_ID"
+            },
+            {
+              "value": "Student_Award_Item_ID",
+              "label": "Student_Award_Item_ID"
+            },
+            {
+              "value": "Student_Charge_Item_ID",
+              "label": "Student_Charge_Item_ID"
+            },
+            {
+              "value": "Student_Course_ID",
+              "label": "Student_Course_ID"
+            },
+            {
+              "value": "Student_Course_Section_ID",
+              "label": "Student_Course_Section_ID"
+            },
+            {
+              "value": "Student_ID",
+              "label": "Student_ID"
+            },
+            {
+              "value": "Student_Recruiting_Campaign_ID",
+              "label": "Student_Recruiting_Campaign_ID"
+            },
+            {
+              "value": "Student_Recruiting_Event_ID",
+              "label": "Student_Recruiting_Event_ID"
+            },
+            {
+              "value": "Student_Sponsor_Contract_ID",
+              "label": "Student_Sponsor_Contract_ID"
+            },
+            {
+              "value": "Student_Waiver_Item_ID",
+              "label": "Student_Waiver_Item_ID"
+            },
+            {
+              "value": "Supplier_Category_ID",
+              "label": "Supplier_Category_ID"
+            },
+            {
+              "value": "Supplier_Contract_ID",
+              "label": "Supplier_Contract_ID"
+            },
+            {
+              "value": "Supplier_Contract_ID_External",
+              "label": "Supplier_Contract_ID_External"
+            },
+            {
+              "value": "Supplier_ID",
+              "label": "Supplier_ID"
+            },
+            {
+              "value": "Supplier_Reference_ID",
+              "label": "Supplier_Reference_ID"
+            },
+            {
+              "value": "Tax_Applicability_ID",
+              "label": "Tax_Applicability_ID"
+            },
+            {
+              "value": "Tax_Authority_ID",
+              "label": "Tax_Authority_ID"
+            },
+            {
+              "value": "Tax_Authority_Reference_ID",
+              "label": "Tax_Authority_Reference_ID"
+            },
+            {
+              "value": "Tax_Category_ID",
+              "label": "Tax_Category_ID"
+            },
+            {
+              "value": "Tax_Code_ID",
+              "label": "Tax_Code_ID"
+            },
+            {
+              "value": "Tax_Rate_ID",
+              "label": "Tax_Rate_ID"
+            },
+            {
+              "value": "Tax_Recoverability_Object_ID",
+              "label": "Tax_Recoverability_Object_ID"
+            },
+            {
+              "value": "Third_Party_ID",
+              "label": "Third_Party_ID"
+            },
+            {
+              "value": "Withholding_Order_Case_ID",
+              "label": "Withholding_Order_Case_ID"
+            },
+            {
+              "value": "Withholding_Tax_Code_ID",
+              "label": "Withholding_Tax_Code_ID"
+            },
+            {
+              "value": "Withholding_Tax_Rate_ID",
+              "label": "Withholding_Tax_Rate_ID"
+            },
+            {
+              "value": "Work_Function_ID",
+              "label": "Work_Function_ID"
+            },
+            {
+              "value": "Work_Shift_ID",
+              "label": "Work_Shift_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Worktags_Reference_ID_Type",
+          "csv_header": "Worktags_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Academic_Level_ID",
+            "Academic_Period_ID",
+            "Academic_Person_ID",
+            "Academic_Unit_ID",
+            "Ad_hoc_Payee_ID",
+            "Allocation_Pool_ID",
+            "Alternate_Supplier_Contract_ID",
+            "Applicant_ID",
+            "Application_Grouping_ID",
+            "Appropriation_ID",
+            "Asset_Adjustment_Reason_Reference_ID",
+            "Asset_Adjustment_Type_Reference_ID",
+            "Asset_Impairment_Reason_ID",
+            "Bank_Account_ID",
+            "Business_Asset_Cost_Adjustment_Reason_ID",
+            "Business_Unit_ID",
+            "Candidate_ID",
+            "Cash_Activity_Category_ID",
+            "Catalog_Item_ID",
+            "Company_Reference_ID",
+            "Compensation_Grade_ID",
+            "Contingent_Worker_ID",
+            "Contingent_Worker_Type_ID",
+            "Corporate_Credit_Card_Account_ID",
+            "Cost_Center_Reference_ID",
+            "Custom_Organization_Reference_ID",
+            "Custom_Worktag_06_ID",
+            "Custom_Worktag_07_ID",
+            "Custom_Worktag_08_ID",
+            "Custom_Worktag_09_ID",
+            "Custom_Worktag_1_ID",
+            "Custom_Worktag_10_ID",
+            "Custom_Worktag_11_ID",
+            "Custom_Worktag_12_ID",
+            "Custom_Worktag_13_ID",
+            "Custom_Worktag_14_ID",
+            "Custom_Worktag_15_ID",
+            "Custom_Worktag_2_ID",
+            "Custom_Worktag_3_ID",
+            "Custom_Worktag_4_ID",
+            "Custom_Worktag_5_ID",
+            "Customer_Category_ID",
+            "Customer_Contract_Alternate_Reference_ID",
+            "Customer_Contract_Reference_ID",
+            "Customer_ID",
+            "Customer_Reference_ID",
+            "Deduction_Recipient_ID",
+            "Donor_ID",
+            "Employee_ID",
+            "Employee_Type_ID",
+            "Ethnicity_ID",
+            "Expense_Item_ID",
+            "External_Committee_Member_ID",
+            "External_Sourceable_ID",
+            "Financial_Institution_ID",
+            "Financial_Institution_Reference_ID",
+            "Fringe_Basis_ID",
+            "Fund_ID",
+            "Funding_Source_Name",
+            "Gender_Code",
+            "Gift_Reference_ID",
+            "Grant_ID",
+            "Internal_Service_Provider_ID",
+            "Internal_Service_Provider_Reference_ID",
+            "Investment_Pool_ID",
+            "Investment_Profile_ID",
+            "Investor_ID",
+            "Job_Category_ID",
+            "Job_Level_ID",
+            "Job_Profile_ID",
+            "Job_Requisition_ID",
+            "Loan_ID",
+            "Location_ID",
+            "Management_Level_ID",
+            "Miscellaneous_Payee_ID",
+            "Object_Class_ID",
+            "Opportunity_Reference_ID",
+            "Organization_Reference_ID",
+            "Pay_Rate_Type_ID",
+            "Petty_Cash_Account_ID",
+            "Position_ID",
+            "Position_Time_Type_ID",
+            "Program_ID",
+            "Program_of_Study_ID",
+            "Project_ID",
+            "Project_Plan_ID",
+            "Project_Worker_Role_ID",
+            "Proposal_Grant_ID",
+            "Prospect_ID",
+            "Prospect_Reference_ID",
+            "Purchase_Item_ID",
+            "Receivable_Writeoff_Reason_ID",
+            "Region_Reference_ID",
+            "Revenue_Category_ID",
+            "Run_Category_ID",
+            "Salary_Over_The_Cap_Type_ID",
+            "Sales_Item_ID",
+            "Spend_Category_ID",
+            "Sponsor_ID",
+            "Sponsor_Reference_ID",
+            "Student_Award_Item_ID",
+            "Student_Charge_Item_ID",
+            "Student_Course_ID",
+            "Student_Course_Section_ID",
+            "Student_ID",
+            "Student_Recruiting_Campaign_ID",
+            "Student_Recruiting_Event_ID",
+            "Student_Sponsor_Contract_ID",
+            "Student_Waiver_Item_ID",
+            "Supplier_Category_ID",
+            "Supplier_Contract_ID",
+            "Supplier_Contract_ID_External",
+            "Supplier_ID",
+            "Supplier_Reference_ID",
+            "Tax_Applicability_ID",
+            "Tax_Authority_ID",
+            "Tax_Authority_Reference_ID",
+            "Tax_Category_ID",
+            "Tax_Code_ID",
+            "Tax_Rate_ID",
+            "Tax_Recoverability_Object_ID",
+            "Third_Party_ID",
+            "Withholding_Order_Case_ID",
+            "Withholding_Tax_Code_ID",
+            "Withholding_Tax_Rate_ID",
+            "Work_Function_ID",
+            "Work_Shift_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to existing worktags. Worktags are a way to mark tasks and business objects to make them easier to access and summarize. Each transaction can include one value for each worktag type and is subject to configurable validation when submitted for approval.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Worktags_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Worktags_Reference_ID_parent_id",
+        "label": "Worktags Reference ID parent id",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Worktags_Reference_ID_parent_id",
+          "csv_header": "Worktags_Reference_ID_parent_id",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Worktags_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worktags_Reference_ID_parent_type",
+        "label": "Worktags Reference ID parent type",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "WID",
+              "label": "WID"
+            },
+            {
+              "value": "External_Supplier_Invoice_Source_ID",
+              "label": "External_Supplier_Invoice_Source_ID"
+            },
+            {
+              "value": "External_Transaction_Source_ID",
+              "label": "External_Transaction_Source_ID"
+            },
+            {
+              "value": "Workday_External_Supplier_Invoice_Source_ID",
+              "label": "Workday_External_Supplier_Invoice_Source_ID"
+            },
+            {
+              "value": "Workday_External_Transaction_Source_ID",
+              "label": "Workday_External_Transaction_Source_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Worktags_Reference_ID_parent_type",
+          "csv_header": "Worktags_Reference_ID_parent_type",
+          "required/optional": "Reference",
+          "type_value": [
+            "WID",
+            "External_Supplier_Invoice_Source_ID",
+            "External_Transaction_Source_ID",
+            "Workday_External_Supplier_Invoice_Source_ID",
+            "Workday_External_Transaction_Source_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Worktags_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Memo",
+        "label": "Memo",
+        "type": "string",
+        "description": "Memo",
+        "metadata": {
+          "wd_field_name": "Memo",
+          "csv_header": "Memo",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Memo",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_Ad_Hoc_Put-Away_Request/wd:Inventory_Ad_Hoc_Put-Away_Data/wd:Inventory_Ad_Hoc_Put-Away_Detail_Data/wd:Memo"
+        }
+      }
+    ]
+  }
+]

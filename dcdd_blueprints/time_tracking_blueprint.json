@@ -1,0 +1,2900 @@
+[
+  {
+    "name": "Adjust Time Off",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": \"change a\", \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Adjust_Time_Off\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "adjust_time_off",
+    "fields": [
+      {
+        "key": "Run_Time_Off_Validations",
+        "label": "Run Time Off Validations",
+        "type": "boolean",
+        "description": "Turn on this flag if you want to validate Time Off Entries for this Time Off Request. If this flag is turned on and any Time Off Entries fail validation for a Time Off Request, the entire Time Off Request will be rejected.",
+        "metadata": {
+          "wd_field_name": "Run_Time_Off_Validations",
+          "csv_header": "Run_Time_Off_Validations",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Turn on this flag if you want to validate Time Off Entries for this Time Off Request. If this flag is turned on and any Time Off Entries fail validation for a Time Off Request, the entire Time Off Request will be rejected.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Run_Time_Off_Validations"
+        }
+      },
+      {
+        "key": "Worker_Reference_ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "description": "Reference to an existing Worker",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID",
+          "csv_header": "Worker_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Employee_ID"
+          ],
+          "sample_value": "21001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference to an existing Worker",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Worker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worker_Reference_ID_Type",
+        "label": "Worker Reference ID Type",
+        "type": "enum",
+        "description": "Reference to an existing Worker",
+        "config": {
+          "options": [
+            {
+              "value": "Contingent_Worker_ID",
+              "label": "Contingent_Worker_ID"
+            },
+            {
+              "value": "Employee_ID",
+              "label": "Employee_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID_Type",
+          "csv_header": "Worker_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Contingent_Worker_ID",
+            "Employee_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to an existing Worker",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Worker_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Time_Off_Entry_ID",
+        "label": "Time Off Entry ID",
+        "type": "string",
+        "description": "This value can be used to reference this Time Off Entry record in the future. For example, if you need to adjust this Time Off Entry in the future, then this \"ID\" could be used to reference it.",
+        "metadata": {
+          "wd_field_name": "Time_Off_Entry_ID",
+          "csv_header": "Time_Off_Entry_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "This value can be used to reference this Time Off Entry record in the future. For example, if you need to adjust this Time Off Entry in the future, then this \"ID\" could be used to reference it.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Adjust_Time_Off_Entry_Data/wd:Time_Off_Entry_ID"
+        }
+      },
+      {
+        "key": "Time_Off_Entry_Reference_ID",
+        "label": "Time Off Entry Reference ID",
+        "type": "string",
+        "description": "A reference to a Time Off Entry",
+        "metadata": {
+          "wd_field_name": "Time_Off_Entry_Reference_ID",
+          "csv_header": "Time_Off_Entry_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Time_Off_Entry_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "A reference to a Time Off Entry",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Adjust_Time_Off_Entry_Data/wd:Time_Off_Entry_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Adjustment_to_Requested",
+        "label": "Adjustment to Requested",
+        "type": "number",
+        "description": "The adjustment to units of time requested. Enter a positive number for an increase (e.g. 8) or a negative number for a decrease (e.g. -4). For example, if the original request was 8 but should have been 6, enter a -2.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Adjustment_to_Requested",
+          "csv_header": "Adjustment_to_Requested",
+          "required/optional": "Required",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "8",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "The adjustment to units of time requested. Enter a positive number for an increase (e.g. 8) or a negative number for a decrease (e.g. -4). For example, if the original request was 8 but should have been 6, enter a -2.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Adjust_Time_Off_Entry_Data/wd:Adjustment_to_Requested"
+        }
+      },
+      {
+        "key": "Comment",
+        "label": "Comment",
+        "type": "string",
+        "description": "Enter a comment for the adjustment.",
+        "metadata": {
+          "wd_field_name": "Comment",
+          "csv_header": "Comment",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Enter a comment for the adjustment.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Adjust_Time_Off_Request/wd:Adjust_Time_Off_Data/wd:Adjust_Time_Off_Entry_Data/wd:Comment"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Assign Work Schedule",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Assign_Work_Schedule\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "assign_work_schedule",
+    "fields": [
+      {
+        "key": "Worker_Reference_ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "description": "Worker to whom the work schedule calendar is being assigned.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID",
+          "csv_header": "Worker_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Contingent_Worker_ID",
+            "Employee_ID"
+          ],
+          "sample_value": "12345",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Worker to whom the work schedule calendar is being assigned.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Worker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worker_Reference_ID_Type",
+        "label": "Worker Reference ID Type",
+        "type": "string",
+        "description": "Worker to whom the work schedule calendar is being assigned.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID_Type",
+          "csv_header": "Worker_Reference_ID_Type",
+          "required/optional": "Required",
+          "type_value": [
+            "Contingent_Worker_ID",
+            "Employee_ID"
+          ],
+          "sample_value": "Employee_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Worker to whom the work schedule calendar is being assigned.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Worker_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Start_Date",
+        "label": "Start Date",
+        "type": "date",
+        "description": "Date attribute for the start date of the work schedule calendar assignment.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Start_Date",
+          "csv_header": "Start_Date",
+          "required/optional": "Required",
+          "type_value": [
+            "yyyy-mm-dd"
+          ],
+          "sample_value": "2021-12-01",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK",
+            "MISSINGVALUE",
+            "OTHER_DATES_AFTER_ARE_PRIOR_TO_THIS"
+          ],
+          "category": null,
+          "description": "Date attribute for the start date of the work schedule calendar assignment.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Start_Date"
+        }
+      },
+      {
+        "key": "End_Date",
+        "label": "End Date",
+        "type": "date",
+        "description": "Date attribute for the end date of the work schedule calendar assignment.",
+        "metadata": {
+          "wd_field_name": "End_Date",
+          "csv_header": "End_Date",
+          "required/optional": "Optional",
+          "type_value": [
+            "yyyy-mm-dd"
+          ],
+          "sample_value": "2022-12-31",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK"
+          ],
+          "category": null,
+          "description": "Date attribute for the end date of the work schedule calendar assignment.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:End_Date"
+        }
+      },
+      {
+        "key": "Work_Schedule_Calendar_Reference_ID",
+        "label": "Work Schedule Calendar Reference ID",
+        "type": "string",
+        "description": "Work schedule calendar to be assigned.",
+        "metadata": {
+          "wd_field_name": "Work_Schedule_Calendar_Reference_ID",
+          "csv_header": "Work_Schedule_Calendar_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Work_Schedule_Calendar_ID"
+          ],
+          "sample_value": "Shift_D8_Hours_08_00_17_00",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Work schedule calendar to be assigned.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Work_Schedule_Calendar_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Number_of_Weeks",
+        "label": "Number of Weeks",
+        "type": "number",
+        "description": "Number of Weeks for Work Schedule Calendar, if using Pattern Schedule Events.",
+        "metadata": {
+          "wd_field_name": "Number_of_Weeks",
+          "csv_header": "Number_of_Weeks",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "1000",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Number of Weeks for Work Schedule Calendar, if using Pattern Schedule Events.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Number_of_Weeks"
+        }
+      },
+      {
+        "key": "Pattern_Schedule_Event_Data_ID",
+        "label": "Pattern Schedule Event Data ID",
+        "type": "string",
+        "description": "Text value for reference ID for Pattern Schedule Event.",
+        "metadata": {
+          "wd_field_name": "Pattern_Schedule_Event_Data_ID",
+          "csv_header": "Pattern_Schedule_Event_Data_ID",
+          "required/optional": "Optional",
+          "type_value": [],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Text value for reference ID for Pattern Schedule Event.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data"
+        }
+      },
+      {
+        "key": "Week_Number",
+        "label": "Week Number",
+        "type": "number",
+        "description": "Numeric value for Pattern Week Number for Pattern Schedule Event.",
+        "metadata": {
+          "wd_field_name": "Week_Number",
+          "csv_header": "Week_Number",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "1000",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Numeric value for Pattern Week Number for Pattern Schedule Event.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Week_Number"
+        }
+      },
+      {
+        "key": "Day_of_the_Week_Reference_ID",
+        "label": "Day of the Week Reference ID",
+        "type": "string",
+        "description": "Day(s) of the Week for Pattern Schedule Event.",
+        "metadata": {
+          "wd_field_name": "Day_of_the_Week_Reference_ID",
+          "csv_header": "Day_of_the_Week_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Day_of_the_Week_ID"
+          ],
+          "sample_value": "1000",
+          "comments": "1-7 (Sunday = 1)",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Day(s) of the Week for Pattern Schedule Event.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Day_of_the_Week_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Day_of_the_Week_Reference_ID_Type",
+        "label": "Day of the Week Reference ID Type",
+        "type": "string",
+        "description": "Day(s) of the Week for Pattern Schedule Event.",
+        "metadata": {
+          "wd_field_name": "Day_of_the_Week_Reference_ID_Type",
+          "csv_header": "Day_of_the_Week_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Day_of_the_Week_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Day(s) of the Week for Pattern Schedule Event.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Day_of_the_Week_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Start_Time",
+        "label": "Start Time",
+        "type": "string",
+        "description": "Minute-precision Start Time for Pattern Schedule Event. Note: This is also referred to as the In time for the schedule pattern.",
+        "metadata": {
+          "wd_field_name": "Start_Time",
+          "csv_header": "Start_Time",
+          "required/optional": "Optional",
+          "type_value": [
+            "time"
+          ],
+          "sample_value": "01:02:49",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Minute-precision Start Time for Pattern Schedule Event. Note: This is also referred to as the In time for the schedule pattern.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Start_Time"
+        }
+      },
+      {
+        "key": "End_Time",
+        "label": "End Time",
+        "type": "string",
+        "description": "Minute-precision End Time for Pattern Schedule Event. Note: This is also referred to as the Out time for the schedule pattern.",
+        "metadata": {
+          "wd_field_name": "End_Time",
+          "csv_header": "End_Time",
+          "required/optional": "Optional",
+          "type_value": [
+            "time"
+          ],
+          "sample_value": "08:01:03",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Minute-precision End Time for Pattern Schedule Event. Note: This is also referred to as the Out time for the schedule pattern.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:End_Time"
+        }
+      },
+      {
+        "key": "_24_Hour_Shift",
+        "label": " 24 Hour Shift",
+        "type": "boolean",
+        "description": "Boolean value specifying whether the Pattern Schedule Event is a 24-Hour Shift.",
+        "metadata": {
+          "wd_field_name": "_24_Hour_Shift",
+          "csv_header": "_24_Hour_Shift",
+          "required/optional": "Optional",
+          "type_value": [
+            "boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Boolean value specifying whether the Pattern Schedule Event is a 24-Hour Shift.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:_24_Hour_Shift"
+        }
+      },
+      {
+        "key": "Meal_Data_ID",
+        "label": "Meal Data ID",
+        "type": "string",
+        "description": "Text value for reference ID for Meal.",
+        "metadata": {
+          "wd_field_name": "Meal_Data_ID",
+          "csv_header": "Meal_Data_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Text value for reference ID for Meal.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Meal_Data/wd:ID"
+        }
+      },
+      {
+        "key": "Meal_In",
+        "label": "Meal In",
+        "type": "string",
+        "description": "Meal In Time for the Work Schedule Calendar Event.",
+        "metadata": {
+          "wd_field_name": "Meal_In",
+          "csv_header": "Meal_In",
+          "required/optional": "Optional",
+          "type_value": [
+            "time"
+          ],
+          "sample_value": "19:07:42",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Meal In Time for the Work Schedule Calendar Event.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Meal_Data/wd:Meal_In"
+        }
+      },
+      {
+        "key": "Meal_Out",
+        "label": "Meal Out",
+        "type": "string",
+        "description": "Meal Out Time for the Work Schedule Calendar Event.",
+        "metadata": {
+          "wd_field_name": "Meal_Out",
+          "csv_header": "Meal_Out",
+          "required/optional": "Optional",
+          "type_value": [
+            "time"
+          ],
+          "sample_value": "19:42:56",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Meal Out Time for the Work Schedule Calendar Event.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Pattern_Schedule_Overview_Data/wd:Pattern_Schedule_Event_Data/wd:Meal_Data/wd:Meal_Out"
+        }
+      },
+      {
+        "key": "Day_Breaker_Reference_ID",
+        "label": "Day Breaker Reference ID",
+        "type": "string",
+        "description": "Reference to Day Breaker for Work Schedule Calendar as Twenty Four Hour.",
+        "metadata": {
+          "wd_field_name": "Day_Breaker_Reference_ID",
+          "csv_header": "Day_Breaker_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Twenty_Four_Hour_Time_ID"
+          ],
+          "sample_value": "13:45",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to Day Breaker for Work Schedule Calendar as Twenty Four Hour.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Day_Breaker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Day_Breaker_Reference_ID_Type",
+        "label": "Day Breaker Reference ID Type",
+        "type": "string",
+        "description": "The unique identifier type. Each \"ID\" for an instance of an object contains a type and a value. A single instance of an object can have multiple \"ID\" but only a single \"ID\" per \"type\". Some \"types\" require a reference to a parent instance.",
+        "metadata": {
+          "wd_field_name": "Day_Breaker_Reference_ID_Type",
+          "csv_header": "Day_Breaker_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Twenty_Four_Hour_Time_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "The unique identifier type. Each \"ID\" for an instance of an object contains a type and a value. A single instance of an object can have multiple \"ID\" but only a single \"ID\" per \"type\". Some \"types\" require a reference to a parent instance.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Day_Breaker_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Day_Breaker_Divides_Reference_ID",
+        "label": "Day Breaker Divides Reference ID",
+        "type": "string",
+        "description": "Reference to Day Breaker Divider for Work Schedule Calendar.",
+        "metadata": {
+          "wd_field_name": "Day_Breaker_Divides_Reference_ID",
+          "csv_header": "Day_Breaker_Divides_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Day_Breaker_Divider_ID"
+          ],
+          "sample_value": "PREV_DAY",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to Day Breaker Divider for Work Schedule Calendar.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Day_Breaker_Divides_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Day_Breaker_Divides_Reference_ID_Type",
+        "label": "Day Breaker Divides Reference ID Type",
+        "type": "string",
+        "description": "The unique identifier type. Each \"ID\" for an instance of an object contains a type and a value. A single instance of an object can have multiple \"ID\" but only a single \"ID\" per \"type\". Some \"types\" require a reference to a parent instance.",
+        "metadata": {
+          "wd_field_name": "Day_Breaker_Divides_Reference_ID_Type",
+          "csv_header": "Day_Breaker_Divides_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Day_Breaker_Divider_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "The unique identifier type. Each \"ID\" for an instance of an object contains a type and a value. A single instance of an object can have multiple \"ID\" but only a single \"ID\" per \"type\". Some \"types\" require a reference to a parent instance.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Day_Breaker_Divides_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Work_Week_Start_Day_Reference_ID",
+        "label": "Work Week Start Day Reference ID",
+        "type": "string",
+        "description": "Reference to day of the week which begins the work week. This setting only applies to time entry and does not affect the start day of a worker's schedule shown in My Schedule report.",
+        "metadata": {
+          "wd_field_name": "Work_Week_Start_Day_Reference_ID",
+          "csv_header": "Work_Week_Start_Day_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Day_of_the_Week_ID"
+          ],
+          "sample_value": "1",
+          "comments": "1-7 (Sunday = 1)",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to day of the week which begins the work week. This setting only applies to time entry and does not affect the start day of a worker's schedule shown in My Schedule report.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Work_Week_Start_Day_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Work_Week_Start_Day_Reference_ID_Type",
+        "label": "Work Week Start Day Reference ID Type",
+        "type": "string",
+        "description": "The unique identifier type. Each \"ID\" for an instance of an object contains a type and a value. A single instance of an object can have multiple \"ID\" but only a single \"ID\" per \"type\". Some \"types\" require a reference to a parent instance.",
+        "metadata": {
+          "wd_field_name": "Work_Week_Start_Day_Reference_ID_Type",
+          "csv_header": "Work_Week_Start_Day_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Day_of_the_Week_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "The unique identifier type. Each \"ID\" for an instance of an object contains a type and a value. A single instance of an object can have multiple \"ID\" but only a single \"ID\" per \"type\". Some \"types\" require a reference to a parent instance.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Work_Week_Start_Day_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Biweekly_Calculation_Start_Date",
+        "label": "Biweekly Calculation Start Date",
+        "type": "date",
+        "description": "Reference to Biweekly Calculation Start Date for Work Schedule Calendar.",
+        "metadata": {
+          "wd_field_name": "Biweekly_Calculation_Start_Date",
+          "csv_header": "Biweekly_Calculation_Start_Date",
+          "required/optional": "Optional",
+          "type_value": [
+            "yyyy-mm-dd"
+          ],
+          "sample_value": "2014-10-27",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK",
+            "OTHER_DATES_AFTER_ARE_PRIOR_TO_THIS"
+          ],
+          "category": null,
+          "description": "Reference to Biweekly Calculation Start Date for Work Schedule Calendar.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Biweekly_Calculation_Start_Date"
+        }
+      },
+      {
+        "key": "Configurable_Calculation_Period_Reference_ID",
+        "label": "Configurable Calculation Period Reference ID",
+        "type": "string",
+        "description": "Reference to Configurable Calculation Period for Work Schedule Calendar.",
+        "metadata": {
+          "wd_field_name": "Configurable_Calculation_Period_Reference_ID",
+          "csv_header": "Configurable_Calculation_Period_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Period_Schedule_ID"
+          ],
+          "sample_value": "Semimonthly",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to Configurable Calculation Period for Work Schedule Calendar.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Configurable_Calculation_Period_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Configurable_Calculation_Period_Reference_ID_Type",
+        "label": "Configurable Calculation Period Reference ID Type",
+        "type": "string",
+        "description": "Reference to Configurable Calculation Period for Work Schedule Calendar.",
+        "metadata": {
+          "wd_field_name": "Configurable_Calculation_Period_Reference_ID_Type",
+          "csv_header": "Configurable_Calculation_Period_Reference_ID_Type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Period_Schedule_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to Configurable Calculation Period for Work Schedule Calendar.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Assign_Work_Schedule_Request/wd:Assign_Work_Schedule_Data/wd:Time_Tracking_Options_Data/wd:Configurable_Calculation_Period_Reference/wd:ID@Type"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Enter Time Off",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Enter_Time_Off\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "enter_time_off",
+    "fields": [
+      {
+        "key": "Worker_Reference_ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "description": "Reference to an existing Worker",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID",
+          "csv_header": "Worker_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Contingent_Worker_ID",
+            "Employee_ID"
+          ],
+          "sample_value": "12345",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference to an existing Worker",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Worker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worker_Reference_ID_Type",
+        "label": "Worker Reference ID Type",
+        "type": "enum",
+        "description": "Reference to an existing Worker",
+        "config": {
+          "options": [
+            {
+              "value": "Contingent_Worker_ID",
+              "label": "Contingent_Worker_ID"
+            },
+            {
+              "value": "Employee_ID",
+              "label": "Employee_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID_Type",
+          "csv_header": "Worker_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Contingent_Worker_ID",
+            "Employee_ID"
+          ],
+          "sample_value": "Employee_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to an existing Worker",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Worker_Reference/wd:ID/@wd:type"
+        }
+      },
+      {
+        "key": "Time_Off_Entry_ID",
+        "label": "Time Off Entry ID",
+        "type": "string",
+        "description": "An \"ID\" value for the Time Off Entry record that is to be added. This \"ID\" can be used to lookup Time Off Entry record for adjustments.",
+        "metadata": {
+          "wd_field_name": "Time_Off_Entry_ID",
+          "csv_header": "Time_Off_Entry_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "An \"ID\" value for the Time Off Entry record that is to be added. This \"ID\" can be used to lookup Time Off Entry record for adjustments.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Time_Off_Entry_ID"
+        }
+      },
+      {
+        "key": "Time_Off_Date",
+        "label": "Time Off Date",
+        "type": "date",
+        "description": "The date (YYYY-MM-DD) value for the time off taken.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Date",
+          "csv_header": "Time_Off_Date",
+          "required/optional": "Required",
+          "type_value": [
+            "yyyy-mm-dd"
+          ],
+          "sample_value": "2021-12-27",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "The date (YYYY-MM-DD) value for the time off taken.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Date"
+        }
+      },
+      {
+        "key": "Start_Time",
+        "label": "Start Time",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Start_Time",
+          "csv_header": "Start_Time",
+          "required/optional": "Optional",
+          "type_value": [
+            "time"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": null,
+          "xpath": null
+        }
+      },
+      {
+        "key": "End_Time",
+        "label": "End Time",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "End_Time",
+          "csv_header": "End_Time",
+          "required/optional": "Optional",
+          "type_value": [
+            "time"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": null,
+          "cardinality": null,
+          "xpath": null
+        }
+      },
+      {
+        "key": "Requested_Units",
+        "label": "Requested Units",
+        "type": "string",
+        "description": "The requested units for the time off taken. For example, if the Time Off is being tracked in hours, enter the number of requested hours.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Requested",
+          "csv_header": "Requested_Units",
+          "required/optional": "Required",
+          "type_value": [
+            "decimal"
+          ],
+          "sample_value": "8",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISINTEGER",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "The requested units for the time off taken. For example, if the Time Off is being tracked in hours, enter the number of requested hours.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Requested"
+        }
+      },
+      {
+        "key": "Time_Off_Type_Reference_ID",
+        "label": "Time Off Type Reference ID",
+        "type": "string",
+        "description": "Reference to an existing Time Off Type",
+        "metadata": {
+          "wd_field_name": "Time_Off_Type_Reference_ID",
+          "csv_header": "Time_Off_Type_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Time_Off_Type_ID"
+          ],
+          "sample_value": "Vacation_Hours",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to an existing Time Off Type",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Time_Off_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Time_Off_Reference_ID",
+        "label": "Time Off Reference ID",
+        "type": "string",
+        "description": "Reference to an existing Time Off",
+        "metadata": {
+          "wd_field_name": "Time_Off_Reference_ID",
+          "csv_header": "Time_Off_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Time_Off_Code"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to an existing Time Off",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Time_Off_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Time_Off_Reason_Reference_ID",
+        "label": "Time Off Reason Reference ID",
+        "type": "string",
+        "description": "The reason for the time off request.",
+        "metadata": {
+          "wd_field_name": "Time_Off_Reason_Reference_ID",
+          "csv_header": "Time_Off_Reason_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Time_Off_Reason_ID"
+          ],
+          "sample_value": null,
+          "comments": "Only populate if the leave type has reason(s) configured",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "The reason for the time off request.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Time_Off_Reason_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Time_Off_Comment",
+        "label": "Time Off Comment",
+        "type": "string",
+        "description": "Comment about the Time Off Entry.",
+        "metadata": {
+          "wd_field_name": "Comment",
+          "csv_header": "Time_Off_Comment",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Comment about the Time Off Entry.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Enter_Time_Off_Request/wd:Enter_Time_Off_Data/wd:Enter_Time_Off_Entry_Data/wd:Comment"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Import Reported Time Blocks",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Import_Reported_Time_Blocks\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "import_reported_time_blocks",
+    "fields": [
+      {
+        "key": "Worker_Reference_ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "description": "Employee reference associated with the time block.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID",
+          "csv_header": "Worker_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Employee_ID"
+          ],
+          "sample_value": "21001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Employee reference associated with the time block.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Worker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worker_Reference_ID_Type",
+        "label": "Worker Reference ID Type",
+        "type": "string",
+        "description": "Employee reference associated with the time block.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID_Type",
+          "csv_header": "Worker_Reference_ID_Type",
+          "required/optional": "Required",
+          "type_value": [
+            "Contingent_Worker_ID",
+            "Employee_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Employee reference associated with the time block.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Worker_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Worker_Time_Block_Reference_ID",
+        "label": "Worker Time Block Reference ID",
+        "type": "string",
+        "description": "This is a unique reference to a time block. If adding new time blocks, you can leave this blank. If updating or deleting an existing time block, populate the ID for the existing time block you wish to update or delete.",
+        "metadata": {
+          "wd_field_name": "Worker_Time_Block_Reference_ID",
+          "csv_header": "Worker_Time_Block_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Worker_Time_Block_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "This is a unique reference to a time block. If adding new time blocks, you can leave this blank. If updating or deleting an existing time block, populate the ID for the existing time block you wish to update or delete.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Worker_Time_Block_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Time_Block_ID",
+        "label": "Time Block ID",
+        "type": "string",
+        "description": "Time Block Reference ID. Use this column when you add new time blocks.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "ID",
+          "csv_header": "Time_Block_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Time Block Reference ID. Use this column when you add new time blocks.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:ID"
+        }
+      },
+      {
+        "key": "Delete_Time_Block",
+        "label": "Delete Time Block",
+        "type": "boolean",
+        "description": "Set this field to \"Y\" to indicate that the Time Block should be deleted.",
+        "metadata": {
+          "wd_field_name": "Delete_Time_Block",
+          "csv_header": "Delete_Time_Block",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Set this field to \"Y\" to indicate that the Time Block should be deleted.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Delete_Time_Block"
+        }
+      },
+      {
+        "key": "Time_Entry_Code_Reference_ID",
+        "label": "Time Entry Code Reference ID",
+        "type": "string",
+        "description": "Time Entry Code used to report time.",
+        "metadata": {
+          "wd_field_name": "Time_Entry_Code_Reference_ID",
+          "csv_header": "Time_Entry_Code_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Time_Code_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Time Entry Code used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Time_Entry_Code_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Project_Reference_ID",
+        "label": "Project Reference ID",
+        "type": "string",
+        "description": "Project used to report time.",
+        "metadata": {
+          "wd_field_name": "Project_Reference_ID",
+          "csv_header": "Project_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Project_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Project used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Project_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Project_Task_Reference_ID",
+        "label": "Project Task Reference ID",
+        "type": "string",
+        "description": "Task used to report time.",
+        "metadata": {
+          "wd_field_name": "Project_Task_Reference_ID",
+          "csv_header": "Project_Task_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Project_Plan_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Task used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Project_Task_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Date",
+        "label": "Date",
+        "type": "date",
+        "description": "Date of hourly time reported.",
+        "metadata": {
+          "wd_field_name": "Date",
+          "csv_header": "Date",
+          "required/optional": "Optional",
+          "type_value": [
+            "YYYY-MM-DD"
+          ],
+          "sample_value": "2021-01-01",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK"
+          ],
+          "category": null,
+          "description": "Date of hourly time reported.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Date"
+        }
+      },
+      {
+        "key": "Quantity",
+        "label": "Quantity",
+        "type": "number",
+        "description": "Quantity (units) reported",
+        "metadata": {
+          "wd_field_name": "Quantity",
+          "csv_header": "Quantity",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Quantity (units) reported",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Quantity"
+        }
+      },
+      {
+        "key": "In_Date_Time",
+        "label": "In Date Time",
+        "type": "string",
+        "description": "In event Date and Time",
+        "metadata": {
+          "wd_field_name": "In_Date_Time",
+          "csv_header": "In_Date_Time",
+          "required/optional": "Optional",
+          "type_value": [
+            "dateTime"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "In event Date and Time",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:In_Date_Time"
+        }
+      },
+      {
+        "key": "Out_Date_Time",
+        "label": "Out Date Time",
+        "type": "string",
+        "description": "Out event Date and Time",
+        "metadata": {
+          "wd_field_name": "Out_Date_Time",
+          "csv_header": "Out_Date_Time",
+          "required/optional": "Optional",
+          "type_value": [
+            "dateTime"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Out event Date and Time",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Out_Date_Time"
+        }
+      },
+      {
+        "key": "Out_Reason_Reference_ID",
+        "label": "Out Reason Reference ID",
+        "type": "string",
+        "description": "Out Type (Break, Meal Or Out).",
+        "metadata": {
+          "wd_field_name": "Out_Reason_Reference_ID",
+          "csv_header": "Out_Reason_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Clock_Event_Type"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Out Type (Break, Meal Or Out).",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Out_Reason_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Position_Reference_ID",
+        "label": "Position Reference ID",
+        "type": "string",
+        "description": "Position used to report time",
+        "metadata": {
+          "wd_field_name": "Position_Reference_ID",
+          "csv_header": "Position_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Position_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKVALUE_POSITIONID"
+          ],
+          "category": null,
+          "description": "Position used to report time",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Position_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Do_Not_Bill",
+        "label": "Do Not Bill",
+        "type": "boolean",
+        "description": "Enter true or false for billable projects. Enter true for non-billable projects. If the time entry is not for a project, enter false or remove the Do Not Bill XML tag.",
+        "metadata": {
+          "wd_field_name": "Do_Not_Bill",
+          "csv_header": "Do_Not_Bill",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Enter true or false for billable projects. Enter true for non-billable projects. If the time entry is not for a project, enter false or remove the Do Not Bill XML tag.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Do_Not_Bill"
+        }
+      },
+      {
+        "key": "Project_Role_Reference_ID",
+        "label": "Project Role Reference ID",
+        "type": "string",
+        "description": "Project Role used while entering Time for Projects.",
+        "metadata": {
+          "wd_field_name": "Project_Role_Reference_ID",
+          "csv_header": "Project_Role_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Project_Worker_Role_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Project Role used while entering Time for Projects.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Project_Role_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Override_Rate",
+        "label": "Override Rate",
+        "type": "number",
+        "description": "Override Rate used while reporting time.",
+        "metadata": {
+          "wd_field_name": "Override_Rate",
+          "csv_header": "Override_Rate",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Override Rate used while reporting time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Override_Rate"
+        }
+      },
+      {
+        "key": "Business_Unit_Reference_ID",
+        "label": "Business Unit Reference ID",
+        "type": "string",
+        "description": "Business Unit used to report time.",
+        "metadata": {
+          "wd_field_name": "Business_Unit_Reference_ID",
+          "csv_header": "Business_Unit_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Business_Unit_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Business Unit used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Business_Unit_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Cost_Center_Reference_ID",
+        "label": "Cost Center Reference ID",
+        "type": "string",
+        "description": "Cost Center used to report time.",
+        "metadata": {
+          "wd_field_name": "Cost_Center_Reference_ID",
+          "csv_header": "Cost_Center_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Cost_Center_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COSTC"
+          ],
+          "category": null,
+          "description": "Cost Center used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Cost_Center_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Cost_Center_Reference_ID_Type",
+        "label": "Cost Center Reference ID Type",
+        "type": "enum",
+        "description": "Cost Center used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Cost_Center_Reference_ID",
+              "label": "Cost_Center_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Cost_Center_Reference_ID_Type",
+          "csv_header": "Cost_Center_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Cost_Center_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Cost Center used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Cost_Center_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_01_Reference_ID",
+        "label": "Custom Organization 01 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 01 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_01_Reference_ID",
+          "csv_header": "Custom_Organization_01_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 01 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_01_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_01_Reference_ID_Type",
+        "label": "Custom Organization 01 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 01 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_01_Reference_ID_Type",
+          "csv_header": "Custom_Organization_01_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 01 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_01_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_02_Reference_ID",
+        "label": "Custom Organization 02 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 02 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_02_Reference_ID",
+          "csv_header": "Custom_Organization_02_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 02 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_02_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_02_Reference_ID_Type",
+        "label": "Custom Organization 02 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 02 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_02_Reference_ID_Type",
+          "csv_header": "Custom_Organization_02_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 02 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_02_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_03_Reference_ID",
+        "label": "Custom Organization 03 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 03 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_03_Reference_ID",
+          "csv_header": "Custom_Organization_03_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 03 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_03_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_03_Reference_ID_Type",
+        "label": "Custom Organization 03 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 03 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_03_Reference_ID_Type",
+          "csv_header": "Custom_Organization_03_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 03 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_03_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_04_Reference_ID",
+        "label": "Custom Organization 04 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 04 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_04_Reference_ID",
+          "csv_header": "Custom_Organization_04_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 04 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_04_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_04_Reference_ID_Type",
+        "label": "Custom Organization 04 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 04 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_04_Reference_ID_Type",
+          "csv_header": "Custom_Organization_04_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 04 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_04_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_05_Reference_ID",
+        "label": "Custom Organization 05 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 05 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_05_Reference_ID",
+          "csv_header": "Custom_Organization_05_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 05 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_05_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_05_Reference_ID_Type",
+        "label": "Custom Organization 05 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 05 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_05_Reference_ID_Type",
+          "csv_header": "Custom_Organization_05_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 05 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_05_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_06_Reference_ID",
+        "label": "Custom Organization 06 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 06 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_06_Reference_ID",
+          "csv_header": "Custom_Organization_06_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 06 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_06_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_06_Reference_ID_Type",
+        "label": "Custom Organization 06 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 06 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_06_Reference_ID_Type",
+          "csv_header": "Custom_Organization_06_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 06 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_06_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_07_Reference_ID",
+        "label": "Custom Organization 07 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 07 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_07_Reference_ID",
+          "csv_header": "Custom_Organization_07_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 07 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_07_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_07_Reference_ID_Type",
+        "label": "Custom Organization 07 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 07 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_07_Reference_ID_Type",
+          "csv_header": "Custom_Organization_07_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 07 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_07_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_08_Reference_ID",
+        "label": "Custom Organization 08 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 08 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_08_Reference_ID",
+          "csv_header": "Custom_Organization_08_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 08 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_08_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_08_Reference_ID_Type",
+        "label": "Custom Organization 08 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 08 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_08_Reference_ID_Type",
+          "csv_header": "Custom_Organization_08_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 08 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_08_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_09_Reference_ID",
+        "label": "Custom Organization 09 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 09 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_09_Reference_ID",
+          "csv_header": "Custom_Organization_09_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 09 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_09_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_09_Reference_ID_Type",
+        "label": "Custom Organization 09 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 09 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_09_Reference_ID_Type",
+          "csv_header": "Custom_Organization_09_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 09 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_09_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Organization_10_Reference_ID",
+        "label": "Custom Organization 10 Reference ID",
+        "type": "string",
+        "description": "Custom Organization 10 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Organization_10_Reference_ID",
+          "csv_header": "Custom_Organization_10_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Organization 10 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_10_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Organization_10_Reference_ID_Type",
+        "label": "Custom Organization 10 Reference ID Type",
+        "type": "enum",
+        "description": "Custom Organization 10 used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Custom_Organization_Reference_ID",
+              "label": "Custom_Organization_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Custom_Organization_10_Reference_ID_Type",
+          "csv_header": "Custom_Organization_10_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Custom_Organization_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Custom Organization 10 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Organization_10_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Custom_Worktag_01_Reference_ID",
+        "label": "Custom Worktag 01 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 01 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_01_Reference_ID",
+          "csv_header": "Custom_Worktag_01_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_1_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 01 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_01_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_02_Reference_ID",
+        "label": "Custom Worktag 02 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 02 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_02_Reference_ID",
+          "csv_header": "Custom_Worktag_02_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_2_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 02 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_02_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_03_Reference_ID",
+        "label": "Custom Worktag 03 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 03 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_03_Reference_ID",
+          "csv_header": "Custom_Worktag_03_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_3_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 03 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_03_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_04_Reference_ID",
+        "label": "Custom Worktag 04 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 04 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_04_Reference_ID",
+          "csv_header": "Custom_Worktag_04_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_4_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 04 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_04_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_05_Reference_ID",
+        "label": "Custom Worktag 05 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 05 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_05_Reference_ID",
+          "csv_header": "Custom_Worktag_05_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_5_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 05 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_05_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_06_Reference_ID",
+        "label": "Custom Worktag 06 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 06 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_06_Reference_ID",
+          "csv_header": "Custom_Worktag_06_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_06_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 06 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_06_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_07_Reference_ID",
+        "label": "Custom Worktag 07 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 07 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_07_Reference_ID",
+          "csv_header": "Custom_Worktag_07_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_07_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 07 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_07_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_08_Reference_ID",
+        "label": "Custom Worktag 08 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 08 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_08_Reference_ID",
+          "csv_header": "Custom_Worktag_08_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_08_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 08 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_08_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_09_Reference_ID",
+        "label": "Custom Worktag 09 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 09 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_09_Reference_ID",
+          "csv_header": "Custom_Worktag_09_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_09_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 09 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_09_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_10_Reference_ID",
+        "label": "Custom Worktag 10 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 10 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_10_Reference_ID",
+          "csv_header": "Custom_Worktag_10_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_10_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 10 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_10_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_11_Reference_ID",
+        "label": "Custom Worktag 11 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 11 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_11_Reference_ID",
+          "csv_header": "Custom_Worktag_11_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_11_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 11 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_11_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_12_Reference_ID",
+        "label": "Custom Worktag 12 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 12 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_12_Reference_ID",
+          "csv_header": "Custom_Worktag_12_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_12_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 12 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_12_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_13_Reference_ID",
+        "label": "Custom Worktag 13 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 13 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_13_Reference_ID",
+          "csv_header": "Custom_Worktag_13_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_13_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 13 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_13_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_14_Reference_ID",
+        "label": "Custom Worktag 14 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 14 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_14_Reference_ID",
+          "csv_header": "Custom_Worktag_14_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_14_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 14 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_14_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Custom_Worktag_15_Reference_ID",
+        "label": "Custom Worktag 15 Reference ID",
+        "type": "string",
+        "description": "Custom Worktag 15 used to report time.",
+        "metadata": {
+          "wd_field_name": "Custom_Worktag_15_Reference_ID",
+          "csv_header": "Custom_Worktag_15_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Custom_Worktag_15_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Custom Worktag 15 used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Custom_Worktag_15_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Fund_Reference_ID",
+        "label": "Fund Reference ID",
+        "type": "string",
+        "description": "Fund used to report time.",
+        "metadata": {
+          "wd_field_name": "Fund_Reference_ID",
+          "csv_header": "Fund_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Fund_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Fund used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Fund_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Gift_Reference_ID",
+        "label": "Gift Reference ID",
+        "type": "string",
+        "description": "Gift associated with the Reported Time",
+        "metadata": {
+          "wd_field_name": "Gift_Reference_ID",
+          "csv_header": "Gift_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Gift_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Gift associated with the Reported Time",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Gift_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Grant_Reference_ID",
+        "label": "Grant Reference ID",
+        "type": "string",
+        "description": "Grant used to report time.",
+        "metadata": {
+          "wd_field_name": "Grant_Reference_ID",
+          "csv_header": "Grant_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Grant_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Grant used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Grant_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Job_Profile_Reference_ID",
+        "label": "Job Profile Reference ID",
+        "type": "string",
+        "description": "Job Profile used to report time.",
+        "metadata": {
+          "wd_field_name": "Job_Profile_Reference_ID",
+          "csv_header": "Job_Profile_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Job_Profile_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MATCHVALUE_JOBPROFILE"
+          ],
+          "category": null,
+          "description": "Job Profile used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Job_Profile_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Location_Reference_ID",
+        "label": "Location Reference ID",
+        "type": "string",
+        "description": "Location used to report time.",
+        "metadata": {
+          "wd_field_name": "Location_Reference_ID",
+          "csv_header": "Location_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Location_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_LOCATIONID"
+          ],
+          "category": null,
+          "description": "Location used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Location_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Program_Reference_ID",
+        "label": "Program Reference ID",
+        "type": "string",
+        "description": "Program used to report time.",
+        "metadata": {
+          "wd_field_name": "Program_Reference_ID",
+          "csv_header": "Program_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Program_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Program used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Program_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Region_Reference_ID",
+        "label": "Region Reference ID",
+        "type": "string",
+        "description": "Region used to report time.",
+        "metadata": {
+          "wd_field_name": "Region_Reference_ID",
+          "csv_header": "Region_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Region used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Region_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Region_Reference_ID_Type",
+        "label": "Region Reference ID Type",
+        "type": "enum",
+        "description": "Region used to report time.",
+        "config": {
+          "options": [
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            },
+            {
+              "value": "Region_Reference_ID",
+              "label": "Region_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Region_Reference_ID_Type",
+          "csv_header": "Region_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Organization_Reference_ID",
+            "Region_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Region used to report time.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Region_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Comment",
+        "label": "Comment",
+        "type": "string",
+        "description": "Comment on Reported Time Block.",
+        "metadata": {
+          "wd_field_name": "Comment",
+          "csv_header": "Comment",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Comment on Reported Time Block.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Import_Reported_Time_Blocks_Request/wd:Reported_Time_Block_Data/wd:Comment"
+        }
+      }
+    ]
+  }
+]

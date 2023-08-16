@@ -1,0 +1,3471 @@
+[
+  {
+    "name": "Submit 1099 Adjustment",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Submit_1099_Adjustment\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "submit_1099_adjustment",
+    "fields": [
+      {
+        "key": "IRS_1099_Adjustment_ID",
+        "label": "IRS 1099 Adjustment ID",
+        "type": "string",
+        "description": "1099 MISC Adjustment ID. This is the unique identfier for the 1099 MISC Adjustment. If no ID is specified, the system will generate one automatically",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "IRS_1099_Adjustment_ID",
+          "csv_header": "IRS_1099_Adjustment_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "I1A_01",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "1099 MISC Adjustment ID. This is the unique identfier for the 1099 MISC Adjustment. If no ID is specified, the system will generate one automatically",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Adjustment_ID"
+        }
+      },
+      {
+        "key": "USD_Company_Reference_ID",
+        "label": "USD Company Reference ID",
+        "type": "string",
+        "description": "Reference to an USD Company",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "USD_Company_Reference_ID",
+          "csv_header": "USD_Company_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Company_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": "FRA_Pay_Group",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COMPNY",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference to an USD Company",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:USD_Company_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "USD_Company_Reference_ID_Type",
+        "label": "USD Company Reference ID Type",
+        "type": "enum",
+        "description": "Reference to an USD Company",
+        "config": {
+          "options": [
+            {
+              "value": "Company_Reference_ID",
+              "label": "Company_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "USD_Company_Reference_ID_Type",
+          "csv_header": "USD_Company_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Company_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": "Organization_Reference_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to an USD Company",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:USD_Company_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "IRS_1099_Form_Type_Reference_ID",
+        "label": "IRS 1099 Form Type Reference ID",
+        "type": "string",
+        "description": "1099 Form Type for the 1099 MISC Adjustment",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "IRS_1099_Form_Type_Reference_ID",
+          "csv_header": "IRS_1099_Form_Type_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "IRS_1099_Form_Type"
+          ],
+          "sample_value": "1099-A",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "1099 Form Type for the 1099 MISC Adjustment",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Form_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "IRS_1099_Payee_Reference_ID",
+        "label": "IRS 1099 Payee Reference ID",
+        "type": "string",
+        "description": "1099 Payee for the 1099 Adjustment",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "IRS_1099_Payee_Reference_ID",
+          "csv_header": "IRS_1099_Payee_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Ad_hoc_Payee_ID",
+            "Contingent_Worker_ID",
+            "External_Sourceable_ID",
+            "Internal_Service_Provider_ID",
+            "Internal_Service_Provider_Reference_ID",
+            "Investor_ID",
+            "Miscellaneous_Payee_ID",
+            "Supplier_ID",
+            "Supplier_Reference_ID"
+          ],
+          "sample_value": "S-0001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "1099 Payee for the 1099 Adjustment",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Payee_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "IRS_1099_Payee_Reference_ID_Type",
+        "label": "IRS 1099 Payee Reference ID Type",
+        "type": "enum",
+        "description": "1099 Payee for the 1099 Adjustment",
+        "config": {
+          "options": [
+            {
+              "value": "Ad_hoc_Payee_ID",
+              "label": "Ad_hoc_Payee_ID"
+            },
+            {
+              "value": "Contingent_Worker_ID",
+              "label": "Contingent_Worker_ID"
+            },
+            {
+              "value": "External_Sourceable_ID",
+              "label": "External_Sourceable_ID"
+            },
+            {
+              "value": "Internal_Service_Provider_ID",
+              "label": "Internal_Service_Provider_ID"
+            },
+            {
+              "value": "Internal_Service_Provider_Reference_ID",
+              "label": "Internal_Service_Provider_Reference_ID"
+            },
+            {
+              "value": "Investor_ID",
+              "label": "Investor_ID"
+            },
+            {
+              "value": "Miscellaneous_Payee_ID",
+              "label": "Miscellaneous_Payee_ID"
+            },
+            {
+              "value": "Supplier_ID",
+              "label": "Supplier_ID"
+            },
+            {
+              "value": "Supplier_Reference_ID",
+              "label": "Supplier_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "IRS_1099_Payee_Reference_ID_Type",
+          "csv_header": "IRS_1099_Payee_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Ad_hoc_Payee_ID",
+            "Contingent_Worker_ID",
+            "External_Sourceable_ID",
+            "Internal_Service_Provider_ID",
+            "Internal_Service_Provider_Reference_ID",
+            "Investor_ID",
+            "Miscellaneous_Payee_ID",
+            "Supplier_ID",
+            "Supplier_Reference_ID"
+          ],
+          "sample_value": "Supplier_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "1099 Payee for the 1099 Adjustment",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Payee_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Adjustment_Date",
+        "label": "Adjustment Date",
+        "type": "string",
+        "description": "1099 MISC Adjustment Date",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Adjustment_Date",
+          "csv_header": "Adjustment_Date",
+          "required/optional": "Required",
+          "type_value": [
+            "Date"
+          ],
+          "sample_value": "2012-01-01",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "1099 MISC Adjustment Date",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:Adjustment_Date"
+        }
+      },
+      {
+        "key": "Adjustment_Memo",
+        "label": "Adjustment Memo",
+        "type": "string",
+        "description": "1099 MISC Adjustment Line Memo",
+        "metadata": {
+          "wd_field_name": "Memo",
+          "csv_header": "Adjustment_Memo",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Sample Text",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "1099 MISC Adjustment Line Memo",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:Memo"
+        }
+      },
+      {
+        "key": "Federal_Income_Tax_Withholding_Amount",
+        "label": "Federal Income Tax Withholding Amount",
+        "type": "number",
+        "description": "Federal Income Tax Withholding Amount",
+        "metadata": {
+          "wd_field_name": "Federal_Income_Tax_Withholding_Amount",
+          "csv_header": "Federal_Income_Tax_Withholding_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "100",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "Federal Income Tax Withholding Amount",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:Federal_Income_Tax_Withholding_Amount"
+        }
+      },
+      {
+        "key": "IRS_1099_Adjust_Line_Spend_Category_Ref_ID",
+        "label": "IRS 1099 Adjust Line Spend Category Ref ID",
+        "type": "string",
+        "description": "Reference to an existing Spend Category",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Spend_Category_Reference_ID",
+          "csv_header": "IRS_1099_Adjust_Line_Spend_Category_Ref_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Spend_Category_ID"
+          ],
+          "sample_value": "SC001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference to an existing Spend Category",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Adjustment_Line_Data/wd:Spend_Category_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "IRS_1099_Adjust_Line_Amount",
+        "label": "IRS 1099 Adjust Line Amount",
+        "type": "number",
+        "description": "1099 MISC Adjustment Line Amount",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Amount",
+          "csv_header": "IRS_1099_Adjust_Line_Amount",
+          "required/optional": "Required",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "100",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "1099 MISC Adjustment Line Amount",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Adjustment_Line_Data/wd:Amount"
+        }
+      },
+      {
+        "key": "IRS_1099_Adjust_Line_Memo",
+        "label": "IRS 1099 Adjust Line Memo",
+        "type": "string",
+        "description": "1099 MISC Adjustment Line Memo",
+        "metadata": {
+          "wd_field_name": "Memo",
+          "csv_header": "IRS_1099_Adjust_Line_Memo",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Sample Text",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "1099 MISC Adjustment Line Memo",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_Adjustment_Line_Data/wd:Memo"
+        }
+      },
+      {
+        "key": "IRS_1099_State_Withholding_Spend_Category_Ref_ID",
+        "label": "IRS 1099 State Withholding Spend Category Ref ID",
+        "type": "string",
+        "description": "Reference to an existing Spend Category",
+        "metadata": {
+          "wd_field_name": "Spend_Category_Reference_ID",
+          "csv_header": "IRS_1099_State_Withholding_Spend_Category_Ref_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "SC001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to an existing Spend Category",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_State_Withholding_Data/wd:Spend_Category_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "IRS_1099_State_Withholding_State_Ref_ID",
+        "label": "IRS 1099 State Withholding State Ref ID",
+        "type": "string",
+        "description": "Reference to an State in United States",
+        "metadata": {
+          "wd_field_name": "State_Reference_ID",
+          "csv_header": "IRS_1099_State_Withholding_State_Ref_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Country_Region_ID",
+            "ISO_3166-2_Code"
+          ],
+          "sample_value": "USA-CA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference to an State in United States",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_State_Withholding_Data/wd:State_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "IRS_1099_State_Withholding_State_Ref_ID_Type",
+        "label": "IRS 1099 State Withholding State Ref ID Type",
+        "type": "enum",
+        "description": "Reference to an State in United States",
+        "config": {
+          "options": [
+            {
+              "value": "Country_Region_ID",
+              "label": "Country_Region_ID"
+            },
+            {
+              "value": "ISO_3166-2_Code",
+              "label": "ISO_3166-2_Code"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "State_Reference_ID_Type",
+          "csv_header": "IRS_1099_State_Withholding_State_Ref_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Country_Region_ID",
+            "ISO_3166-2_Code"
+          ],
+          "sample_value": "Country_Region_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference to an State in United States",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_State_Withholding_Data/wd:State_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "IRS_1099_State_Withholding_Income_Tax_Withholding_Amount",
+        "label": "IRS 1099 State Withholding Income Tax Withholding Amount",
+        "type": "number",
+        "description": "1099 MISC Adjustment for State Income Tax Withholding Amount",
+        "metadata": {
+          "wd_field_name": "State_Income_Tax_Withholding_Amount",
+          "csv_header": "IRS_1099_State_Withholding_Income_Tax_Withholding_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "100",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "1099 MISC Adjustment for State Income Tax Withholding Amount",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_State_Withholding_Data/wd:State_Income_Tax_Withholding_Amount"
+        }
+      },
+      {
+        "key": "IRS_1099_State_Withholding_Income_Amount",
+        "label": "IRS 1099 State Withholding Income Amount",
+        "type": "number",
+        "description": "1099 MISC Adjustment for State Income Amount",
+        "metadata": {
+          "wd_field_name": "State_Income_Amount",
+          "csv_header": "IRS_1099_State_Withholding_Income_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "10000",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "1099 MISC Adjustment for State Income Amount",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_State_Withholding_Data/wd:State_Income_Amount"
+        }
+      },
+      {
+        "key": "IRS_1099_State_Withholding_Memo",
+        "label": "IRS 1099 State Withholding Memo",
+        "type": "string",
+        "description": "1099 MISC Adjustment Line Memo",
+        "metadata": {
+          "wd_field_name": "Memo",
+          "csv_header": "IRS_1099_State_Withholding_Memo",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Sample Text",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "1099 MISC Adjustment Line Memo",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Submit_1099_Adjustment_Request/wd:IRS_1099_Adjustment_Data/wd:IRS_1099_State_Withholding_Data/wd:Memo"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Put Business Entity Contact",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Business_Entity_Contact\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "put_business_entity_contact",
+    "fields": [
+      {
+        "key": "Business_Entity_Contact_ID",
+        "label": "Business Entity Contact ID",
+        "type": "string",
+        "description": "Business Entity Contact ID.  This is the Business Entity Contact unique identifier",
+        "metadata": {
+          "wd_field_name": "Business_Entity_Contact_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Business_Entity_Contact_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "BUSINESS_ENTITY_CONTACT-4-12",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Business Entity Contact ID.  This is the Business Entity Contact unique identifier",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_ID"
+        }
+      },
+      {
+        "key": "Primary_Bill_To_Contact",
+        "label": "Primary Bill To Contact",
+        "type": "boolean",
+        "description": "Primary Bill To Contact to choose one contact to be as primary.",
+        "metadata": {
+          "wd_field_name": "Primary_Bill_To_Contact",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Primary_Bill_To_Contact",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Primary Bill To Contact to choose one contact to be as primary.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Primary_Bill_To_Contact"
+        }
+      },
+      {
+        "key": "Default_Bill_To_Contact",
+        "label": "Default Bill To Contact",
+        "type": "boolean",
+        "description": "Sets Contact as the default Bill-To Contact for the Billable Entity.",
+        "metadata": {
+          "wd_field_name": "Default_Bill_To_Contact",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Default_Bill_To_Contact",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Sets Contact as the default Bill-To Contact for the Billable Entity.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Default_Bill_To_Contact"
+        }
+      },
+      {
+        "key": "Supplier_Reference_ID",
+        "label": "Supplier Reference ID",
+        "type": "string",
+        "description": "Reference field for Supplier.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Supplier_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Supplier_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "External_Sourceable_ID",
+            "Supplier_ID",
+            "Supplier_Reference_ID"
+          ],
+          "sample_value": "SUPPLIER-1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Supplier.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Supplier_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Supplier_Reference_ID_Type",
+        "label": "Supplier Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Supplier.",
+        "config": {
+          "options": [
+            {
+              "value": "External_Sourceable_ID",
+              "label": "External_Sourceable_ID"
+            },
+            {
+              "value": "Supplier_ID",
+              "label": "Supplier_ID"
+            },
+            {
+              "value": "Supplier_Reference_ID",
+              "label": "Supplier_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Supplier_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Supplier_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "External_Sourceable_ID",
+            "Supplier_ID",
+            "Supplier_Reference_ID"
+          ],
+          "sample_value": "Supplier_Reference_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Supplier.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Supplier_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Billable_Entity_Reference_ID",
+        "label": "Billable Entity Reference ID",
+        "type": "string",
+        "description": "Reference field for Billable Entity.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Billable_Entity_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Billable_Entity_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Customer_ID",
+            "Customer_Reference_ID",
+            "Sponsor_ID",
+            "Sponsor_Reference_ID",
+            "Student_Financial_Account_ID"
+          ],
+          "sample_value": "CUSTREQ1001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Billable Entity.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Billable_Entity_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Billable_Entity_Reference_ID_Type",
+        "label": "Billable Entity Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Billable Entity.",
+        "config": {
+          "options": [
+            {
+              "value": "Customer_ID",
+              "label": "Customer_ID"
+            },
+            {
+              "value": "Customer_Reference_ID",
+              "label": "Customer_Reference_ID"
+            },
+            {
+              "value": "Sponsor_ID",
+              "label": "Sponsor_ID"
+            },
+            {
+              "value": "Sponsor_Reference_ID",
+              "label": "Sponsor_Reference_ID"
+            },
+            {
+              "value": "Student_Financial_Account_ID",
+              "label": "Student_Financial_Account_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Billable_Entity_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Billable_Entity_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Customer_ID",
+            "Customer_Reference_ID",
+            "Sponsor_ID",
+            "Sponsor_Reference_ID",
+            "Student_Financial_Account_ID"
+          ],
+          "sample_value": "Customer_Reference_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Billable Entity.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Billable_Entity_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Financial_Institution_Reference_ID",
+        "label": "Financial Institution Reference ID",
+        "type": "string",
+        "description": "Reference field for Financial Institution.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Financial_Institution_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Financial_Institution_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Financial_Institution_ID",
+            "Financial_Institution_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Financial Institution.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Financial_Institution_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Financial_Institution_Reference_ID_Type",
+        "label": "Financial Institution Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Financial Institution.",
+        "config": {
+          "options": [
+            {
+              "value": "Financial_Institution_ID",
+              "label": "Financial_Institution_ID"
+            },
+            {
+              "value": "Financial_Institution_Reference_ID",
+              "label": "Financial_Institution_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Financial_Institution_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Financial_Institution_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Financial_Institution_ID",
+            "Financial_Institution_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Financial Institution.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Financial_Institution_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Tax_Authority_Reference_ID",
+        "label": "Tax Authority Reference ID",
+        "type": "string",
+        "description": "Reference field for Tax Authority.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Tax_Authority_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Tax_Authority_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Tax_Authority_ID",
+            "Tax_Authority_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Tax Authority.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Tax_Authority_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Tax_Authority_Reference_ID_Type",
+        "label": "Tax Authority Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Tax Authority.",
+        "config": {
+          "options": [
+            {
+              "value": "Tax_Authority_ID",
+              "label": "Tax_Authority_ID"
+            },
+            {
+              "value": "Tax_Authority_Reference_ID",
+              "label": "Tax_Authority_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Tax_Authority_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Tax_Authority_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Tax_Authority_ID",
+            "Tax_Authority_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Tax Authority.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Tax_Authority_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Name_Country_Reference_ID",
+        "label": "Name Country Reference ID",
+        "type": "string",
+        "description": "Reference field for Country.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Country_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Name_Country_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "ISO_3166-1_Alpha-3_Code",
+            "ISO_3166-1_Alpha-2_Code",
+            "ISO_3166-1_Numeric-3_Code"
+          ],
+          "sample_value": "USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "COUNTRYISVALID",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Country_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Name_Country_Reference_ID_Type",
+        "label": "Name Country Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Country.",
+        "config": {
+          "options": [
+            {
+              "value": "ISO_3166-1_Alpha-3_Code",
+              "label": "ISO_3166-1_Alpha-3_Code"
+            },
+            {
+              "value": "ISO_3166-1_Alpha-2_Code",
+              "label": "ISO_3166-1_Alpha-2_Code"
+            },
+            {
+              "value": "ISO_3166-1_Numeric-3_Code",
+              "label": "ISO_3166-1_Numeric-3_Code"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Country_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Name_Country_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "ISO_3166-1_Alpha-3_Code",
+            "ISO_3166-1_Alpha-2_Code",
+            "ISO_3166-1_Numeric-3_Code"
+          ],
+          "sample_value": "ISO_3166-1_Alpha-3_Code",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Country_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Title_Reference_ID",
+        "label": "Title Reference ID",
+        "type": "string",
+        "description": "Reference field for Title.",
+        "metadata": {
+          "wd_field_name": "Title_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Title_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": "Mr_United_Kingdom",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Title.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Prefix_Data/wd:Title_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Title_Descriptor",
+        "label": "Title Descriptor",
+        "type": "string",
+        "description": "The description of the reference to the Title of a person.",
+        "metadata": {
+          "wd_field_name": "Title_Descriptor",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Title_Descriptor",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Mr",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "The description of the reference to the Title of a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Prefix_Data/wd:Title_Descriptor"
+        }
+      },
+      {
+        "key": "Salutation_Reference_ID",
+        "label": "Salutation Reference ID",
+        "type": "string",
+        "description": "Reference field for Salutation.",
+        "metadata": {
+          "wd_field_name": "Salutation_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Salutation_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Salutation.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Prefix_Data/wd:Salutation_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "First_Name",
+        "label": "First Name",
+        "type": "string",
+        "description": "The First Name (Given Name) for a person.",
+        "metadata": {
+          "wd_field_name": "First_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "First_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Peggy",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The First Name (Given Name) for a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:First_Name"
+        }
+      },
+      {
+        "key": "Middle_Name",
+        "label": "Middle Name",
+        "type": "string",
+        "description": "The Middle Name for a person.",
+        "metadata": {
+          "wd_field_name": "Middle_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Middle_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The Middle Name for a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Middle_Name"
+        }
+      },
+      {
+        "key": "Last_Name",
+        "label": "Last Name",
+        "type": "string",
+        "description": "The Last Name (Family Name) for a person.",
+        "metadata": {
+          "wd_field_name": "Last_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Last_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Tran",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The Last Name (Family Name) for a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Last_Name"
+        }
+      },
+      {
+        "key": "Secondary_Last_Name",
+        "label": "Secondary Last Name",
+        "type": "string",
+        "description": "The Secondary Last Name (Secondary Family Name) for a person.",
+        "metadata": {
+          "wd_field_name": "Secondary_Last_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Secondary_Last_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The Secondary Last Name (Secondary Family Name) for a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Secondary_Last_Name"
+        }
+      },
+      {
+        "key": "Tertiary_Last_Name",
+        "label": "Tertiary Last Name",
+        "type": "string",
+        "description": "The Tertiary Last Name for a person.",
+        "metadata": {
+          "wd_field_name": "Tertiary_Last_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Tertiary_Last_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The Tertiary Last Name for a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Tertiary_Last_Name"
+        }
+      },
+      {
+        "key": "Local_Name_Detail_Data_Local_Name",
+        "label": "Local Name Detail Data Local Name",
+        "type": "string",
+        "description": "Contains the formatted Local Name in local script as configured for the Country",
+        "metadata": {
+          "wd_field_name": "Local_Name_Detail_Data_Local_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Name_Detail_Data_Local_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains the formatted Local Name in local script as configured for the Country",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data"
+        }
+      },
+      {
+        "key": "Local_Name_Detail_Data_Local_Script",
+        "label": "Local Name Detail Data Local Script",
+        "type": "string",
+        "description": "Contains the formatted Local Script Name which contains the ISO code and name.",
+        "metadata": {
+          "wd_field_name": "Local_Name_Detail_Data_Local_Script",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Name_Detail_Data_Local_Script",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains the formatted Local Script Name which contains the ISO code and name.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data"
+        }
+      },
+      {
+        "key": "Local_First_Name",
+        "label": "Local First Name",
+        "type": "string",
+        "description": "Contains First Name in local script, which is generally configured to as Given Name, for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "First_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_First_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains First Name in local script, which is generally configured to as Given Name, for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:First_Name"
+        }
+      },
+      {
+        "key": "Local_Middle_Name",
+        "label": "Local Middle Name",
+        "type": "string",
+        "description": "Contains Middle Name in local script for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "Middle_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Middle_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains Middle Name in local script for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:Middle_Name"
+        }
+      },
+      {
+        "key": "Local_Last_Name",
+        "label": "Local Last Name",
+        "type": "string",
+        "description": "Contains Last Name in local script, which is generally configured as Family Name, for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "Last_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Last_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains Last Name in local script, which is generally configured as Family Name, for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:Last_Name"
+        }
+      },
+      {
+        "key": "Local_Secondary_Last_Name",
+        "label": "Local Secondary Last Name",
+        "type": "string",
+        "description": "Contains Secondary Last Name in local script, which is generally configured as Maternal Family Name, for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "Secondary_Last_Name",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Secondary_Last_Name",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains Secondary Last Name in local script, which is generally configured as Maternal Family Name, for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:Secondary_Last_Name"
+        }
+      },
+      {
+        "key": "Local_First_Name_2",
+        "label": "Local First Name 2",
+        "type": "string",
+        "description": "Contains First Name in second local script, which is generally configured as Given Name, for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "First_Name_2",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_First_Name_2",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains First Name in second local script, which is generally configured as Given Name, for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:First_Name_2"
+        }
+      },
+      {
+        "key": "Local_Middle_Name_2",
+        "label": "Local Middle Name 2",
+        "type": "string",
+        "description": "Contains Middle Name in second local script for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "Middle_Name_2",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Middle_Name_2",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains Middle Name in second local script for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:Middle_Name_2"
+        }
+      },
+      {
+        "key": "Local_Last_Name_2",
+        "label": "Local Last Name 2",
+        "type": "string",
+        "description": "Contains Last Name in second local script, which is generally configured as Given Name, for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "Last_Name_2",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Last_Name_2",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains Last Name in second local script, which is generally configured as Given Name, for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:Last_Name_2"
+        }
+      },
+      {
+        "key": "Local_Secondary_Last_Name_2",
+        "label": "Local Secondary Last Name 2",
+        "type": "string",
+        "description": "Contains Secondary Last Name in second local script, which is generally configured as Maternal Family Name, for supporting Countries.",
+        "metadata": {
+          "wd_field_name": "Secondary_Last_Name_2",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Local_Secondary_Last_Name_2",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Contains Secondary Last Name in second local script, which is generally configured as Maternal Family Name, for supporting Countries.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Local_Name_Detail_Data/wd:Secondary_Last_Name_2"
+        }
+      },
+      {
+        "key": "Social_Suffix_Reference_ID",
+        "label": "Social Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Social Suffix.",
+        "metadata": {
+          "wd_field_name": "Social_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Social_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Social Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Social_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Social_Suffix_Descriptor",
+        "label": "Social Suffix Descriptor",
+        "type": "string",
+        "description": "A reference to the description of Social Suffix for a person.",
+        "metadata": {
+          "wd_field_name": "Social_Suffix_Descriptor",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Social_Suffix_Descriptor",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "A reference to the description of Social Suffix for a person.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Social_Suffix_Descriptor"
+        }
+      },
+      {
+        "key": "Academic_Suffix_Reference_ID",
+        "label": "Academic Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Academic Suffix.",
+        "metadata": {
+          "wd_field_name": "Academic_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Academic_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Academic Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Academic_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Hereditary_Suffix_Reference_ID",
+        "label": "Hereditary Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Hereditary Suffix.",
+        "metadata": {
+          "wd_field_name": "Hereditary_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Hereditary_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Hereditary Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Hereditary_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Honorary_Suffix_Reference_ID",
+        "label": "Honorary Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Honorary Suffix.",
+        "metadata": {
+          "wd_field_name": "Honorary_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Honorary_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Honorary Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Honorary_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Professional_Suffix_Reference_ID",
+        "label": "Professional Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Professional Suffix.",
+        "metadata": {
+          "wd_field_name": "Professional_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Professional_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Professional Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Professional_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Religious_Suffix_Reference_ID",
+        "label": "Religious Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Religious Suffix.",
+        "metadata": {
+          "wd_field_name": "Religious_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Religious_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Religious Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Religious_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Royal_Suffix_Reference_ID",
+        "label": "Royal Suffix Reference ID",
+        "type": "string",
+        "description": "Reference field for Royal Suffix.",
+        "metadata": {
+          "wd_field_name": "Royal_Suffix_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Royal_Suffix_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Predefined_Name_Component_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Reference field for Royal Suffix.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Suffix_Data/wd:Royal_Suffix_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Full_Name_for_Singapore_and_Malaysia",
+        "label": "Full Name for Singapore and Malaysia",
+        "type": "string",
+        "description": "Full Person Name is used by Malaysia and Singapore. It is designed for (eliminate space between these two words) Workers in these countries to enter their Full Legal Name. It is an attribute of Global Person Name Class and is not a concatenation of First and Last Names.",
+        "metadata": {
+          "wd_field_name": "Full_Name_for_Singapore_and_Malaysia",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Full_Name_for_Singapore_and_Malaysia",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Steve Lim",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Full Person Name is used by Malaysia and Singapore. It is designed for (eliminate space between these two words) Workers in these countries to enter their Full Legal Name. It is an attribute of Global Person Name Class and is not a concatenation of First and Last Names.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Name_Data/wd:Name_Detail_Data/wd:Full_Name_for_Singapore_and_Malaysia"
+        }
+      },
+      {
+        "key": "Contact_Type_Tenanted_Reference_ID",
+        "label": "Contact Type Tenanted Reference ID",
+        "type": "string",
+        "description": "Business Entity Contact Type Tenanted",
+        "metadata": {
+          "wd_field_name": "Contact_Type_Tenanted_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Contact_Type_Tenanted_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Business_Entity_Contact_Type_Tenanted_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Business Entity Contact Type Tenanted",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Type_Tenanted_Data/wd:Contact_Type_Tenanted_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Business_Entity_Contact_Type_Reference_ID",
+        "label": "Business Entity Contact Type Reference ID",
+        "type": "string",
+        "description": "Business Entity Contact Type Reference",
+        "metadata": {
+          "wd_field_name": "Business_Entity_Contact_Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact",
+          "csv_header": "Business_Entity_Contact_Type_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Business_Entity_Contact_Type_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": null,
+          "description": "Business Entity Contact Type Reference",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Type_Tenanted_Data/wd:Business_Entity_Contact_Type_Reference/wd:ID"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Put Business Entity Contact Details",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Business_Entity_Contact\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "put_business_entity_contact_details",
+    "fields": [
+      {
+        "key": "Business_Entity_Contact_ID",
+        "label": "Business Entity Contact ID",
+        "type": "string",
+        "description": "Business Entity Contact ID.  This is the Business Entity Contact unique identifier",
+        "metadata": {
+          "wd_field_name": "Business_Entity_Contact_ID",
+          "csv_file_name": "All CSVs",
+          "csv_header": "Business_Entity_Contact_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "BUSINESS_ENTITY_CONTACT-4-12",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Business Entity Contact ID.  This is the Business Entity Contact unique identifier",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_ID"
+        }
+      },
+      {
+        "key": "Address_Data_Defaulted_Business_Site_Address",
+        "label": "Address Data Defaulted Business Site Address",
+        "type": "boolean",
+        "description": "Set to 1 if the address is a defaulted location address. If this value is 1, this address will not be processed for inbound web services.",
+        "metadata": {
+          "wd_field_name": "Address_Data_Defaulted_Business_Site_Address",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Data_Defaulted_Business_Site_Address",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "0",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Set to 1 if the address is a defaulted location address. If this value is 1, this address will not be processed for inbound web services.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data"
+        }
+      },
+      {
+        "key": "Address_Data_Effective_Date",
+        "label": "Address Data Effective Date",
+        "type": "date",
+        "description": "Effective date of address.",
+        "metadata": {
+          "wd_field_name": "Address_Data_Effective_Date",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Data_Effective_Date",
+          "required/optional": "Optional",
+          "type_value": [
+            "YYYY-MM-DD"
+          ],
+          "sample_value": "2008-04-18",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK"
+          ],
+          "category": "Launch / Lx",
+          "description": "Effective date of address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data"
+        }
+      },
+      {
+        "key": "Address_Country_Reference_ID",
+        "label": "Address Country Reference ID",
+        "type": "string",
+        "description": "Reference field for Country.",
+        "metadata": {
+          "wd_field_name": "Country_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "ISO_3166-1_Alpha-3_Code",
+            "ISO_3166-1_Alpha-2_Code",
+            "ISO_3166-1_Numeric-3_Code"
+          ],
+          "sample_value": "US",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ADDRESSVALIDATION",
+            "CHECKREFERENCES",
+            "COUNTRYISVALID",
+            "ISPRIMARY_USAGE_SET_ADDRESS"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Country_Reference_ID_Type",
+        "label": "Address Country Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Country.",
+        "config": {
+          "options": [
+            {
+              "value": "ISO_3166-1_Alpha-3_Code",
+              "label": "ISO_3166-1_Alpha-3_Code"
+            },
+            {
+              "value": "ISO_3166-1_Alpha-2_Code",
+              "label": "ISO_3166-1_Alpha-2_Code"
+            },
+            {
+              "value": "ISO_3166-1_Numeric-3_Code",
+              "label": "ISO_3166-1_Numeric-3_Code"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Country_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "ISO_3166-1_Alpha-3_Code",
+            "ISO_3166-1_Alpha-2_Code",
+            "ISO_3166-1_Numeric-3_Code"
+          ],
+          "sample_value": "ISO_3166-1_Alpha-3_Code",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Address_Line_1",
+        "label": "Address Line 1",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Address_Line_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Line_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "1 Riverside Plaza  2727 NW Loop 410",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Address_Line_Data"
+        }
+      },
+      {
+        "key": "Address_Line_2",
+        "label": "Address Line 2",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Address_Line_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Line_2",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "PO Box Line 2",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Address_Line_Data"
+        }
+      },
+      {
+        "key": "Address_Line_3",
+        "label": "Address Line 3",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Address_Line_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Line_3",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Address_Line_Data"
+        }
+      },
+      {
+        "key": "Address_Line_4",
+        "label": "Address Line 4",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Address_Line_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Line_4",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Address_Line_Data"
+        }
+      },
+      {
+        "key": "Address_Line_5",
+        "label": "Address Line 5",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Address_Line_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Line_5",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Address_Line_Data"
+        }
+      },
+      {
+        "key": "Address_Municipality",
+        "label": "Address Municipality",
+        "type": "string",
+        "description": "City part of the address.",
+        "metadata": {
+          "wd_field_name": "Municipality",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Municipality",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Columbus",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "City part of the address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Municipality"
+        }
+      },
+      {
+        "key": "Address_Country_City_Reference_ID",
+        "label": "Address Country City Reference ID",
+        "type": "string",
+        "description": "Reference field for Country City.",
+        "metadata": {
+          "wd_field_name": "Country_City_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_City_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Country_Subregion_Code_In_Country",
+            "Country_Subregion_Internal_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country City.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_City_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Country_City_Reference_ID_Type",
+        "label": "Address Country City Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Country City.",
+        "config": {
+          "options": [
+            {
+              "value": "Country_Subregion_Code_In_Country",
+              "label": "Country_Subregion_Code_In_Country"
+            },
+            {
+              "value": "Country_Subregion_Internal_ID",
+              "label": "Country_Subregion_Internal_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Country_City_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_City_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Country_Subregion_Code_In_Country",
+            "Country_Subregion_Internal_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country City.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_City_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Address_Country_City_Reference_ID_parent_id",
+        "label": "Address Country City Reference ID parent id",
+        "type": "string",
+        "description": "Contains a unique identifier for an instance of a parent object",
+        "metadata": {
+          "wd_field_name": "Country_City_Reference_ID_parent_id",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_City_Reference_ID_parent_id",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Contains a unique identifier for an instance of a parent object",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_City_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Country_City_Reference_ID_parent_type",
+        "label": "Address Country City Reference ID parent type",
+        "type": "string",
+        "description": "The unique identifier type of a parent object",
+        "metadata": {
+          "wd_field_name": "Country_City_Reference_ID_parent_type",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_City_Reference_ID_parent_type",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The unique identifier type of a parent object",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_City_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Submunicipality_Data_1",
+        "label": "Address Submunicipality Data 1",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Submunicipality_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Submunicipality_Data_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Helsinki",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Submunicipality_Data"
+        }
+      },
+      {
+        "key": "Address_Component_Name_1",
+        "label": "Address Component Name 1",
+        "type": "string",
+        "description": "The descriptor is an optional serialized attribute that shows the text Override Label (such as Municipality or District)  that helps describe the usage of the type (such as CITY_SUBDIVISION_1 or CITY_SUBDIVISION_2) for each country.",
+        "metadata": {
+          "wd_field_name": "Submunicipality_Data_Address_Component_Name",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Component_Name_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Postal District or City",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "The descriptor is an optional serialized attribute that shows the text Override Label (such as Municipality or District)  that helps describe the usage of the type (such as CITY_SUBDIVISION_1 or CITY_SUBDIVISION_2) for each country.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Submunicipality_Data"
+        }
+      },
+      {
+        "key": "Address_Submunicipality_Data_ID_Type_1",
+        "label": "Address Submunicipality Data ID Type 1",
+        "type": "string",
+        "description": "Reference field for Submunicipality Data.",
+        "metadata": {
+          "wd_field_name": "Submunicipality_Data_Type",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Submunicipality_Data_ID_Type_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "CITY_SUBDIVISION_1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Submunicipality Data.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Submunicipality_Data"
+        }
+      },
+      {
+        "key": "Address_Country_Region_Reference_ID",
+        "label": "Address Country Region Reference ID",
+        "type": "string",
+        "description": "Reference field for Country Region.",
+        "metadata": {
+          "wd_field_name": "Country_Region_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_Region_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Country_Region_ID",
+            "ISO_3166-2_Code"
+          ],
+          "sample_value": "USA-OH",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country Region.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_Region_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Country_Region_Reference_ID_Type",
+        "label": "Address Country Region Reference ID Type",
+        "type": "enum",
+        "description": "Reference field for Country Region.",
+        "config": {
+          "options": [
+            {
+              "value": "Country_Region_ID",
+              "label": "Country_Region_ID"
+            },
+            {
+              "value": "ISO_3166-2_Code",
+              "label": "ISO_3166-2_Code"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Country_Region_Reference_ID_Type",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_Region_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Country_Region_ID",
+            "ISO_3166-2_Code"
+          ],
+          "sample_value": "Country_Region_ID",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Country Region.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_Region_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Address_Country_Region_Descriptor",
+        "label": "Address Country Region Descriptor",
+        "type": "string",
+        "description": "The region part of the address. Typically this contains the state/province information.",
+        "metadata": {
+          "wd_field_name": "Country_Region_Descriptor",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Country_Region_Descriptor",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Ohio",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "The region part of the address. Typically this contains the state/province information.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Country_Region_Descriptor"
+        }
+      },
+      {
+        "key": "Address_Subregion_Data_1",
+        "label": "Address Subregion Data 1",
+        "type": "string",
+        "metadata": {
+          "wd_field_name": "Subregion_Data",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Subregion_Data_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "Mount Roskill",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Subregion_Data"
+        }
+      },
+      {
+        "key": "Address_Subregion_Data_Type_1",
+        "label": "Address Subregion Data Type 1",
+        "type": "string",
+        "description": "Reference field for Subregion Data.",
+        "metadata": {
+          "wd_field_name": "Subregion_Data_Type",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Subregion_Data_Type_1",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "REGION_SUBDIVISION_1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Reference field for Subregion Data.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Subregion_Data"
+        }
+      },
+      {
+        "key": "Address_Postal_Code",
+        "label": "Address Postal Code",
+        "type": "string",
+        "description": "The postal code part of the address.",
+        "metadata": {
+          "wd_field_name": "Postal_Code",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Postal_Code",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "43215",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISVALIDPOSTAL_CAN",
+            "ISVALIDZIP_USA"
+          ],
+          "category": "Launch / Lx",
+          "description": "The postal code part of the address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Postal_Code"
+        }
+      },
+      {
+        "key": "Address_Usage_Public",
+        "label": "Address Usage Public",
+        "type": "boolean",
+        "description": "Indicates if the address is public.",
+        "metadata": {
+          "wd_field_name": "Usage_Data_Public",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Usage_Public",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Indicates if the address is public.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data"
+        }
+      },
+      {
+        "key": "Address_Type_Primary",
+        "label": "Address Type Primary",
+        "type": "boolean",
+        "description": "Indicates if the communication method is primary.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Data_Primary",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Type_Primary",
+          "required/optional": "Required",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Indicates if the communication method is primary.",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Type_Data"
+        }
+      },
+      {
+        "key": "Address_Type_Reference_ID",
+        "label": "Address Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Type.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Type_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Communication_Usage_Type_ID"
+          ],
+          "sample_value": "BUSINESS",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Type.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Type_Data/wd:Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Billing",
+        "label": "Address Use For Billing",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Billing",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Mailing",
+        "label": "Address Use For Mailing",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Mailing",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Mileage_Calculation",
+        "label": "Address Use For Mileage Calculation",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Mileage_Calculation",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Other_Work",
+        "label": "Address Use For Other Work",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Other_Work",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Paycheck",
+        "label": "Address Use For Paycheck",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Paycheck",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Payroll_Tax_Form",
+        "label": "Address Use For Payroll Tax Form",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Payroll_Tax_Form",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Shipping",
+        "label": "Address Use For Shipping",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Shipping",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Storage",
+        "label": "Address Use For Storage",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Storage",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Use_For_Street_Address",
+        "label": "Address Use For Street Address",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Use_For_Street_Address",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Address_Comments",
+        "label": "Address Comments",
+        "type": "string",
+        "description": "Description of the  address, phone, email, instant messenger, or web address.",
+        "metadata": {
+          "wd_field_name": "Comments",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Address_Comments",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Description of the  address, phone, email, instant messenger, or web address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Address_Data/wd:Usage_Data/wd:Comments"
+        }
+      },
+      {
+        "key": "Phone_Country_ISO_Code",
+        "label": "Phone Country ISO Code",
+        "type": "string",
+        "description": "Country ISO code. If the Country ISO code is specified, then this ISO code will be used to determine the Country Phone Code for (eliminate space between f and o) the phone. Pass this ISO code to distinguish between multiple countries sharing the same Country Phone Code. (For example, 1 is the Country Phone Code that is shared by USA, Canada, Dominican Republic, Bermuda, Jamaica, and Puerto Rico.)",
+        "metadata": {
+          "wd_field_name": "Country_ISO_Code",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Country_ISO_Code",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Country ISO code. If the Country ISO code is specified, then this ISO code will be used to determine the Country Phone Code for (eliminate space between f and o) the phone. Pass this ISO code to distinguish between multiple countries sharing the same Country Phone Code. (For example, 1 is the Country Phone Code that is shared by USA, Canada, Dominican Republic, Bermuda, Jamaica, and Puerto Rico.)",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Country_ISO_Code"
+        }
+      },
+      {
+        "key": "Phone_International_Phone_Code",
+        "label": "Phone International Phone Code",
+        "type": "string",
+        "description": "International phone code number.",
+        "metadata": {
+          "wd_field_name": "International_Phone_Code",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_International_Phone_Code",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "International phone code number.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:International_Phone_Code"
+        }
+      },
+      {
+        "key": "Phone_Number",
+        "label": "Phone Number",
+        "type": "string",
+        "description": "Full phone number.",
+        "metadata": {
+          "wd_field_name": "Phone_Number",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Number",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "7161000",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISPRIMARY_USAGE_SET_PHONE",
+            "ISVALIDPHONENUM"
+          ],
+          "category": "Launch / Lx",
+          "description": "Full phone number.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Phone_Number"
+        }
+      },
+      {
+        "key": "Phone_Extension",
+        "label": "Phone Extension",
+        "type": "string",
+        "description": "Phone extension.",
+        "metadata": {
+          "wd_field_name": "Phone_Extension",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Extension",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Phone extension.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Phone_Extension"
+        }
+      },
+      {
+        "key": "Phone_Device_Type_Reference_ID",
+        "label": "Phone Device Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Phone Device Type.",
+        "metadata": {
+          "wd_field_name": "Phone_Device_Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Device_Type_Reference_ID",
+          "required/optional": "Optional",
+          "type_value": [
+            "Phone_Device_Type_ID"
+          ],
+          "sample_value": "Landline",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Phone Device Type.",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Phone_Device_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Phone_Usage_Public",
+        "label": "Phone Usage Public",
+        "type": "boolean",
+        "description": "Indicates if the address is public.",
+        "metadata": {
+          "wd_field_name": "Usage_Data_Public",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Usage_Public",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Indicates if the address is public.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Usage_Data"
+        }
+      },
+      {
+        "key": "Phone_Type_Primary",
+        "label": "Phone Type Primary",
+        "type": "boolean",
+        "description": "Indicates if the communication method is primary.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Data_Primary",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Type_Primary",
+          "required/optional": "Required",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Indicates if the communication method is primary.",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Usage_Data/wd:Type_Data"
+        }
+      },
+      {
+        "key": "Phone_Type_Reference_ID",
+        "label": "Phone Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Type.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Type_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Communication_Usage_Type_ID"
+          ],
+          "sample_value": "BUSINESS",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Type.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Usage_Data/wd:Type_Data/wd:Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Phone_Use_For_Billing",
+        "label": "Phone Use For Billing",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Use_For_Billing",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Phone_Use_For_Shipping",
+        "label": "Phone Use For Shipping",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Use_For_Shipping",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Phone_Comments",
+        "label": "Phone Comments",
+        "type": "string",
+        "description": "Description of the  address, phone, email, instant messenger, or web address.",
+        "metadata": {
+          "wd_field_name": "Comments",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Phone_Comments",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Description of the  address, phone, email, instant messenger, or web address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Phone_Data/wd:Usage_Data/wd:Comments"
+        }
+      },
+      {
+        "key": "Email_Address",
+        "label": "Email Address",
+        "type": "string",
+        "description": "Email Address Information",
+        "metadata": {
+          "wd_field_name": "Email_Address",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Address",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "peggy.tran@supplier1.com",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISPRIMARY_USAGE_SET_EMAIL",
+            "ISVALIDEMAIL"
+          ],
+          "category": "Launch / Lx",
+          "description": "Email Address Information",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Email_Address"
+        }
+      },
+      {
+        "key": "Email_Comment",
+        "label": "Email Comment",
+        "type": "string",
+        "description": "Email comments.",
+        "metadata": {
+          "wd_field_name": "Email_Comment",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Comment",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Email comments.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Email_Comment"
+        }
+      },
+      {
+        "key": "Email_Usage_Public",
+        "label": "Email Usage Public",
+        "type": "boolean",
+        "description": "Indicates if the address is public.",
+        "metadata": {
+          "wd_field_name": "Usage_Data_Public",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Usage_Public",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Indicates if the address is public.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Usage_Data"
+        }
+      },
+      {
+        "key": "Email_Type_Primary",
+        "label": "Email Type Primary",
+        "type": "boolean",
+        "description": "Indicates if the communication method is primary.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Data_Primary",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Type_Primary",
+          "required/optional": "Required",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Indicates if the communication method is primary.",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Usage_Data/wd:Type_Data"
+        }
+      },
+      {
+        "key": "Email_Type_Reference_ID",
+        "label": "Email Type Reference ID",
+        "type": "string",
+        "description": "Reference field for Type.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Type_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Communication_Usage_Type_ID"
+          ],
+          "sample_value": "BUSINESS",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Type.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Usage_Data/wd:Type_Data/wd:Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Email_Use_For_Billing",
+        "label": "Email Use For Billing",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Use_For_Billing",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Email_Use_For_Shipping",
+        "label": "Email Use For Shipping",
+        "type": "boolean",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Use_For_Shipping",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Email_Comments",
+        "label": "Email Comments",
+        "type": "string",
+        "description": "Description of the  address, phone, email, instant messenger, or web address.",
+        "metadata": {
+          "wd_field_name": "Comments",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Email_Comments",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Description of the  address, phone, email, instant messenger, or web address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Email_Address_Data/wd:Usage_Data/wd:Comments"
+        }
+      },
+      {
+        "key": "Web_Address",
+        "label": "Web Address",
+        "type": "string",
+        "description": "Web address (Example: URL).",
+        "metadata": {
+          "wd_field_name": "Web_Address",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": "https://www.mercury.co.nz/",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISVALIDURL"
+          ],
+          "category": null,
+          "description": "Web address (Example: URL).",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Web_Address"
+        }
+      },
+      {
+        "key": "Web_Address_Comment",
+        "label": "Web Address Comment",
+        "type": "string",
+        "description": "Web address comment.",
+        "metadata": {
+          "wd_field_name": "Web_Address_Comment",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Comment",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Web address comment.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Web_Address_Comment"
+        }
+      },
+      {
+        "key": "Web_Address_Usage_Public",
+        "label": "Web Address Usage Public",
+        "type": "boolean",
+        "description": "Indicates if the address is public.",
+        "metadata": {
+          "wd_field_name": "Usage_Data_Public",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Usage_Public",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Indicates if the address is public.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Usage_Data"
+        }
+      },
+      {
+        "key": "Web_Address_Type_Primary",
+        "label": "Web Address Type Primary",
+        "type": "boolean",
+        "description": "Indicates if the communication method is primary.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Data_Primary",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Type_Primary",
+          "required/optional": "Required",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Indicates if the communication method is primary.",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Usage_Data/wd:Type_Data"
+        }
+      },
+      {
+        "key": "Web_Address_Type_Work",
+        "label": "Web Address Type Work",
+        "type": "string",
+        "description": "Reference field for Type.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Type_Work",
+          "required/optional": "Required",
+          "type_value": [
+            "Communication_Usage_Type_ID"
+          ],
+          "sample_value": "WORK",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Type.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Usage_Data/wd:Type_Data/wd:Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Web_Address_Type_Home",
+        "label": "Web Address Type Home",
+        "type": "string",
+        "description": "Reference field for Type.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Type_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Type_Home",
+          "required/optional": "Required",
+          "type_value": [
+            "Communication_Usage_Type_ID"
+          ],
+          "sample_value": "HOME",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Reference field for Type.",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Usage_Data/wd:Type_Data/wd:Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Web_Address_Use_For_Shipping",
+        "label": "Web Address Use For Shipping",
+        "type": "string",
+        "description": "Reference field for Use For.",
+        "metadata": {
+          "wd_field_name": "Use_For_Reference_ID",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Use_For_Shipping",
+          "required/optional": "Optional",
+          "type_value": [
+            "Communication_Usage_Behavior_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Reference field for Use For.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Usage_Data/wd:Use_For_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Web_Address_Comments",
+        "label": "Web Address Comments",
+        "type": "string",
+        "description": "Description of the  address, phone, email, instant messenger, or web address.",
+        "metadata": {
+          "wd_field_name": "Comments",
+          "csv_file_name": "Put_Business_Entity_Contact_Details",
+          "csv_header": "Web_Address_Comments",
+          "required/optional": "Optional",
+          "type_value": [
+            "Text"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Description of the  address, phone, email, instant messenger, or web address.",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Business_Entity_Contact_Request/wd:Business_Entity_Contact_Data/wd:Business_Entity_Contact_Personal_Data/wd:Contact_Data/wd:Web_Address_Data/wd:Usage_Data/wd:Comments"
+        }
+      }
+    ]
+  }
+]

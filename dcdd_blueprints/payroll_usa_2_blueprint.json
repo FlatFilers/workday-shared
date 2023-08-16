@@ -1,0 +1,439 @@
+[
+  {
+    "name": "Put W 2 W 2C Printing Election",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_W_2_W_2C_Printing_Election\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "put_w_2_w_2c_printing_election",
+    "fields": [
+      {
+        "key": "Worker_Reference_ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "description": "Worker the W-2/W-2C Printing Election belongs to",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID",
+          "csv_header": "Worker_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Employee_ID"
+          ],
+          "sample_value": "21001",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "Worker the W-2/W-2C Printing Election belongs to",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_W_2_W_2C_Printing_Election_Request/wd:W_2_W_2C_Printing_Election_Request_Data/wd:Worker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Company_Reference_ID",
+        "label": "Company Reference ID",
+        "type": "string",
+        "description": "The Company of the Worker the W-2/W-2C Printing Election belongs to",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID",
+          "csv_header": "Company_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Company_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": "GMS-USA",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COMPNY",
+            "MISSINGVALUE"
+          ],
+          "category": null,
+          "description": "The Company of the Worker the W-2/W-2C Printing Election belongs to",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_W_2_W_2C_Printing_Election_Request/wd:W_2_W_2C_Printing_Election_Request_Data/wd:Company_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Company_Reference_ID_Type",
+        "label": "Company Reference ID Type",
+        "type": "enum",
+        "description": "The Company of the Worker the W-2/W-2C Printing Election belongs to",
+        "config": {
+          "options": [
+            {
+              "value": "Company_Reference_ID",
+              "label": "Company_Reference_ID"
+            },
+            {
+              "value": "Organization_Reference_ID",
+              "label": "Organization_Reference_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID_Type",
+          "csv_header": "Company_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Company_Reference_ID",
+            "Organization_Reference_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "The Company of the Worker the W-2/W-2C Printing Election belongs to",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_W_2_W_2C_Printing_Election_Request/wd:W_2_W_2C_Printing_Election_Request_Data/wd:Company_Reference/wd:ID@Type"
+        }
+      },
+      {
+        "key": "Receive_only_electronic_copies_of_W_2_W_2C_Reference",
+        "label": "Receive only electronic copies of W 2 W 2C Reference",
+        "type": "boolean",
+        "description": "The W-2/W-2C Printing Election selected",
+        "metadata": {
+          "wd_field_name": "Receive_only_electronic_copies_of_W_2_W_2C_Reference",
+          "csv_header": "Receive_only_electronic_copies_of_W_2_W_2C_Reference",
+          "required/optional": "Optional",
+          "type_value": [
+            "Boolean"
+          ],
+          "sample_value": "1",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "The W-2/W-2C Printing Election selected",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_W_2_W_2C_Printing_Election_Request/wd:W_2_W_2C_Printing_Election_Request_Data/wd:Receive_only_electronic_copies_of_W_2_W_2C_Reference"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Put Payroll Usa State And Local",
+    "description": "{\"Population Scope / Selection Criteria\": null, \"Notes\": null, \"PRIMARY TABLE\": null, \"SECONDARY TABLES\": null, \"JOIN LOGIC\": null, \"WHERE LOGIC\": null, \"REFERENCE TYPES\": null, \"MANUAL CODE TO RUN AFTER\": null, \"MANUAL CODE TO RUN PRIOR\": null, \"DECLARED VALUES\": \"@conversionDate = ''\", \"WEB SERVICE\": \"Put_Payroll_USA_State_and_Local\", \"STANDARD SP\": null, \"API VERSION\": null}",
+    "slug": "put_payroll_usa_state_and_local",
+    "fields": [
+      {
+        "key": "Worker_Reference_ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "description": "Employee ID of worker",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID",
+          "csv_header": "Worker_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Employee_ID"
+          ],
+          "sample_value": "21165",
+          "comments": "Employee ID",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "CHECKVALUE_WORKERID",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Employee ID of worker",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Worker_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Worker_Reference_ID_Type",
+        "label": "Worker Reference ID Type",
+        "type": "enum",
+        "description": "Employee Reference ID",
+        "config": {
+          "options": [
+            {
+              "value": "Employee_ID",
+              "label": "Employee_ID"
+            },
+            {
+              "value": "Contingent_Worker_ID",
+              "label": "Contingent_Worker_ID"
+            }
+          ]
+        },
+        "metadata": {
+          "wd_field_name": "Worker_Reference_ID_Type",
+          "csv_header": "Worker_Reference_ID_Type",
+          "required/optional": "Reference",
+          "type_value": [
+            "Employee_ID",
+            "Contingent_Worker_ID"
+          ],
+          "sample_value": null,
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": "Launch / Lx",
+          "description": "Employee Reference ID",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Worker_Reference/wd:ID/@wd:type"
+        }
+      },
+      {
+        "key": "Company_Reference_ID",
+        "label": "Company Reference ID",
+        "type": "string",
+        "description": "Company ID",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Company_Reference_ID",
+          "csv_header": "Company_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Company_Reference_ID"
+          ],
+          "sample_value": "Global_Modern_Services_Inc_USA",
+          "comments": "Tax elections are connected to the employee's company, so must be defined by the company to which the employee is assigned.",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MATCHVALUE_COMPNY",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Company ID",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Company_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Effective_Date",
+        "label": "Effective Date",
+        "type": "date",
+        "description": "Effective Date of withholding",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Effective_Date",
+          "csv_header": "Effective_Date",
+          "required/optional": "Required",
+          "type_value": [
+            "yyyy-mm-dd"
+          ],
+          "sample_value": "2000-01-01",
+          "comments": "Two options:\n1) Hire date or most recent election date from legacy\n2) Start of tax year 20xx-01-01",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "DATEFORMATCHECK",
+            "MISSINGVALUE",
+            "OTHER_DATES_AFTER_ARE_PRIOR_TO_THIS"
+          ],
+          "category": "Launch / Lx",
+          "description": "Effective Date of withholding",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Effective_Date"
+        }
+      },
+      {
+        "key": "Payroll_State_Authority_Reference_ID",
+        "label": "Payroll State Authority Reference ID",
+        "type": "string",
+        "description": "Payroll_State_Authority_Reference_ID",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Payroll_State_Authority_Reference_ID",
+          "csv_header": "Payroll_State_Authority_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Payroll_State_Authority_Tax_Code"
+          ],
+          "sample_value": "39",
+          "comments": "This is known as the State \"Code\", or the Payroll State Authority.  \nThis field is looking for the Workday equivalent ID ## for each State.  \nExamples:  \n - Alabama (AL) = 01\n - Arizona (AZ) = 04\n - Arkansas (AR) = 05 \nFor a full list, please run the Workday Report: \"Payroll Tax Authority Defaults\", and view the \"Payroll State Authority\" section.",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Payroll_State_Authority_Reference_ID",
+          "cardinality": "[1..1]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Payroll_USA_State_and_Local_Tax_Election_Data/wd:Payroll_State_Authority_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Effective_Date_County_Tax_Data",
+        "label": "Effective Date County Tax Data",
+        "type": "date",
+        "description": "Effective_Date",
+        "metadata": {
+          "wd_field_name": "Effective_Date",
+          "csv_header": "Effective_Date_County_Tax_Data",
+          "required/optional": "Optional",
+          "type_value": [
+            "yyyy-mm-dd"
+          ],
+          "sample_value": "2000-01-01",
+          "comments": "Effective Date of Tax Elections",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [],
+          "category": null,
+          "description": "Effective_Date",
+          "cardinality": "[0..1]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Payroll_USA_State_and_Local_Tax_Election_Data/wd:Payroll_State_County_Tax_Data/wd:Effective_Date"
+        }
+      },
+      {
+        "key": "Tax_Address_Type_Reference_ID",
+        "label": "Tax Address Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Tax_Address_Type_Reference_ID",
+          "csv_header": "Tax_Address_Type_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Tax_Address_Type_ID"
+          ],
+          "sample_value": "Work",
+          "comments": null,
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": null,
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Payroll_USA_State_and_Local_Tax_Election_Data/wd:Payroll_State_County_Tax_Data/wd:Tax_Address_Type_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "Payroll_Local_County_Authority_Reference_ID",
+        "label": "Payroll Local County Authority Reference ID",
+        "type": "string",
+        "description": "Reference to a Local County Tax Authority. The County Authority must be valid for the State Tax Authority specified in the Request.",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "wd_field_name": "Payroll_Local_County_Authority_Reference_ID",
+          "csv_header": "Payroll_Local_County_Authority_Reference_ID",
+          "required/optional": "Required",
+          "type_value": [
+            "Payroll_Local_County_Authority_Tax_Code"
+          ],
+          "sample_value": "39WD093",
+          "comments": "Residence Local County Tax Code",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKREFERENCES",
+            "MISSINGVALUE"
+          ],
+          "category": "Launch / Lx",
+          "description": "Reference to a Local County Tax Authority. The County Authority must be valid for the State Tax Authority specified in the Request.",
+          "cardinality": "[1..*]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Payroll_USA_State_and_Local_Tax_Election_Data/wd:Payroll_State_County_Tax_Data/wd:Payroll_Local_County_Authority_Reference/wd:ID"
+        }
+      },
+      {
+        "key": "County_Additional_Amount",
+        "label": "County Additional Amount",
+        "type": "number",
+        "description": "County_Additional_Amount",
+        "metadata": {
+          "wd_field_name": "County_Additional_Amount",
+          "csv_header": "County_Additional_Amount",
+          "required/optional": "Optional",
+          "type_value": [
+            "Number"
+          ],
+          "sample_value": "60",
+          "comments": "Additional amount to be deducted for County",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "ISNUMERIC"
+          ],
+          "category": null,
+          "description": "County_Additional_Amount",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Payroll_USA_State_and_Local_Tax_Election_Data/wd:Payroll_State_County_Tax_Data/wd:County_Additional_Amount"
+        }
+      },
+      {
+        "key": "Inactivate_State_Tax",
+        "label": "Inactivate State Tax",
+        "type": "boolean",
+        "description": "Inactivate_State_Tax",
+        "metadata": {
+          "wd_field_name": "Inactivate_State_Tax",
+          "csv_header": "Inactivate_State_Tax",
+          "required/optional": "Optional",
+          "type_value": [
+            "boolean"
+          ],
+          "sample_value": "1",
+          "comments": "Marking \"Y\" will inactivate this tax election from being withheld. For example if an employee moved out of this local",
+          "sourcetable.field": null,
+          "transformation_logic": null,
+          "validations": [
+            "CHECKBOOLEAN"
+          ],
+          "category": null,
+          "description": "Inactivate_State_Tax",
+          "cardinality": "[0..*]",
+          "xpath": "/wd:Put_Payroll_USA_State_and_Local_Tax_Election_Request/wd:Payroll_USA_State_and_Local_Tax_Election_Data/wd:Payroll_State_County_Tax_Data/wd:Inactivate_State_Tax"
+        }
+      }
+    ]
+  }
+]
