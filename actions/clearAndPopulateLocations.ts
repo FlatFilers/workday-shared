@@ -1,5 +1,6 @@
 import api from '@flatfile/api'
-import { authenticateAndFetchLocations } from '../reference_data/locations.js'
+import { authenticateAndFetchData } from '../soapRequest/authenticateAndFetchData'
+import { locationsMetadata } from '../soapRequest/soapMetadata'
 
 async function clearAndPopulateLocations(event) {
   try {
@@ -20,12 +21,15 @@ async function clearAndPopulateLocations(event) {
 
       console.log('Fetching location data...')
       // Fetch location data from the source (e.g., API)
-      const locationData = await authenticateAndFetchLocations(
-        event.context.spaceId
+      // We are now using the authenticateAndFetchData function, which is a more generalized function for data fetching
+      const locationData = await authenticateAndFetchData(
+        event.context.spaceId,
+        locationsMetadata // Use the locations metadata with the new function
       )
       console.log('Fetched location data:', locationData)
 
       if (locationData) {
+        // Check each location data item for required fields
         locationData.forEach((loc, index) => {
           if (!loc.locationName || !loc.locationID) {
             console.log(
@@ -67,9 +71,10 @@ async function clearAndPopulateLocations(event) {
         }
 
         // Prepare the request to insert the location data
-        const request = locationData.map(({ locationName, locationID }) => ({
-          name: { value: locationName },
-          id: { value: locationID },
+        // Map each location data item to the request format expected by the API
+        const request = locationData.map(({ name, id }) => ({
+          name: { value: name },
+          id: { value: id },
           // Include other fields if necessary
         }))
 
