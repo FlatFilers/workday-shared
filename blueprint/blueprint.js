@@ -4,6 +4,14 @@ export const blueprint = [
     slug: 'workers',
     fields: [
       {
+        key: 'Active',
+        label: 'Active',
+        type: 'boolean',
+        description: 'Is the Worker Active?',
+        constraints: [{ type: 'required' }],
+      },
+
+      {
         key: 'Applicant_ID',
         label: 'Worker ID',
         type: 'string',
@@ -11,7 +19,7 @@ export const blueprint = [
         constraints: [{ type: 'required', type: 'unique', primary: true }],
       },
       {
-        key: 'Legal_Name_Country_Reference_ID',
+        key: 'COUNTRY',
         label: 'Country',
         type: 'enum',
         description:
@@ -276,7 +284,7 @@ export const blueprint = [
         // no key was listed for this in the generator table
         key: 'Scheduled_Weekly_Hours',
         label: 'Scheduled Weekly Hours',
-        type: 'string',
+        type: 'number',
         description: "Enter the worker's scheduled weekly hours",
         constraints: [{ type: 'required' }],
       },
@@ -289,7 +297,7 @@ export const blueprint = [
       {
         key: 'salary',
         label: 'Salary',
-        type: 'string',
+        type: 'number',
         description: 'Enter the salary for salaried workers',
       },
       {
@@ -316,6 +324,9 @@ export const blueprint = [
         description:
           'Enter the password that the worker will use to log into Workday.',
         constraints: [{ type: 'required' }],
+        metadata: {
+          validateAs: 'complexPwd',
+        },
       },
       {
         // I think this is how the key is built based on the generator table
@@ -481,7 +492,7 @@ export const blueprint = [
         constraints: [{ type: 'required' }],
       },
       {
-        key: 'National_ID',
+        key: 'USA_National_ID_Country_Ref_12345_ID',
         label: 'Social Security Number',
         type: 'string',
         description:
