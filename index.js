@@ -1,25 +1,26 @@
 import { RecordHook } from '@flatfile/plugin-record-hook'
 import api from '@flatfile/api'
 import { blueprint } from './blueprint/blueprint'
-import { ExcelExtractor } from '@flatfile/plugin-xlsx-extractor'
+import { xlsxExtractorPlugin } from '@flatfile/plugin-xlsx-extractor'
 import { DedupeRecords } from './actions/dedupe.records'
 import { validateRecord } from './validationsDictionary/recordValidators'
 import { validateReportingStructure } from './actions/validateReportingStructure'
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
-import axios from 'axios'
 require('dotenv').config()
 import { clearAndPopulateLocations } from './actions/clearAndPopulateLocations'
 import { createPage } from './workflow/welcome-page'
 import { retrieveBlueprint } from './workflow/retrieve-blueprint'
 import { isNil, isNotNil } from './validations/common/helpers'
 import { createAndInviteGuests } from './guests/createAndInviteGuests'
-import { jobs } from './reference_data/jobs'
 import csvZip from './actions/csvZip'
 import { locationsMetadata } from './soapRequest/soapMetadata'
 import { authenticateAndFetchData } from './soapRequest/authenticateAndFetchData'
 import { costCentersMetadata } from './soapRequest/soapMetadata'
 import { companiesMetadata } from './soapRequest/soapMetadata'
 import { jobsMetadata } from './soapRequest/soapMetadata'
+const ExcelJS = require('exceljs')
+const path = require('path')
+const fs = require('fs')
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -84,17 +85,17 @@ export default function (listener) {
         sheets: blueprint,
         actions: [
           {
-            operation: 'submitAction',
-            mode: 'foreground',
-            label: 'Submit',
-            description: 'Send a webhook to the app',
-            primary: true,
-          },
-          {
             operation: 'downloadCSV',
             mode: 'foreground',
             label: 'Download ZIP File of Workbook Data',
             description: 'Downloads ZIP File of Workbook Data',
+            primary: true,
+          },
+          {
+            operation: 'downloadExcelWorkbook',
+            mode: 'foreground',
+            label: 'Download Excel Workbook',
+            description: 'Downloads Excel Workbook of Data',
             primary: false,
           },
         ],
@@ -383,56 +384,56 @@ export default function (listener) {
         console.error('Error: Jobs sheet not found')
       }
 
-          //Locations
+      //Locations
 
-          const locationsSheet = workbook.data.sheets.find((s) =>
-            s.config.slug.includes('locations')
-          )
+      const locationsSheet = workbook.data.sheets.find((s) =>
+        s.config.slug.includes('locations')
+      )
 
-          if (locationsSheet) {
-            console.log('Locations sheet found')
-            const locationsId = locationsSheet.id
+      if (locationsSheet) {
+        console.log('Locations sheet found')
+        const locationsId = locationsSheet.id
+
+        try {
+          // console.log('Fetching location data...')
+          const locationData = await authenticateAndFetchData(
+            spaceId,
+            locationsMetadata
+          ) // Fetch location data using the authenticateAndFetchLocations function
+          console.log('Location Data Prior to Preparing Request:', locationData)
+
+          if (locationData) {
+            console.log('Location data fetched successfully')
+            console.log('Location Data:', locationData)
+
+            const request = locationData.map(({ name, id }) => ({
+              name: { value: name },
+              id: { value: id },
+              // Include other fields if necessary
+            }))
+
+            console.log('Request:', request) // Log the prepared request
 
             try {
-              // console.log('Fetching location data...')
-              const locationData = await authenticateAndFetchData(
-                spaceId,
-                locationsMetadata
-              ) // Fetch location data using the authenticateAndFetchLocations function
-              console.log('Location Data Prior to Preparing Request:', locationData)
-
-              if (locationData) {
-                console.log('Location data fetched successfully')
-                console.log('Location Data:', locationData)
-
-                const request = locationData.map(({ name, id }) => ({
-                  name: { value: name },
-                  id: { value: id },
-                  // Include other fields if necessary
-                }))
-
-                console.log('Request:', request) // Log the prepared request
-
-                try {
-                  // console.log('Inserting location data...')
-                  const insertLocations = await api.records.insert(
-                    locationsId,
-                    request
-                  )
-                  // console.log('Location data inserted:', insertLocations)
-                } catch (error) {
-                  console.error('Error inserting location data:', error.message)
-                  console.error('Error Details:', error)
-                }
-              } else {
-                console.error('Error: Failed to fetch location data')
-              }
+              // console.log('Inserting location data...')
+              const insertLocations = await api.records.insert(
+                locationsId,
+                request
+              )
+              // console.log('Location data inserted:', insertLocations)
             } catch (error) {
-              console.error('Error fetching location data:', error.message)
+              console.error('Error inserting location data:', error.message)
+              console.error('Error Details:', error)
             }
           } else {
-            console.error('Error: Locations sheet not found')
+            console.error('Error: Failed to fetch location data')
           }
+        } catch (error) {
+          console.error('Error fetching location data:', error.message)
+        }
+      } else {
+        console.error('Error: Locations sheet not found')
+      }
     } else {
       console.log('Workbook does not match the expected name')
     }
@@ -636,64 +637,114 @@ export default function (listener) {
   // run .trim()
   // })
 
-  // SUBMIT A WEBHOOK WITH THE WORKBOOK ID
-
-  listener.filter({ job: 'workbook:submitAction' }, (configure) => {
+  listener.filter({ job: 'workbook:downloadExcelWorkbook' }, (configure) => {
     configure.on('job:ready', async (event) => {
-      const { jobId, workbookId } = event.context
+      const { jobId, workbookId, spaceId, environmentId } = event.context
 
-      //get all sheets
-      const sheets = await api.sheets.list({ workbookId })
-
-      const records = {}
-      for (const [index, element] of sheets.data.entries()) {
-        records[`Sheet[${index}]`] = await api.records.get(element.id)
-      }
+      console.log(
+        `JobId: ${jobId}, WorkbookId: ${workbookId}, SpaceId: ${spaceId}, EnvironmentId: ${environmentId}`
+      )
 
       try {
+        // Get all sheets
+        const sheetsResponse = await api.sheets.list({ workbookId })
+        console.log('Sheets API Response:', sheetsResponse)
+        if (!sheetsResponse.data) {
+          throw new Error(
+            `Failed to fetch sheets. Response: ${JSON.stringify(
+              sheetsResponse
+            )}`
+          )
+        }
+
+        const sheets = sheetsResponse.data || []
+        console.log('Sheets retrieved:', sheets)
+
+        const records = {}
+        for (const [index, sheet] of sheets.entries()) {
+          const sheetRecords = await api.records.get(sheet.id)
+          if (!sheetRecords.data) {
+            throw new Error(
+              `Failed to fetch records for sheet ${
+                sheet.name
+              }. Response: ${JSON.stringify(sheetRecords)}`
+            )
+          }
+          records[sheet.name] = sheetRecords
+        }
+        console.log('Records for sheets:', records)
+
         await api.jobs.ack(jobId, {
-          info: 'Starting job to submit action to webhook.site',
+          info: 'Starting job to write to Excel file',
           progress: 10,
         })
 
-        const webhookReceiver =
-          process.env.WEBHOOK_SITE_URL ||
-          'https://webhook.site/e8702d78-58c2-4f47-9b11-8ab39ff9da9e'
+        // Create new workbook
+        const workbook = new ExcelJS.Workbook()
+        console.log('New workbook created')
 
-        const response = await axios.post(
-          webhookReceiver,
-          {
-            ...event.payload,
-            method: 'axios',
-            sheets,
-            records,
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
+        // For each sheet, populate Excel with data
+        for (const sheet in records) {
+          // Limit sheet name to 31 characters
+          const trimmedSheetName = sheet.substring(0, 31)
+
+          const newWorksheet = workbook.addWorksheet(trimmedSheetName)
+          const data = records[sheet].data.records
+
+          if (data.length > 0) {
+            // Add headers based on the keys of the `values` object in the first record
+            const headers = Object.keys(data[0].values)
+            newWorksheet.addRow(headers)
           }
-        )
 
-        if (response.status === 200) {
-          await api.jobs.complete(jobId, {
-            outcome: {
-              message:
-                'Data was successfully submitted to webhook.site. Go check it out!',
-            },
+          // For each row of data, write to Excel
+          data.forEach((record) => {
+            const cellData = record.values
+            const newRow = []
+            Object.entries(cellData).forEach(([, value]) => {
+              newRow.push(value.value)
+            })
+            newWorksheet.addRow(newRow)
           })
-        } else {
-          throw new Error('Failed to submit data to webhook.site')
         }
-      } catch (error) {
-        console.log(`webhook.site[error]: ${JSON.stringify(error, null, 2)}`)
+        console.log('Data written to workbook')
 
-        await api.jobs.fail(jobId, {
+        // Get current date-time
+        const dateTime = new Date().toISOString().replace(/[:.]/g, '-')
+
+        // Write workbook to a file
+        const tempFilePath = path.join(__dirname, `Workbook_${dateTime}.xlsx`)
+        await workbook.xlsx.writeFile(tempFilePath)
+
+        // Read the file as a stream
+        const fileStream = fs.createReadStream(tempFilePath)
+
+        // Upload the workbook to Flatfile as a file
+        const fileUploadResponse = await api.files.upload(fileStream, {
+          spaceId,
+          environmentId,
+          mode: 'export',
+        })
+        console.log('File uploaded:', fileUploadResponse)
+
+        await api.jobs.complete(jobId, {
           outcome: {
             message:
-              "This job failed probably because it couldn't find the webhook.site URL.",
+              'Data was successfully written to Excel file and uploaded. You can access the workbook in the "Available Downloads" section of the Files page in Flatfile.',
           },
         })
+      } catch (error) {
+        console.error('Error:', error)
+        try {
+          await api.jobs.fail(jobId, {
+            outcome: {
+              message:
+                'Job failed due to an unexpected error. Please check logs for more details.',
+            },
+          })
+        } catch (apiError) {
+          console.error('Error while reporting job failure:', apiError)
+        }
       }
     })
   })
@@ -701,7 +752,5 @@ export default function (listener) {
   //Download Data to Excel Workbook
   listener.use(csvZip)
   // PARSE XLSX FILES
-  listener.on('file:created', async (event) => {
-    return new ExcelExtractor(event).runExtraction()
-  })
+  listener.use(xlsxExtractorPlugin({ rawNumbers: true }))
 }
