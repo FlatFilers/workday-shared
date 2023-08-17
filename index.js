@@ -21,6 +21,7 @@ import { jobsMetadata } from './soapRequest/soapMetadata'
 const ExcelJS = require('exceljs')
 const path = require('path')
 const fs = require('fs')
+import { DelimiterExtractor } from '@flatfile/plugin-delimiter-extractor'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -749,8 +750,10 @@ export default function (listener) {
     })
   })
 
-  //Download Data to Excel Workbook
+  //Download Data to Zipped CSV
   listener.use(csvZip)
   // PARSE XLSX FILES
   listener.use(xlsxExtractorPlugin({ rawNumbers: true }))
+  //PARSE PIPE-DELIMITED TXT FILES
+  listener.use(DelimiterExtractor('.txt', { delimiter: '|' }))
 }
