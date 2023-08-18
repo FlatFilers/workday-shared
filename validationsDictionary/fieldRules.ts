@@ -13,7 +13,7 @@ function shouldValidateAsAlphanumeric(field): boolean {
  * @returns {boolean} - Whether the field should undergo password complexity validation.
  */
 function shouldValidateAsComplexPwd(field): boolean {
-  return field.metadata?.validateAs === 'complexPwd'
+  return field.metadata?.validations?.includes('complexPwd') ?? false
 }
 
 /**
@@ -22,7 +22,7 @@ function shouldValidateAsComplexPwd(field): boolean {
  * @returns {boolean} - Whether the field should be validated as an integer.
  */
 function shouldValidateAsInteger(field): boolean {
-  return field.metadata?.validateAs === 'integer'
+  return field.metadata?.validations?.includes('ISINTEGER') ?? false
 }
 
 /**

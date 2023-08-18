@@ -82,7 +82,10 @@ export default function (listener) {
         spaceId: spaceId,
         environmentId: environmentId,
         labels: ['primary'],
-        name: 'Worker + Org Import',
+
+        //Dynamically Generate Name Based on DCDD?
+
+        name: 'DCDD Test',
         sheets: blueprint,
         actions: [
           {
@@ -209,434 +212,433 @@ export default function (listener) {
     })
   })
 
-  // SEED THE WORKBOOK WITH DATA workbook:created
-  listener.on('workbook:created', async (event) => {
-    if (!event.context || !event.context.workbookId) {
-      console.error('Event context or workbookId missing')
-      return
-    }
+  // // SEED THE WORKBOOK WITH DATA workbook:created
+  // listener.on('workbook:created', async (event) => {
+  //   if (!event.context || !event.context.workbookId) {
+  //     console.error('Event context or workbookId missing')
+  //     return
+  //   }
 
-    const workbookId = event.context.workbookId
-    let workbook
-    try {
-      workbook = await api.workbooks.get(workbookId)
-    } catch (error) {
-      console.error('Error getting workbook:', error.message)
-      return
-    }
+  //   const workbookId = event.context.workbookId
+  //   let workbook
+  //   try {
+  //     workbook = await api.workbooks.get(workbookId)
+  //   } catch (error) {
+  //     console.error('Error getting workbook:', error.message)
+  //     return
+  //   }
 
-    const workbookName =
-      workbook.data && workbook.data.name ? workbook.data.name : ''
-    const spaceId =
-      workbook.data && workbook.data.spaceId ? workbook.data.spaceId : ''
+  //   const workbookName =
+  //     workbook.data && workbook.data.name ? workbook.data.name : ''
+  //   const spaceId =
+  //     workbook.data && workbook.data.spaceId ? workbook.data.spaceId : ''
 
-    // console.log('Received workbook:created event')
-    // console.log('Workbook ID:', workbookId)
-    // console.log('Workbook Name:', workbookName)
+  //   // console.log('Received workbook:created event')
+  //   // console.log('Workbook ID:', workbookId)
+  //   // console.log('Workbook Name:', workbookName)
 
-    if (workbookName.includes('Worker + Org Import')) {
-      // console.log('Workbook matches the expected name')
+  //   if (workbookName.includes('Worker + Org Import')) {
+  //     // console.log('Workbook matches the expected name')
 
-      const sheets =
-        workbook.data && workbook.data.sheets ? workbook.data.sheets : []
+  //     const sheets =
+  //       workbook.data && workbook.data.sheets ? workbook.data.sheets : []
 
-      // COMPANIES
-      const companiesSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('companies')
-      )
+  //     // COMPANIES
+  //     const companiesSheet = workbook.data.sheets.find((s) =>
+  //       s.config.slug.includes('companies')
+  //     )
 
-      if (companiesSheet) {
-        console.log('Companies sheet found')
-        const companiesId = companiesSheet.id
+  //     if (companiesSheet) {
+  //       console.log('Companies sheet found')
+  //       const companiesId = companiesSheet.id
 
-        try {
-          console.log('Fetching company data...')
-          const companyData = await authenticateAndFetchData(
-            spaceId,
-            companiesMetadata
-          ) // Fetch company data using the authenticateAndFetchData function
+  //       try {
+  //         console.log('Fetching company data...')
+  //         const companyData = await authenticateAndFetchData(
+  //           spaceId,
+  //           companiesMetadata
+  //         ) // Fetch company data using the authenticateAndFetchData function
 
-          if (companyData) {
-            console.log(
-              `Fetched ${companyData.length} company records successfully`
-            )
+  //         if (companyData) {
+  //           console.log(
+  //             `Fetched ${companyData.length} company records successfully`
+  //           )
 
-            const request = companyData.map(({ name, id }) => ({
-              name: { value: name },
-              id: { value: id },
-              // Include other fields if necessary
-            }))
+  //           const request = companyData.map(({ name, id }) => ({
+  //             name: { value: name },
+  //             id: { value: id },
+  //             // Include other fields if necessary
+  //           }))
 
-            try {
-              console.log('Inserting company data...')
-              const insertCompanies = await api.records.insert(
-                companiesId,
-                request
-              )
-              console.log(
-                `Inserted ${insertCompanies.length} company records successfully`
-              )
-            } catch (error) {
-              console.error('Error inserting company data:', error.message)
-            }
-          } else {
-            console.error('Error: Failed to fetch company data')
-          }
-        } catch (error) {
-          console.error('Error fetching company data:', error.message)
-        }
-      } else {
-        console.error('Error: Companies sheet not found')
-      }
+  //           try {
+  //             console.log('Inserting company data...')
+  //             const insertCompanies = await api.records.insert(
+  //               companiesId,
+  //               request
+  //             )
+  //             console.log(
+  //               `Inserted ${insertCompanies.length} company records successfully`
+  //             )
+  //           } catch (error) {
+  //             console.error('Error inserting company data:', error.message)
+  //           }
+  //         } else {
+  //           console.error('Error: Failed to fetch company data')
+  //         }
+  //       } catch (error) {
+  //         console.error('Error fetching company data:', error.message)
+  //       }
+  //     } else {
+  //       console.error('Error: Companies sheet not found')
+  //     }
 
-      // COST CENTERS
-      const costCentersSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('cost_centers')
-      )
+  //     // COST CENTERS
+  //     const costCentersSheet = workbook.data.sheets.find((s) =>
+  //       s.config.slug.includes('cost_centers')
+  //     )
 
-      if (costCentersSheet) {
-        console.log('Cost Centers sheet found')
-        const costCentersId = costCentersSheet.id
+  //     if (costCentersSheet) {
+  //       console.log('Cost Centers sheet found')
+  //       const costCentersId = costCentersSheet.id
 
-        try {
-          console.log('Fetching cost center data...')
-          const costCenterData = await authenticateAndFetchData(
-            spaceId,
-            costCentersMetadata
-          ) // Fetch cost center data using the authenticateAndFetchData function
+  //       try {
+  //         console.log('Fetching cost center data...')
+  //         const costCenterData = await authenticateAndFetchData(
+  //           spaceId,
+  //           costCentersMetadata
+  //         ) // Fetch cost center data using the authenticateAndFetchData function
 
-          if (costCenterData) {
-            console.log(
-              `Fetched ${costCenterData.length} cost center records successfully`
-            )
+  //         if (costCenterData) {
+  //           console.log(
+  //             `Fetched ${costCenterData.length} cost center records successfully`
+  //           )
 
-            const request = costCenterData.map(({ name, id }) => ({
-              name: { value: name },
-              id: { value: id },
-              // Include other fields if necessary
-            }))
+  //           const request = costCenterData.map(({ name, id }) => ({
+  //             name: { value: name },
+  //             id: { value: id },
+  //             // Include other fields if necessary
+  //           }))
 
-            try {
-              console.log('Inserting cost center data...')
-              const insertCostCenters = await api.records.insert(
-                costCentersId,
-                request
-              )
-              console.log(
-                `Inserted ${insertCostCenters.length} cost center records successfully`
-              )
-            } catch (error) {
-              console.error('Error inserting cost center data:', error.message)
-            }
-          } else {
-            console.error('Error: Failed to fetch cost center data')
-          }
-        } catch (error) {
-          console.error('Error fetching cost center data:', error.message)
-        }
-      } else {
-        console.error('Error: Cost Centers sheet not found')
-      }
+  //           try {
+  //             console.log('Inserting cost center data...')
+  //             const insertCostCenters = await api.records.insert(
+  //               costCentersId,
+  //               request
+  //             )
+  //             console.log(
+  //               `Inserted ${insertCostCenters.length} cost center records successfully`
+  //             )
+  //           } catch (error) {
+  //             console.error('Error inserting cost center data:', error.message)
+  //           }
+  //         } else {
+  //           console.error('Error: Failed to fetch cost center data')
+  //         }
+  //       } catch (error) {
+  //         console.error('Error fetching cost center data:', error.message)
+  //       }
+  //     } else {
+  //       console.error('Error: Cost Centers sheet not found')
+  //     }
 
-      // JOB PROFILES
-      const jobsSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('jobs')
-      )
+  //     // JOB PROFILES
+  //     const jobsSheet = workbook.data.sheets.find((s) =>
+  //       s.config.slug.includes('jobs')
+  //     )
 
-      if (jobsSheet) {
-        console.log('Jobs sheet found')
-        const jobsId = jobsSheet.id
+  //     if (jobsSheet) {
+  //       console.log('Jobs sheet found')
+  //       const jobsId = jobsSheet.id
 
-        try {
-          console.log('Fetching job profile data...')
-          const jobData = await authenticateAndFetchData(spaceId, jobsMetadata) // Fetch job profile data using the authenticateAndFetchData function
+  //       try {
+  //         console.log('Fetching job profile data...')
+  //         const jobData = await authenticateAndFetchData(spaceId, jobsMetadata) // Fetch job profile data using the authenticateAndFetchData function
 
-          if (jobData) {
-            console.log(
-              `Fetched ${jobData.length} job profile records successfully`
-            )
+  //         if (jobData) {
+  //           console.log(
+  //             `Fetched ${jobData.length} job profile records successfully`
+  //           )
 
-            const request = jobData.map(
-              ({ jobCode, jobTitle, jobClassification, jobPayRate }) => ({
-                code: { value: jobCode },
-                title: { value: jobTitle },
-                classification: { value: jobClassification },
-                pay_rate_type: { value: jobPayRate },
-                // Include other fields if necessary
-              })
-            )
+  //           const request = jobData.map(
+  //             ({ jobCode, jobTitle, jobClassification, jobPayRate }) => ({
+  //               code: { value: jobCode },
+  //               title: { value: jobTitle },
+  //               classification: { value: jobClassification },
+  //               pay_rate_type: { value: jobPayRate },
+  //               // Include other fields if necessary
+  //             })
+  //           )
 
-            try {
-              console.log('Inserting job profile data...')
-              const insertJobs = await api.records.insert(jobsId, request)
-              console.log(
-                `Inserted ${insertJobs.length} job profile records successfully`
-              )
-            } catch (error) {
-              console.error('Error inserting job profile data:', error.message)
-            }
-          } else {
-            console.error('Error: Failed to fetch job profile data')
-          }
-        } catch (error) {
-          console.error('Error fetching job profile data:', error.message)
-        }
-      } else {
-        console.error('Error: Jobs sheet not found')
-      }
+  //           try {
+  //             console.log('Inserting job profile data...')
+  //             const insertJobs = await api.records.insert(jobsId, request)
+  //             console.log(
+  //               `Inserted ${insertJobs.length} job profile records successfully`
+  //             )
+  //           } catch (error) {
+  //             console.error('Error inserting job profile data:', error.message)
+  //           }
+  //         } else {
+  //           console.error('Error: Failed to fetch job profile data')
+  //         }
+  //       } catch (error) {
+  //         console.error('Error fetching job profile data:', error.message)
+  //       }
+  //     } else {
+  //       console.error('Error: Jobs sheet not found')
+  //     }
 
-      //Locations
+  //     //Locations
 
-      const locationsSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('locations')
-      )
+  //     const locationsSheet = workbook.data.sheets.find((s) =>
+  //       s.config.slug.includes('locations')
+  //     )
 
-      if (locationsSheet) {
-        console.log('Locations sheet found')
-        const locationsId = locationsSheet.id
+  //     if (locationsSheet) {
+  //       console.log('Locations sheet found')
+  //       const locationsId = locationsSheet.id
 
-        try {
-          // console.log('Fetching location data...')
-          const locationData = await authenticateAndFetchData(
-            spaceId,
-            locationsMetadata
-          ) // Fetch location data using the authenticateAndFetchLocations function
-          console.log('Location Data Prior to Preparing Request:', locationData)
+  //       try {
+  //         // console.log('Fetching location data...')
+  //         const locationData = await authenticateAndFetchData(
+  //           spaceId,
+  //           locationsMetadata
+  //         ) // Fetch location data using the authenticateAndFetchLocations function
+  //         console.log('Location Data Prior to Preparing Request:', locationData)
 
-          if (locationData) {
-            console.log('Location data fetched successfully')
-            console.log('Location Data:', locationData)
+  //         if (locationData) {
+  //           console.log('Location data fetched successfully')
+  //           console.log('Location Data:', locationData)
 
-            const request = locationData.map(({ name, id }) => ({
-              name: { value: name },
-              id: { value: id },
-              // Include other fields if necessary
-            }))
+  //           const request = locationData.map(({ name, id }) => ({
+  //             name: { value: name },
+  //             id: { value: id },
+  //             // Include other fields if necessary
+  //           }))
 
-            console.log('Request:', request) // Log the prepared request
+  //           console.log('Request:', request) // Log the prepared request
 
-            try {
-              // console.log('Inserting location data...')
-              const insertLocations = await api.records.insert(
-                locationsId,
-                request
-              )
-              // console.log('Location data inserted:', insertLocations)
-            } catch (error) {
-              console.error('Error inserting location data:', error.message)
-              console.error('Error Details:', error)
-            }
-          } else {
-            console.error('Error: Failed to fetch location data')
-          }
-        } catch (error) {
-          console.error('Error fetching location data:', error.message)
-        }
-      } else {
-        console.error('Error: Locations sheet not found')
-      }
-    } else {
-      console.log('Workbook does not match the expected name')
-    }
-  })
+  //           try {
+  //             // console.log('Inserting location data...')
+  //             const insertLocations = await api.records.insert(
+  //               locationsId,
+  //               request
+  //             )
+  //             // console.log('Location data inserted:', insertLocations)
+  //           } catch (error) {
+  //             console.error('Error inserting location data:', error.message)
+  //             console.error('Error Details:', error)
+  //           }
+  //         } else {
+  //           console.error('Error: Failed to fetch location data')
+  //         }
+  //       } catch (error) {
+  //         console.error('Error fetching location data:', error.message)
+  //       }
+  //     } else {
+  //       console.error('Error: Locations sheet not found')
+  //     }
+  //   } else {
+  //     console.log('Workbook does not match the expected name')
+  //   }
+  // })
 
   // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
   listener.on('commit:created', async (event) => {
     try {
-      console.log('commit:created event triggered') // Log when the event is triggered
+      console.log('commit:created event triggered')
+      console.log('Logging Entire Event for Colin: ', event.context)
 
-      // Retrieve the sheetId from the event context
+      // Retrieve the sheetId and workbookId from the event context
       const sheetId = event.context.sheetId
-      console.log(`Retrieved sheetId from event: ${sheetId}`) // Log the retrieved sheetId
+      const workbookId = event.context.workbookId // Assuming the workbookId is available in the event context
+
+      console.log(`Retrieved sheetId from event: ${sheetId}`)
+
+      // Fetch the workbook from the API
+      const workbook = await api.workbooks.get(workbookId)
+      if (
+        !workbook ||
+        workbook.data.name.startsWith('[file]') ||
+        workbook.data.labels.includes('file')
+      ) {
+        console.log('Skipping RecordHooks for file-based workbooks.')
+        return
+      }
 
       // Fetch the sheet from the API
       const sheet = await api.sheets.get(sheetId)
-
-      // Only log that the sheet was fetched successfully
       if (!sheet) {
         console.log(`Failed to fetch sheet with id: ${sheetId}`)
         return
       }
       console.log(`Sheet with id: ${sheetId} fetched successfully.`)
 
-      // Verify that the sheetSlug matches 'workers'
-      if (sheet.data.config?.slug === 'workers') {
-        console.log(
-          "Confirmed: sheetSlug matches 'workers'. Proceeding to call RecordHook..."
-        ) // Log before calling RecordHook
-
-        // Get the fields from the sheet response
-        const fields = sheet.data.config?.fields
-
-        // Log only the number of fields retrieved
-        if (!fields) {
-          console.log('No fields were fetched.')
-          return
-        }
-        console.log(`Successfully fetched ${fields.length} fields.`)
-
-        // Call the RecordHook function with event and a handler
-        await RecordHook(event, async (record, event) => {
-          console.log("Inside RecordHook's handler function") // Log inside the handler function
-          try {
-            await validateRecord(record, fields) // Using the validateRecord function here
-          } catch (error) {
-            console.error('Error in validateRecord:', error)
-          }
-          console.log("Exiting RecordHook's handler function") // Log when exiting the handler function
-          return record
-        })
-        console.log('Finished calling RecordHook') // Log after calling RecordHook
-      } else {
-        console.log(
-          "Failed: sheetSlug does not match 'workers'. Aborting RecordHook call..."
-        )
+      // Get the fields from the sheet response
+      const fields = sheet.data.config?.fields
+      if (!fields) {
+        console.log('No fields were fetched.')
+        return
       }
+      console.log(`Successfully fetched ${fields.length} fields.`)
+
+      // Call the RecordHook function with event and a handler
+      await RecordHook(event, async (record, event) => {
+        console.log("Inside RecordHook's handler function")
+        try {
+          await validateRecord(record, fields)
+        } catch (error) {
+          console.error('Error in validateRecord:', error)
+        }
+        console.log("Exiting RecordHook's handler function")
+        return record
+      })
+      console.log('Finished calling RecordHook')
     } catch (error) {
       console.error('Error in commit:created event handler:', error)
     }
   })
 
-  // RUN ACTIONS TRIGGERED BY USERS
+  // // RUN ACTIONS TRIGGERED BY USERS
 
-  // DEDUPE FROM WORKERS SHEET
-  listener.filter({ job: 'sheet:dedupeWorkers' }, (configure) => {
-    configure.on('job:ready', async (event) => {
-      const { jobId, sheetId } = event.context
+  // // DEDUPE FROM WORKERS SHEET
+  // listener.filter({ job: 'sheet:dedupeWorkers' }, (configure) => {
+  //   configure.on('job:ready', async (event) => {
+  //     const { jobId, sheetId } = event.context
 
-      try {
-        await api.jobs.ack(jobId, {
-          info: 'Deduplicating Workers...',
-          progress: 10, //optional
-        })
+  //     try {
+  //       await api.jobs.ack(jobId, {
+  //         info: 'Deduplicating Workers...',
+  //         progress: 10, //optional
+  //       })
 
-        // Call the dedupeEmployees function with the records
-        await new DedupeRecords(sheetId, 'Applicant_ID').dedupeRecords()
+  //       // Call the dedupeEmployees function with the records
+  //       await new DedupeRecords(sheetId, 'Applicant_ID').dedupeRecords()
 
-        await api.jobs.complete(jobId, {
-          info: 'This job is now complete.',
-        })
-      } catch (error) {
-        console.log(`Error: ${JSON.stringify(error, null, 2)}`)
+  //       await api.jobs.complete(jobId, {
+  //         info: 'This job is now complete.',
+  //       })
+  //     } catch (error) {
+  //       console.log(`Error: ${JSON.stringify(error, null, 2)}`)
 
-        await api.jobs.fail(jobId, {
-          info: 'This job did not work.',
-        })
-      }
-    })
-  })
-
-  // VALIDATE REPORTING STRUCTURE FROM WORKERS SHEET
-  listener.filter({ job: 'sheet:validateReportingStructure' }, (configure) => {
-    configure.on('job:ready', async (event) => {
-      const { jobId, sheetId } = event.context
-
-      try {
-        await api.jobs.ack(jobId, {
-          info: 'Validating Reporting Structure...',
-          progress: 10, //optional
-        })
-
-        // Call the 'get' method of api.records with the sheetId
-        const response = await api.records.get(sheetId)
-
-        // Check if the response is valid and contains records
-        if (response?.data?.records) {
-          // Get the records from the response data
-          const records = response.data.records
-
-          // Call the validateReportingStructure function with the records
-          const reportingErrors = validateReportingStructure(records)
-
-          // Update the records if there are any reporting errors
-          if (reportingErrors.length > 0) {
-            await api.records.update(sheetId, reportingErrors)
-            console.log('Records updated successfully.')
-            // For example, you can send them as a notification or store them in a database
-          } else {
-            console.log('No records found for updating.')
-          }
-        } else {
-          console.log('No records found in the response.')
-        }
-
-        await api.jobs.complete(jobId, {
-          info: 'This job is now complete.',
-        })
-      } catch (error) {
-        console.log(`Error: ${JSON.stringify(error, null, 2)}`)
-
-        await api.jobs.fail(jobId, {
-          info: 'This job did not work.',
-        })
-      }
-    })
-  })
-
-  // CREATE SUPERVISORY ORG STRUCTURE FROM WORKERS SHEET
-  listener.filter({ job: 'sheet:buildSupOrgStructure' }, (configure) => {
-    configure.on('job:ready', async (event) => {
-      const { jobId, sheetId, workbookId } = event.context
-
-      try {
-        await api.jobs.ack(jobId, {
-          info: 'Building Supervisory Organization Structure...',
-          progress: 10, // optional
-        })
-
-        // Instantiate the SupervisoryOrgStructureBuilder and call the buildSupervisoryOrgStructure method
-        const orgStructureBuilder = new SupervisoryOrgStructureBuilder(
-          workbookId,
-          sheetId
-        )
-        await orgStructureBuilder.buildSupervisoryOrgStructure()
-
-        await api.jobs.complete(jobId, {
-          info: 'This job is now complete.',
-        })
-      } catch (error) {
-        console.error('Error:', error)
-
-        await api.jobs.fail(jobId, {
-          info: 'This job did not work.',
-        })
-      }
-    })
-  })
-
-  // REFRESH LOCATIONS SHEET WITH DATA
-  listener.filter({ job: 'sheet:refreshLocationsData' }, (configure) => {
-    configure.on('job:ready', async (event) => {
-      const { jobId, sheetId, workbookId } = event.context
-
-      try {
-        await api.jobs.ack(jobId, {
-          info: 'Refreshing Locations Data...',
-          progress: 10, // optional
-        })
-
-        // Call the clearAndPopulateLocations function
-        await clearAndPopulateLocations(event)
-
-        await api.jobs.complete(jobId, {
-          info: 'This job is now complete.',
-        })
-      } catch (error) {
-        console.error('Error:', error)
-
-        await api.jobs.fail(jobId, {
-          info: 'This job did not work.',
-        })
-      }
-    })
-  })
-
-  // TRIMMING ALL
-  // listener.on("commit:created", async (event) => {
-  // event.context.sheet.records.value
-  // for each value in each record
-  // run .trim()
+  //       await api.jobs.fail(jobId, {
+  //         info: 'This job did not work.',
+  //       })
+  //     }
+  //   })
   // })
+
+  // // VALIDATE REPORTING STRUCTURE FROM WORKERS SHEET
+  // listener.filter({ job: 'sheet:validateReportingStructure' }, (configure) => {
+  //   configure.on('job:ready', async (event) => {
+  //     const { jobId, sheetId } = event.context
+
+  //     try {
+  //       await api.jobs.ack(jobId, {
+  //         info: 'Validating Reporting Structure...',
+  //         progress: 10, //optional
+  //       })
+
+  //       // Call the 'get' method of api.records with the sheetId
+  //       const response = await api.records.get(sheetId)
+
+  //       // Check if the response is valid and contains records
+  //       if (response?.data?.records) {
+  //         // Get the records from the response data
+  //         const records = response.data.records
+
+  //         // Call the validateReportingStructure function with the records
+  //         const reportingErrors = validateReportingStructure(records)
+
+  //         // Update the records if there are any reporting errors
+  //         if (reportingErrors.length > 0) {
+  //           await api.records.update(sheetId, reportingErrors)
+  //           console.log('Records updated successfully.')
+  //           // For example, you can send them as a notification or store them in a database
+  //         } else {
+  //           console.log('No records found for updating.')
+  //         }
+  //       } else {
+  //         console.log('No records found in the response.')
+  //       }
+
+  //       await api.jobs.complete(jobId, {
+  //         info: 'This job is now complete.',
+  //       })
+  //     } catch (error) {
+  //       console.log(`Error: ${JSON.stringify(error, null, 2)}`)
+
+  //       await api.jobs.fail(jobId, {
+  //         info: 'This job did not work.',
+  //       })
+  //     }
+  //   })
+  // })
+
+  // // CREATE SUPERVISORY ORG STRUCTURE FROM WORKERS SHEET
+  // listener.filter({ job: 'sheet:buildSupOrgStructure' }, (configure) => {
+  //   configure.on('job:ready', async (event) => {
+  //     const { jobId, sheetId, workbookId } = event.context
+
+  //     try {
+  //       await api.jobs.ack(jobId, {
+  //         info: 'Building Supervisory Organization Structure...',
+  //         progress: 10, // optional
+  //       })
+
+  //       // Instantiate the SupervisoryOrgStructureBuilder and call the buildSupervisoryOrgStructure method
+  //       const orgStructureBuilder = new SupervisoryOrgStructureBuilder(
+  //         workbookId,
+  //         sheetId
+  //       )
+  //       await orgStructureBuilder.buildSupervisoryOrgStructure()
+
+  //       await api.jobs.complete(jobId, {
+  //         info: 'This job is now complete.',
+  //       })
+  //     } catch (error) {
+  //       console.error('Error:', error)
+
+  //       await api.jobs.fail(jobId, {
+  //         info: 'This job did not work.',
+  //       })
+  //     }
+  //   })
+  // })
+
+  // // REFRESH LOCATIONS SHEET WITH DATA
+  // listener.filter({ job: 'sheet:refreshLocationsData' }, (configure) => {
+  //   configure.on('job:ready', async (event) => {
+  //     const { jobId, sheetId, workbookId } = event.context
+
+  //     try {
+  //       await api.jobs.ack(jobId, {
+  //         info: 'Refreshing Locations Data...',
+  //         progress: 10, // optional
+  //       })
+
+  //       // Call the clearAndPopulateLocations function
+  //       await clearAndPopulateLocations(event)
+
+  //       await api.jobs.complete(jobId, {
+  //         info: 'This job is now complete.',
+  //       })
+  //     } catch (error) {
+  //       console.error('Error:', error)
+
+  //       await api.jobs.fail(jobId, {
+  //         info: 'This job did not work.',
+  //       })
+  //     }
+  //   })
+  // })
+
+  // // TRIMMING ALL
+  // // listener.on("commit:created", async (event) => {
+  // // event.context.sheet.records.value
+  // // for each value in each record
+  // // run .trim()
+  // // })
 
   listener.filter({ job: 'workbook:downloadExcelWorkbook' }, (configure) => {
     configure.on('job:ready', async (event) => {
