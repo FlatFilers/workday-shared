@@ -77,42 +77,66 @@ export default function (listener) {
         blueprint = dynamicBlueprint
       }
 
-      // CREATE WORKBOOK FROM BLUEPRINT
-      const createWorkbook = await api.workbooks.create({
-        spaceId: spaceId,
-        environmentId: environmentId,
-        labels: ['primary'],
+      // Corrected path to the dcdd_blueprints folder
+      const folderPath = path.join(__dirname, '..', 'dcdd_blueprints')
 
-        //Dynamically Generate Name Based on DCDD?
+      // Read the contents of the folder
+      const blueprintFiles = fs.readdirSync(folderPath)
 
-        name: 'DCDD Test',
-        sheets: blueprint,
-        actions: [
-          {
-            operation: 'downloadCSV',
-            mode: 'foreground',
-            label: 'Download ZIP File of Workbook Data',
-            description: 'Downloads ZIP File of Workbook Data',
-            primary: true,
-          },
-          {
-            operation: 'downloadExcelWorkbook',
-            mode: 'foreground',
-            label: 'Download Excel Workbook',
-            description: 'Downloads Excel Workbook of Data',
-            primary: false,
-          },
-        ],
+      // Your two default actions
+      const defaultActions = [
+        {
+          operation: 'downloadCSV',
+          mode: 'foreground',
+          label: 'Download ZIP File of Workbook Data',
+          description: 'Downloads ZIP File of Workbook Data',
+          primary: true,
+        },
+        {
+          operation: 'downloadExcelWorkbook',
+          mode: 'foreground',
+          label: 'Download Excel Workbook',
+          description: 'Downloads Excel Workbook of Data',
+          primary: false,
+        },
+      ]
+
+      // Dynamically generate blueprints based on files
+      const blueprints = blueprintFiles.map((file) => {
+        const blueprintContent = JSON.parse(
+          fs.readFileSync(path.join(folderPath, file), 'utf8')
+        )
+        const nameWithoutExtension = path.basename(file, path.extname(file)) // e.g., "absence_blueprint"
+        const workbookName =
+          nameWithoutExtension.split('_')[0].charAt(0).toUpperCase() +
+          nameWithoutExtension.split('_')[0].slice(1) // e.g., "Absence"
+
+        return {
+          name: workbookName,
+          sheets: blueprintContent, // Assuming each file directly contains the blueprint structure
+          actions: defaultActions,
+        }
       })
+      const workbookIds = []
 
-      const workbookId = createWorkbook.data?.id
+      for (const blueprint of blueprints) {
+        const createWorkbook = await api.workbooks.create({
+          spaceId: spaceId,
+          environmentId: environmentId,
+          //labels: ['primary'],
+          ...blueprint,
+        })
+        workbookIds.push(createWorkbook.data?.id)
+      }
+
+      console.log(workbookIds) // This will give you all the workbook IDs created
 
       // ADD WORKBOOK TO SPACE, SET THEME, AND SAVE CREDS
-      if (workbookId) {
+      if (workbookIds) {
         // Need to refresh until update to Spaces to poll for changes
         const updatedSpace = await api.spaces.update(spaceId, {
           environmentId: environmentId,
-          primaryWorkbookId: workbookId,
+          //primaryWorkbookId: workbookId,
           metadata: {
             creds: {
               username: username,
