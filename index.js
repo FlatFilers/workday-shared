@@ -99,6 +99,13 @@ export default function (listener) {
             description: 'Downloads Excel Workbook of Data',
             primary: false,
           },
+          {
+            operation: 'downloadExcelTemplate',
+            mode: 'foreground',
+            label: 'Download Excel Template',
+            description: 'Downloads Excel Templates of Workbook',
+            primary: false,
+          },
         ],
       })
 
@@ -686,18 +693,61 @@ export default function (listener) {
 
         // For each sheet, populate Excel with data
         for (const sheet in records) {
-          // Limit sheet name to 31 characters
-          const trimmedSheetName = sheet.substring(0, 31)
+          // Limit sheet name to 31 characters initially
+          const initialName = sheet.substring(0, 31)
 
-          const newWorksheet = workbook.addWorksheet(trimmedSheetName)
+          let counter = 1
+          let uniqueSheetName = initialName
+
+          while (workbook.getWorksheet(uniqueSheetName)) {
+            // Deduct 2 characters for "_X", or 3 for "_XX" etc., based on the number of digits in the counter.
+            const baseLength = 31 - (1 + counter.toString().length)
+            uniqueSheetName = `${initialName.substring(
+              0,
+              baseLength
+            )}_${counter}`
+            counter++
+
+            if (counter > 99) {
+              // Safety check to prevent infinite loops
+              throw new Error(
+                'Too many duplicate sheet names. Please review the data.'
+              )
+            }
+          }
+
+          const newWorksheet = workbook.addWorksheet(uniqueSheetName)
           const data = records[sheet].data.records
+
+          let headers = []
 
           if (data.length > 0) {
             // Add headers based on the keys of the `values` object in the first record
-            const headers = Object.keys(data[0].values)
-            newWorksheet.addRow(headers)
+            headers = Object.keys(data[0].values)
+          } else {
+            console.log(`No records for sheet: ${sheet}`) // Debugging statement 1
+
+            // If there are no records, fetch headers from the sheet's configuration
+            const matchingSheetConfig = sheets.find((s) => s.name === sheet)
+
+            if (matchingSheetConfig) {
+              console.log(`Found matching config for sheet: ${sheet}`) // Debugging statement 2
+
+              if (
+                matchingSheetConfig.config &&
+                matchingSheetConfig.config.fields
+              ) {
+                headers = matchingSheetConfig.config.fields.map(
+                  (field) => field.key
+                )
+                console.log(`Generated headers for sheet ${sheet}:`, headers) // Debugging statement 3
+              }
+            }
           }
 
+          if (headers.length > 0) {
+            newWorksheet.addRow(headers)
+          }
           // For each row of data, write to Excel
           data.forEach((record) => {
             const cellData = record.values
@@ -732,6 +782,157 @@ export default function (listener) {
           outcome: {
             message:
               'Data was successfully written to Excel file and uploaded. You can access the workbook in the "Available Downloads" section of the Files page in Flatfile.',
+          },
+        })
+      } catch (error) {
+        console.error('Error:', error)
+        try {
+          await api.jobs.fail(jobId, {
+            outcome: {
+              message:
+                'Job failed due to an unexpected error. Please check logs for more details.',
+            },
+          })
+        } catch (apiError) {
+          console.error('Error while reporting job failure:', apiError)
+        }
+      }
+    })
+  })
+
+  listener.filter({ job: 'workbook:downloadExcelTemplate' }, (configure) => {
+    configure.on('job:ready', async (event) => {
+      const { jobId, workbookId, spaceId, environmentId } = event.context
+
+      console.log(
+        `JobId: ${jobId}, WorkbookId: ${workbookId}, SpaceId: ${spaceId}, EnvironmentId: ${environmentId}`
+      )
+
+      try {
+        const sheetsResponse = await api.sheets.list({ workbookId })
+        console.log('Sheets API Response:', sheetsResponse)
+        if (!sheetsResponse.data) {
+          throw new Error(
+            `Failed to fetch sheets. Response: ${JSON.stringify(
+              sheetsResponse
+            )}`
+          )
+        }
+
+        const sheets = sheetsResponse.data || []
+        console.log('Sheets retrieved:', sheets)
+
+        await api.jobs.ack(jobId, {
+          info: 'Starting job to write to Excel file',
+          progress: 10,
+        })
+
+        const workbook = new ExcelJS.Workbook()
+        console.log('New workbook created')
+
+        sheets.forEach((sheet) => {
+          // Limit sheet name to 31 characters initially
+          const initialName = sheet.name.substring(0, 31)
+
+          let counter = 1
+          let uniqueSheetName = initialName
+
+          while (workbook.getWorksheet(uniqueSheetName)) {
+            // Deduct 2 characters for "_X", or 3 for "_XX" etc., based on the number of digits in the counter.
+            const baseLength = 31 - (1 + counter.toString().length)
+            uniqueSheetName = `${initialName.substring(
+              0,
+              baseLength
+            )}_${counter}`
+            counter++
+
+            if (counter > 99) {
+              // Safety check to prevent infinite loops
+              throw new Error(
+                'Too many duplicate sheet names. Please review the data.'
+              )
+            }
+          }
+
+          const newWorksheet = workbook.addWorksheet(uniqueSheetName)
+
+          if (sheet.config && sheet.config.fields) {
+            const fieldKeys = sheet.config.fields.map((field) => field.key)
+            const attributes = [
+              'Field Label',
+              'Field Description',
+              'Field Type',
+              'Required',
+              'Unique',
+              'Readonly',
+            ]
+            newWorksheet.addRow(['Field Key'].concat(fieldKeys)) // First row is field key
+
+            attributes.forEach((attribute) => {
+              let row = [attribute] // Start each row with the attribute name
+              sheet.config.fields.forEach((field) => {
+                switch (attribute) {
+                  case 'Field Label':
+                    row.push(field.label)
+                    break
+                  case 'Field Description':
+                    row.push(field.description || '')
+                    break
+                  case 'Field Type':
+                    row.push(field.type)
+                    break
+                  case 'Required':
+                    row.push(
+                      field.constraints &&
+                        Array.isArray(field.constraints) &&
+                        field.constraints.some(
+                          (constraint) => constraint.type === 'required'
+                        )
+                        ? 'Yes'
+                        : 'No'
+                    )
+                    break
+                  case 'Unique':
+                    row.push(
+                      field.constraints &&
+                        Array.isArray(field.constraints) &&
+                        field.constraints.some(
+                          (constraint) => constraint.type === 'unique'
+                        )
+                        ? 'Yes'
+                        : 'No'
+                    )
+                    break
+                  case 'Readonly':
+                    row.push(field.readonly ? 'Yes' : 'No')
+                    break
+                  default:
+                    row.push('')
+                }
+              })
+              newWorksheet.addRow(row)
+            })
+          }
+        })
+
+        console.log('Field attributes written to workbook')
+
+        const dateTime = new Date().toISOString().replace(/[:.]/g, '-')
+        const tempFilePath = path.join(__dirname, `Workbook_${dateTime}.xlsx`)
+        await workbook.xlsx.writeFile(tempFilePath)
+        const fileStream = fs.createReadStream(tempFilePath)
+
+        const fileUploadResponse = await api.files.upload(fileStream, {
+          spaceId,
+          environmentId,
+          mode: 'export',
+        })
+        console.log('File uploaded:', fileUploadResponse)
+
+        await api.jobs.complete(jobId, {
+          outcome: {
+            message:
+              'Field attributes were successfully written to Excel file and uploaded. You can access the workbook in the "Available Downloads" section of the Files page in Flatfile.',
           },
         })
       } catch (error) {
