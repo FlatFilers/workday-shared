@@ -691,10 +691,6 @@ export default function (listener) {
         const workbook = new ExcelJS.Workbook()
         console.log('New workbook created')
 
-        // Add hidden sheet
-        const instructionsWorksheet = workbook.addWorksheet('Instructions')
-        instructionsWorksheet.state = 'veryHidden' // This makes the sheet hidden
-
         // For each sheet, populate Excel with data
         for (const sheet in records) {
           // Limit sheet name to 31 characters
@@ -812,9 +808,6 @@ export default function (listener) {
 
         const workbook = new ExcelJS.Workbook()
         console.log('New workbook created')
-
-        const instructionsWorksheet = workbook.addWorksheet('Instructions')
-        instructionsWorksheet.state = 'veryHidden'
 
         sheets.forEach((sheet) => {
           const trimmedSheetName = sheet.name.substring(0, 31)
