@@ -693,9 +693,30 @@ export default function (listener) {
 
         // For each sheet, populate Excel with data
         for (const sheet in records) {
-          // Limit sheet name to 31 characters
-          const trimmedSheetName = sheet.substring(0, 31)
-          const newWorksheet = workbook.addWorksheet(trimmedSheetName)
+          // Limit sheet name to 31 characters initially
+          const initialName = sheet.substring(0, 31)
+
+          let counter = 1
+          let uniqueSheetName = initialName
+
+          while (workbook.getWorksheet(uniqueSheetName)) {
+            // Deduct 2 characters for "_X", or 3 for "_XX" etc., based on the number of digits in the counter.
+            const baseLength = 31 - (1 + counter.toString().length)
+            uniqueSheetName = `${initialName.substring(
+              0,
+              baseLength
+            )}_${counter}`
+            counter++
+
+            if (counter > 99) {
+              // Safety check to prevent infinite loops
+              throw new Error(
+                'Too many duplicate sheet names. Please review the data.'
+              )
+            }
+          }
+
+          const newWorksheet = workbook.addWorksheet(uniqueSheetName)
           const data = records[sheet].data.records
 
           let headers = []
@@ -810,8 +831,30 @@ export default function (listener) {
         console.log('New workbook created')
 
         sheets.forEach((sheet) => {
-          const trimmedSheetName = sheet.name.substring(0, 31)
-          const newWorksheet = workbook.addWorksheet(trimmedSheetName)
+          // Limit sheet name to 31 characters initially
+          const initialName = sheet.name.substring(0, 31)
+
+          let counter = 1
+          let uniqueSheetName = initialName
+
+          while (workbook.getWorksheet(uniqueSheetName)) {
+            // Deduct 2 characters for "_X", or 3 for "_XX" etc., based on the number of digits in the counter.
+            const baseLength = 31 - (1 + counter.toString().length)
+            uniqueSheetName = `${initialName.substring(
+              0,
+              baseLength
+            )}_${counter}`
+            counter++
+
+            if (counter > 99) {
+              // Safety check to prevent infinite loops
+              throw new Error(
+                'Too many duplicate sheet names. Please review the data.'
+              )
+            }
+          }
+
+          const newWorksheet = workbook.addWorksheet(uniqueSheetName)
 
           if (sheet.config && sheet.config.fields) {
             const fieldKeys = sheet.config.fields.map((field) => field.key)
