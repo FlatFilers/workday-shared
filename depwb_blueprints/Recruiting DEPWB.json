@@ -1,0 +1,5877 @@
+[
+  {
+    "name": "Job Posting Location Mapping",
+    "slug": "Job Posting Location Mapping",
+    "fields": [
+      {
+        "key": "Location Name",
+        "label": "Location Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Usage",
+        "label": "Location Usage",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Type",
+        "label": "Location Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Location Needed?",
+        "label": "Job Posting Location Needed?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Location Name",
+        "label": "Job Posting Location Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Address Line Data",
+    "slug": "Address Line Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data Key",
+        "label": "Address Line Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data Descriptor",
+        "label": "Address Line Data Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data Type",
+        "label": "Address Line Data Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data",
+        "label": "Address Line Data",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Submunicipality Data",
+    "slug": "Submunicipality Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data Key",
+        "label": "Submunicipality Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data Address Component Name",
+        "label": "Submunicipality Data Address Component Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data Type",
+        "label": "Submunicipality Data Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data",
+        "label": "Submunicipality Data",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "External Career Site",
+    "slug": "External Career Site",
+    "fields": [
+      {
+        "key": "External Career Site Name",
+        "label": "External Career Site Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Brand Name",
+        "label": "Brand Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Description",
+        "label": "Description",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "About Us",
+        "label": "About Us",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Follow Us - Social Network Name",
+        "label": "Follow Us - Social Network Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Social Network URL",
+        "label": "Social Network URL",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Title",
+        "label": "Title",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructions",
+        "label": "Instructions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Field",
+        "label": "Field",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Use?",
+        "label": "Use?",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Required*",
+        "label": "Required*",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Text",
+        "label": "Question Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Terms & Conditions",
+        "label": "Default Terms & Conditions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country-Specific Terms and Conditions",
+        "label": "Country-Specific Terms and Conditions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Candidate Consent",
+        "label": "Candidate Consent",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Privacy Policy Link URL",
+        "label": "Privacy Policy Link URL",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Privacy Policy Link Text",
+        "label": "Privacy Policy Link Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Previous Worker Confirmation Text",
+        "label": "Previous Worker Confirmation Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Field",
+        "label": "Field",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Use?",
+        "label": "Use?",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Required*",
+        "label": "Required*",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Text",
+        "label": "Question Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Include Voluntary Self-Identification of Disability",
+        "label": "Include Voluntary Self-Identification of Disability",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Require Completion of Voluntary Self-Identification of Disability",
+        "label": "Require Completion of Voluntary Self-Identification of Disability",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Apply Confirmation Message",
+        "label": "Apply Confirmation Message",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Welcome Message",
+        "label": "Welcome Message",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "My Task Intro Text",
+        "label": "My Task Intro Text",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "My Application Intro Text",
+        "label": "My Application Intro Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Withdraw Confirmation Message",
+        "label": "Withdraw Confirmation Message",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Delete My Information Message",
+        "label": "Delete My Information Message",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Delete My Information Confirmation Message",
+        "label": "Delete My Information Confirmation Message",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Internal Career Site Non-Worker",
+    "slug": "Internal Career Site Non-Worker",
+    "fields": [
+      {
+        "key": "Career Site Name",
+        "label": "Career Site Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Title",
+        "label": "Title",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructions",
+        "label": "Instructions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Field",
+        "label": "Field",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Use?",
+        "label": "Use?",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Required*",
+        "label": "Required*",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Text",
+        "label": "Question Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Include Voluntary Self-Identification of Disability",
+        "label": "Include Voluntary Self-Identification of Disability",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Require Completion of Voluntary Self-Identification of Disability",
+        "label": "Require Completion of Voluntary Self-Identification of Disability",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Terms & Conditions",
+        "label": "Default Terms & Conditions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country-Specific Terms and Conditions",
+        "label": "Country-Specific Terms and Conditions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Candidate Consent",
+        "label": "Candidate Consent",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Apply Confirmation Message",
+        "label": "Apply Confirmation Message",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Withdraw Confirmation Message",
+        "label": "Withdraw Confirmation Message",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Non-Us Personal Information",
+    "slug": "Non-US Personal Information",
+    "fields": [
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Race/Ethnicity - Allow Multiple",
+        "label": "Race/Ethnicity - Allow Multiple",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Race/Ethnicity - Single Select",
+        "label": "Race/Ethnicity - Single Select",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Gender",
+        "label": "Gender",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Gender Identity",
+        "label": "Gender Identity",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Citzenship Status",
+        "label": "Citzenship Status",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Date of Birth",
+        "label": "Date of Birth",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Disability",
+        "label": "Disability",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Marital Status",
+        "label": "Marital Status",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Religion",
+        "label": "Religion",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Questions",
+    "slug": "Questions",
+    "fields": [
+      {
+        "key": "Mapped to Questionnaire",
+        "label": "Mapped to Questionnaire",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Question Name",
+        "label": "Question Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Question Body",
+        "label": "Question Body",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Required*",
+        "label": "Required*",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Question Type",
+        "label": "Question Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Answer 1",
+        "label": "Answer 1",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 2",
+        "label": "Answer 2",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 3",
+        "label": "Answer 3",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 4",
+        "label": "Answer 4",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 5",
+        "label": "Answer 5",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 6",
+        "label": "Answer 6",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 7",
+        "label": "Answer 7",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 8",
+        "label": "Answer 8",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 9",
+        "label": "Answer 9",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 10",
+        "label": "Answer 10",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 11",
+        "label": "Answer 11",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 12",
+        "label": "Answer 12",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 13",
+        "label": "Answer 13",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 14",
+        "label": "Answer 14",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 15",
+        "label": "Answer 15",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 16",
+        "label": "Answer 16",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 17",
+        "label": "Answer 17",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 18",
+        "label": "Answer 18",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 19",
+        "label": "Answer 19",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 20",
+        "label": "Answer 20",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 21",
+        "label": "Answer 21",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 22",
+        "label": "Answer 22",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 23",
+        "label": "Answer 23",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 24",
+        "label": "Answer 24",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 25",
+        "label": "Answer 25",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Branching Questions",
+    "slug": "Branching Questions",
+    "fields": [
+      {
+        "key": "Mapped to Question",
+        "label": "Mapped to Question",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Which Answer Triggers the Branching Question",
+        "label": "Which Answer Triggers the Branching Question",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Branching Question Name",
+        "label": "Branching Question Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Branching Question Body",
+        "label": "Branching Question Body",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Required",
+        "label": "Required",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Question Type",
+        "label": "Question Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Answer 1",
+        "label": "Answer 1",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 2",
+        "label": "Answer 2",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 3",
+        "label": "Answer 3",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 4",
+        "label": "Answer 4",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 5",
+        "label": "Answer 5",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 6",
+        "label": "Answer 6",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 7",
+        "label": "Answer 7",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 8",
+        "label": "Answer 8",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 9",
+        "label": "Answer 9",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Answer 10",
+        "label": "Answer 10",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Subregion Data",
+    "slug": "Subregion Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data Key",
+        "label": "Subregion Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data Descriptor",
+        "label": "Subregion Data Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data Type",
+        "label": "Subregion Data Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data",
+        "label": "Subregion Data",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Job Requisitions",
+    "slug": "Job Requisitions",
+    "fields": [
+      {
+        "key": "Position ID",
+        "label": "Position ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Position Name",
+        "label": "Position Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Title",
+        "label": "Job Posting Title",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Recruiting Start Date",
+        "label": "Recruiting Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Target Hire Date",
+        "label": "Target Hire Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Target End Date",
+        "label": "Target End Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Salary or Hourly?",
+        "label": "Salary or Hourly?",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Amount",
+        "label": "Amount",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Currency",
+        "label": "Currency",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Recruiter's Position ID",
+        "label": "Primary Recruiter's Position ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Primary Recruiter's Name",
+        "label": "Primary Recruiter's Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Post to External Career Site?",
+        "label": "Post to External Career Site?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Start Date",
+        "label": "Job Posting Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting End Date",
+        "label": "Job Posting End Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Post to Internal Career Site?",
+        "label": "Post to Internal Career Site?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Start Date",
+        "label": "Job Posting Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting End Date",
+        "label": "Job Posting End Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Profile",
+        "label": "Job Profile",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Profile Code",
+        "label": "Job Profile Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worker Type",
+        "label": "Worker Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worker Sub-Type",
+        "label": "Worker Sub-Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Type",
+        "label": "Time Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Scheduled Weekly Hours",
+        "label": "Scheduled Weekly Hours",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Description",
+        "label": "Job Description",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Description Summary",
+        "label": "Job Description Summary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Location",
+        "label": "Primary Location",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Ref ID",
+        "label": "Location Ref ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Job Posting Location",
+        "label": "Primary Job Posting Location",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Location Ref ID",
+        "label": "Job Posting Location Ref ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Company Ref ID",
+        "label": "Company Ref ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Cost Center",
+        "label": "Cost Center",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "CC Ref ID",
+        "label": "CC Ref ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Grade",
+        "label": "Grade",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Grade Ref ID",
+        "label": "Grade Ref ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Grade Profile",
+        "label": "Grade Profile",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "GP Ref ID",
+        "label": "GP Ref ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Create Job Requisition",
+    "slug": "Create Job Requisition",
+    "fields": [
+      {
+        "key": "Create Job Requisition Key",
+        "label": "Create Job Requisition Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Auto Complete",
+        "label": "Auto Complete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Run Now",
+        "label": "Run Now",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Comment",
+        "label": "Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worker Reference Descriptor",
+        "label": "Worker Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worker Reference ID type",
+        "label": "Worker Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Worker Reference ID",
+        "label": "Worker Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Position Restriction Reference Descriptor",
+        "label": "Position Restriction Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Position Restriction Reference ID type",
+        "label": "Position Restriction Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Position Restriction Reference ID",
+        "label": "Position Restriction Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Supervisory Organization Reference Descriptor",
+        "label": "Supervisory Organization Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Supervisory Organization Reference ID type",
+        "label": "Supervisory Organization Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Supervisory Organization Reference ID",
+        "label": "Supervisory Organization Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Create Job Requisition Reason Reference Descriptor",
+        "label": "Create Job Requisition Reason Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Create Job Requisition Reason Reference ID type",
+        "label": "Create Job Requisition Reason Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Create Job Requisition Reason Reference ID",
+        "label": "Create Job Requisition Reason Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Number of Openings",
+        "label": "Number of Openings",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Requisition ID",
+        "label": "Job Requisition ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Title",
+        "label": "Job Posting Title",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Recruiting Instruction Reference Descriptor",
+        "label": "Recruiting Instruction Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Recruiting Instruction Reference ID type",
+        "label": "Recruiting Instruction Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Recruiting Instruction Reference ID",
+        "label": "Recruiting Instruction Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Description Summary",
+        "label": "Job Description Summary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Description",
+        "label": "Job Description",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Additional Job Description",
+        "label": "Additional Job Description",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Justification",
+        "label": "Justification",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Recruiting Start Date",
+        "label": "Recruiting Start Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Target Hire Date",
+        "label": "Target Hire Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Target End Date",
+        "label": "Target End Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Profile Reference Descriptor",
+        "label": "Job Profile Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Profile Reference ID type",
+        "label": "Job Profile Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Profile Reference ID",
+        "label": "Job Profile Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Referral Payment Plan Reference Descriptor",
+        "label": "Referral Payment Plan Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Referral Payment Plan Reference ID type",
+        "label": "Referral Payment Plan Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Referral Payment Plan Reference ID",
+        "label": "Referral Payment Plan Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Worker Type Reference Descriptor",
+        "label": "Worker Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worker Type Reference ID type",
+        "label": "Worker Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Worker Type Reference ID",
+        "label": "Worker Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Worker Sub-Type Reference Descriptor",
+        "label": "Worker Sub-Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worker Sub-Type Reference ID type",
+        "label": "Worker Sub-Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Worker Sub-Type Reference ID",
+        "label": "Worker Sub-Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Primary Location Reference Descriptor",
+        "label": "Primary Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Location Reference ID type",
+        "label": "Primary Location Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Primary Location Reference ID",
+        "label": "Primary Location Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Primary Job Posting Location Reference Descriptor",
+        "label": "Primary Job Posting Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Job Posting Location Reference ID type",
+        "label": "Primary Job Posting Location Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Primary Job Posting Location Reference ID",
+        "label": "Primary Job Posting Location Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Position Time Type Reference Descriptor",
+        "label": "Position Time Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Position Time Type Reference ID type",
+        "label": "Position Time Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Position Time Type Reference ID",
+        "label": "Position Time Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Employee Contract Type Reference Descriptor",
+        "label": "Employee Contract Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Employee Contract Type Reference ID type",
+        "label": "Employee Contract Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Employee Contract Type Reference ID",
+        "label": "Employee Contract Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Scheduled Weekly Hours",
+        "label": "Scheduled Weekly Hours",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Work Shift Reference Descriptor",
+        "label": "Work Shift Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Work Shift Reference ID type",
+        "label": "Work Shift Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Work Shift Reference ID",
+        "label": "Work Shift Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Spotlight Job",
+        "label": "Spotlight Job",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Confidential Job Requisition",
+        "label": "Confidential Job Requisition",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Link to Evergreen Requisition Reference Descriptor",
+        "label": "Link to Evergreen Requisition Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Link to Evergreen Requisition Reference ID type",
+        "label": "Link to Evergreen Requisition Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Link to Evergreen Requisition Reference ID",
+        "label": "Link to Evergreen Requisition Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire for Internal Career Site Reference Descriptor",
+        "label": "Questionnaire for Internal Career Site Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire for Internal Career Site Reference ID type",
+        "label": "Questionnaire for Internal Career Site Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire for Internal Career Site Reference ID",
+        "label": "Questionnaire for Internal Career Site Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Secondary Questionnaire for Internal Career Site Reference Descriptor",
+        "label": "Secondary Questionnaire for Internal Career Site Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Secondary Questionnaire for Internal Career Site Reference ID type",
+        "label": "Secondary Questionnaire for Internal Career Site Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Secondary Questionnaire for Internal Career Site Reference ID",
+        "label": "Secondary Questionnaire for Internal Career Site Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire for External Career Sites Reference Descriptor",
+        "label": "Questionnaire for External Career Sites Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire for External Career Sites Reference ID type",
+        "label": "Questionnaire for External Career Sites Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire for External Career Sites Reference ID",
+        "label": "Questionnaire for External Career Sites Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Secondary Questionnaire for External Career Site Reference Descriptor",
+        "label": "Secondary Questionnaire for External Career Site Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Secondary Questionnaire for External Career Site Reference ID type",
+        "label": "Secondary Questionnaire for External Career Site Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Secondary Questionnaire for External Career Site Reference ID",
+        "label": "Secondary Questionnaire for External Career Site Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Inline Assessment Test Reference Descriptor",
+        "label": "Inline Assessment Test Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Inline Assessment Test Reference ID type",
+        "label": "Inline Assessment Test Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Inline Assessment Test Reference ID",
+        "label": "Inline Assessment Test Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Responsibility Qualification Replacement - Delete",
+        "label": "Responsibility Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Work Experience Qualification Replacement - Delete",
+        "label": "Work Experience Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Education Qualification Replacement - Delete",
+        "label": "Education Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Language Qualification Replacement - Delete",
+        "label": "Language Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Competency Qualification Replacement - Delete",
+        "label": "Competency Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Certification Qualification Replacement - Delete",
+        "label": "Certification Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Training Qualification Replacement - Delete",
+        "label": "Training Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Skill Qualification Replacement - Delete",
+        "label": "Skill Qualification Replacement - Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Requester Reference Descriptor",
+        "label": "Requester Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Requester Reference ID type",
+        "label": "Requester Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Requester Reference ID",
+        "label": "Requester Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Company for Purchase Order Reference Descriptor",
+        "label": "Company for Purchase Order Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Company for Purchase Order Reference ID type",
+        "label": "Company for Purchase Order Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Company for Purchase Order Reference ID",
+        "label": "Company for Purchase Order Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Supplier Reference Descriptor",
+        "label": "Supplier Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Supplier Reference ID type",
+        "label": "Supplier Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Supplier Reference ID",
+        "label": "Supplier Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Currency Reference Descriptor",
+        "label": "Currency Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Currency Reference ID type",
+        "label": "Currency Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Currency Reference ID",
+        "label": "Currency Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Spend Category Reference Descriptor",
+        "label": "Spend Category Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Spend Category Reference ID type",
+        "label": "Spend Category Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Spend Category Reference ID",
+        "label": "Spend Category Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Pay Rate",
+        "label": "Pay Rate",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Frequency Reference Descriptor",
+        "label": "Frequency Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Frequency Reference ID type",
+        "label": "Frequency Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Frequency Reference ID",
+        "label": "Frequency Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Maximum Amount",
+        "label": "Maximum Amount",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Replacement for Worker Reference Descriptor",
+        "label": "Replacement for Worker Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Replacement for Worker Reference ID type",
+        "label": "Replacement for Worker Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Replacement for Worker Reference ID",
+        "label": "Replacement for Worker Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Replace All",
+        "label": "Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Company Assignment Reference Descriptor",
+        "label": "Company Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Company Assignment Reference ID type",
+        "label": "Company Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Company Assignment Reference ID",
+        "label": "Company Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Cost Center Assignment Reference Descriptor",
+        "label": "Cost Center Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Cost Center Assignment Reference ID type",
+        "label": "Cost Center Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Cost Center Assignment Reference ID",
+        "label": "Cost Center Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Region Assignment Reference Descriptor",
+        "label": "Region Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Region Assignment Reference ID type",
+        "label": "Region Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Region Assignment Reference ID",
+        "label": "Region Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Business Unit Assignment Reference Descriptor",
+        "label": "Business Unit Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Business Unit Assignment Reference ID type",
+        "label": "Business Unit Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Business Unit Assignment Reference ID",
+        "label": "Business Unit Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Grant Assignment Reference Descriptor",
+        "label": "Grant Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Grant Assignment Reference ID type",
+        "label": "Grant Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Grant Assignment Reference ID",
+        "label": "Grant Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Program Assignment Reference Descriptor",
+        "label": "Program Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Program Assignment Reference ID type",
+        "label": "Program Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Program Assignment Reference ID",
+        "label": "Program Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Fund Assignment Reference Descriptor",
+        "label": "Fund Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Fund Assignment Reference ID type",
+        "label": "Fund Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Fund Assignment Reference ID",
+        "label": "Fund Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Gift Assignment Reference Descriptor",
+        "label": "Gift Assignment Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Gift Assignment Reference ID type",
+        "label": "Gift Assignment Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Gift Assignment Reference ID",
+        "label": "Gift Assignment Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Use Updated Template Version",
+        "label": "Use Updated Template Version",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Application Template Reference Descriptor",
+        "label": "Job Application Template Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Job Application Template Reference ID type",
+        "label": "Job Application Template Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Job Application Template Reference ID",
+        "label": "Job Application Template Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Check Position Budget Sub Process - Business Sub Process Parameters - Skip",
+        "label": "Check Position Budget Sub Process - Business Sub Process Parameters - Skip",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "label": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "label": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "label": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "label": "Check Position Budget Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Post Job Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Auto Complete",
+        "label": "Post Job Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Auto Complete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Post Job Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Skip",
+        "label": "Post Job Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Skip",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "label": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "label": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "label": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "label": "Post Job Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Auto Complete",
+        "label": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Auto Complete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Skip",
+        "label": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Skip",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "label": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "label": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "label": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "label": "Assign Organization Roles Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assignee Reference Descriptor",
+        "label": "Role Assignee Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Role Assignee Reference ID type",
+        "label": "Role Assignee Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assignee Reference ID",
+        "label": "Role Assignee Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Auto Complete",
+        "label": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Auto Complete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Skip",
+        "label": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Auto Complete Mutex - Skip",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "label": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "label": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "label": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "label": "Request Requisition Compensation Sub Process - Business Sub Process Parameters - Business Process Comment Data - Worker Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Primary Compensation Basis",
+        "label": "Primary Compensation Basis",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Compensation Basis Amount Change",
+        "label": "Primary Compensation Basis Amount Change",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary Compensation Basis Percent Change",
+        "label": "Primary Compensation Basis Percent Change",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Package Reference Descriptor",
+        "label": "Compensation Package Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Package Reference ID type",
+        "label": "Compensation Package Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Package Reference ID",
+        "label": "Compensation Package Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Grade Reference Descriptor",
+        "label": "Compensation Grade Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Grade Reference ID type",
+        "label": "Compensation Grade Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Grade Reference ID",
+        "label": "Compensation Grade Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Grade Profile Reference Descriptor",
+        "label": "Compensation Grade Profile Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Grade Profile Reference ID type",
+        "label": "Compensation Grade Profile Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Grade Profile Reference ID",
+        "label": "Compensation Grade Profile Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Step Reference Descriptor",
+        "label": "Compensation Step Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Step Reference ID type",
+        "label": "Compensation Step Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Compensation Step Reference ID",
+        "label": "Compensation Step Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Pay Plan Data - Replace",
+        "label": "Pay Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Unit Salary Plan Data - Replace",
+        "label": "Unit Salary Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Allowance Plan Non-Unit Based Data - Replace",
+        "label": "Allowance Plan Non-Unit Based Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Allowance Plan Unit Based Data - Replace",
+        "label": "Allowance Plan Unit Based Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Bonus Plan Data - Replace",
+        "label": "Bonus Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Merit Plan Data - Replace",
+        "label": "Merit Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Commission Plan Data - Replace",
+        "label": "Commission Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Stock Plan Data - Replace",
+        "label": "Stock Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Period Salary Plan Data - Replace",
+        "label": "Period Salary Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Calculated Plan Data - Replace",
+        "label": "Calculated Plan Data - Replace",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Pay Plan Sub Data",
+    "slug": "Pay Plan Sub Data",
+    "fields": [
+      {
+        "key": "Create Job Requisition Key",
+        "label": "Create Job Requisition Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Pay Plan Sub Data Key",
+        "label": "Pay Plan Sub Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Pay Plan Reference Descriptor",
+        "label": "Pay Plan Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Pay Plan Reference ID type",
+        "label": "Pay Plan Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Pay Plan Reference ID",
+        "label": "Pay Plan Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Amount",
+        "label": "Amount",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Percent Change",
+        "label": "Percent Change",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Amount Change",
+        "label": "Amount Change",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Currency Reference Descriptor",
+        "label": "Currency Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Currency Reference ID type",
+        "label": "Currency Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Currency Reference ID",
+        "label": "Currency Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Frequency Reference Descriptor",
+        "label": "Frequency Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Frequency Reference ID type",
+        "label": "Frequency Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Frequency Reference ID",
+        "label": "Frequency Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Expected End Date",
+        "label": "Expected End Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Actual End Date",
+        "label": "Actual End Date",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Role Assigner",
+    "slug": "Role Assigner",
+    "fields": [
+      {
+        "key": "Role Assigner Key",
+        "label": "Role Assigner Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Effective Timezone Reference Descriptor",
+        "label": "Effective Timezone Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Effective Timezone Reference ID type",
+        "label": "Effective Timezone Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Effective Timezone Reference ID",
+        "label": "Effective Timezone Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assigner Reference Descriptor",
+        "label": "Role Assigner Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Role Assigner Reference ID type",
+        "label": "Role Assigner Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assigner Reference ID",
+        "label": "Role Assigner Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Role Assignment Data",
+    "slug": "Role Assignment Data",
+    "fields": [
+      {
+        "key": "Role Assigner Key",
+        "label": "Role Assigner Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assignment Data Key",
+        "label": "Role Assignment Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Update",
+        "label": "Update",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Organization Role Reference Descriptor",
+        "label": "Organization Role Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Organization Role Reference ID type",
+        "label": "Organization Role Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Organization Role Reference ID",
+        "label": "Organization Role Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Role Assignee Reference",
+    "slug": "Role Assignee Reference",
+    "fields": [
+      {
+        "key": "Role Assigner Key",
+        "label": "Role Assigner Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assignment Data Key",
+        "label": "Role Assignment Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Role Assignee Reference Key",
+        "label": "Role Assignee Reference Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Descriptor",
+        "label": "Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID type",
+        "label": "ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Grid-1",
+    "slug": "Grid-1",
+    "fields": [
+      {
+        "key": "Question Setup Key",
+        "label": "Question Setup Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer Data Key",
+        "label": "Question Multiple Choice Answer Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer ID",
+        "label": "Question Multiple Choice Answer ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer Order",
+        "label": "Question Multiple Choice Answer Order",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer Text",
+        "label": "Question Multiple Choice Answer Text",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Question Setup",
+    "slug": "Question Setup",
+    "fields": [
+      {
+        "key": "Question Setup Key",
+        "label": "Question Setup Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Add Only",
+        "label": "Add Only",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup Reference Descriptor",
+        "label": "Question Setup Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup Reference ID type",
+        "label": "Question Setup Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup Reference ID",
+        "label": "Question Setup Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question ID",
+        "label": "Question ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Name",
+        "label": "Question Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Body",
+        "label": "Question Body",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Inactive",
+        "label": "Inactive",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Type Reference Descriptor",
+        "label": "Question Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Type Reference ID type",
+        "label": "Question Type Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Type Reference ID",
+        "label": "Question Type Reference ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Question Tags Reference",
+    "slug": "Question Tags Reference",
+    "fields": [
+      {
+        "key": "Question Setup Key",
+        "label": "Question Setup Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Tags Reference Key",
+        "label": "Question Tags Reference Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Descriptor",
+        "label": "Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID type",
+        "label": "ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Questionnaire",
+    "slug": "Questionnaire",
+    "fields": [
+      {
+        "key": "Questionnaire Key",
+        "label": "Questionnaire Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Add Only",
+        "label": "Add Only",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire Reference Descriptor",
+        "label": "Questionnaire Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire Reference ID type",
+        "label": "Questionnaire Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire Reference ID",
+        "label": "Questionnaire Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire ID",
+        "label": "Questionnaire ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire Name",
+        "label": "Questionnaire Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire Instructions",
+        "label": "Questionnaire Instructions",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Inactive",
+        "label": "Inactive",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Grid-1 (2)",
+    "slug": "Grid-1 (2)",
+    "fields": [
+      {
+        "key": "Questionnaire Key",
+        "label": "Questionnaire Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questions for Questionnaire Data Key",
+        "label": "Questions for Questionnaire Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Score for Question Multiple Choice Answers Key",
+        "label": "Score for Question Multiple Choice Answers Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Score for Branching Question Multiple Choice Answers Key",
+        "label": "Score for Branching Question Multiple Choice Answers Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Branching Question Score",
+        "label": "Branching Question Score",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Branching Question Multiple Choice Answer Reference Descriptor",
+        "label": "Branching Question Multiple Choice Answer Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Branching Question Multiple Choice Answer Reference ID type",
+        "label": "Branching Question Multiple Choice Answer Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Branching Question Multiple Choice Answer Reference ID",
+        "label": "Branching Question Multiple Choice Answer Reference ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Grid-2",
+    "slug": "Grid-2",
+    "fields": [
+      {
+        "key": "Questionnaire Key",
+        "label": "Questionnaire Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questions for Questionnaire Data Key",
+        "label": "Questions for Questionnaire Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Score for Question Multiple Choice Answers Key",
+        "label": "Score for Question Multiple Choice Answers Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer Reference Descriptor",
+        "label": "Question Multiple Choice Answer Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer Reference ID type",
+        "label": "Question Multiple Choice Answer Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Multiple Choice Answer Reference ID",
+        "label": "Question Multiple Choice Answer Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Score",
+        "label": "Score",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup ",
+        "label": "Question Setup ",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Grid-3",
+    "slug": "Grid-3",
+    "fields": [
+      {
+        "key": "Questionnaire Key",
+        "label": "Questionnaire Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questions for Questionnaire Data Key",
+        "label": "Questions for Questionnaire Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Order",
+        "label": "Order",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Required",
+        "label": "Required",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup Reference Descriptor",
+        "label": "Question Setup Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup Reference ID type",
+        "label": "Question Setup Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Question Setup Reference ID",
+        "label": "Question Setup Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Business Process Type Reference",
+    "slug": "Business Process Type Reference",
+    "fields": [
+      {
+        "key": "Questionnaire Key",
+        "label": "Questionnaire Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Business Process Type Reference Key",
+        "label": "Business Process Type Reference Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Descriptor",
+        "label": "Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID type",
+        "label": "ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Questionnaire Type Reference",
+    "slug": "Questionnaire Type Reference",
+    "fields": [
+      {
+        "key": "Questionnaire Key",
+        "label": "Questionnaire Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Questionnaire Type Reference Key",
+        "label": "Questionnaire Type Reference Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Descriptor",
+        "label": "Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID type",
+        "label": "ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Location",
+    "slug": "Location",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Add Only",
+        "label": "Add Only",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Reference Descriptor",
+        "label": "Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Reference ID type",
+        "label": "Location Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Reference ID",
+        "label": "Location Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location ID",
+        "label": "Location ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Name",
+        "label": "Location Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Inactive",
+        "label": "Inactive",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Latitude",
+        "label": "Latitude",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Longitude",
+        "label": "Longitude",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Altitude",
+        "label": "Altitude",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "External Name",
+        "label": "External Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Trade Name",
+        "label": "Trade Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worksite ID Code",
+        "label": "Worksite ID Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Global Location Number",
+        "label": "Global Location Number",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Identifier",
+        "label": "Location Identifier",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Superior Location Reference Descriptor",
+        "label": "Superior Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Superior Location Reference ID type",
+        "label": "Superior Location Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Superior Location Reference ID",
+        "label": "Superior Location Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Profile Reference Descriptor",
+        "label": "Time Profile Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Profile Reference ID type",
+        "label": "Time Profile Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Profile Reference ID",
+        "label": "Time Profile Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Locale Reference Descriptor",
+        "label": "Locale Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Locale Reference ID type",
+        "label": "Locale Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Locale Reference ID",
+        "label": "Locale Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Display Language Reference Descriptor",
+        "label": "Display Language Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Display Language Reference ID type",
+        "label": "Display Language Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Display Language Reference ID",
+        "label": "Display Language Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Zone Reference Descriptor",
+        "label": "Time Zone Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Zone Reference ID type",
+        "label": "Time Zone Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Zone Reference ID",
+        "label": "Time Zone Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Currency Reference Descriptor",
+        "label": "Default Currency Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Currency Reference ID type",
+        "label": "Default Currency Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Currency Reference ID",
+        "label": "Default Currency Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Job Posting Location Reference Descriptor",
+        "label": "Default Job Posting Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Job Posting Location Reference ID type",
+        "label": "Default Job Posting Location Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Job Posting Location Reference ID",
+        "label": "Default Job Posting Location Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Site Data Capacity",
+        "label": "Instructional Site Data Capacity",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Off-Site",
+        "label": "Off-Site",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Use Only",
+        "label": "Instructional Use Only",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Academic Unit Reference Descriptor",
+        "label": "Academic Unit Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Academic Unit Reference ID type",
+        "label": "Academic Unit Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Academic Unit Reference ID",
+        "label": "Academic Unit Reference ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Address Data",
+    "slug": "Address Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Formatted Address",
+        "label": "Formatted Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Format Type",
+        "label": "Address Format Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Defaulted Business Site Address",
+        "label": "Defaulted Business Site Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Do Not Replace All",
+        "label": "Do Not Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Last Modified",
+        "label": "Last Modified",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Municipality",
+        "label": "Municipality",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Descriptor",
+        "label": "Country Region Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Postal Code",
+        "label": "Postal Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Number of Days",
+        "label": "Number of Days",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Municipality Local",
+        "label": "Municipality Local",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address ID",
+        "label": "Address ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Reference Descriptor",
+        "label": "Country Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Reference ID type",
+        "label": "Country Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Reference ID",
+        "label": "Country Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference Descriptor",
+        "label": "Country City Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID type",
+        "label": "Country City Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID",
+        "label": "Country City Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID parent type",
+        "label": "Country City Reference ID parent type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID parent id",
+        "label": "Country City Reference ID parent id",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Reference Descriptor",
+        "label": "Country Region Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Reference ID type",
+        "label": "Country Region Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Reference ID",
+        "label": "Country Region Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Public",
+        "label": "Public",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Comments",
+        "label": "Comments",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary",
+        "label": "Primary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference Descriptor",
+        "label": "Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID type",
+        "label": "Type Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID",
+        "label": "Type Reference ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Reference Descriptor",
+        "label": "Address Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Reference ID type",
+        "label": "Address Reference ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Reference ID",
+        "label": "Address Reference ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Location Usage Reference",
+    "slug": "Location Usage Reference",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Usage Reference Key",
+        "label": "Location Usage Reference Key",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Descriptor",
+        "label": "Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID type",
+        "label": "ID type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Job Posting Locations",
+    "slug": "Mapped Job Posting Locations",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Add Only",
+        "label": "Add Only",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Reference Descriptor",
+        "label": "Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Reference ID type",
+        "label": "Location Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Location Reference ID",
+        "label": "Location Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Location ID",
+        "label": "Location ID",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Name",
+        "label": "Location Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Superior Location Reference Descriptor",
+        "label": "Superior Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Superior Location Reference ID type",
+        "label": "Superior Location Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Superior Location Reference ID",
+        "label": "Superior Location Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Inactive",
+        "label": "Inactive",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Latitude",
+        "label": "Latitude",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Longitude",
+        "label": "Longitude",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Altitude",
+        "label": "Altitude",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Profile Reference Descriptor",
+        "label": "Time Profile Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Profile Reference ID type",
+        "label": "Time Profile Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Time Profile Reference ID",
+        "label": "Time Profile Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Locale Reference Descriptor",
+        "label": "Locale Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Locale Reference ID type",
+        "label": "Locale Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Locale Reference ID",
+        "label": "Locale Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Display Language Reference Descriptor",
+        "label": "Display Language Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Display Language Reference ID type",
+        "label": "Display Language Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Display Language Reference ID",
+        "label": "Display Language Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Time Zone Reference Descriptor",
+        "label": "Time Zone Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Zone Reference ID type",
+        "label": "Time Zone Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Time Zone Reference ID",
+        "label": "Time Zone Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Default Currency Reference Descriptor",
+        "label": "Default Currency Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Currency Reference ID type",
+        "label": "Default Currency Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Default Currency Reference ID",
+        "label": "Default Currency Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "External Name",
+        "label": "External Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Job Posting Location Reference Descriptor",
+        "label": "Default Job Posting Location Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Default Job Posting Location Reference ID type",
+        "label": "Default Job Posting Location Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Default Job Posting Location Reference ID",
+        "label": "Default Job Posting Location Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Trade Name",
+        "label": "Trade Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Worksite ID Code",
+        "label": "Worksite ID Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Global Location Number",
+        "label": "Global Location Number",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Location Identifier",
+        "label": "Location Identifier",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Site Data - Academic Unit Reference Descriptor",
+        "label": "Instructional Site Data - Academic Unit Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Site Data - Academic Unit Reference ID type",
+        "label": "Instructional Site Data - Academic Unit Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Site Data - Academic Unit Reference ID",
+        "label": "Instructional Site Data - Academic Unit Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Site Data Capacity",
+        "label": "Instructional Site Data Capacity",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Off-Site",
+        "label": "Off-Site",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instructional Use Only",
+        "label": "Instructional Use Only",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Student Housing Assignment Data - Academic Unit Reference Descriptor",
+        "label": "Student Housing Assignment Data - Academic Unit Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Student Housing Assignment Data - Academic Unit Reference ID type",
+        "label": "Student Housing Assignment Data - Academic Unit Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Student Housing Assignment Data - Academic Unit Reference ID",
+        "label": "Student Housing Assignment Data - Academic Unit Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Address Data",
+    "slug": "Mapped Address Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Formatted Address",
+        "label": "Formatted Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Format Type",
+        "label": "Address Format Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Defaulted Business Site Address",
+        "label": "Defaulted Business Site Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Do Not Replace All",
+        "label": "Do Not Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Reference Descriptor",
+        "label": "Country Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Reference ID type",
+        "label": "Country Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Country Reference ID",
+        "label": "Country Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Last Modified",
+        "label": "Last Modified",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Municipality",
+        "label": "Municipality",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference Descriptor",
+        "label": "Country City Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID type",
+        "label": "Country City Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID",
+        "label": "Country City Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID parent type",
+        "label": "Country City Reference ID parent type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country City Reference ID parent id",
+        "label": "Country City Reference ID parent id",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Reference Descriptor",
+        "label": "Country Region Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Reference ID type",
+        "label": "Country Region Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Reference ID",
+        "label": "Country Region Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Country Region Descriptor",
+        "label": "Country Region Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Postal Code",
+        "label": "Postal Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Public",
+        "label": "Public",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary",
+        "label": "Primary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference Descriptor",
+        "label": "Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID type",
+        "label": "Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID",
+        "label": "Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Comments",
+        "label": "Comments",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Number of Days",
+        "label": "Number of Days",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Municipality Local",
+        "label": "Municipality Local",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Reference Descriptor",
+        "label": "Address Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Reference ID type",
+        "label": "Address Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Reference ID",
+        "label": "Address Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address ID",
+        "label": "Address ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Address Line Data",
+    "slug": "Mapped Address Line Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data Key",
+        "label": "Address Line Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data Descriptor",
+        "label": "Address Line Data Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data Type",
+        "label": "Address Line Data Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Address Line Data",
+        "label": "Address Line Data",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Submunicipality Data",
+    "slug": "Mapped Submunicipality Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data Key",
+        "label": "Submunicipality Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data Address Component Name",
+        "label": "Submunicipality Data Address Component Name",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data Type",
+        "label": "Submunicipality Data Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Submunicipality Data",
+        "label": "Submunicipality Data",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Subregion Data",
+    "slug": "Mapped Subregion Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Address Data Key",
+        "label": "Address Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data Key",
+        "label": "Subregion Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data Descriptor",
+        "label": "Subregion Data Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data Type",
+        "label": "Subregion Data Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Subregion Data",
+        "label": "Subregion Data",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Phone Data",
+    "slug": "Mapped Phone Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Phone Data Key",
+        "label": "Phone Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Area Code",
+        "label": "Area Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Tenant Formatted Phone",
+        "label": "Tenant Formatted Phone",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "International Formatted Phone",
+        "label": "International Formatted Phone",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Number Without Area Code",
+        "label": "Phone Number Without Area Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "National Formatted Phone",
+        "label": "National Formatted Phone",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "E164 Formatted Phone",
+        "label": "E164 Formatted Phone",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Workday Traditional Formatted Phone",
+        "label": "Workday Traditional Formatted Phone",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Do Not Replace All",
+        "label": "Do Not Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Country ISO Code",
+        "label": "Country ISO Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "International Phone Code",
+        "label": "International Phone Code",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Number",
+        "label": "Phone Number",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Extension",
+        "label": "Phone Extension",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Device Type Reference Descriptor",
+        "label": "Phone Device Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Device Type Reference ID type",
+        "label": "Phone Device Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Phone Device Type Reference ID",
+        "label": "Phone Device Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Public",
+        "label": "Public",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary",
+        "label": "Primary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference Descriptor",
+        "label": "Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID type",
+        "label": "Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID",
+        "label": "Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Comments",
+        "label": "Comments",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Reference Descriptor",
+        "label": "Phone Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Phone Reference ID type",
+        "label": "Phone Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Phone Reference ID",
+        "label": "Phone Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Email Address Data",
+    "slug": "Mapped Email Address Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Email Address Data Key",
+        "label": "Email Address Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Do Not Replace All",
+        "label": "Do Not Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Email Address",
+        "label": "Email Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Email Comment",
+        "label": "Email Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Public",
+        "label": "Public",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary",
+        "label": "Primary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference Descriptor",
+        "label": "Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID type",
+        "label": "Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID",
+        "label": "Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Comments",
+        "label": "Comments",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Email Reference Descriptor",
+        "label": "Email Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Email Reference ID type",
+        "label": "Email Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Email Reference ID",
+        "label": "Email Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Instant Messenger Data",
+    "slug": "Mapped Instant Messenger Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Data Key",
+        "label": "Instant Messenger Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Do Not Replace All",
+        "label": "Do Not Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Address",
+        "label": "Instant Messenger Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Type Reference Descriptor",
+        "label": "Instant Messenger Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Type Reference ID type",
+        "label": "Instant Messenger Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Type Reference ID",
+        "label": "Instant Messenger Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Comment",
+        "label": "Instant Messenger Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Public",
+        "label": "Public",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary",
+        "label": "Primary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference Descriptor",
+        "label": "Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID type",
+        "label": "Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID",
+        "label": "Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Comments",
+        "label": "Comments",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Reference Descriptor",
+        "label": "Instant Messenger Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Reference ID type",
+        "label": "Instant Messenger Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Instant Messenger Reference ID",
+        "label": "Instant Messenger Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Mapped Web Address Data",
+    "slug": "Mapped Web Address Data",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Web Address Data Key",
+        "label": "Web Address Data Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Delete",
+        "label": "Delete",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Do Not Replace All",
+        "label": "Do Not Replace All",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Web Address",
+        "label": "Web Address",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Web Address Comment",
+        "label": "Web Address Comment",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Public",
+        "label": "Public",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Primary",
+        "label": "Primary",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference Descriptor",
+        "label": "Type Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID type",
+        "label": "Type Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Type Reference ID",
+        "label": "Type Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Comments",
+        "label": "Comments",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Web Address Reference Descriptor",
+        "label": "Web Address Reference Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Web Address Reference ID type",
+        "label": "Web Address Reference ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Web Address Reference ID",
+        "label": "Web Address Reference ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "Location Usage Reference (2)",
+    "slug": "Location Usage Reference (2)",
+    "fields": [
+      {
+        "key": "Location Key",
+        "label": "Location Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Location Usage Reference Key",
+        "label": "Location Usage Reference Key",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Descriptor",
+        "label": "Descriptor",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "ID type",
+        "label": "ID type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,4822 @@
+[
+  {
+    "name": "Period Schedule",
+    "slug": "Period Schedule",
+    "fields": [
+      {
+        "key": "Usage",
+        "label": "Usage",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Usage is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Period Schedule Name",
+        "label": "Period Schedule Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Start Date",
+        "label": "Start Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "End Date",
+        "label": "End Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Pay Date",
+        "label": "Pay Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Unmatch"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Unmatch",
+              "Compare Worksheet": "Holidays",
+              "Compare Column": "Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Date is Bank Holiday."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use GL Accrual?",
+        "label": "Use GL Accrual?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Days to Accrue",
+        "label": "Days to Accrue",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Days in Basis",
+        "label": "Days in Basis",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Accrual Date",
+        "label": "Accrual Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Accrual Reversal Date",
+        "label": "Accrual Reversal Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Run Categories",
+    "slug": "Run Categories",
+    "fields": [
+      {
+        "key": "Run Category Name",
+        "label": "Run Category Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Run Category Name is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Run Category Name must be unique and cannot be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Regular Run Category",
+        "label": "Regular Run Category",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Gross Pay",
+        "label": "Gross Pay",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Gross Pay is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Net Pay",
+        "label": "Net Pay",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Net Pay is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country Code",
+        "label": "Country Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pay Groups",
+    "slug": "Pay Groups",
+    "fields": [
+      {
+        "key": "Select Yes or No",
+        "label": "Select Yes or No",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "=Value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "=Value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Yes",
+              "Error Message": "Make sure to delete this pay group as it is not going to be loaded"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Name",
+        "label": "Pay Group Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group Name is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group Name must be unique and cannot be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group ID",
+        "label": "Pay Group ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group ID is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group ID must be unique and cannot be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country Code",
+        "label": "Country Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Run Category Name",
+        "label": "Run Category Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Run Category column does not match any value from the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Period Schedule",
+        "label": "Period Schedule",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Period Schedule is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Period Schedule",
+              "Compare Column": "Period Schedule Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Period Schedule column does not match any value from the Period Schedule worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Days from Payment Date to Display Payslip",
+        "label": "Days from Payment Date to Display Payslip",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Days from Payment Date to Display Payslip is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Assignment Rule",
+        "label": "Pay Group Assignment Rule",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Pay Run Group",
+        "label": "Pay Run Group",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Start Period",
+        "label": "Start Period",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Payroll Partner(s)",
+        "label": "Payroll Partner(s)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used in Payroll Interface?",
+        "label": "Used in Payroll Interface?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Financial Institutions",
+    "slug": "Financial Institutions",
+    "fields": [
+      {
+        "key": "Financial Institution Name",
+        "label": "Financial Institution Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Reference ID",
+        "label": "Reference ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Financial Institution ID",
+        "label": "Financial Institution ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country Code",
+        "label": "Country Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Region",
+        "label": "Region",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Subregion",
+        "label": "Subregion",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "City",
+        "label": "City",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Submunicipality",
+        "label": "Submunicipality",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "City Subdivision",
+        "label": "City Subdivision",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Postal Code",
+        "label": "Postal Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MatchValueFormatX"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MatchValueFormatX",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Financial Institutions!Country=Canada",
+              "Value\\Format": "xxx xxx",
+              "Error Message": "Test"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Address Line #1",
+        "label": "Address Line #1",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #2",
+        "label": "Address Line #2",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #3",
+        "label": "Address Line #3",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #4",
+        "label": "Address Line #4",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country (Phone)",
+        "label": "Country (Phone)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "International Phone Code",
+        "label": "International Phone Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Area Code",
+        "label": "Area Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Phone Number",
+        "label": "Phone Number",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Phone Number Extension",
+        "label": "Phone Number Extension",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Email Address",
+        "label": "Email Address",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Web Address",
+        "label": "Web Address",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bank Accounts",
+    "slug": "Bank Accounts",
+    "fields": [
+      {
+        "key": "Workday Bank Account Name",
+        "label": "Workday Bank Account Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Account Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Account Type",
+        "label": "Account Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Bank Account Type is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "BankAccountType",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Bank Account Type column does not match any of the drop down values."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Account Number",
+        "label": "Account Number",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Account Number is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Account Number column should contain numeric values only."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Branch ID",
+        "label": "Branch ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Branch ID is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Branch Name",
+        "label": "Branch Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Branch Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Institution Number",
+        "label": "Institution Number",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Institution Number is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "IBAN",
+        "label": "IBAN",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Bank Identification Code",
+        "label": "Bank Identification Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Company Name",
+        "label": "Company Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "CompanyNames",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company column does not match any of the available companies on the Imported EE Data worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Accept All Currencies",
+        "label": "Accept All Currencies",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Country is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Country",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Country column does not match any of the drop down values. Country names need to be spelled out."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Country Code",
+        "label": "Country Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currency Code",
+        "label": "Currency Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Bank/Financial Institution",
+        "label": "Bank/Financial Institution",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Financial Institution is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Roll Number",
+        "label": "Roll Number",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Name on Account",
+        "label": "Name on Account",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Bank Statement Format",
+        "label": "Bank Statement Format",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Ad Hoc Payment",
+        "label": "Used By Ad Hoc Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Cash Advance Payment",
+        "label": "Used By Cash Advance Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Customer Payment",
+        "label": "Used By Customer Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Customer Refund",
+        "label": "Used By Customer Refund",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Expense Credit Card Payment",
+        "label": "Used By Expense Credit Card Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Expense Payment",
+        "label": "Used By Expense Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Intercompany Payment",
+        "label": "Used By Intercompany Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Payroll Off-Cycle Payment",
+        "label": "Used By Payroll Off-Cycle Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Payroll On-Cycle Payment",
+        "label": "Used By Payroll On-Cycle Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Prenote Payment",
+        "label": "Used By Prenote Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Procurement Card Payment",
+        "label": "Used By Procurement Card Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Supplier Payment",
+        "label": "Used By Supplier Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Used By Tax Payment",
+        "label": "Used By Tax Payment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Allowed Payment Type 1",
+        "label": "Allowed Payment Type 1",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "PaymentTypes",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Allowed Payment Type column does not match any of the drop down values."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Allowed Payment Type 2",
+        "label": "Allowed Payment Type 2",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "PaymentTypes",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Allowed Payment Type column does not match any of the drop down values."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Allowed Payment Type 3",
+        "label": "Allowed Payment Type 3",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "PaymentTypes",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Allowed Payment Type column does not match any of the drop down values."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Enable Positive Pay",
+        "label": "Enable Positive Pay",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Enable Positive Pay column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Check Number Used",
+        "label": "Last Check Number Used",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last Check Number Used column should contain numeric values only."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Status",
+        "label": "Status",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Comment",
+        "label": "Comment",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Account Name",
+        "label": "Account Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Account Currency",
+        "label": "Account Currency",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Outsourced Bank Provider",
+        "label": "Outsourced Bank Provider",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Allowed Payment Types",
+        "label": "Allowed Payment Types",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "PaymentTypes",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Allowed Payment Type column does not match any of the drop down values."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Account Number",
+        "label": "Account Number",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Account Number is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Account Number column should contain numeric values only."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Bank Statement Format",
+        "label": "Bank Statement Format",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Earnings",
+    "slug": "Earnings",
+    "fields": [
+      {
+        "key": "Use in Workday?",
+        "label": "Use in Workday?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date is a required column."
+            },
+            {
+              "ValidationType": "DateMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Effective Date must be on or after the Hire Date."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Earning Name",
+        "label": "Earning Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Earning Name is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Earning Name must be unique and cannot be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Code",
+        "label": "Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn",
+            "StringCounter"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Earning Code is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Earning Code must be unique and cannot be duplicated."
+            },
+            {
+              "ValidationType": "StringCounter",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": 20,
+              "Error Message": "Earning Code can't be longer than 20 characters."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Earning Code on Current System",
+        "label": "Earning Code on Current System",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Earning Code on Current System is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payslip Override Name",
+        "label": "Payslip Override Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Run Category Eligibility",
+        "label": "Run Category Eligibility",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Run Category Eligibility column must be populated with values available on the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Run Category Eligibility 2",
+        "label": "Run Category Eligibility 2",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Run Category Eligibility 2 column must be populated with values available on the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Run Category Eligibility 3",
+        "label": "Run Category Eligibility 3",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Run Category Eligibility 3 column must be populated with values available on the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility",
+        "label": "Pay Group Detail Eligibility",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 2",
+        "label": "Pay Group Detail Eligibility 2",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 2 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 3",
+        "label": "Pay Group Detail Eligibility 3",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 3 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 4",
+        "label": "Pay Group Detail Eligibility 4",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 4 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 5",
+        "label": "Pay Group Detail Eligibility 5",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 5 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Worker Eligibility Calculation Name",
+        "label": "Worker Eligibility Calculation Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker Eligibility Calculation Type",
+        "label": "Worker Eligibility Calculation Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker Eligibility Calculation Workday Owned",
+        "label": "Worker Eligibility Calculation Workday Owned",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Scheduling",
+        "label": "Scheduling",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation",
+        "label": "Calculation",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Name",
+        "label": "Calculation Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Type",
+        "label": "Calculation Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday Owned",
+        "label": "Workday Owned",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Input Amount Allowed",
+        "label": "Input Amount Allowed",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Override Frequency",
+        "label": "Override Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Proration",
+        "label": "Calculation Proration",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Gross Up Calculation",
+        "label": "Gross Up Calculation",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Gross Up Calculation column must be populated with either 'Yes' or 'No'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Gross Up Calculation is required."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Related Calculations?",
+        "label": "Related Calculations?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Compensation Element",
+        "label": "Compensation Element",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Compensation Element 2",
+        "label": "Compensation Element 2",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Causes Proration",
+        "label": "Causes Proration",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Adds to Gross",
+        "label": "Adds to Gross",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Adds to Gross column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Non Cash Taxable Benefits",
+        "label": "Non Cash Taxable Benefits",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Income Taxable (Withhold Taxes)",
+        "label": "Income Taxable (Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Income Taxable (Do Not Withhold Taxes)",
+        "label": "Income Taxable (Do Not Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Bonus Earnings - Regular",
+        "label": "Bonus Earnings - Regular",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Lump Sum Taxable T4",
+        "label": "Lump Sum Taxable T4",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Lump Sum Taxable T4A",
+        "label": "Lump Sum Taxable T4A",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Pension Income T4A",
+        "label": "Pension Income T4A",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "CPP Taxable",
+        "label": "CPP Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "EI Taxable",
+        "label": "EI Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "EI Hours",
+        "label": "EI Hours",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "RST Taxable",
+        "label": "RST Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "RST Manitoba Taxable",
+        "label": "RST Manitoba Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Pensionable Wages",
+        "label": "Pensionable Wages",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "ONEHT Taxable",
+        "label": "ONEHT Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "BCEHT Taxable",
+        "label": "BCEHT Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "CNESST Taxable",
+        "label": "CNESST Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Manitoba Health Taxable",
+        "label": "Manitoba Health Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Newfoundland and Labrador Health Taxable",
+        "label": "Newfoundland and Labrador Health Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Withholding Order (All): Periodic and Lump Sum Earnings Canada",
+        "label": "Withholding Order (All): Periodic and Lump Sum Earnings Canada",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Statutory Holiday Pay Earning",
+        "label": "Statutory Holiday Pay Earning",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workers Compensation Exempt",
+        "label": "Workers Compensation Exempt",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workers Compensation Other",
+        "label": "Workers Compensation Other",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Vacationable Earnings",
+        "label": "Vacationable Earnings",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Northwest Territories Payroll Tax Taxable",
+        "label": "Northwest Territories Payroll Tax Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Nunavut Payroll Tax Taxable",
+        "label": "Nunavut Payroll Tax Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "CAN Vacation Pay Earnings MB",
+        "label": "CAN Vacation Pay Earnings MB",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "CAN Vacation Pay Earnings ON & QC",
+        "label": "CAN Vacation Pay Earnings ON & QC",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Taxable (Withhold Taxes)",
+        "label": "Quebec Taxable (Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Taxable (Do Not Withhold Taxes)",
+        "label": "Quebec Taxable (Do Not Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Bonus Earnings - Regular",
+        "label": "Quebec Bonus Earnings - Regular",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Commission Earnings",
+        "label": "Quebec Commission Earnings",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Lump Sum Taxable RL-1",
+        "label": "Quebec Lump Sum Taxable RL-1",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Pension Income RL-2",
+        "label": "Pension Income RL-2",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QPP Taxable (Withhold Taxes)",
+        "label": "QPP Taxable (Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QPP Taxable (Do Not Withhold Taxes)",
+        "label": "QPP Taxable (Do Not Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QPIP Taxable",
+        "label": "QPIP Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QHSF Taxable",
+        "label": "QHSF Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "WSDRF Taxable",
+        "label": "WSDRF Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QST Taxable",
+        "label": "QST Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Compensation Tax Taxable",
+        "label": "Compensation Tax Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Memo Entries",
+        "label": "Memo Entries",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "ROE Allocation Reporting Period",
+        "label": "ROE Allocation Reporting Period",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "MustBeBlank"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Earnings!EI Taxable=Yes",
+              "Value\\Format": null,
+              "Error Message": "ROE Allocation Reporting Period is required if EI Taxable is \"Yes\""
+            },
+            {
+              "ValidationType": "MustBeBlank",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Earnings!EI Taxable=No",
+              "Value\\Format": null,
+              "Error Message": "ROE Allocation Reporting Period must be blank if EI Taxable is \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "ROE Allocation Reporting Period Retro",
+        "label": "ROE Allocation Reporting Period Retro",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "MustBeBlank"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Earnings!EI Taxable=Yes",
+              "Value\\Format": null,
+              "Error Message": "ROE Allocation Reporting Period Retro is required if EI Taxable is \"Yes\""
+            },
+            {
+              "ValidationType": "MustBeBlank",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Earnings!EI Taxable=No",
+              "Value\\Format": null,
+              "Error Message": "ROE Allocation Reporting Period Retro must be blank if EI Taxable is \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Do Not Recalculate Retro",
+        "label": "Do Not Recalculate Retro",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Worktag",
+        "label": "Calculation Worktag",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Absence Plan",
+        "label": "Absence Plan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Additional Configuration Notes",
+        "label": "Additional Configuration Notes",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "WD Owned PC Code",
+        "label": "WD Owned PC Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Deductions",
+    "slug": "Deductions",
+    "fields": [
+      {
+        "key": "Use in Workday?",
+        "label": "Use in Workday?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date is a required column."
+            },
+            {
+              "ValidationType": "DateMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Effective Date must be on or after the Hire Date."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Deduction Name",
+        "label": "Deduction Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Name is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Name must be unique and cannot be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Code",
+        "label": "Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn",
+            "StringCounter"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Code is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Code must be unique and cannot be duplicated."
+            },
+            {
+              "ValidationType": "StringCounter",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": 20,
+              "Error Message": "Deduction Code can't be longer than 20 characters."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Deduction Code on Current System",
+        "label": "Deduction Code on Current System",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Code on Current System is a requied column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payslip Override Name",
+        "label": "Payslip Override Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Run Category Eligibility",
+        "label": "Run Category Eligibility",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Run Category Eligibility column must be populated with values available on the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Run Category Eligibility 2",
+        "label": "Run Category Eligibility 2",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Run Category Eligibility 2 column must be populated with values available on the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Run Category Eligibility 3",
+        "label": "Run Category Eligibility 3",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Run Categories",
+              "Compare Column": "Run Category Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Run Category Eligibility 3 column must be populated with values available on the Run Categories worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility",
+        "label": "Pay Group Detail Eligibility",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 2",
+        "label": "Pay Group Detail Eligibility 2",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 2 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 3",
+        "label": "Pay Group Detail Eligibility 3",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 3 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 4",
+        "label": "Pay Group Detail Eligibility 4",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 4 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Detail Eligibility 5",
+        "label": "Pay Group Detail Eligibility 5",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pay Group Detail Eligibility 5 column must be populated with values available on the Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Worker Eligibility Calculation Name",
+        "label": "Worker Eligibility Calculation Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker Eligibility Calculation Type",
+        "label": "Worker Eligibility Calculation Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker Eligibility Workday Owned",
+        "label": "Worker Eligibility Workday Owned",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Scheduling",
+        "label": "Scheduling",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation",
+        "label": "Calculation",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Name",
+        "label": "Calculation Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Type",
+        "label": "Calculation Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday Owned",
+        "label": "Workday Owned",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Input Amount Allowed",
+        "label": "Input Amount Allowed",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Override Frequency",
+        "label": "Override Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Frequency",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Override Frequency column values must be one of the values available in the drop down."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Calculation Proration",
+        "label": "Calculation Proration",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Retro Calculation",
+        "label": "Retro Calculation",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Retro Calculation column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Calculation Worktag",
+        "label": "Calculation Worktag",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Include Input?",
+        "label": "Include Input?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Related Calculations?",
+        "label": "Related Calculations?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Limits",
+        "label": "Limits",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Pre Tax Deductions",
+        "label": "Pre Tax Deductions",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Pre Tax Deductions column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Post Tax Deductions",
+        "label": "Post Tax Deductions",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Post Tax Deductions column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Employer Paid Benefits",
+        "label": "Employer Paid Benefits",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Paid Benefits",
+        "label": "Employee Paid Benefits",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "RPP/RRSP/RCA (F) - Regular",
+        "label": "RPP/RRSP/RCA (F) - Regular",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "RPP/RRSP/RCA (F) - Bonus",
+        "label": "RPP/RRSP/RCA (F) - Bonus",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "RPP/RRSP/RCA (F) - Lump Sum",
+        "label": "RPP/RRSP/RCA (F) - Lump Sum",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Withholding Order (All): Union Dues",
+        "label": "Withholding Order (All): Union Dues",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Union Dues (U1)",
+        "label": "Union Dues (U1)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Income Taxable (Withhold Taxes)",
+        "label": "Income Taxable (Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Income Taxable (Do Not Withhold Taxes)",
+        "label": "Income Taxable (Do Not Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "CPP Taxable",
+        "label": "CPP Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "EI Taxable",
+        "label": "EI Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "ONEHT Taxable",
+        "label": "ONEHT Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "BCEHT Taxable",
+        "label": "BCEHT Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Manitoba Health Taxable",
+        "label": "Manitoba Health Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Newfoundland and Labrador Health Taxable",
+        "label": "Newfoundland and Labrador Health Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Northwest Territories Payroll Tax Taxable",
+        "label": "Northwest Territories Payroll Tax Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Nunavut Payroll Tax Taxable",
+        "label": "Nunavut Payroll Tax Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Other Quebec Deductions (F)",
+        "label": "Other Quebec Deductions (F)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Other Quebec Deductions (F) - Regular",
+        "label": "Other Quebec Deductions (F) - Regular",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Other Quebec Deductions (F) - Bonus",
+        "label": "Other Quebec Deductions (F) - Bonus",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Other Quebec Deductions (F) - Lump Sum",
+        "label": "Other Quebec Deductions (F) - Lump Sum",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Other Quebec Deductions (F2)",
+        "label": "Other Quebec Deductions (F2)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Taxable (Withhold Taxes)",
+        "label": "Quebec Taxable (Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Quebec Taxable (Do Not Withhold Taxes)",
+        "label": "Quebec Taxable (Do Not Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Compensation Tax Taxable",
+        "label": "Compensation Tax Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QHSF",
+        "label": "QHSF",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QHSF Taxable",
+        "label": "QHSF Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QPIP Taxable",
+        "label": "QPIP Taxable",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QPP Taxable (Withhold Taxes)",
+        "label": "QPP Taxable (Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "QPP Taxable (Do Not Withhold Taxes)",
+        "label": "QPP Taxable (Do Not Withhold Taxes)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "WSDRF",
+        "label": "WSDRF",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Recalculate Retro",
+        "label": "Recalculate Retro",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Calculation Worktag",
+        "label": "Calculation Worktag",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Plan",
+        "label": "Benefit Plan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Additional Configuration Notes",
+        "label": "Additional Configuration Notes",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "WD Owned PC Code",
+        "label": "WD Owned PC Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Deduction Priority And Arrears",
+    "slug": "Deduction Priority and Arrears",
+    "fields": [
+      {
+        "key": "Deduction Name",
+        "label": "Deduction Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Deduction Code",
+        "label": "Deduction Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Deduction Code is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Priority Order",
+        "label": "Priority Order",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Duplicatecolumn",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Priority Order values must be unique."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Priority Order is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Do Not Take Partial Deduction",
+        "label": "Do Not Take Partial Deduction",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Do Not Take Partial Deduction column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Deduction Impacts other Components of Net Pay",
+        "label": "Deduction Impacts other Components of Net Pay",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Deduction Impacts other Components of Net Pay column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Track Arrears",
+        "label": "Track Arrears",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Track Arrears column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Recoup Arrears",
+        "label": "Recoup Arrears",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Recoup Arrears column must be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "General Ledger Account Sets",
+    "slug": "General Ledger Account Sets",
+    "fields": [
+      {
+        "key": "Parent Account Set Name",
+        "label": "Parent Account Set Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Parent Account Set Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Account Set Name",
+        "label": "Account Set Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Account Set Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Ledger Account Identifier",
+        "label": "Ledger Account Identifier",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Ledger Account Identifier is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Ledger Account Identifier values must be unique."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Ledger Account Name",
+        "label": "Ledger Account Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Ledger Account Name is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Ledger Account Name values must be unique."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Ledger Account Type",
+        "label": "Ledger Account Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Ledger Account Type is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "LedgerAccountTypes",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Ledger Account Type column values must be one of the values available in the drop down."
+            }
+          ]
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Payment Elections",
+    "slug": "Payment Elections",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Employee ID column values must be one of the values available in the Imported EE Data worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Country is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Country",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Country column values must be one of the values available in the drop down (Country name spelled out)."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Currency",
+        "label": "Currency",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Currency is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Currency",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Currency column values must be one of the values available in the drop down (3 character ISO code)."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Type",
+        "label": "Pay Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Payment Type",
+        "label": "Payment Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Payment Type is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "PaymentTypes",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Payment Type column values must be one of the values available in the drop down"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Priority",
+        "label": "Priority",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Priority",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Priority column must be populated with a number between 1-10."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Institution Number",
+        "label": "Institution Number",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Payment Elections!Payment Type=Direct Deposit",
+              "Value\\Format": null,
+              "Error Message": "Institution Number is a required column and must be populated for Direct Deposit."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Branch ID",
+        "label": "Branch ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "StringCountEquals"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Payment Elections!Payment Type=Direct Deposit",
+              "Value\\Format": null,
+              "Error Message": "Branch ID is a required column and must be populated for Direct Deposit."
+            },
+            {
+              "ValidationType": "StringCountEquals",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": 5,
+              "Error Message": "The Branch ID should by 5 digits long"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Account Number",
+        "label": "Account Number",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Payment Elections!Payment Type=Direct Deposit",
+              "Value\\Format": null,
+              "Error Message": "Account Number is a required column and must be populated for Direct Deposit."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Bank Name",
+        "label": "Bank Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Payment Elections!Payment Type=Direct Deposit",
+              "Value\\Format": null,
+              "Error Message": "Bank Name is a required column and must be populated for Direct Deposit."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Account Type Code",
+        "label": "Account Type Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Payment Elections!Payment Type=Direct Deposit",
+              "Value\\Format": null,
+              "Error Message": "Account Type Code is a required column and must be populated for Direct Deposit."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "EE Drop Downs",
+              "Compare Column": "Checking or Savings",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Account Type Code1 column must be populated with either a Checking or Savings."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Amount",
+        "label": "Amount",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Amount1 column should contain numeric values only."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Percent",
+        "label": "Percent",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Percent1 column should contain numeric values only."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Balance",
+        "label": "Balance",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Assign Pay Groups",
+    "slug": "Assign Pay Groups",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The Employee ID column values must be one of the values available in the Imported EE Data worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Position ID",
+        "label": "Position ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last Name is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Hire Date",
+        "label": "Hire Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Hire Date is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group Org Name",
+        "label": "Pay Group Org Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group Org Name is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Pay Groups",
+              "Compare Column": "Pay Group Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group Name must match values listed on Pay Groups worksheet."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pay Group ID",
+        "label": "Pay Group ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Pay Group ID is a required column and must be populated."
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

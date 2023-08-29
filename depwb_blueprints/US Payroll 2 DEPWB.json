@@ -1,0 +1,5927 @@
+[
+  {
+    "name": "Company Federal Tax Reporting",
+    "slug": "Company Federal Tax Reporting",
+    "fields": [
+      {
+        "key": "Start Date",
+        "label": "Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Federal Tax Start Date is a required column and must be populated"
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Start Date must contain a date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company Name",
+        "label": "Company Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name is a required column and must be populated"
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name must be unique and cannot be duplicated"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name must match one of the companies provided on the Imported EE tab"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "W-2 Name Override",
+        "label": "W-2 Name Override",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Company FEIN",
+        "label": "Company FEIN",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn",
+            "FEINformatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company FEIN is a required column and must be populated"
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company FEIN must be unique and cannot be duplicated"
+            },
+            {
+              "ValidationType": "FEINformatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company FEIN must be a valid format. Format should be xx-xxxxxxx."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Supplemental Tax Method - Regular Check",
+        "label": "Supplemental Tax Method - Regular Check",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Supplemental Tax Method - Single Check is a required column and must be populated"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Supplemental Tax Method - Separate Check",
+        "label": "Supplemental Tax Method - Separate Check",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Supplemental Tax Method - Separate Check is a required column and must be populated"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Third Party Provides W-2 for Sick Pay",
+        "label": "Third Party Provides W-2 for Sick Pay",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Third Party Provides W-2 for Sick Pay is a required column and must be populated"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Third Party Provides W-2 for Sick Pay must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Kind of Employer?",
+        "label": "Kind of Employer?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "EmployerType",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Kind of Employer? must match values listed in dropdown list."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Does Company provide Dependent Benefits?",
+        "label": "Does Company provide Dependent Benefits?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Does Company provide Dependent Benefits? must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "On Going Multiple Work Jurisdictions Required?",
+        "label": "On Going Multiple Work Jurisdictions Required?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "On Going Multiple Work Jurisdictions Required? must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt from FUI",
+        "label": "Exempt from FUI",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt from FUI is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt from FUI must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exclude 1042-S Taxes from Tax Filing",
+        "label": "Exclude 1042-S Taxes from Tax Filing",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exclude 1042-S Taxes from Tax Filing must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payroll Year End Reporting FEIN Override",
+        "label": "Payroll Year End Reporting FEIN Override",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Company State Tax Reporting",
+    "slug": "Company State Tax Reporting",
+    "fields": [
+      {
+        "key": "Start Date",
+        "label": "Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State Tax Start Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Start Date must contain a date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "StateTaxCheck",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "StateTaxCheck",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Withholding States",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State needs to match available dropdown list."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State is a required column and must be populated "
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company Name",
+        "label": "Company Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name must match companies provided on Federal Tax Reporting worksheet"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Tax Type",
+        "label": "Tax Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "DuplicateTaxType"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State Tax Type is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "StateTaxType",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State Tax Type must be either \"State Withholding\" or \"State Unemployment\""
+            },
+            {
+              "ValidationType": "DuplicateTaxType",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "There can be only one tax type per company per state."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use State (or Federal) EIN",
+        "label": "Use State (or Federal) EIN",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Use State (or Federal) EIN is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "EIN",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Use State (or Federal) EIN must be either \"Use State EIN\" or \"Use Federal EIN\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use Above EIN?",
+        "label": "Use Above EIN?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State EIN For Withholding",
+        "label": "State EIN For Withholding",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Company State Tax Reporting!Use State (or Federal) EIN=Use State EIN",
+              "Value\\Format": null,
+              "Error Message": "State EIN is required if \"Use State EIN\" is selected."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt from SUI",
+        "label": "Exempt from SUI",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt from SUI must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Tax Override Rate",
+        "label": "Tax Override Rate",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "Stateunemployment"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax Override Rate must be a numeric value"
+            },
+            {
+              "ValidationType": "Stateunemployment",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State Unemployment Rate should be provided in Tax Override Rate column"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use Tax Override Rate",
+        "label": "Use Tax Override Rate",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Exclude From Tax Filling",
+        "label": "Exclude From Tax Filling",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exclude From Tax Filling must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Supplemental Tax Method - Separate Check",
+        "label": "Supplemental Tax Method - Separate Check",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "TaxMethod",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Supplemental Tax Method - Separate Check must match a value from the dropdown menu"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Supplemental Tax Method - Single Check",
+        "label": "Supplemental Tax Method - Single Check",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "TaxMethod",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Supplemental Tax Method - Single Check must match a value from the dropdown menu"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Company Local Tax",
+    "slug": "Company Local Tax",
+    "fields": [
+      {
+        "key": "Start Date",
+        "label": "Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Local Tax Start Date is a required column and must be populated"
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Start Date must contain a date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "StatesWithLocals",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State needs to match available dropdown list"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State is a required column and must be populated "
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company Name",
+        "label": "Company Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name must match companies provided on Federal Tax Reporting worksheet"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Tax Type",
+        "label": "Tax Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "TAXAUTHORITYCHECKER"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Local Authorities Tax Type is a required column and must be populated "
+            },
+            {
+              "ValidationType": "TAXAUTHORITYCHECKER",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax Type must match a value from the dropdown menu."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payroll Tax Local Authority",
+        "label": "Payroll Tax Local Authority",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition",
+            "CheckBasedonCondition",
+            "CheckBasedonCondition",
+            "LocalTaxCombo"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority is a required column and must be populated "
+            },
+            {
+              "ValidationType": "CheckBasedonCondition",
+              "Compare Worksheet": "School District Deduction Codes",
+              "Compare Column": "Payroll School District Authority Name",
+              "PK\\Condition": "Company Local Tax Reporting!Tax Type=School District Deduction Codes!Tax Type",
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority for School District does not match any values available on School district Deduction Codes worksheet"
+            },
+            {
+              "ValidationType": "CheckBasedonCondition",
+              "Compare Worksheet": "City Deduction Codes",
+              "Compare Column": "Payroll Local City Authority Name",
+              "PK\\Condition": "Company Local Tax Reporting!Tax Type=City Deduction Codes!Tax Type",
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority for Local City does not match any values available on City Deduction Codes worksheet"
+            },
+            {
+              "ValidationType": "CheckBasedonCondition",
+              "Compare Worksheet": "County Deduction Codes",
+              "Compare Column": "Payroll Local County Authority Name",
+              "PK\\Condition": "Company Local Tax Reporting!Tax Type=County Deduction Codes!Tax Type",
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority for Local County does not match any values available on County Deduction Codes worksheet"
+            },
+            {
+              "ValidationType": "LocalTaxCombo",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "There are duplicate Payroll Tax Local Authorities for this Company and State combination."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payroll Tax Local Authority ID",
+        "label": "Payroll Tax Local Authority ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "TaxAuthorityMatch"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority ID is a required column and must be populated "
+            },
+            {
+              "ValidationType": "TaxAuthorityMatch",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Invalid Tax Authority ID"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use State/Federal or Local EIN",
+        "label": "Use State/Federal or Local EIN",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Use State (or Federal) EIN is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "LocalEIN",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Use State (or Federal) EIN must be either \"Use State EIN\" or \"Use Federal EIN\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local EIN",
+        "label": "Local EIN",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Company Local Tax Reporting!Use State/Federal or Local EIN=Use State EIN",
+              "Value\\Format": null,
+              "Error Message": "State EIN is required if \"Use State EIN\" is selected."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Political Subdivision Code",
+        "label": "Political Subdivision Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Company Other Tax",
+    "slug": "Company Other Tax",
+    "fields": [
+      {
+        "key": "Start Date",
+        "label": "Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Local Tax Start Date is a required column and must be populated"
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Start Date must contain a date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "StatesWithOtherTax",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State needs to match available dropdown list"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State is a required column and must be populated "
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company Name",
+        "label": "Company Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company Name must match companies provided on Federal Tax Reporting worksheet"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Tax Type",
+        "label": "Tax Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "TAXAUTHORITYCHECKER"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Local Authorities Tax Type is a required column and must be populated "
+            },
+            {
+              "ValidationType": "TAXAUTHORITYCHECKER",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax Type must match a value from the dropdown menu."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payroll Tax Local Authority",
+        "label": "Payroll Tax Local Authority",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition",
+            "OtherTaxCombo"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority is a required column and must be populated "
+            },
+            {
+              "ValidationType": "CheckBasedonCondition",
+              "Compare Worksheet": "Other Deduction Codes",
+              "Compare Column": "Payroll Other Tax Authority Name",
+              "PK\\Condition": "Company Local Tax Reporting!Tax Type=Other Deduction Codes!Tax Type",
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority for Local Other Withholdings does not match any values available on Other Deduction Codes worksheet"
+            },
+            {
+              "ValidationType": "OtherTaxCombo",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "There are duplicate Payroll Tax Local Authorities for this Company/State/Deduction name combination."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Payroll Tax Local Authority ID",
+        "label": "Payroll Tax Local Authority ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "TaxAuthorityMatch"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority ID is a required column and must be populated "
+            },
+            {
+              "ValidationType": "TaxAuthorityMatch",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Invalid Tax Authority ID"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local Other Deduction Name",
+        "label": "Local Other Deduction Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Company Local and Other Tax!Payroll Tax Local Authority=Local Other Withholding",
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Local Authority is required if \"Local Other Withholding\" is selected."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local Other Deduction Code",
+        "label": "Local Other Deduction Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Use State/Federal or Local EIN",
+        "label": "Use State/Federal or Local EIN",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Use State (or Federal) EIN is a required column and must be populated "
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "LocalEIN",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Use State (or Federal) EIN must be either \"Use State EIN\" or \"Use Federal EIN\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local EIN",
+        "label": "Local EIN",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Company Local Tax Reporting!Use State/Federal or Local EIN=Use State EIN",
+              "Value\\Format": null,
+              "Error Message": "State EIN is required if \"Use State EIN\" is selected."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Tax Override Rate",
+        "label": "Tax Override Rate",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax Override Rate must be a numeric value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exclude From Tax Filing",
+        "label": "Exclude From Tax Filing",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exclude From Tax Filling must be either \"Yes\" or \"No\""
+            }
+          ]
+        }
+      },
+      {
+        "key": "Worker Tax Election Required",
+        "label": "Worker Tax Election Required",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker W-4 Withholdings",
+    "slug": "Worker W-4 Withholdings",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company provided must match Company name on Company Federal Tax Reporting worksheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "DateFormatting",
+            "Missing",
+            "DateMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must contain a date value formatted correctly."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must be on or after the Hire Date for the employee."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Marital Status Federal",
+        "label": "Current System - Marital Status Federal",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Federal WD - Tax Filing Marital Status",
+        "label": "Federal WD - Tax Filing Marital Status",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "W4MaritalStatusRequired",
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "W-4 Marital Options Types",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Federal Tax Filing Marital Status must match the dropdown menu for the cell."
+            },
+            {
+              "ValidationType": "W4MaritalStatusRequired",
+              "Compare Worksheet": null,
+              "Compare Column": "Federal WD - Tax Filing Marital Status",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Marital Status is a required element.  One of the two marital status columns should have a value"
+            },
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "<01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates BEFORE 01/01/2020"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Number of Allowances Federal",
+        "label": "Number of Allowances Federal",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Number of Allowances must be numeric."
+            },
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "<01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates BEFORE 01/01/2020"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Federal WD - Tax Filing Marital Status (2020)",
+        "label": "Federal WD - Tax Filing Marital Status (2020)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "W-4 Marital Options Types (2020)",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Federal Tax Filing Marital Status must match the dropdown menu for the cell."
+            },
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": ">=01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates 01/01/2020 or AFTER"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Total Dependent Amount",
+        "label": "Total Dependent Amount",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": ">=01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates 01/01/2020 or AFTER"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Other Income",
+        "label": "Other Income",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": ">=01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates 01/01/2020 or AFTER"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Deductions",
+        "label": "Deductions",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": ">=01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates 01/01/2020 or AFTER"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Multiple Jobs or Spouse Works",
+        "label": "Multiple Jobs or Spouse Works",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "WorkerFederalW4Election01012020"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Multiple Jobs or Spouse Works column can be populated with either 'Yes' or 'No'."
+            },
+            {
+              "ValidationType": "WorkerFederalW4Election01012020",
+              "Compare Worksheet": "Worker W-4 Withholdings",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": ">=01012020",
+              "Error Message": "This column should only be used for federal tax elections with effective as of dates 01/01/2020 or AFTER"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Additional Amount Federal",
+        "label": "Additional Amount Federal",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Additional Amount Federal must be numeric."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Federal Exemption [Yes/No]",
+        "label": "Federal Exemption [Yes/No]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Federal Exemption can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Nonresident Alien [Yes/No]",
+        "label": "Nonresident Alien [Yes/No]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Nonresident Alien can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt from NRA Additional Amount [Yes/No]",
+        "label": "Exempt from NRA Additional Amount [Yes/No]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt from NRA Additional Amount can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Lock In Letter [Yes/No]",
+        "label": "Lock In Letter [Yes/No]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Lock In Letter can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "No Wage No Tax [Yes/No]",
+        "label": "No Wage No Tax [Yes/No]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "No Wage No Tax can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Fica Oasdi Exemption",
+    "slug": "Worker FICA OASDI Exemption",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook"
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workers should be listed only once on this tab.  Duplicates were found"
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company provided must match Comany name on Company Federat Tax Reporting worksheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "DateFormatting",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must contain a date value formatted correctly."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt From OASDI [Yes/No]",
+        "label": "Exempt From OASDI [Yes/No]",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Matching",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Matching",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt From OASDI can be populated with either 'Yes' or 'No'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt From OASDI is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "OASDI Reason for Exemption",
+        "label": "OASDI Reason for Exemption",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Matching",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Matching",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "FICA",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "OASDI Reason for Exemption needs to be NRA Rule, Student, or Other."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "OASDI Reason for Exemptions a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Position ID",
+        "label": "Position ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Apply To Worker",
+        "label": "Apply To Worker",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Fica Medicare Exemption",
+    "slug": "Worker FICA Medicare Exemption",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workers should be listed only once on this tab.  Duplicates were found"
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company provided must match Comany name on Company Federat Tax Reporting worksheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "DateFormatting",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must contain a date value formatted correctly."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt From Medicare [Yes/No]",
+        "label": "Exempt From Medicare [Yes/No]",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Matching",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Matching",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt From Medicare can be populated with either 'Yes' or 'No'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt From Medicare is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Medicare Reason for Exemption",
+        "label": "Medicare Reason for Exemption",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Matching",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Matching",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "FICA",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Medicare Reason for Exemption needs to be NRA Rule, Student, or Other."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Medicare Reason for Exemption is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Position ID",
+        "label": "Position ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Apply To Worker",
+        "label": "Apply To Worker",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Futa Exemption",
+    "slug": "Worker FUTA Exemption",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workers should be listed only once on this tab.  Duplicates were found"
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company provided must match Comany name on Company Federat Tax Reporting worksheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "DateFormatting",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must contain a date value formatted correctly."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "FUTA Exempt [Yes/No]",
+        "label": "FUTA Exempt [Yes/No]",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "FUTA Exempt can be populated with either 'Yes' or 'No'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "FUTA Exempt is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker State Withholdings",
+    "slug": "Worker State Withholdings",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company provided must match Comany name on Company Federat Tax Reporting worksheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "DateFormatting",
+            "Missing",
+            "DateMatching",
+            ">=Value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must contain a date value formatted correctly."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must be on or after the Hire Date for the employee."
+            },
+            {
+              "ValidationType": ">=Value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2007-01-01 00:00:00",
+              "Error Message": "Effective As Of must be on or after 01/01/2007"
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckCompanyStateSetup_Formula",
+            "Missing",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckCompanyStateSetup_Formula",
+              "Compare Worksheet": "Company State Tax Reporting",
+              "Compare Column": "State",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State provided must match one of the states populated for State Withholding in the Company State Tax Reporting tab."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "State is a required column and must be populated."
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company State Tax Reporting",
+              "Compare Column": "State",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The State listed for the worker's tax election is not setup for the Company listed for the worker.  This can be setup on the Company State Tax Reporting tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Withholding State WD Tax Code",
+        "label": "Withholding State WD Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Withholding State WD  Tax Code is required  and needs to be generated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Tax Filing Marital Status State",
+        "label": "Current System - Tax Filing Marital Status State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "WD - Payroll Tax Filing Marital Status State",
+        "label": "WD - Payroll Tax Filing Marital Status State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MaritalStatus_Formula",
+            "StatesDefaultMaritalMissing_Formula",
+            "CheckStateAttribute_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MaritalStatus_Formula",
+              "Compare Worksheet": "States default Marital Status",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Marital Status for each state must match drop down."
+            },
+            {
+              "ValidationType": "StatesDefaultMaritalMissing_Formula",
+              "Compare Worksheet": "States default Marital Status",
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Payroll Tax Filing Marital Status State is a required column and must be populated."
+            },
+            {
+              "ValidationType": "CheckStateAttribute_Formula",
+              "Compare Worksheet": "State Attributes",
+              "Compare Column": "Marital Status",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Marital Status is not a valid attribute for this state as of the effective date provided."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt From State Withholdings",
+        "label": "Exempt From State Withholdings",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "CheckStateAttribute_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckStateAttribute_Formula",
+              "Compare Worksheet": "State Attributes",
+              "Compare Column": "Exempt",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Exempt is not a valid attribute for this state as of the effective date provided."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Number of Allowances State",
+        "label": "Number of Allowances State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "GeorgiaAllowance",
+            "CheckStateAttribute_Formula",
+            "LouisianaAllowance"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Number of Allowances must be numeric."
+            },
+            {
+              "ValidationType": "GeorgiaAllowance",
+              "Compare Worksheet": "Worker State Withholdings",
+              "Compare Column": "WD - Payroll Tax Filing Marital Status State",
+              "PK\\Condition": null,
+              "Value\\Format": "Georgia",
+              "Error Message": "Workers in Georgia can only have a max allowance of 1, unless marital status is C, then 2."
+            },
+            {
+              "ValidationType": "CheckStateAttribute_Formula",
+              "Compare Worksheet": "State Attributes",
+              "Compare Column": "Number of Allowances State",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Number of Allowances State is not a valid attribute for this state as of the effective date provided."
+            },
+            {
+              "ValidationType": "LouisianaAllowance",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Louisiana",
+              "Error Message": "Workers in Louisiana should not have more than 2 in the \"Number of Allowances State\" column.  Allowances over 2 can be entered in the \"Dependent Allowance\" column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Additional Amount State",
+        "label": "Additional Amount State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "CheckStateAttribute_Formula",
+            "ConditionChecking"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Additional Amount Federal must be numeric."
+            },
+            {
+              "ValidationType": "CheckStateAttribute_Formula",
+              "Compare Worksheet": "State Attributes",
+              "Compare Column": "Additional Amount",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Additional Amount is not a valid attribute for this state as of the effective date provided."
+            },
+            {
+              "ValidationType": "ConditionChecking",
+              "Compare Worksheet": "Worker State Withholdings",
+              "Compare Column": "State",
+              "PK\\Condition": "Louisiana",
+              "Value\\Format": "Blank",
+              "Error Message": "Workers in Louisiana should not have the \"Additional Amount State\" column populated.  They can use the \"Increase or Decrease Withholding Amount\" column instead."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent Allowance",
+        "label": "Dependent Allowance",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckStateAttribute_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckStateAttribute_Formula",
+              "Compare Worksheet": "State Attributes",
+              "Compare Column": "Dependent Allowance",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Dependent Allowance is not a valid attribute for this state as of the effective date provided."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Additional Allowance",
+        "label": "Additional Allowance",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckStateAttribute_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckStateAttribute_Formula",
+              "Compare Worksheet": "State Attributes",
+              "Compare Column": "Additional Allowance",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Additional Allowance is not a valid attribute for this state as of the effective date provided."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Married Filing Jointly Optional Calculation?",
+        "label": "Married Filing Jointly Optional Calculation?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Married Filing Jointly Optional Calculation can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Veteran Exemption?",
+        "label": "Veteran Exemption?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Veteran Exemption can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exemption for Dependents Complete",
+        "label": "Exemption for Dependents Complete",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Exemption for Dependents Joint Custody",
+        "label": "Exemption for Dependents Joint Custody",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Additional Percent",
+        "label": "Additional Percent",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Entrepreneur Exemption?",
+        "label": "Entrepreneur Exemption?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Entrepreneur Exemption can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Allowance on Special Deduction?",
+        "label": "Allowance on Special Deduction?",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Allowance on Special Deduction can be populated with either 'Yes' or 'No'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Certificate of Non Residence",
+        "label": "Certificate of Non Residence",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Certificate of Residence",
+        "label": "Certificate of Residence",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "New Jersey Rate Table",
+        "label": "New Jersey Rate Table",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "NJ Rate Table",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "New Jersey Rate table can be populated with A, B, C, D or E."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Worker State Withholdings!State=New Jersey",
+              "Value\\Format": null,
+              "Error Message": "New Jersey Rate Table required if state withholding is for New Jersey."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exemption for Mississippi",
+        "label": "Exemption for Mississippi",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Worker State Withholdings!State=Mississippi",
+              "Value\\Format": null,
+              "Error Message": "Exemption for Mississippi is required if state withholding is for Mississippi."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Constant Percent for Arizona",
+        "label": "Constant Percent for Arizona",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "CheckMissingAZPercentNotExempt",
+            "ConditionChecking",
+            "AZ_Percentages_2023_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "AZ Percentages",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "WD - Constant Percent for Arizona can be populated with the drop down values of Exempt or specific percent values."
+            },
+            {
+              "ValidationType": "CheckMissingAZPercentNotExempt",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Worker State Withholdings!State=Arizona",
+              "Value\\Format": null,
+              "Error Message": "WD - Constant Percent for Arizona is required if state withholding is for Arizona and worker is not exempt from state withholding."
+            },
+            {
+              "ValidationType": "ConditionChecking",
+              "Compare Worksheet": "Worker State Withholdings",
+              "Compare Column": "Exempt From State Withholdings",
+              "PK\\Condition": "Yes",
+              "Value\\Format": "Blank",
+              "Error Message": "Workers may not have the \"Constant Percent for Arizona\" column populated if they are marked as exempt."
+            },
+            {
+              "ValidationType": "AZ_Percentages_2023_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "AZ Percentages 2023",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Invalid Arizona withholding percentage chosen based on the election effective date"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Massachusetts Head of Household",
+        "label": "Massachusetts Head of Household",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Increase or Decrease Withholding Amount",
+        "label": "Increase or Decrease Withholding Amount",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Withholding Per Period - Reduced Withholding",
+        "label": "Withholding Per Period - Reduced Withholding",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Annual Withholding Allowance",
+        "label": "Annual Withholding Allowance",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Suta Exemption",
+    "slug": "Worker SUTA Exemption",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company provided must match Comany name on Company Federat Tax Reporting worksheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "DateFormatting",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of must contain a date value formatted correctly."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "SUTA Exempt [Yes/No]",
+        "label": "SUTA Exempt [Yes/No]",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "SUTA Exempt can be populated with either 'Yes' or 'No'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "SUTA Exempt is a required column and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "SUI Exempted From State",
+        "label": "SUI Exempted From State",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "States",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "SUI Exempted From State provided must match values in dropdown list; State name spelled out, no abbr."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "SUI Exempted From State is a required column and must be populated."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "SUI Exempted from State must match the values in the Imported EE Data from the HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Work County",
+    "slug": "Worker Work County",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required field."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company must be on the Company Federal Tax Tab first."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date must be a valid date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Work County Name",
+        "label": "Work County Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Work County Name is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Work County Tax Code",
+        "label": "Current System - Work County Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday - Work County Tax Code",
+        "label": "Workday - Work County Tax Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Match_Formula",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "W_CNTYW",
+              "Compare Column": "Payroll Authority Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker is not valid for Work County.  Refer to W_CNTYW tab for valid tax authorities"
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker does not match one provided on the Company Local Tax tab"
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code is not setup for the Company that has been provide on the worker's tax election."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Work County Additional Amount",
+        "label": "Work County Additional Amount",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Work State",
+        "label": "Worker's Work State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Work City",
+        "label": "Worker's Work City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "nan",
+        "label": "nan",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Residence County",
+    "slug": "Worker Residence County",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company must be on the Company Federal Tax Tab first."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date must be a valid date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Residence County Name",
+        "label": "Residence County Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Residence County Name is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Residence County Tax Code",
+        "label": "Current System - Residence County Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday - Residence County Tax Code",
+        "label": "Workday - Residence County Tax Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Match_Formula",
+            "Missing",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "W_CNTYR",
+              "Compare Column": "Payroll Authority Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker is not valid for Residence County.  Refer to W_CNTYR tab for valid tax authorities"
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker does not match one provided on the Company Local Tax tab"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workday - Residence County Tax Code is a required column."
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code is not setup for the Company that has been provide on the worker's tax election."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Residence County Additional Amount",
+        "label": "Residence County Additional Amount",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home State",
+        "label": "Worker's Home State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home City",
+        "label": "Worker's Home City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Work City",
+    "slug": "Worker Work City",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required field."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company must be on the Company Federal Tax Tab first."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date must be a valid date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Work City Tax Name",
+        "label": "Work City Tax Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Work City Tax Name is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Work City Tax Code",
+        "label": "Current System - Work City Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday - Work City Name WD Tax Code",
+        "label": "Workday - Work City Name WD Tax Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "Match_Formula",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workday - Work City Name WD Tax Code is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "W_CITYW",
+              "Compare Column": "Payroll Authority Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker is not valid for Work City.  Refer to W_CITYW tab for valid tax authorities"
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker does not match one provided on the Company Local Tax tab"
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code is not setup for the Company that has been provided on the worker's tax election."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Work City Additional Amount",
+        "label": "Work City Additional Amount",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Work Number of Allowances Michigan",
+        "label": "Work Number of Allowances Michigan",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": "Michigan",
+              "Error Message": "This column is only applicable if employee resides in Michigan."
+            }
+          ]
+        }
+      },
+      {
+        "key": "WD - Work Number of Allowances Michigan",
+        "label": "WD - Work Number of Allowances Michigan",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": "Michigan",
+              "Error Message": "This column is only applicable if employee resides in Michigan."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Work Michigan Constant Percent",
+        "label": "Work Michigan Constant Percent",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition",
+            "StateTaxCodeConditions"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": "Michigan",
+              "Error Message": "This column is only applicable if employee resides in Michigan."
+            },
+            {
+              "ValidationType": "StateTaxCodeConditions",
+              "Compare Worksheet": "Worker Work City",
+              "Compare Column": "Workday - Work City Name WD Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": "Michigan",
+              "Error Message": "If the tax code is for Michigan, this column needs to be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "WD - Work Michigan Constant Percent",
+        "label": "WD - Work Michigan Constant Percent",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition",
+            "StateTaxCodeConditions"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": "Michigan",
+              "Error Message": "This column is only applicable if employee resides in Michigan."
+            },
+            {
+              "ValidationType": "StateTaxCodeConditions",
+              "Compare Worksheet": "Worker Work City",
+              "Compare Column": "Workday - Work City Name WD Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": "Michigan",
+              "Error Message": "If the tax code is for Michigan, this column needs to be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Work City Exemption for Michigan/ Pennsylvania [Y/N]",
+        "label": "Work City Exemption for Michigan/ Pennsylvania [Y/N]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": "Pennsylvania,Michigan",
+              "Error Message": "This column is only applicable if employee resident is in Pennslyvania or Michigan."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt Reason\nPennsylvania",
+        "label": "Exempt Reason\nPennsylvania",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region (Work)",
+              "PK\\Condition": null,
+              "Value\\Format": "Pennsylvania",
+              "Error Message": "This column is only applicable if employee resident is in Pennslyvania."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Work State",
+        "label": "Worker's Work State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Work City",
+        "label": "Worker's Work City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Residence City",
+    "slug": "Worker Residence City",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company must be on the Company Federal Tax Tab first."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date must be a valid date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Residence City Tax Name",
+        "label": "Residence City Tax Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Residence City Tax Name is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Residence City Tax Code",
+        "label": "Current System - Residence City Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday - Residence City Name WD Tax Code",
+        "label": "Workday - Residence City Name WD Tax Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "Match_Formula",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workday - Residence City Name WD Tax Code is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "W_CITYR",
+              "Compare Column": "Payroll Authority Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker is not valid for Residence City.  Refer to W_CITYR tab for valid tax authorities"
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker does not match one provided on the Company Local Tax tab"
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code is not setup for the Company that has been provide on the worker's tax election."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Resident Number of Allowances",
+        "label": "Resident Number of Allowances",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Resident Number of Allowances is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Residence City Additional Amount",
+        "label": "Residence City Additional Amount",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Residence City Exemption Pennsylvania [Y/N]",
+        "label": "Residence City Exemption Pennsylvania [Y/N]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region",
+              "PK\\Condition": null,
+              "Value\\Format": "Pennsylvania",
+              "Error Message": "This column is only applicable if employee resident is in Pennslyvania."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Exempt Reason\nPennsylvania",
+        "label": "Exempt Reason\nPennsylvania",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region",
+              "PK\\Condition": null,
+              "Value\\Format": "Pennsylvania",
+              "Error Message": "This column is only applicable if employee resident is in Pennslyvania."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home State",
+        "label": "Worker's Home State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home City",
+        "label": "Worker's Home City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Residence School Dist.",
+    "slug": "Worker Residence School Dist.",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company must be on the Company Federal Tax Tab first."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date must be a valid date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local School District Tax Name",
+        "label": "Local School District Tax Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Local School District Tax Name is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Local School District Tax Code",
+        "label": "Current System - Local School District Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday - Local School District WD Tax Code",
+        "label": "Workday - Local School District WD Tax Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match_Formula",
+            "Match_Formula",
+            "Missing",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker does not match one provided on the Company Local Tax tab"
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "W_SCHDR",
+              "Compare Column": "Payroll Authority Tax Code",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker is not valid for School District.  Refer to W_SCHDR tab for valid tax authorities"
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workday - Local School District WD Tax Code is a required column."
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company Local Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code is not setup for the Company that has been provide on the worker's tax election."
+            }
+          ]
+        }
+      },
+      {
+        "key": "School District Exemption Pennsylvania [Y/N]",
+        "label": "School District Exemption Pennsylvania [Y/N]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region",
+              "PK\\Condition": null,
+              "Value\\Format": "Pennsylvania",
+              "Error Message": "This column is only applicable if employee resident is in Pennslyvania."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local School District Exempt Reason Pennsylvania",
+        "label": "Local School District Exempt Reason Pennsylvania",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "PrimaryKeyCondition"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "PrimaryKeyCondition",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Region",
+              "PK\\Condition": null,
+              "Value\\Format": "Pennsylvania",
+              "Error Message": "This column is only applicable if employee resident is in Pennslyvania."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home State",
+        "label": "Worker's Home State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home City",
+        "label": "Worker's Home City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Worker Work Other Employer",
+    "slug": "Worker Work Other Employer",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must match value employee provided on Imported EE Data from HCM Workbook."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "First name is a required field."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Last name is a required field."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Last Name does not match the last name on the imported EE tab for this employee ID.  Confirm that this tax election data is for the correct worker."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company",
+        "label": "Company",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "PrimaryKeyMatching"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company is a required column and must be populated."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Federal Tax Reporting",
+              "Compare Column": "Company Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Company must be on the Company Federal Tax Tab first."
+            },
+            {
+              "ValidationType": "PrimaryKeyMatching",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Company",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "The employee's company must match the employee's company in HCM."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Company ID",
+        "label": "Company ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective As Of",
+        "label": "Effective As Of",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "DateFormatting"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective As Of Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "DateFormatting",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date must be a valid date value formatted correctly."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Local Other Work Tax Name",
+        "label": "Local Other Work Tax Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Local Other Work Tax Name is a required column."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Current System - Local Other Work Tax Code",
+        "label": "Current System - Local Other Work Tax Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Workday - Local Other Work WD Tax Code",
+        "label": "Workday - Local Other Work WD Tax Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match_Formula",
+            "TaxAuthSetupForCompany"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Workday - Local Other Work WD Tax Code  is a required column."
+            },
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Company Other Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code provided for worker does not match one provided on the Company Other Tax tab"
+            },
+            {
+              "ValidationType": "TaxAuthSetupForCompany",
+              "Compare Worksheet": "Company Other Tax",
+              "Compare Column": "Payroll Tax Local Authority ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Tax authority code is not setup for the Company that has been provide on the worker's tax election."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Other Work Exemption  [Y/N]",
+        "label": "Other Work Exemption  [Y/N]",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match_Formula"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match_Formula",
+              "Compare Worksheet": "Dropdowns",
+              "Compare Column": "Yes_No",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Cell value must be Yes or No."
+            }
+          ]
+        }
+      },
+      {
+        "key": "State",
+        "label": "State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "State Code",
+        "label": "State Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home State",
+        "label": "Worker's Home State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Home City",
+        "label": "Worker's Home City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Work State",
+        "label": "Worker's Work State",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Worker's Work City",
+        "label": "Worker's Work City",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,4588 @@
+[
+  {
+    "name": "Employee Related Person",
+    "slug": "Employee Related Person",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Employee First Name",
+        "label": "Employee First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Last Name",
+        "label": "Employee Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legal First Name",
+        "label": "Legal First Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Legal First Name is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Legal Middle Name",
+        "label": "Legal Middle Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legal Last Name",
+        "label": "Legal Last Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Legal Last Name is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Legal Name Country",
+        "label": "Legal Name Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Legal Name Country is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Title",
+        "label": "Title",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Suffix",
+        "label": "Suffix",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "II|III|IV|Jr.|Sr.",
+              "Error Message": "Suffix column must be populated with 'II', 'III', 'IV', 'Jr.' or 'Sr.'"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Preferred First Name",
+        "label": "Preferred First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "Preferred Last Name",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of these columns is populated, both of these columns must be populated: Preferred First Name and Preferred Last Name"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Preferred Last Name",
+        "label": "Preferred Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Is Dependent?",
+        "label": "Is Dependent?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Yes|No",
+              "Error Message": "Is Dependent? Must be either Yes or No."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent ID",
+        "label": "Dependent ID",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Dependent?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Dependent ID is required if \"Is Dependent?\" = Yes."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Dependent ID can not be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Is Beneficiary?",
+        "label": "Is Beneficiary?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Yes|No",
+              "Error Message": "Is Beneficiary? Must be either Yes or No."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Beneficiary ID",
+        "label": "Beneficiary ID",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Beneficiary?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Beneficiary ID is required if \"Is Beneficiary?\" = Yes."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Benficiary ID can not be duplicated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Is Individual or Entity?",
+        "label": "Is Individual or Entity?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Is Emergency Contact?",
+        "label": "Is Emergency Contact?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Yes|No",
+              "Error Message": "Is Emergency Contact? Must be either Yes or No."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Emergency Contact ID",
+        "label": "Emergency Contact ID",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Emergency Contact?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Emergency Contact ID is required if \"Is Emergency Contact?\" = Yes."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Emergency Contact Priority",
+        "label": "Emergency Contact Priority",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Emergency Contact?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Emergency Contact Priority is a required column for Emergency Contacts and must be populated for the used row."
+            },
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Emergency Contact?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Emergency Contact Priority must be a numeric value, with 1 being the highest priority."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Emergency Contact Primary?",
+        "label": "Emergency Contact Primary?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Relationship to Employee",
+        "label": "Relationship to Employee",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Relationship to Employee",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Relationship to Employee does not match any Relationships on the Plan References tab."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Relationship to Employee is a required field and must be populated with 'Spouse', 'Child', 'Sibling', 'Parent', 'Other', 'Domestic Partner', 'Ex-Domestic Partner' or 'Ex-Spouse'"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use Employee Address?",
+        "label": "Use Employee Address?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Yes|No",
+              "Error Message": "Use Employee Address? Must be either Yes or No."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Use Employee Phone?",
+        "label": "Use Employee Phone?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Yes|No",
+              "Error Message": "Use Employee Phone? Must be either Yes or No."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Emergency Contact?=Yes",
+              "Value\\Format": "No",
+              "Error Message": "Emergency Contacts are required to provide their own phone number and cannot \"Use Employee Phone\". An email address can be provided instead of a phone number if necessary."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent Effective Date",
+        "label": "Dependent Effective Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Irrevocable?",
+        "label": "Irrevocable?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country (National ID)",
+        "label": "Country (National ID)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "National ID|National ID Type|Country Code (National ID)",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of these columns is populated, all of these columns must be populated: Country, National ID, National ID Type and Country Code"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Country Code (National ID)",
+        "label": "Country Code (National ID)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "National ID",
+        "label": "National ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MatchValueorFormat",
+            "Duplicatecolumn"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (National ID)=United States of America",
+              "Value\\Format": "d{9}",
+              "Error Message": "USA National ID values in must have 9 digits with no extra characters."
+            },
+            {
+              "ValidationType": "Duplicatecolumn",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "National ID column must be unique and cannot be duplicated"
+            }
+          ]
+        }
+      },
+      {
+        "key": "National ID Type",
+        "label": "National ID Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Date of Birth",
+        "label": "Date of Birth",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Dependent?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Date of Birth is a required field for Dependents and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Age",
+        "label": "Age",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Gender",
+        "label": "Gender",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Is Dependent?=Yes",
+              "Value\\Format": null,
+              "Error Message": "Gender is a required field for Dependents and must be populated for the used row"
+            },
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Male|Female",
+              "Error Message": "Some genders are not male/female. Please review and verify."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Date of Death",
+        "label": "Date of Death",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Uses Tobacco?",
+        "label": "Uses Tobacco?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Disabled?",
+        "label": "Disabled?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Dependent for Payroll Purposes",
+        "label": "Dependent for Payroll Purposes",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Could be Covered Elsewhere",
+        "label": "Could be Covered Elsewhere",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "Could be Covered Elsewhere Effective Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of these columns is populated, both of these columns must be populated: Could be Covered Elsewhere and Could be Covered Elsewhere Effective Date"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Could be Covered Elsewhere Effective Date",
+        "label": "Could be Covered Elsewhere Effective Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Full-time Student?",
+        "label": "Full-time Student?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Student Status Start Date",
+        "label": "Student Status Start Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Student Status End Date",
+        "label": "Student Status End Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "City|Postal Code|Address Line #1|Country Code",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of the address columns is populated, all of the required columns must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Country Code",
+        "label": "Country Code",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #1",
+        "label": "Address Line #1",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #2",
+        "label": "Address Line #2",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "City",
+        "label": "City",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Region",
+        "label": "Region",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Subregion",
+        "label": "Subregion",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Submunicipality",
+        "label": "Submunicipality",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "City Subdivision",
+        "label": "City Subdivision",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Postal Code",
+        "label": "Postal Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #3",
+        "label": "Address Line #3",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Line #4",
+        "label": "Address Line #4",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Address Usage",
+        "label": "Address Usage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Email Address",
+        "label": "Email Address",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country (Home)",
+        "label": "Country (Home)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "International Phone Code (Home)",
+        "label": "International Phone Code (Home)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Area Code (Home)",
+        "label": "Area Code (Home)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "AreaCodeValidation",
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "AreaCodeValidation",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Country (Home)",
+              "Value\\Format": null,
+              "Error Message": "Some countries require an Area Code (Home). Check against the Data Formatting Guide."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Home)=United States of America",
+              "Value\\Format": "d{3}",
+              "Error Message": "Area Code values must be ### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Home)=The Netherlands",
+              "Value\\Format": "d{2,3}|[0]?[6]?d{2,3}",
+              "Error Message": "Area Code values must be ## or ### format for NLD"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Home)=United Kingdom",
+              "Value\\Format": "d{2,5}|[0]?d{2,5}",
+              "Error Message": "Area Code values must 2-5 digits for GBR"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Phone Number (Home)",
+        "label": "Phone Number (Home)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Home)=United States of America",
+              "Value\\Format": "d{3}-d{4}|d{3}.d{4}|d{7}",
+              "Error Message": "Phone Number values must be ###-####/###.#### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Home)=The Netherlands",
+              "Value\\Format": "d{6,8}",
+              "Error Message": "Phone Number values must be 6-8 digits for Netherlands(no special characters)"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Home)=United Kingdom",
+              "Value\\Format": "d{4,8}",
+              "Error Message": "Phone Number values must be 4-8 digits for UK(No Special Characters)"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Phone Type (Home)",
+        "label": "Phone Type (Home)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Primary? (Home)",
+        "label": "Primary? (Home)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Public? (Home)",
+        "label": "Public? (Home)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country (Work)",
+        "label": "Country (Work)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "International Phone Code (Work)",
+        "label": "International Phone Code (Work)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Area Code (Work)",
+        "label": "Area Code (Work)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "AreaCodeValidation",
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "AreaCodeValidation",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Country (Work)",
+              "Value\\Format": null,
+              "Error Message": "Some countries require an Area Code (Work). Check against the Data Formatting Guide."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work)=United States of America",
+              "Value\\Format": "d{3}",
+              "Error Message": "Area Code values must be ### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work)=The Netherlands",
+              "Value\\Format": "d{2,3}|[0]?[6]?d{2,3}",
+              "Error Message": "Area Code values must be ## or ### format for NLD"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work)=United Kingdom",
+              "Value\\Format": "d{2,5}|[0]?d{2,5}",
+              "Error Message": "Area Code values must 2-5 digits for GBR"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Phone Number (Work)",
+        "label": "Phone Number (Work)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work)=United States of America",
+              "Value\\Format": "d{3}-d{4}|d{3}.d{4}|d{7}",
+              "Error Message": "Phone Number values must be ###-####/###.#### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work)=The Netherlands",
+              "Value\\Format": "d{6,8}",
+              "Error Message": "Phone Number values must be 6-8 digits for Netherlands(no special characters)"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work)=United Kingdom",
+              "Value\\Format": "d{4,8}",
+              "Error Message": "Phone Number values must be 4-8 digits for UK(No Special Characters)"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Phone Extension (Work)",
+        "label": "Phone Extension (Work)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Phone Type (Work)",
+        "label": "Phone Type (Work)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Primary? (Work)",
+        "label": "Primary? (Work)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Public? (Work)",
+        "label": "Public? (Work)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country (Work Mobile)",
+        "label": "Country (Work Mobile)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "International Phone Code (Work Mobile)",
+        "label": "International Phone Code (Work Mobile)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Area Code (Work Mobile)",
+        "label": "Area Code (Work Mobile)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "AreaCodeValidation",
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "AreaCodeValidation",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Country (Work Mobile)",
+              "Value\\Format": null,
+              "Error Message": "Some countries require an Area Code (Work Mobile). Check against the Data Formatting Guide."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work Mobile)=United States of America",
+              "Value\\Format": "d{3}",
+              "Error Message": "Area Code values must be ### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work Mobile)=The Netherlands",
+              "Value\\Format": "d{2,3}|[0]?[6]?d{2,3}",
+              "Error Message": "Area Code values must be ## or ### format for NLD"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work Mobile)=United Kingdom",
+              "Value\\Format": "d{2,5}|[0]?d{2,5}",
+              "Error Message": "Area Code values must 2-5 digits for GBR"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Phone Number (Work Mobile)",
+        "label": "Phone Number (Work Mobile)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work Mobile)=United States of America",
+              "Value\\Format": "d{3}-d{4}|d{3}.d{4}|d{7}",
+              "Error Message": "Phone Number values must be ###-####/###.#### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work Mobile)=The Netherlands",
+              "Value\\Format": "d{6,8}",
+              "Error Message": "Phone Number values must be 6-8 digits for Netherlands(no special characters)"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Work Mobile)=United Kingdom",
+              "Value\\Format": "d{4,8}",
+              "Error Message": "Phone Number values must be 4-8 digits for UK(No Special Characters)"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Primary? (Work Mobile)",
+        "label": "Primary? (Work Mobile)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Public? (Work Mobile)",
+        "label": "Public? (Work Mobile)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Country (Personal Mobile)",
+        "label": "Country (Personal Mobile)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "International Phone Code (Personal Mobile)",
+        "label": "International Phone Code (Personal Mobile)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Area Code (Personal Mobile)",
+        "label": "Area Code (Personal Mobile)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "AreaCodeValidation",
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "AreaCodeValidation",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Country (Personal Mobile)",
+              "Value\\Format": null,
+              "Error Message": "Some countries require an Area Code (Personal Mobile). Check against the Data Formatting Guide."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Personal Mobile)=United States of America",
+              "Value\\Format": "d{3}",
+              "Error Message": "Area Code values must be ### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Personal Mobile)=The Netherlands",
+              "Value\\Format": "d{2,3}|[0]?[6]?d{2,3}",
+              "Error Message": "Area Code values must be ## or ### format for NLD"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Personal Mobile)=United Kingdom",
+              "Value\\Format": "d{2,5}|[0]?d{2,5}",
+              "Error Message": "Area Code values must 2-5 digits for GBR"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Phone Number (Personal Mobile)",
+        "label": "Phone Number (Personal Mobile)",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "MatchValueorFormat",
+            "MatchValueorFormat",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Personal Mobile)=United States of America",
+              "Value\\Format": "d{3}-d{4}|d{3}.d{4}|d{7}",
+              "Error Message": "Phone Number values must be ###-####/###.#### format for USA"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Personal Mobile)=The Netherlands",
+              "Value\\Format": "d{6,8}",
+              "Error Message": "Phone Number values must be 6-8 digits for Netherlands(no special characters)"
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Employee Related Person!Country (Personal Mobile)=United Kingdom",
+              "Value\\Format": "d{4,8}",
+              "Error Message": "Phone Number values must be 4-8 digits for UK(No Special Characters)"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Primary? (Personal Mobile)",
+        "label": "Primary? (Personal Mobile)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Public? (Personal Mobile)",
+        "label": "Public? (Personal Mobile)",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Court Order - Benefit Coverage Type",
+        "label": "Court Order - Benefit Coverage Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Start Date",
+        "label": "Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "End Date",
+        "label": "End Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Trust Name",
+        "label": "Trust Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Tax ID",
+        "label": "Tax ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Trust Date",
+        "label": "Trust Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Employee Wellness Data",
+    "slug": "Employee Wellness Data",
+    "fields": [
+      {
+        "key": "Worker or Dependent?",
+        "label": "Worker or Dependent?",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Worker or Dependent? is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "ID",
+        "label": "ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Participates in Wellness Program Date",
+        "label": "Participates in Wellness Program Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Participates in Wellness Program",
+        "label": "Participates in Wellness Program",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "Participates in Wellness Program Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of the \"Participates in Wellness Program\" columns are populated, both columns must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Wellness Score Date",
+        "label": "Wellness Score Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Wellness Score",
+        "label": "Wellness Score",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "Wellness Score Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of the \"Wellness Score\" columns are populated, both columns must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Uses Tobacco Date",
+        "label": "Uses Tobacco Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Uses Tobacco",
+        "label": "Uses Tobacco",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "Uses Tobacco Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of the \"Uses Tobacco\" columns are populated, both columns must be populated."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Benefit Annual Rates",
+    "slug": "Benefit Annual Rates",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Effective Date",
+        "label": "Effective Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Effective Date is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Benefit Annual Rate",
+        "label": "Benefit Annual Rate",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Benefit Annual Rate is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Currency",
+        "label": "Currency",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Currency is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Benefit Annual Rate Type",
+        "label": "Benefit Annual Rate Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Benefit Annual Rate Type",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Benefit Annual Rate Type does not match any Benefit Annual Rate Type on the Plan References sheet."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Benefit Annual Rate Type is a required column and must be populated for the used row"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Health Care Enrollment Data",
+    "slug": "Health Care Enrollment Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            ">=value",
+            "CheckBasedonCondition.>=",
+            "CheckBasedonCondition.>="
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Date of Birth",
+              "PK\\Condition": "Health Care Enrollment Data!Dependent ID=Employee Related Person!Dependent ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Dependent's Date of Birth."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Health Care Enrollment Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Health Care Coverage Plan ID",
+        "label": "Health Care Coverage Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Health Care Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Health Care Plan does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Health Care Coverage Target ID",
+        "label": "Health Care Coverage Target ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Health Care Coverage Target ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Coverage target does not match any value on the Plan References tab."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Care Enrollment Data!Health Care Coverage Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Coverage Target is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent ID",
+        "label": "Dependent ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing",
+            "Blank",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Dependent ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Dependent ID is not listed on the Employee Related Person tab."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Care Enrollment Data!Health Care Coverage Target ID=<*>Only",
+              "Value\\Format": null,
+              "Error Message": "Coverage Targets that are not 'Employee Only' require a dependent to be listed."
+            },
+            {
+              "ValidationType": "Blank",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Care Enrollment Data!Health Care Coverage Target ID=*Only",
+              "Value\\Format": null,
+              "Error Message": "Coverage Targets that are 'Employee Only' should not have a dependent listed."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Dependent ID",
+              "PK\\Condition": "Health Care Enrollment Data!EmployeeID=Employee Related Person!EmployeeID",
+              "Value\\Format": null,
+              "Error Message": "Employee(s) not eligible for the selected plan."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent Original Coverage Begin Date",
+        "label": "Dependent Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Dependent Provider ID",
+        "label": "Dependent Provider ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Health Care Provider ID",
+        "label": "Health Care Provider ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Pre-Tax",
+        "label": "Employee Cost Pre-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Post-Tax",
+        "label": "Employee Cost Post-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Non-Taxable",
+        "label": "Employer Cost Non-Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Taxable",
+        "label": "Employer Cost Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Health Care History Enroll Data",
+    "slug": "Health Care History Enroll Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            ">=value",
+            "CheckBasedonCondition.>=",
+            "CheckBasedonCondition.>="
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Date of Birth",
+              "PK\\Condition": "Health Care History Enroll Data!Dependent ID=Employee Related Person!Dependent ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Dependent's Date of Birth."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Health Care History Enroll Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Health Care Coverage Plan ID",
+        "label": "Health Care Coverage Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Health Care Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Health Care Plan does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Health Care Coverage Target ID",
+        "label": "Health Care Coverage Target ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Health Care Coverage Target ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Coverage target does not match any value on the Plan References tab."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Coverage Target is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent ID",
+        "label": "Dependent ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match",
+            "Missing",
+            "Blank",
+            "MatchValueorFormat"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Dependent ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Dependent ID is not listed on the Employee Related Person tab."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Care History Enroll Data!Health Care Coverage Target ID=<*>Only",
+              "Value\\Format": null,
+              "Error Message": "Coverage Targets that are not 'Employee Only' require a dependent to be listed."
+            },
+            {
+              "ValidationType": "Blank",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Care Enrollment Data!Health Care Coverage Target ID=*Only",
+              "Value\\Format": null,
+              "Error Message": "Coverage Targets that are 'Employee Only' should not have a dependent listed."
+            },
+            {
+              "ValidationType": "MatchValueorFormat",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Dependent ID",
+              "PK\\Condition": "Health Care History Enroll Data!EmployeeID=Employee Related Person!EmployeeID",
+              "Value\\Format": null,
+              "Error Message": "Employee(s) not eligible for the selected plan."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent Original Coverage Begin Date",
+        "label": "Dependent Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Dependent Provider ID",
+        "label": "Dependent Provider ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Health Care Provider ID",
+        "label": "Health Care Provider ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Pre-Tax",
+        "label": "Employee Cost Pre-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Post-Tax",
+        "label": "Employee Cost Post-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Non-Taxable",
+        "label": "Employer Cost Non-Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Taxable",
+        "label": "Employer Cost Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Health Savings Enrollment Data",
+    "slug": "Health Savings Enrollment Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition.>=",
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Health Savings Enrollment Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Health Savings Account Plan ID",
+        "label": "Health Savings Account Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Health Savings Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Health Savings Plan does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Benefit Deduction Periods Remaining",
+        "label": "Benefit Deduction Periods Remaining",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Savings Enrollment Data!Health Savings Account Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Benefit Deduction Periods Remaining is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Remaining Period Frequency",
+        "label": "Remaining Period Frequency",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Savings Enrollment Data!Health Savings Account Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Remaining Period Frequency is a required field and must be populated"
+            },
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Monthly|Semimonthly|Biweekly|Annual",
+              "Error Message": "Frequency must be 'Monthly', 'Semi-monthly', 'Bi-weekly' or 'Annual'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "YTD Contribution Amount",
+        "label": "YTD Contribution Amount",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "YTD Contribution Amount must be a numeric value."
+            },
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Annual Contribution",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "YTD Contribution Amount should be less than or equal to annual contribution."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Annual Contribution",
+        "label": "Annual Contribution",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Annual Contribution must be a numeric value."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Savings Enrollment Data!Health Savings Account Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Annual Contribution is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Employee Cost",
+        "label": "Employee Cost",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Cost must be a numeric value."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Savings Enrollment Data!Health Savings Account Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Employee Cost is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Monthly|Semimonthly|Biweekly|Annual",
+              "Error Message": "Frequency must be 'Monthly', 'Semi-monthly', 'Bi-weekly' or 'Annual'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Health Savings Enrollment Data!Health Savings Account Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Frequency is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Beneficiary ID",
+        "label": "Beneficiary ID",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Beneficiary ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Beneficiary ID is not listed on the Employee Related Person tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Primary Percentage",
+        "label": "Primary Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Contingent Percentage",
+        "label": "Contingent Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Spending Acct Enrollment Data",
+    "slug": "Spending Acct Enrollment Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition.>=",
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Spending Acct Enrollment Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Spending Account Plan ID",
+        "label": "Spending Account Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Spending Account Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Spending Account Plan does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Benefit Deduction Periods Remaining",
+        "label": "Benefit Deduction Periods Remaining",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Benefit Deduction Periods Remaining must be a numeric value."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Spending Acct Enrollment Data!Benefit Deduction Periods Remaining=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Benefit Deduction Periods Remaining is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Remaining Period Frequency",
+        "label": "Remaining Period Frequency",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "CheckValueExist",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Monthly|Semimonthly|Biweekly|Annual",
+              "Error Message": "Frequency must be 'Monthly', 'Semi-monthly', 'Bi-weekly' or 'Annual'."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Spending Acct Enrollment Data!Remaining Period Frequency=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Remaining Period Frequency is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "YTD Contribution Amount",
+        "label": "YTD Contribution Amount",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            ">=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "YTD Contribution Amount must be a numeric value."
+            },
+            {
+              "ValidationType": ">=column",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "YTD Contribution Amount should be less than or equal to annual contribution."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Annual Contribution",
+        "label": "Annual Contribution",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "Missing",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Annual Contribution must be a numeric value."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Spending Acct Enrollment Data!Annual Contribution=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Annual Contribution is a required field and must be populated."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Spending Acct Enrollment Data!Spending Account Plan ID=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Annual Contribution is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Employee Cost",
+        "label": "Employee Cost",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            "Missing"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee Cost must be a numeric value."
+            },
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": "Spending Acct Enrollment Data!Employee Cost=<>Waive Plans",
+              "Value\\Format": null,
+              "Error Message": "Employee Cost is a required field and must be populated."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Beneficiary ID",
+        "label": "Beneficiary ID",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Beneficiary ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Beneficiary ID is not listed on the Employee Related Person tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Primary Percentage",
+        "label": "Primary Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Contingent Percentage",
+        "label": "Contingent Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Insurance Enrollment Data",
+    "slug": "Insurance Enrollment Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition.>=",
+            ">=value",
+            "CheckBasedonCondition.>=",
+            "CheckBasedonCondition.>="
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Insurance Enrollment Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Date of Birth",
+              "PK\\Condition": "Insurance Enrollment Data!Dependent ID=Employee Related Person!Dependent ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Dependent's Date of Birth."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Date of Birth",
+              "PK\\Condition": "Insurance Enrollment Data!Beneficiary ID=Employee Related Person!Beneficiary ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Beneficiary's Date of Birth."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Insurance Coverage Plan ID",
+        "label": "Insurance Coverage Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Insurance Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Insurance Plan does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Amount",
+        "label": "Coverage Amount",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Coverage Amount ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Coverage Amount does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Currency Code",
+        "label": "Currency Code",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "EnsureDataMultipleColumns"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "EnsureDataMultipleColumns",
+              "Compare Worksheet": null,
+              "Compare Column": "Coverage Amount",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "If one of these columns is populated, both of these columns must be populated: Currency Code and Coverage Amount"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Compensation Multiplier",
+        "label": "Compensation Multiplier",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Compensation Multiplier ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Compensation Multiplier does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Compensation Percentage",
+        "label": "Compensation Percentage",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Compensation Percentage ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Compensation Percentage does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Dependent ID",
+        "label": "Dependent ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Dependent ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Dependent ID is not listed on the Employee Related Person tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Beneficiary ID",
+        "label": "Beneficiary ID",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Employee Related Person",
+              "Compare Column": "Beneficiary ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Beneficiary ID is not listed on the Employee Related Person tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Primary Percentage",
+        "label": "Primary Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Contingent Percentage",
+        "label": "Contingent Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Pre-Tax",
+        "label": "Employee Cost Pre-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Post-Tax",
+        "label": "Employee Cost Post-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Non-Taxable",
+        "label": "Employer Cost Non-Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Taxable",
+        "label": "Employer Cost Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Retirement Enrollment Data",
+    "slug": "Retirement Enrollment Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition.>=",
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Retirement Enrollment Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Retirement Savings Plan ID",
+        "label": "Retirement Savings Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Retirement Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Retirement Savings Plan ID does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Election Percentage",
+        "label": "Election Percentage",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric",
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Election Percentage must be a numeric value."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": 1,
+              "Error Message": "Election Percentage must be greater than 1. (For example, insert 60 for 60%, not .60)."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Election Amount",
+        "label": "Election Amount",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Numeric"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Numeric",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Election Amount must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Beneficiary ID",
+        "label": "Beneficiary ID",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Primary Percentage",
+        "label": "Primary Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Contingent Percentage",
+        "label": "Contingent Percentage",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Addtl Benefits Enrollment Data",
+    "slug": "Addtl Benefits Enrollment Data",
+    "fields": [
+      {
+        "key": "Employee ID",
+        "label": "Employee ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "Match",
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID is a required column and must be populated for the used row"
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID must first exist on the Imported EE Data. This ensures that the employee is in the tenant."
+            },
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Benefits Eligibility by Benefit",
+              "Compare Column": "Employee ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Employee ID does not match any Employee ID on the Benefit Eligibility by Benefit tab. Can ignore if you haven't filled out that tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "First Name",
+        "label": "First Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Last Name",
+        "label": "Last Name",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Legacy Event Date",
+        "label": "Legacy Event Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Missing",
+            "CheckBasedonCondition.>=",
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Missing",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Event Date is a required column and must be populated."
+            },
+            {
+              "ValidationType": "CheckBasedonCondition.>=",
+              "Compare Worksheet": "Imported EE Data",
+              "Compare Column": "Hire Date",
+              "PK\\Condition": "Addtl Benefits Enrollment Data!Employee ID=Imported EE Data!Employee ID",
+              "Value\\Format": null,
+              "Error Message": "The Event Date listed must come after the Employees Hire Date."
+            },
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Legacy event date should be on or after Jan 1st of this year, or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Original Coverage Begin Date",
+        "label": "Original Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "<=column"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "<=column",
+              "Compare Worksheet": null,
+              "Compare Column": "Event Date",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Original Coverage Begin Date column values must be either equal or come before the row's Event Date value"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Event Date",
+        "label": "Event Date",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            ">=value"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": ">=value",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "2023-01-01 00:00:00",
+              "Error Message": "Event date should be on or after Jan 1st of this year or the benefit plan start date (if you provided one) from the plan references tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Coverage Begin Date",
+        "label": "Coverage Begin Date",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Benefit Event Type",
+        "label": "Benefit Event Type",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Additional Benefits Plan ID",
+        "label": "Additional Benefits Plan ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Additional Benefits Plan ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Additional Benefits Plan does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Additional Benefits Coverage Target",
+        "label": "Additional Benefits Coverage Target",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [
+            "Match"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "Match",
+              "Compare Worksheet": "Plan References",
+              "Compare Column": "Additional Benefits Coverage Target ID",
+              "PK\\Condition": null,
+              "Value\\Format": null,
+              "Error Message": "Coverage target does not match any value on the Plan References tab."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Additional Benefits Flat Rate",
+        "label": "Additional Benefits Flat Rate",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Additional Benefits Percentage",
+        "label": "Additional Benefits Percentage",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Frequency",
+        "label": "Frequency",
+        "type": "string",
+        "metadata": {
+          "validations": [
+            "CheckValueExist"
+          ],
+          "validation_criteria": [
+            {
+              "ValidationType": "CheckValueExist",
+              "Compare Worksheet": null,
+              "Compare Column": null,
+              "PK\\Condition": null,
+              "Value\\Format": "Monthly|Semimonthly|Biweekly|Annual",
+              "Error Message": "Frequency must be 'Monthly', 'Semi-monthly', 'Bi-weekly' or 'Annual'."
+            }
+          ]
+        }
+      },
+      {
+        "key": "Employee Cost Pre-Tax",
+        "label": "Employee Cost Pre-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employee Cost Post-Tax",
+        "label": "Employee Cost Post-Tax",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Non-Taxable",
+        "label": "Employer Cost Non-Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Employer Cost Taxable",
+        "label": "Employer Cost Taxable",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      },
+      {
+        "key": "Currently in Waiting Period?",
+        "label": "Currently in Waiting Period?",
+        "type": "string",
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
+        }
+      }
+    ]
+  }
+]
