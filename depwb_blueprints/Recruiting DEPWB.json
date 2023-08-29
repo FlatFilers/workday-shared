@@ -24,12 +24,24 @@
       {
         "key": "Job Posting Location Needed?",
         "label": "Job Posting Location Needed?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -84,18 +96,6 @@
         "label": "Address Line Data",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -136,18 +136,6 @@
       {
         "key": "Submunicipality Data",
         "label": "Submunicipality Data",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -230,13 +218,37 @@
       {
         "key": "Use?",
         "label": "Use?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Required*",
         "label": "Required*",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -288,39 +300,87 @@
         "metadata": {}
       },
       {
-        "key": "Field",
-        "label": "Field",
+        "key": "Field-2",
+        "label": "Field-2",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "Use?",
-        "label": "Use?",
-        "type": "string",
+        "key": "Use?-2",
+        "label": "Use?-2",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
-        "key": "Required*",
-        "label": "Required*",
-        "type": "string",
+        "key": "Required*-2",
+        "label": "Required*-2",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
-        "key": "Question Text",
-        "label": "Question Text",
+        "key": "Question Text-2",
+        "label": "Question Text-2",
         "type": "string",
         "metadata": {}
       },
       {
         "key": "Include Voluntary Self-Identification of Disability",
         "label": "Include Voluntary Self-Identification of Disability",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Require Completion of Voluntary Self-Identification of Disability",
         "label": "Require Completion of Voluntary Self-Identification of Disability",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -408,13 +468,37 @@
       {
         "key": "Use?",
         "label": "Use?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Required*",
         "label": "Required*",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -426,19 +510,55 @@
       {
         "key": "Include Voluntary Self-Identification of Disability",
         "label": "Include Voluntary Self-Identification of Disability",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Require Completion of Voluntary Self-Identification of Disability",
         "label": "Require Completion of Voluntary Self-Identification of Disability",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Default Terms & Conditions",
         "label": "Default Terms & Conditions",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -450,7 +570,19 @@
       {
         "key": "Country-Specific Terms and Conditions",
         "label": "Country-Specific Terms and Conditions",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -474,7 +606,7 @@
     ]
   },
   {
-    "name": "Non-Us Personal Information",
+    "name": "Non-US Personal Information",
     "slug": "Non-US Personal Information",
     "fields": [
       {
@@ -584,12 +716,24 @@
       {
         "key": "Required*",
         "label": "Required*",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -926,18 +1070,6 @@
         "label": "Subregion Data",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -1004,13 +1136,37 @@
       {
         "key": "Salary or Hourly?",
         "label": "Salary or Hourly?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Salary",
+              "label": "Salary"
+            },
+            {
+              "value": "Hourly",
+              "label": "Hourly"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Frequency",
         "label": "Frequency",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Annual",
+              "label": "Annual"
+            },
+            {
+              "value": "Hourly",
+              "label": "Hourly"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -1045,12 +1201,24 @@
       {
         "key": "Post to External Career Site?",
         "label": "Post to External Career Site?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Y",
+              "label": "Y"
+            },
+            {
+              "value": "N",
+              "label": "N"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -1073,6 +1241,29 @@
       {
         "key": "Post to Internal Career Site?",
         "label": "Post to Internal Career Site?",
+        "type": "enum",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "config": {
+          "options": [
+            {
+              "value": "Y",
+              "label": "Y"
+            },
+            {
+              "value": "N",
+              "label": "N"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Job Posting Start Date-2",
+        "label": "Job Posting Start Date-2",
         "type": "string",
         "constraints": [
           {
@@ -1082,19 +1273,8 @@
         "metadata": {}
       },
       {
-        "key": "Job Posting Start Date",
-        "label": "Job Posting Start Date",
-        "type": "string",
-        "constraints": [
-          {
-            "type": "required"
-          }
-        ],
-        "metadata": {}
-      },
-      {
-        "key": "Job Posting End Date",
-        "label": "Job Posting End Date",
+        "key": "Job Posting End Date-2",
+        "label": "Job Posting End Date-2",
         "type": "string",
         "metadata": {}
       },
@@ -1113,7 +1293,19 @@
       {
         "key": "Worker Type",
         "label": "Worker Type",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Employee",
+              "label": "Employee"
+            },
+            {
+              "value": "Contingent Worker",
+              "label": "Contingent Worker"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -1125,7 +1317,19 @@
       {
         "key": "Time Type",
         "label": "Time Type",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Full time",
+              "label": "Full time"
+            },
+            {
+              "value": "Part time",
+              "label": "Part time"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -3117,12 +3321,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3190,18 +3388,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3236,24 +3422,6 @@
       {
         "key": "Question Multiple Choice Answer Text",
         "label": "Question Multiple Choice Answer Text",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3368,24 +3536,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3604,12 +3754,6 @@
         "label": "Question Setup Reference ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3646,24 +3790,6 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3698,24 +3824,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -4238,24 +4346,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -4999,18 +5089,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -5073,18 +5151,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -5146,18 +5212,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -5852,24 +5906,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]

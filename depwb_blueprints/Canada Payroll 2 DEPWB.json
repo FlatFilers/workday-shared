@@ -84,12 +84,24 @@
       {
         "key": "Default EI Ref # (Y/N)",
         "label": "Default EI Ref # (Y/N)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -159,12 +171,24 @@
       {
         "key": "Bonus Tax Method",
         "label": "Bonus Tax Method",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Regular Bonus Tax Calculation",
+              "label": "Regular Bonus Tax Calculation"
+            },
+            {
+              "value": "YTD Bonus Tax Calculation",
+              "label": "YTD Bonus Tax Calculation"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -184,12 +208,24 @@
       {
         "key": "Use Primary Company Address",
         "label": "Use Primary Company Address",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -198,12 +234,24 @@
       {
         "key": "Use Location Address",
         "label": "Use Location Address",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "ConditionChecking"
@@ -248,7 +296,19 @@
       {
         "key": "Preferred Language",
         "label": "Preferred Language",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "English (Canada)",
+              "label": "English (Canada)"
+            },
+            {
+              "value": "French (Canada)",
+              "label": "French (Canada)"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -257,7 +317,19 @@
       {
         "key": "Display Occupation on ROE (Y/N)",
         "label": "Display Occupation on ROE (Y/N)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -454,12 +526,68 @@
       {
         "key": "Province",
         "label": "Province",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alberta",
+              "label": "Alberta"
+            },
+            {
+              "value": "British Columbia",
+              "label": "British Columbia"
+            },
+            {
+              "value": "Manitoba",
+              "label": "Manitoba"
+            },
+            {
+              "value": "New Brunswick",
+              "label": "New Brunswick"
+            },
+            {
+              "value": "Newfoundland and Labrador",
+              "label": "Newfoundland and Labrador"
+            },
+            {
+              "value": "Northwest Territories",
+              "label": "Northwest Territories"
+            },
+            {
+              "value": "Nova Scotia",
+              "label": "Nova Scotia"
+            },
+            {
+              "value": "Nunavut",
+              "label": "Nunavut"
+            },
+            {
+              "value": "Ontario",
+              "label": "Ontario"
+            },
+            {
+              "value": "Prince Edward Island",
+              "label": "Prince Edward Island"
+            },
+            {
+              "value": "Quebec",
+              "label": "Quebec"
+            },
+            {
+              "value": "Saskatchewan",
+              "label": "Saskatchewan"
+            },
+            {
+              "value": "Yukon",
+              "label": "Yukon"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -557,12 +685,24 @@
       {
         "key": "Exempt (Y/N)",
         "label": "Exempt (Y/N)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -700,7 +840,7 @@
     ]
   },
   {
-    "name": "Rpp Or Dpsp Registration Number",
+    "name": "RPP or DPSP Registration Number",
     "slug": "RPP or DPSP Registration Number",
     "fields": [
       {
@@ -727,47 +867,11 @@
             }
           ]
         }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
       }
     ]
   },
   {
-    "name": "Rpp Or Dpsp Reg Num Config",
+    "name": "RPP or DPSP Reg Num Config",
     "slug": "RPP or DPSP Reg Num Config",
     "fields": [
       {
@@ -914,7 +1018,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Federal Td1",
+    "name": "Payroll Payee Federal TD1",
     "slug": "Payroll Payee Federal TD1",
     "fields": [
       {
@@ -1234,7 +1338,19 @@
       {
         "key": "Total Income less than Total Claim Amount",
         "label": "Total Income less than Total Claim Amount",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "ConditionChecking"
@@ -1254,7 +1370,19 @@
       {
         "key": "More Than One Employer Reference",
         "label": "More Than One Employer Reference",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "ConditionChecking"
@@ -1292,7 +1420,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Province Td1",
+    "name": "Payroll Payee Province TD1",
     "slug": "Payroll Payee Province TD1",
     "fields": [
       {
@@ -1459,12 +1587,68 @@
       {
         "key": "Province",
         "label": "Province",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alberta",
+              "label": "Alberta"
+            },
+            {
+              "value": "British Columbia",
+              "label": "British Columbia"
+            },
+            {
+              "value": "Manitoba",
+              "label": "Manitoba"
+            },
+            {
+              "value": "New Brunswick",
+              "label": "New Brunswick"
+            },
+            {
+              "value": "Newfoundland and Labrador",
+              "label": "Newfoundland and Labrador"
+            },
+            {
+              "value": "Northwest Territories",
+              "label": "Northwest Territories"
+            },
+            {
+              "value": "Nova Scotia",
+              "label": "Nova Scotia"
+            },
+            {
+              "value": "Nunavut",
+              "label": "Nunavut"
+            },
+            {
+              "value": "Ontario",
+              "label": "Ontario"
+            },
+            {
+              "value": "Prince Edward Island",
+              "label": "Prince Edward Island"
+            },
+            {
+              "value": "Quebec",
+              "label": "Quebec"
+            },
+            {
+              "value": "Saskatchewan",
+              "label": "Saskatchewan"
+            },
+            {
+              "value": "Yukon",
+              "label": "Yukon"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1516,7 +1700,19 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "RemoveWorker"
@@ -1536,7 +1732,19 @@
       {
         "key": "Exempt from Health Contribution",
         "label": "Exempt from Health Contribution",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1689,7 +1897,19 @@
       {
         "key": "Total Income less than Total Claim Amount",
         "label": "Total Income less than Total Claim Amount",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "ConditionChecking"
@@ -1709,7 +1929,19 @@
       {
         "key": "More than One Employer Reference",
         "label": "More than One Employer Reference",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1736,7 +1968,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Td1X",
+    "name": "Payroll Payee TD1X",
     "slug": "Payroll Payee TD1X",
     "fields": [
       {
@@ -1948,7 +2180,7 @@
     ]
   },
   {
-    "name": "Payee Rpp Or Dpsp Reg Override",
+    "name": "Payee RPP or DPSP Reg Override",
     "slug": "Payee RPP or DPSP Reg Override",
     "fields": [
       {
@@ -2721,7 +2953,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Quebec Ptd1X",
+    "name": "Payroll Payee Quebec PTD1X",
     "slug": "Payroll Payee Quebec PTD1X",
     "fields": [
       {
@@ -3082,12 +3314,56 @@
       {
         "key": "Exemption",
         "label": "Exemption",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Employment Insurance (EI)",
+              "label": "Employment Insurance (EI)"
+            },
+            {
+              "value": "Canadian Pension Plan (CPP) / Quebec Pension Plan (QPP)",
+              "label": "Canadian Pension Plan (CPP) / Quebec Pension Plan (QPP)"
+            },
+            {
+              "value": "Province Workers Compensation (PWC)",
+              "label": "Province Workers Compensation (PWC)"
+            },
+            {
+              "value": "Federal (FIT)",
+              "label": "Federal (FIT)"
+            },
+            {
+              "value": "Province (PIT)",
+              "label": "Province (PIT)"
+            },
+            {
+              "value": "Workforce Skills Development and Recognition Fund (WSD & RF)",
+              "label": "Workforce Skills Development and Recognition Fund (WSD & RF)"
+            },
+            {
+              "value": "Quebec Parental Insurance Plan (PIP)",
+              "label": "Quebec Parental Insurance Plan (PIP)"
+            },
+            {
+              "value": "Quebec Compensation Tax (QCT)",
+              "label": "Quebec Compensation Tax (QCT)"
+            },
+            {
+              "value": "Quebec Health Services Fund (HSF)",
+              "label": "Quebec Health Services Fund (HSF)"
+            },
+            {
+              "value": "Quebec Commission des normes du travail (CNT)",
+              "label": "Quebec Commission des normes du travail (CNT)"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3096,12 +3372,32 @@
       {
         "key": "Exemption Type",
         "label": "Exemption Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Death",
+              "label": "Death"
+            },
+            {
+              "value": "Disabled",
+              "label": "Disabled"
+            },
+            {
+              "value": "Employment",
+              "label": "Employment"
+            },
+            {
+              "value": "CPT30/Pension Payment",
+              "label": "CPT30/Pension Payment"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3110,12 +3406,68 @@
       {
         "key": "Province",
         "label": "Province",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alberta",
+              "label": "Alberta"
+            },
+            {
+              "value": "British Columbia",
+              "label": "British Columbia"
+            },
+            {
+              "value": "Manitoba",
+              "label": "Manitoba"
+            },
+            {
+              "value": "New Brunswick",
+              "label": "New Brunswick"
+            },
+            {
+              "value": "Newfoundland and Labrador",
+              "label": "Newfoundland and Labrador"
+            },
+            {
+              "value": "Northwest Territories",
+              "label": "Northwest Territories"
+            },
+            {
+              "value": "Nova Scotia",
+              "label": "Nova Scotia"
+            },
+            {
+              "value": "Nunavut",
+              "label": "Nunavut"
+            },
+            {
+              "value": "Ontario",
+              "label": "Ontario"
+            },
+            {
+              "value": "Prince Edward Island",
+              "label": "Prince Edward Island"
+            },
+            {
+              "value": "Quebec",
+              "label": "Quebec"
+            },
+            {
+              "value": "Saskatchewan",
+              "label": "Saskatchewan"
+            },
+            {
+              "value": "Yukon",
+              "label": "Yukon"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3124,7 +3476,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Ei",
+    "name": "Payroll Payee EI",
     "slug": "Payroll Payee EI",
     "fields": [
       {
@@ -3220,12 +3572,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3234,7 +3598,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Cpp Qpp",
+    "name": "Payroll Payee CPP QPP",
     "slug": "Payroll Payee CPP QPP",
     "fields": [
       {
@@ -3330,12 +3694,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3358,7 +3734,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Pwc",
+    "name": "Payroll Payee PWC",
     "slug": "Payroll Payee PWC",
     "fields": [
       {
@@ -3454,12 +3830,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3468,7 +3856,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Fit",
+    "name": "Payroll Payee FIT",
     "slug": "Payroll Payee FIT",
     "fields": [
       {
@@ -3564,12 +3952,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3578,7 +3978,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Pit",
+    "name": "Payroll Payee PIT",
     "slug": "Payroll Payee PIT",
     "fields": [
       {
@@ -3688,7 +4088,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Wsd & Rf",
+    "name": "Payroll Payee WSD & RF",
     "slug": "Payroll Payee WSD & RF",
     "fields": [
       {
@@ -3798,7 +4198,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Quebec Pip",
+    "name": "Payroll Payee Quebec PIP",
     "slug": "Payroll Payee Quebec PIP",
     "fields": [
       {
@@ -3894,12 +4294,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3908,7 +4320,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Quebec Hsf",
+    "name": "Payroll Payee Quebec HSF",
     "slug": "Payroll Payee Quebec HSF",
     "fields": [
       {
@@ -4004,12 +4416,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4018,7 +4442,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Qct",
+    "name": "Payroll Payee QCT",
     "slug": "Payroll Payee QCT",
     "fields": [
       {
@@ -4114,12 +4538,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4128,7 +4564,7 @@
     ]
   },
   {
-    "name": "Payroll Payee Quebec Cnt",
+    "name": "Payroll Payee Quebec CNT",
     "slug": "Payroll Payee Quebec CNT",
     "fields": [
       {
@@ -4224,12 +4660,24 @@
       {
         "key": "Exempt",
         "label": "Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []

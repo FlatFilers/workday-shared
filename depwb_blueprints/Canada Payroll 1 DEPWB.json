@@ -6,12 +6,32 @@
       {
         "key": "Usage",
         "label": "Usage",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Payroll",
+              "label": "Payroll"
+            },
+            {
+              "value": "Absence",
+              "label": "Absence"
+            },
+            {
+              "value": "Time Tracking",
+              "label": "Time Tracking"
+            },
+            {
+              "value": "Payroll Interface",
+              "label": "Payroll Interface"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -45,7 +65,43 @@
       {
         "key": "Frequency",
         "label": "Frequency",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Annual",
+              "label": "Annual"
+            },
+            {
+              "value": "Bi-Weekly",
+              "label": "Bi-Weekly"
+            },
+            {
+              "value": "Daily",
+              "label": "Daily"
+            },
+            {
+              "value": "Hourly",
+              "label": "Hourly"
+            },
+            {
+              "value": "Monthly",
+              "label": "Monthly"
+            },
+            {
+              "value": "Quarterly",
+              "label": "Quarterly"
+            },
+            {
+              "value": "Semi-Monthly",
+              "label": "Semi-Monthly"
+            },
+            {
+              "value": "Weekly",
+              "label": "Weekly"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -133,51 +189,6 @@
           "validations": [],
           "validation_criteria": []
         }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
       }
     ]
   },
@@ -222,12 +233,24 @@
       {
         "key": "Regular Run Category",
         "label": "Regular Run Category",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -286,12 +309,32 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Canada",
+              "label": "Canada"
+            },
+            {
+              "value": "France",
+              "label": "France"
+            },
+            {
+              "value": "United Kingdom",
+              "label": "United Kingdom"
+            },
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -300,12 +343,32 @@
       {
         "key": "Country Code",
         "label": "Country Code",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "CAN",
+              "label": "CAN"
+            },
+            {
+              "value": "FRA",
+              "label": "FRA"
+            },
+            {
+              "value": "GBR",
+              "label": "GBR"
+            },
+            {
+              "value": "USA",
+              "label": "USA"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -320,12 +383,24 @@
       {
         "key": "Select Yes or No",
         "label": "Select Yes or No",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "=Value"
@@ -413,12 +488,32 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Canada",
+              "label": "Canada"
+            },
+            {
+              "value": "France",
+              "label": "France"
+            },
+            {
+              "value": "United Kingdom",
+              "label": "United Kingdom"
+            },
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -427,12 +522,32 @@
       {
         "key": "Country Code",
         "label": "Country Code",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "CAN",
+              "label": "CAN"
+            },
+            {
+              "value": "FRA",
+              "label": "FRA"
+            },
+            {
+              "value": "GBR",
+              "label": "GBR"
+            },
+            {
+              "value": "USA",
+              "label": "USA"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -566,7 +681,19 @@
       {
         "key": "Used in Payroll Interface?",
         "label": "Used in Payroll Interface?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -881,12 +1008,28 @@
       {
         "key": "Account Type",
         "label": "Account Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Bank Account",
+              "label": "Bank Account"
+            },
+            {
+              "value": "Outsourced Account",
+              "label": "Outsourced Account"
+            },
+            {
+              "value": "Petty Cash Account",
+              "label": "Petty Cash Account"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1076,7 +1219,19 @@
       {
         "key": "Accept All Currencies",
         "label": "Accept All Currencies",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1085,12 +1240,32 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Canada",
+              "label": "Canada"
+            },
+            {
+              "value": "France",
+              "label": "France"
+            },
+            {
+              "value": "United Kingdom",
+              "label": "United Kingdom"
+            },
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1119,7 +1294,27 @@
       {
         "key": "Country Code",
         "label": "Country Code",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "CAN",
+              "label": "CAN"
+            },
+            {
+              "value": "FRA",
+              "label": "FRA"
+            },
+            {
+              "value": "GBR",
+              "label": "GBR"
+            },
+            {
+              "value": "USA",
+              "label": "USA"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1128,7 +1323,27 @@
       {
         "key": "Currency Code",
         "label": "Currency Code",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "USD",
+              "label": "USD"
+            },
+            {
+              "value": "CAD",
+              "label": "CAD"
+            },
+            {
+              "value": "EUR",
+              "label": "EUR"
+            },
+            {
+              "value": "GBP",
+              "label": "GBP"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1180,12 +1395,24 @@
       {
         "key": "Bank Statement Format",
         "label": "Bank Statement Format",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "ISO 20022",
+              "label": "ISO 20022"
+            },
+            {
+              "value": "BAI2",
+              "label": "BAI2"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1194,7 +1421,19 @@
       {
         "key": "Used By Ad Hoc Payment",
         "label": "Used By Ad Hoc Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1203,7 +1442,19 @@
       {
         "key": "Used By Cash Advance Payment",
         "label": "Used By Cash Advance Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1212,7 +1463,19 @@
       {
         "key": "Used By Customer Payment",
         "label": "Used By Customer Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1221,7 +1484,19 @@
       {
         "key": "Used By Customer Refund",
         "label": "Used By Customer Refund",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1230,7 +1505,19 @@
       {
         "key": "Used By Expense Credit Card Payment",
         "label": "Used By Expense Credit Card Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1239,7 +1526,19 @@
       {
         "key": "Used By Expense Payment",
         "label": "Used By Expense Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1248,7 +1547,19 @@
       {
         "key": "Used By Intercompany Payment",
         "label": "Used By Intercompany Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1257,7 +1568,19 @@
       {
         "key": "Used By Payroll Off-Cycle Payment",
         "label": "Used By Payroll Off-Cycle Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1266,7 +1589,19 @@
       {
         "key": "Used By Payroll On-Cycle Payment",
         "label": "Used By Payroll On-Cycle Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1275,7 +1610,19 @@
       {
         "key": "Used By Prenote Payment",
         "label": "Used By Prenote Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1284,7 +1631,19 @@
       {
         "key": "Used By Procurement Card Payment",
         "label": "Used By Procurement Card Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1293,7 +1652,19 @@
       {
         "key": "Used By Supplier Payment",
         "label": "Used By Supplier Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1302,7 +1673,19 @@
       {
         "key": "Used By Tax Payment",
         "label": "Used By Tax Payment",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1311,12 +1694,28 @@
       {
         "key": "Allowed Payment Type 1",
         "label": "Allowed Payment Type 1",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -1336,12 +1735,28 @@
       {
         "key": "Allowed Payment Type 2",
         "label": "Allowed Payment Type 2",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -1361,12 +1776,28 @@
       {
         "key": "Allowed Payment Type 3",
         "label": "Allowed Payment Type 3",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -1458,12 +1889,32 @@
       {
         "key": "Organization",
         "label": "Organization",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "USD",
+              "label": "USD"
+            },
+            {
+              "value": "CAD",
+              "label": "CAD"
+            },
+            {
+              "value": "EUR",
+              "label": "EUR"
+            },
+            {
+              "value": "GBP",
+              "label": "GBP"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1472,12 +1923,28 @@
       {
         "key": "Account Currency",
         "label": "Account Currency",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Ceridian",
+              "label": "Ceridian"
+            },
+            {
+              "value": "ADP",
+              "label": "ADP"
+            },
+            {
+              "value": "One Source",
+              "label": "One Source"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1486,12 +1953,28 @@
       {
         "key": "Outsourced Bank Provider",
         "label": "Outsourced Bank Provider",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1523,42 +2006,34 @@
         }
       },
       {
-        "key": "Account Number",
-        "label": "Account Number",
-        "type": "string",
+        "key": "Account Number-2",
+        "label": "Account Number-2",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
-        "metadata": {
-          "validations": [
-            "Missing",
-            "Numeric"
-          ],
-          "validation_criteria": [
+        "config": {
+          "options": [
             {
-              "ValidationType": "Missing",
-              "Compare Worksheet": null,
-              "Compare Column": null,
-              "PK\\Condition": null,
-              "Value\\Format": null,
-              "Error Message": "Account Number is a required column and must be populated."
+              "value": "ISO 20022",
+              "label": "ISO 20022"
             },
             {
-              "ValidationType": "Numeric",
-              "Compare Worksheet": null,
-              "Compare Column": null,
-              "PK\\Condition": null,
-              "Value\\Format": null,
-              "Error Message": "Account Number column should contain numeric values only."
+              "value": "BAI2",
+              "label": "BAI2"
             }
           ]
+        },
+        "metadata": {
+          "validations": [],
+          "validation_criteria": []
         }
       },
       {
-        "key": "Bank Statement Format",
-        "label": "Bank Statement Format",
+        "key": "Bank Statement Format-2",
+        "label": "Bank Statement Format-2",
         "type": "string",
         "constraints": [
           {
@@ -1579,12 +2054,24 @@
       {
         "key": "Use in Workday?",
         "label": "Use in Workday?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1967,7 +2454,35 @@
       {
         "key": "Calculation Name",
         "label": "Calculation Name",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Payroll Input",
+              "label": "Payroll Input"
+            },
+            {
+              "value": "Hours (unprorated) * rate",
+              "label": "Hours (unprorated) * rate"
+            },
+            {
+              "value": "Benefits: Imputed Income for GTL (Employee)",
+              "label": "Benefits: Imputed Income for GTL (Employee)"
+            },
+            {
+              "value": "Compensation: Compensation Element Value (Using PC Freq Override)",
+              "label": "Compensation: Compensation Element Value (Using PC Freq Override)"
+            },
+            {
+              "value": "Benefits: Base (unprorated) * Percent OR Flat Amount",
+              "label": "Benefits: Base (unprorated) * Percent OR Flat Amount"
+            },
+            {
+              "value": "Base (unprorated) * Percent",
+              "label": "Base (unprorated) * Percent"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1994,7 +2509,19 @@
       {
         "key": "Input Amount Allowed",
         "label": "Input Amount Allowed",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2021,12 +2548,24 @@
       {
         "key": "Gross Up Calculation",
         "label": "Gross Up Calculation",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -2064,7 +2603,31 @@
       {
         "key": "Compensation Element",
         "label": "Compensation Element",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Allowance",
+              "label": "Allowance"
+            },
+            {
+              "value": "Hourly Pay",
+              "label": "Hourly Pay"
+            },
+            {
+              "value": "Incentive",
+              "label": "Incentive"
+            },
+            {
+              "value": "Salary Pay",
+              "label": "Salary Pay"
+            },
+            {
+              "value": "Standard Base Pay",
+              "label": "Standard Base Pay"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2073,7 +2636,31 @@
       {
         "key": "Compensation Element 2",
         "label": "Compensation Element 2",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Allowance",
+              "label": "Allowance"
+            },
+            {
+              "value": "Hourly Pay",
+              "label": "Hourly Pay"
+            },
+            {
+              "value": "Incentive",
+              "label": "Incentive"
+            },
+            {
+              "value": "Salary Pay",
+              "label": "Salary Pay"
+            },
+            {
+              "value": "Standard Base Pay",
+              "label": "Standard Base Pay"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2091,12 +2678,24 @@
       {
         "key": "Adds to Gross",
         "label": "Adds to Gross",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -2116,12 +2715,24 @@
       {
         "key": "Non Cash Taxable Benefits",
         "label": "Non Cash Taxable Benefits",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2130,12 +2741,24 @@
       {
         "key": "Income Taxable (Withhold Taxes)",
         "label": "Income Taxable (Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2144,12 +2767,24 @@
       {
         "key": "Income Taxable (Do Not Withhold Taxes)",
         "label": "Income Taxable (Do Not Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2158,12 +2793,24 @@
       {
         "key": "Bonus Earnings - Regular",
         "label": "Bonus Earnings - Regular",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2172,12 +2819,24 @@
       {
         "key": "Lump Sum Taxable T4",
         "label": "Lump Sum Taxable T4",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2186,12 +2845,24 @@
       {
         "key": "Lump Sum Taxable T4A",
         "label": "Lump Sum Taxable T4A",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2200,12 +2871,24 @@
       {
         "key": "Pension Income T4A",
         "label": "Pension Income T4A",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2214,12 +2897,24 @@
       {
         "key": "CPP Taxable",
         "label": "CPP Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2228,12 +2923,24 @@
       {
         "key": "EI Taxable",
         "label": "EI Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2242,12 +2949,24 @@
       {
         "key": "EI Hours",
         "label": "EI Hours",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2256,12 +2975,24 @@
       {
         "key": "RST Taxable",
         "label": "RST Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2270,12 +3001,24 @@
       {
         "key": "RST Manitoba Taxable",
         "label": "RST Manitoba Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2284,12 +3027,24 @@
       {
         "key": "Pensionable Wages",
         "label": "Pensionable Wages",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2298,12 +3053,24 @@
       {
         "key": "ONEHT Taxable",
         "label": "ONEHT Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2312,12 +3079,24 @@
       {
         "key": "BCEHT Taxable",
         "label": "BCEHT Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2326,12 +3105,24 @@
       {
         "key": "CNESST Taxable",
         "label": "CNESST Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2340,12 +3131,24 @@
       {
         "key": "Manitoba Health Taxable",
         "label": "Manitoba Health Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2354,12 +3157,24 @@
       {
         "key": "Newfoundland and Labrador Health Taxable",
         "label": "Newfoundland and Labrador Health Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2368,12 +3183,24 @@
       {
         "key": "Withholding Order (All): Periodic and Lump Sum Earnings Canada",
         "label": "Withholding Order (All): Periodic and Lump Sum Earnings Canada",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2382,12 +3209,24 @@
       {
         "key": "Statutory Holiday Pay Earning",
         "label": "Statutory Holiday Pay Earning",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2396,12 +3235,24 @@
       {
         "key": "Workers Compensation Exempt",
         "label": "Workers Compensation Exempt",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2410,12 +3261,24 @@
       {
         "key": "Workers Compensation Other",
         "label": "Workers Compensation Other",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2424,12 +3287,24 @@
       {
         "key": "Vacationable Earnings",
         "label": "Vacationable Earnings",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2438,12 +3313,24 @@
       {
         "key": "Northwest Territories Payroll Tax Taxable",
         "label": "Northwest Territories Payroll Tax Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2452,12 +3339,24 @@
       {
         "key": "Nunavut Payroll Tax Taxable",
         "label": "Nunavut Payroll Tax Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2466,12 +3365,24 @@
       {
         "key": "CAN Vacation Pay Earnings MB",
         "label": "CAN Vacation Pay Earnings MB",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2480,12 +3391,24 @@
       {
         "key": "CAN Vacation Pay Earnings ON & QC",
         "label": "CAN Vacation Pay Earnings ON & QC",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2494,12 +3417,24 @@
       {
         "key": "Quebec Taxable (Withhold Taxes)",
         "label": "Quebec Taxable (Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2508,12 +3443,24 @@
       {
         "key": "Quebec Taxable (Do Not Withhold Taxes)",
         "label": "Quebec Taxable (Do Not Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2522,12 +3469,24 @@
       {
         "key": "Quebec Bonus Earnings - Regular",
         "label": "Quebec Bonus Earnings - Regular",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2536,12 +3495,24 @@
       {
         "key": "Quebec Commission Earnings",
         "label": "Quebec Commission Earnings",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2550,12 +3521,24 @@
       {
         "key": "Quebec Lump Sum Taxable RL-1",
         "label": "Quebec Lump Sum Taxable RL-1",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2564,12 +3547,24 @@
       {
         "key": "Pension Income RL-2",
         "label": "Pension Income RL-2",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2578,12 +3573,24 @@
       {
         "key": "QPP Taxable (Withhold Taxes)",
         "label": "QPP Taxable (Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2592,12 +3599,24 @@
       {
         "key": "QPP Taxable (Do Not Withhold Taxes)",
         "label": "QPP Taxable (Do Not Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2606,12 +3625,24 @@
       {
         "key": "QPIP Taxable",
         "label": "QPIP Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2620,12 +3651,24 @@
       {
         "key": "QHSF Taxable",
         "label": "QHSF Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2634,12 +3677,24 @@
       {
         "key": "WSDRF Taxable",
         "label": "WSDRF Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2648,12 +3703,24 @@
       {
         "key": "QST Taxable",
         "label": "QST Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2662,12 +3729,24 @@
       {
         "key": "Compensation Tax Taxable",
         "label": "Compensation Tax Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2676,12 +3755,24 @@
       {
         "key": "Memo Entries",
         "label": "Memo Entries",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2690,12 +3781,28 @@
       {
         "key": "ROE Allocation Reporting Period",
         "label": "ROE Allocation Reporting Period",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Period Earned",
+              "label": "Period Earned"
+            },
+            {
+              "value": "Period Paid",
+              "label": "Period Paid"
+            },
+            {
+              "value": "Last Regular Period",
+              "label": "Last Regular Period"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -2724,12 +3831,28 @@
       {
         "key": "ROE Allocation Reporting Period Retro",
         "label": "ROE Allocation Reporting Period Retro",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Period Earned",
+              "label": "Period Earned"
+            },
+            {
+              "value": "Period Paid",
+              "label": "Period Paid"
+            },
+            {
+              "value": "Last Regular Period",
+              "label": "Last Regular Period"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -2814,12 +3937,24 @@
       {
         "key": "Use in Workday?",
         "label": "Use in Workday?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3202,7 +4337,27 @@
       {
         "key": "Calculation Name",
         "label": "Calculation Name",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Payroll Input",
+              "label": "Payroll Input"
+            },
+            {
+              "value": "Benefits: Employee Cost (Pre-tax)",
+              "label": "Benefits: Employee Cost (Pre-tax)"
+            },
+            {
+              "value": "Benefits: Employee Cost (Post-tax)",
+              "label": "Benefits: Employee Cost (Post-tax)"
+            },
+            {
+              "value": "Benefits: Employer Cost",
+              "label": "Benefits: Employer Cost"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3229,7 +4384,19 @@
       {
         "key": "Input Amount Allowed",
         "label": "Input Amount Allowed",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3323,12 +4490,24 @@
       {
         "key": "Pre Tax Deductions",
         "label": "Pre Tax Deductions",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -3348,12 +4527,24 @@
       {
         "key": "Post Tax Deductions",
         "label": "Post Tax Deductions",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -3373,12 +4564,24 @@
       {
         "key": "Employer Paid Benefits",
         "label": "Employer Paid Benefits",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3387,12 +4590,24 @@
       {
         "key": "Employee Paid Benefits",
         "label": "Employee Paid Benefits",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3401,12 +4616,24 @@
       {
         "key": "RPP/RRSP/RCA (F) - Regular",
         "label": "RPP/RRSP/RCA (F) - Regular",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3415,12 +4642,24 @@
       {
         "key": "RPP/RRSP/RCA (F) - Bonus",
         "label": "RPP/RRSP/RCA (F) - Bonus",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3429,12 +4668,24 @@
       {
         "key": "RPP/RRSP/RCA (F) - Lump Sum",
         "label": "RPP/RRSP/RCA (F) - Lump Sum",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3443,12 +4694,24 @@
       {
         "key": "Withholding Order (All): Union Dues",
         "label": "Withholding Order (All): Union Dues",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3457,12 +4720,24 @@
       {
         "key": "Union Dues (U1)",
         "label": "Union Dues (U1)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3471,12 +4746,24 @@
       {
         "key": "Income Taxable (Withhold Taxes)",
         "label": "Income Taxable (Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3485,12 +4772,24 @@
       {
         "key": "Income Taxable (Do Not Withhold Taxes)",
         "label": "Income Taxable (Do Not Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3499,12 +4798,24 @@
       {
         "key": "CPP Taxable",
         "label": "CPP Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3513,12 +4824,24 @@
       {
         "key": "EI Taxable",
         "label": "EI Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3527,12 +4850,24 @@
       {
         "key": "ONEHT Taxable",
         "label": "ONEHT Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3541,12 +4876,24 @@
       {
         "key": "BCEHT Taxable",
         "label": "BCEHT Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3555,12 +4902,24 @@
       {
         "key": "Manitoba Health Taxable",
         "label": "Manitoba Health Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3569,12 +4928,24 @@
       {
         "key": "Newfoundland and Labrador Health Taxable",
         "label": "Newfoundland and Labrador Health Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3583,12 +4954,24 @@
       {
         "key": "Northwest Territories Payroll Tax Taxable",
         "label": "Northwest Territories Payroll Tax Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3597,12 +4980,24 @@
       {
         "key": "Nunavut Payroll Tax Taxable",
         "label": "Nunavut Payroll Tax Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3611,12 +5006,24 @@
       {
         "key": "Other Quebec Deductions (F)",
         "label": "Other Quebec Deductions (F)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3625,12 +5032,24 @@
       {
         "key": "Other Quebec Deductions (F) - Regular",
         "label": "Other Quebec Deductions (F) - Regular",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3639,12 +5058,24 @@
       {
         "key": "Other Quebec Deductions (F) - Bonus",
         "label": "Other Quebec Deductions (F) - Bonus",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3653,12 +5084,24 @@
       {
         "key": "Other Quebec Deductions (F) - Lump Sum",
         "label": "Other Quebec Deductions (F) - Lump Sum",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3667,12 +5110,24 @@
       {
         "key": "Other Quebec Deductions (F2)",
         "label": "Other Quebec Deductions (F2)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3681,12 +5136,24 @@
       {
         "key": "Quebec Taxable (Withhold Taxes)",
         "label": "Quebec Taxable (Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3695,12 +5162,24 @@
       {
         "key": "Quebec Taxable (Do Not Withhold Taxes)",
         "label": "Quebec Taxable (Do Not Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3709,12 +5188,24 @@
       {
         "key": "Compensation Tax Taxable",
         "label": "Compensation Tax Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3723,12 +5214,24 @@
       {
         "key": "QHSF",
         "label": "QHSF",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3737,12 +5240,24 @@
       {
         "key": "QHSF Taxable",
         "label": "QHSF Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3751,12 +5266,24 @@
       {
         "key": "QPIP Taxable",
         "label": "QPIP Taxable",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3765,12 +5292,24 @@
       {
         "key": "QPP Taxable (Withhold Taxes)",
         "label": "QPP Taxable (Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3779,12 +5318,24 @@
       {
         "key": "QPP Taxable (Do Not Withhold Taxes)",
         "label": "QPP Taxable (Do Not Withhold Taxes)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3793,12 +5344,24 @@
       {
         "key": "WSDRF",
         "label": "WSDRF",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3807,20 +5370,32 @@
       {
         "key": "Recalculate Retro",
         "label": "Recalculate Retro",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
         }
       },
       {
-        "key": "Calculation Worktag",
-        "label": "Calculation Worktag",
+        "key": "Calculation Worktag-2",
+        "label": "Calculation Worktag-2",
         "type": "string",
         "metadata": {
           "validations": [],
@@ -3857,7 +5432,7 @@
     ]
   },
   {
-    "name": "Deduction Priority And Arrears",
+    "name": "Deduction Priority and Arrears",
     "slug": "Deduction Priority and Arrears",
     "fields": [
       {
@@ -3947,7 +5522,19 @@
       {
         "key": "Do Not Take Partial Deduction",
         "label": "Do Not Take Partial Deduction",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -3967,7 +5554,19 @@
       {
         "key": "Deduction Impacts other Components of Net Pay",
         "label": "Deduction Impacts other Components of Net Pay",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -3987,7 +5586,19 @@
       {
         "key": "Track Arrears",
         "label": "Track Arrears",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -4007,7 +5618,19 @@
       {
         "key": "Recoup Arrears",
         "label": "Recoup Arrears",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -4151,12 +5774,36 @@
       {
         "key": "Ledger Account Type",
         "label": "Ledger Account Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Asset",
+              "label": "Asset"
+            },
+            {
+              "value": "Equity",
+              "label": "Equity"
+            },
+            {
+              "value": "Expense",
+              "label": "Expense"
+            },
+            {
+              "value": "Income",
+              "label": "Income"
+            },
+            {
+              "value": "Liability",
+              "label": "Liability"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -4180,15 +5827,6 @@
               "Error Message": "The Ledger Account Type column values must be one of the values available in the drop down."
             }
           ]
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
         }
       }
     ]
@@ -4284,12 +5922,32 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Canada",
+              "label": "Canada"
+            },
+            {
+              "value": "France",
+              "label": "France"
+            },
+            {
+              "value": "United Kingdom",
+              "label": "United Kingdom"
+            },
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -4318,12 +5976,32 @@
       {
         "key": "Currency",
         "label": "Currency",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "USD",
+              "label": "USD"
+            },
+            {
+              "value": "CAD",
+              "label": "CAD"
+            },
+            {
+              "value": "EUR",
+              "label": "EUR"
+            },
+            {
+              "value": "GBP",
+              "label": "GBP"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -4366,12 +6044,28 @@
       {
         "key": "Payment Type",
         "label": "Payment Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -4400,12 +6094,56 @@
       {
         "key": "Priority",
         "label": "Priority",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -4534,12 +6272,24 @@
       {
         "key": "Account Type Code",
         "label": "Account Type Code",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Checking",
+              "label": "Checking"
+            },
+            {
+              "value": "Savings",
+              "label": "Savings"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",

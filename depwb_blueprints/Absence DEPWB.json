@@ -4,602 +4,602 @@
     "slug": "Holiday Calendars",
     "fields": [
       {
-        "key": "x",
-        "label": "x",
+        "key": "Holiday",
+        "label": "Holiday",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
+        "key": "Date (MM/DD/YYYY)",
+        "label": "Date (MM/DD/YYYY)",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "8",
-        "label": "8",
+        "key": "Holiday-2",
+        "label": "Holiday-2",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
+        "key": "Date (MM/DD/YYYY)-2",
+        "label": "Date (MM/DD/YYYY)-2",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "9",
-        "label": "9",
+        "key": "Holiday-3",
+        "label": "Holiday-3",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-3",
+        "label": "Date (MM/DD/YYYY)-3",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-4",
+        "label": "Holiday-4",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-4",
+        "label": "Date (MM/DD/YYYY)-4",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-5",
+        "label": "Holiday-5",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-5",
+        "label": "Date (MM/DD/YYYY)-5",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-6",
+        "label": "Holiday-6",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-6",
+        "label": "Date (MM/DD/YYYY)-6",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-7",
+        "label": "Holiday-7",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-7",
+        "label": "Date (MM/DD/YYYY)-7",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-8",
+        "label": "Holiday-8",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-8",
+        "label": "Date (MM/DD/YYYY)-8",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-9",
+        "label": "Holiday-9",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-9",
+        "label": "Date (MM/DD/YYYY)-9",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-10",
+        "label": "Holiday-10",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-10",
+        "label": "Date (MM/DD/YYYY)-10",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-11",
+        "label": "Holiday-11",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-11",
+        "label": "Date (MM/DD/YYYY)-11",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-12",
+        "label": "Holiday-12",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-12",
+        "label": "Date (MM/DD/YYYY)-12",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-13",
+        "label": "Holiday-13",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-13",
+        "label": "Date (MM/DD/YYYY)-13",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-14",
+        "label": "Holiday-14",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-14",
+        "label": "Date (MM/DD/YYYY)-14",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-15",
+        "label": "Holiday-15",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-15",
+        "label": "Date (MM/DD/YYYY)-15",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-16",
+        "label": "Holiday-16",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-16",
+        "label": "Date (MM/DD/YYYY)-16",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-17",
+        "label": "Holiday-17",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-17",
+        "label": "Date (MM/DD/YYYY)-17",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-18",
+        "label": "Holiday-18",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-18",
+        "label": "Date (MM/DD/YYYY)-18",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-19",
+        "label": "Holiday-19",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-19",
+        "label": "Date (MM/DD/YYYY)-19",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-20",
+        "label": "Holiday-20",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-20",
+        "label": "Date (MM/DD/YYYY)-20",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-21",
+        "label": "Holiday-21",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-21",
+        "label": "Date (MM/DD/YYYY)-21",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-22",
+        "label": "Holiday-22",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-22",
+        "label": "Date (MM/DD/YYYY)-22",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-23",
+        "label": "Holiday-23",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-23",
+        "label": "Date (MM/DD/YYYY)-23",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-24",
+        "label": "Holiday-24",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-24",
+        "label": "Date (MM/DD/YYYY)-24",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-25",
+        "label": "Holiday-25",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-25",
+        "label": "Date (MM/DD/YYYY)-25",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-26",
+        "label": "Holiday-26",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-26",
+        "label": "Date (MM/DD/YYYY)-26",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-27",
+        "label": "Holiday-27",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-27",
+        "label": "Date (MM/DD/YYYY)-27",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-28",
+        "label": "Holiday-28",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-28",
+        "label": "Date (MM/DD/YYYY)-28",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-29",
+        "label": "Holiday-29",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-29",
+        "label": "Date (MM/DD/YYYY)-29",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-30",
+        "label": "Holiday-30",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-30",
+        "label": "Date (MM/DD/YYYY)-30",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-31",
+        "label": "Holiday-31",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-31",
+        "label": "Date (MM/DD/YYYY)-31",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-32",
+        "label": "Holiday-32",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-32",
+        "label": "Date (MM/DD/YYYY)-32",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-33",
+        "label": "Holiday-33",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-33",
+        "label": "Date (MM/DD/YYYY)-33",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-34",
+        "label": "Holiday-34",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-34",
+        "label": "Date (MM/DD/YYYY)-34",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-35",
+        "label": "Holiday-35",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-35",
+        "label": "Date (MM/DD/YYYY)-35",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-36",
+        "label": "Holiday-36",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-36",
+        "label": "Date (MM/DD/YYYY)-36",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-37",
+        "label": "Holiday-37",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-37",
+        "label": "Date (MM/DD/YYYY)-37",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-38",
+        "label": "Holiday-38",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-38",
+        "label": "Date (MM/DD/YYYY)-38",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-39",
+        "label": "Holiday-39",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-39",
+        "label": "Date (MM/DD/YYYY)-39",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-40",
+        "label": "Holiday-40",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-40",
+        "label": "Date (MM/DD/YYYY)-40",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-41",
+        "label": "Holiday-41",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-41",
+        "label": "Date (MM/DD/YYYY)-41",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-42",
+        "label": "Holiday-42",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-42",
+        "label": "Date (MM/DD/YYYY)-42",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-43",
+        "label": "Holiday-43",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-43",
+        "label": "Date (MM/DD/YYYY)-43",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-44",
+        "label": "Holiday-44",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-44",
+        "label": "Date (MM/DD/YYYY)-44",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-45",
+        "label": "Holiday-45",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-45",
+        "label": "Date (MM/DD/YYYY)-45",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-46",
+        "label": "Holiday-46",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-46",
+        "label": "Date (MM/DD/YYYY)-46",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-47",
+        "label": "Holiday-47",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-47",
+        "label": "Date (MM/DD/YYYY)-47",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-48",
+        "label": "Holiday-48",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-48",
+        "label": "Date (MM/DD/YYYY)-48",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-49",
+        "label": "Holiday-49",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-49",
+        "label": "Date (MM/DD/YYYY)-49",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Holiday-50",
+        "label": "Holiday-50",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Date (MM/DD/YYYY)-50",
+        "label": "Date (MM/DD/YYYY)-50",
         "type": "string",
         "metadata": {}
       }
@@ -610,278 +610,180 @@
     "slug": "Work Schedules",
     "fields": [
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Include",
+        "label": "Include",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Schedule Name",
+        "label": "Schedule Name",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Schedule ID",
+        "label": "Schedule ID",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Default Worker Group",
+        "label": "Default Worker Group",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "Preconfig End Row:",
-        "label": "Preconfig End Row:",
+        "key": "Day Breaker",
+        "label": "Day Breaker",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Day Breaker Divides",
+        "label": "Day Breaker Divides",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Configurable Calculation Period",
+        "label": "Configurable Calculation Period",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Schedule Pattern Type",
+        "label": "Schedule Pattern Type",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Work Week Start Day*",
+        "label": "Work Week Start Day*",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Day of the Week",
+        "label": "Day of the Week",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Start Time",
+        "label": "Start Time",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Meal Start Time",
+        "label": "Meal Start Time",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Meal End Time",
+        "label": "Meal End Time",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "End Time",
+        "label": "End Time",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Pattern Start Date",
+        "label": "Pattern Start Date",
+        "type": "string",
+        "constraints": [
+          {
+            "type": "required"
+          }
+        ],
+        "metadata": {}
+      },
+      {
+        "key": "Condition Rule Description",
+        "label": "Condition Rule Description",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "26",
-        "label": "26",
+        "key": "Condition Rule ID",
+        "label": "Condition Rule ID",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "6",
-        "label": "6",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "27",
-        "label": "27",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      }
-    ]
-  },
-  {
-    "name": "(1) Time Off Plans",
-    "slug": "(1) Time Off Plans",
-    "fields": [
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "3",
-        "label": "3",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "4",
-        "label": "4",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
+        "key": "Eligibility Rules and Notes",
+        "label": "Eligibility Rules and Notes",
         "type": "string",
         "metadata": {}
       },
@@ -892,134 +794,692 @@
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "1",
+        "label": "1",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "2",
+        "label": "2",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "10:00:00",
+        "label": "10:00:00",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "16:00:00",
+        "label": "16:00:00",
+        "type": "string",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "name": "(1) Time Off Plans",
+    "slug": "(1) Time Off Plans",
+    "fields": [
+      {
+        "key": "Row",
+        "label": "Row",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Plan Name",
+        "label": "Plan Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Display Name (Only use when display name is different than plan name)",
+        "label": "Display Name (Only use when display name is different than plan name)",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Country",
+        "label": "Country",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Enabled for Worker Type",
+        "label": "Enabled for Worker Type",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Employee",
+              "label": "Employee"
+            },
+            {
+              "value": "Contingent Worker",
+              "label": "Contingent Worker"
+            },
+            {
+              "value": "All Worker Types",
+              "label": "All Worker Types"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Plan Length of Service Requirement",
+        "label": "Plan Length of Service Requirement",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Minimum Weekly Hours",
+        "label": "Minimum Weekly Hours",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Additional Eligibility Criteria",
+        "label": "Additional Eligibility Criteria",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Units",
+        "label": "Units",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Hours",
+              "label": "Hours"
+            },
+            {
+              "value": "Days",
+              "label": "Days"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Daily Work Hours",
+        "label": "Daily Work Hours",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Daily Quantity Default",
+        "label": "Daily Quantity Default",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Plan Type",
+        "label": "Plan Type",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Accruing",
+              "label": "Accruing"
+            },
+            {
+              "value": "Accrue-as-you-go",
+              "label": "Accrue-as-you-go"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Accrual Frequency",
+        "label": "Accrual Frequency",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Weekly",
+              "label": "Weekly"
+            },
+            {
+              "value": "Bi-Weekly",
+              "label": "Bi-Weekly"
+            },
+            {
+              "value": "Semi-Monthly",
+              "label": "Semi-Monthly"
+            },
+            {
+              "value": "Monthly",
+              "label": "Monthly"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "When Does Plan Accrue",
+        "label": "When Does Plan Accrue",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Start of Period",
+              "label": "Start of Period"
+            },
+            {
+              "value": "End of Period",
+              "label": "End of Period"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Is balance adjusted to zero at termination",
+        "label": "Is balance adjusted to zero at termination",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Days to Include as Taken",
+        "label": "Days to Include as Taken",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "All Days",
+              "label": "All Days"
+            },
+            {
+              "value": "Weekdays (Mon-Fri)",
+              "label": "Weekdays (Mon-Fri)"
+            },
+            {
+              "value": "Workdays (Non-Holiday)",
+              "label": "Workdays (Non-Holiday)"
+            },
+            {
+              "value": "Workdays (Work hours exceed Holiday hours)",
+              "label": "Workdays (Work hours exceed Holiday hours)"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Restrict Requests to Days to Include",
+        "label": "Restrict Requests to Days to Include",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Balance Period",
+        "label": "Balance Period",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "January 1 - December 31",
+              "label": "January 1 - December 31"
+            },
+            {
+              "value": "February 1 - January 31",
+              "label": "February 1 - January 31"
+            },
+            {
+              "value": "March 1 - February 28",
+              "label": "March 1 - February 28"
+            },
+            {
+              "value": "April 1 - March 31",
+              "label": "April 1 - March 31"
+            },
+            {
+              "value": "May 1 - April 31",
+              "label": "May 1 - April 31"
+            },
+            {
+              "value": "June 1 - May 31",
+              "label": "June 1 - May 31"
+            },
+            {
+              "value": "July 1 - June 30",
+              "label": "July 1 - June 30"
+            },
+            {
+              "value": "August 1 - July 31",
+              "label": "August 1 - July 31"
+            },
+            {
+              "value": "September 1 - August 31",
+              "label": "September 1 - August 31"
+            },
+            {
+              "value": "October 1 - September 30",
+              "label": "October 1 - September 30"
+            },
+            {
+              "value": "November 1 - October 31",
+              "label": "November 1 - October 31"
+            },
+            {
+              "value": "December 1 - November 30",
+              "label": "December 1 - November 30"
+            },
+            {
+              "value": "Anniversary Balance Period (Based on Hire Date)",
+              "label": "Anniversary Balance Period (Based on Hire Date)"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Time Off Balance Visibility",
+        "label": "Time Off Balance Visibility",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Carryover Limit",
+        "label": "Carryover Limit",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Amount of Time before Expiration",
+        "label": "Amount of Time before Expiration",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Unit of Time for Expiration",
+        "label": "Unit of Time for Expiration",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Month",
+              "label": "Month"
+            },
+            {
+              "value": "Day",
+              "label": "Day"
+            },
+            {
+              "value": "N/A",
+              "label": "N/A"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Balance Upper Limit",
+        "label": "Balance Upper Limit",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Balance Lower Limit",
+        "label": "Balance Lower Limit",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Calendar Display",
+        "label": "Calendar Display",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Plan",
+              "label": "Plan"
+            },
+            {
+              "value": "Type",
+              "label": "Type"
+            },
+            {
+              "value": "Plan and type",
+              "label": "Plan and type"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Hide Balance from EE",
+        "label": "Hide Balance from EE",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Included Countries (put a \"|\" between each if there are multiple)",
+        "label": "Included Countries (put a \"|\" between each if there are multiple)",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "(Generated) Countries",
+        "label": "(Generated) Countries",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Period Schedule",
+        "label": "Period Schedule",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "(Generated) Accrual Frequency",
+        "label": "(Generated) Accrual Frequency",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Included Employee Types (put a \",\" between each if there are multiple)",
+        "label": "Included Employee Types (put a \",\" between each if there are multiple)",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Excluded Employee Types (put a \",\" between each if there are multiple)",
+        "label": "Excluded Employee Types (put a \",\" between each if there are multiple)",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "(Generated) Additional Eligibility Criteria",
+        "label": "(Generated) Additional Eligibility Criteria",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Time Types",
+        "label": "Time Types",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Exempt / Non-Exempt",
+        "label": "Exempt / Non-Exempt",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Pay Rate Type",
+        "label": "Pay Rate Type",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Region",
+        "label": "Region",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "Alaska",
+              "label": "Alaska"
+            },
+            {
+              "value": "Arizona",
+              "label": "Arizona"
+            },
+            {
+              "value": "Arkansas",
+              "label": "Arkansas"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Connecticut",
+              "label": "Connecticut"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "Florida",
+              "label": "Florida"
+            },
+            {
+              "value": "Georgia",
+              "label": "Georgia"
+            },
+            {
+              "value": "Hawaii",
+              "label": "Hawaii"
+            },
+            {
+              "value": "Idaho",
+              "label": "Idaho"
+            },
+            {
+              "value": "Illinois",
+              "label": "Illinois"
+            },
+            {
+              "value": "Indiana",
+              "label": "Indiana"
+            },
+            {
+              "value": "Iowa",
+              "label": "Iowa"
+            },
+            {
+              "value": "Kansas",
+              "label": "Kansas"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Louisiana",
+              "label": "Louisiana"
+            },
+            {
+              "value": "Maine",
+              "label": "Maine"
+            },
+            {
+              "value": "Maryland",
+              "label": "Maryland"
+            },
+            {
+              "value": "Massachusetts",
+              "label": "Massachusetts"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Minnesota",
+              "label": "Minnesota"
+            },
+            {
+              "value": "Mississippi",
+              "label": "Mississippi"
+            },
+            {
+              "value": "Missouri",
+              "label": "Missouri"
+            },
+            {
+              "value": "Montana",
+              "label": "Montana"
+            },
+            {
+              "value": "Nebraska",
+              "label": "Nebraska"
+            },
+            {
+              "value": "Nevada",
+              "label": "Nevada"
+            },
+            {
+              "value": "New Hampshire",
+              "label": "New Hampshire"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New Mexico",
+              "label": "New Mexico"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "North Carolina",
+              "label": "North Carolina"
+            },
+            {
+              "value": "North Dakota",
+              "label": "North Dakota"
+            },
+            {
+              "value": "Ohio",
+              "label": "Ohio"
+            },
+            {
+              "value": "Oklahoma",
+              "label": "Oklahoma"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Pennsylvania",
+              "label": "Pennsylvania"
+            },
+            {
+              "value": "Rhode Island",
+              "label": "Rhode Island"
+            },
+            {
+              "value": "South Carolina",
+              "label": "South Carolina"
+            },
+            {
+              "value": "South Dakota",
+              "label": "South Dakota"
+            },
+            {
+              "value": "Tennessee",
+              "label": "Tennessee"
+            },
+            {
+              "value": "Texas",
+              "label": "Texas"
+            },
+            {
+              "value": "Utah",
+              "label": "Utah"
+            },
+            {
+              "value": "Vermont",
+              "label": "Vermont"
+            },
+            {
+              "value": "Virginia",
+              "label": "Virginia"
+            },
+            {
+              "value": "Washington",
+              "label": "Washington"
+            },
+            {
+              "value": "West Virginia",
+              "label": "West Virginia"
+            },
+            {
+              "value": "Wisconsin",
+              "label": "Wisconsin"
+            },
+            {
+              "value": "Wyoming",
+              "label": "Wyoming"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Scheduled Weekly Hours",
+        "label": "Scheduled Weekly Hours",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "(Generated) Minimum Weekly Hours",
+        "label": "(Generated) Minimum Weekly Hours",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Months of Service",
+        "label": "Months of Service",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "(Generated) Plan Length of Service",
+        "label": "(Generated) Plan Length of Service",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Use this section to capture additional criteria that needs to be considered when configuring a time off plan. ",
+        "label": "Use this section to capture additional criteria that needs to be considered when configuring a time off plan. ",
         "type": "string",
         "metadata": {}
       }
@@ -1030,206 +1490,306 @@
     "slug": "(2) Time Offs",
     "fields": [
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Row",
+        "label": "Row",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
+        "key": "Plan Name",
+        "label": "Plan Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "3",
-        "label": "3",
+        "key": "Time Off Name",
+        "label": "Time Off Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
+        "key": "Time Off Type",
+        "label": "Time Off Type",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "4",
-        "label": "4",
+        "key": "Allow Employee Request",
+        "label": "Allow Employee Request",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Time Off Length of Service Requirement",
+        "label": "Time Off Length of Service Requirement",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Time Off Plan Units (Reference Only)",
+        "label": "Time Off Plan Units (Reference Only)",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Daily Work Hours",
+        "label": "Daily Work Hours",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Minimum Request Amount (Daily)",
+        "label": "Minimum Request Amount (Daily)",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Can Manager / Admin Override Minimum",
+        "label": "Can Manager / Admin Override Minimum",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Time Off Increments",
+        "label": "Time Off Increments",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Can Manager / Admin Override Increments",
+        "label": "Can Manager / Admin Override Increments",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Daily Maximum Request Amount",
+        "label": "Daily Maximum Request Amount",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Can Manager / Admin Override Maximum",
+        "label": "Can Manager / Admin Override Maximum",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Consecutive Day Minimum",
+        "label": "Consecutive Day Minimum",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Consecutive Day Maximum",
+        "label": "Consecutive Day Maximum",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Time Calculation Tag (Paid or Unpaid)",
+        "label": "Time Calculation Tag (Paid or Unpaid)",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Time Off Reasons",
+        "label": "Time Off Reasons",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Picked up by Payroll one Period in Arrears",
+        "label": "Picked up by Payroll one Period in Arrears",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Adjustments Allowed",
+        "label": "Adjustments Allowed",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Maximum Unpaid Units Allowed",
+        "label": "Maximum Unpaid Units Allowed",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Entry Option",
+        "label": "Entry Option",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Time Off Only",
+              "label": "Time Off Only"
+            },
+            {
+              "value": "Time Tracking Only",
+              "label": "Time Tracking Only"
+            },
+            {
+              "value": "Time Tracking or Time Off",
+              "label": "Time Tracking or Time Off"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Start and End Time Required",
+        "label": "Start and End Time Required",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Limit Overrides",
+        "label": "Limit Overrides",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Worker Eligbility Overrides",
+        "label": "Worker Eligbility Overrides",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Daily Quantity Default Override for Time Off",
+        "label": "Daily Quantity Default Override for Time Off",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Adjustments Allowed Gen",
+        "label": "Adjustments Allowed Gen",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Maximum Unpaid Units Allowed Gen",
+        "label": "Maximum Unpaid Units Allowed Gen",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Entry Option Gen",
+        "label": "Entry Option Gen",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Start and End Time Required Gen",
+        "label": "Start and End Time Required Gen",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Concatenated Time Off Name",
+        "label": "Concatenated Time Off Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Balance Tracking",
+        "label": "Balance Tracking",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Priority",
+        "label": "Priority",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
+        "key": "Use this section to capture additional criteria that needs to be considered when configuring a time off plan. ",
+        "label": "Use this section to capture additional criteria that needs to be considered when configuring a time off plan. ",
         "type": "string",
         "metadata": {}
       }
@@ -1240,32 +1800,20 @@
     "slug": "(2.1) Payout Time Offs",
     "fields": [
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Row",
+        "label": "Row",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
+        "key": "Plan Name",
+        "label": "Plan Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "3",
-        "label": "3",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "4.0",
-        "label": "4.0",
+        "key": "Time Off Name",
+        "label": "Time Off Name",
         "type": "string",
         "metadata": {}
       }
@@ -1276,152 +1824,244 @@
     "slug": "(3) Accruals",
     "fields": [
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Row",
+        "label": "Row",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
+        "key": "Plan Name",
+        "label": "Plan Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "3",
-        "label": "3",
+        "key": "Accrual Name",
+        "label": "Accrual Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
+        "key": "Time Off Plan Accrual Frequency",
+        "label": "Time Off Plan Accrual Frequency",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "4",
-        "label": "4",
+        "key": "Time Off Plan Units ",
+        "label": "Time Off Plan Units ",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Accrual Calculation",
+        "label": "Accrual Calculation",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Is Accrual Frontloaded",
+        "label": "Is Accrual Frontloaded",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Does Accrual Pause While Worker is on Leave",
+        "label": "Does Accrual Pause While Worker is on Leave",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Prorate for Partial Period",
+        "label": "Prorate for Partial Period",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Prorate based on Employees FTE",
+        "label": "Prorate based on Employees FTE",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Adjustments / Overrides Allowed",
+        "label": "Adjustments / Overrides Allowed",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Accrual Options",
+        "label": "Accrual Options",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Front-Loaded",
+              "label": "Front-Loaded"
+            },
+            {
+              "value": "Based on As of Date",
+              "label": "Based on As of Date"
+            },
+            {
+              "value": "None",
+              "label": "None"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Accrual Frequency Method Override",
+        "label": "Accrual Frequency Method Override",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Start of Period",
+              "label": "Start of Period"
+            },
+            {
+              "value": "End of Period",
+              "label": "End of Period"
+            },
+            {
+              "value": "N/A",
+              "label": "N/A"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Worker Eligibility Overrides",
+        "label": "Worker Eligibility Overrides",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Limit Overrides",
+        "label": "Limit Overrides",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Limit Override Based On",
+        "label": "Limit Override Based On",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Is Balance Tracked Reference",
+        "label": "Is Balance Tracked Reference",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Concatenated Accrual Name",
+        "label": "Concatenated Accrual Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Calc Reference Type",
+        "label": "Calc Reference Type",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Calc Type",
+        "label": "Calc Type",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Arthimetic Calc",
+        "label": "Arthimetic Calc",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Accrual Calc",
+        "label": "Accrual Calc",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Adjustments / Overrides Allowed Gen",
+        "label": "Adjustments / Overrides Allowed Gen",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Priority",
+        "label": "Priority",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
+        "key": "Additional Accrual Considerations",
+        "label": "Additional Accrual Considerations",
         "type": "string",
         "metadata": {}
       }
@@ -1432,399 +2072,939 @@
     "slug": "Leaves",
     "fields": [
       {
-        "key": "nan",
-        "label": "nan",
+        "key": "Row",
+        "label": "Row",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "HeaderRow",
-        "label": "HeaderRow",
+        "key": "Leave Type Name",
+        "label": "Leave Type Name",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "3",
-        "label": "3",
+        "key": "Leave Family",
+        "label": "Leave Family",
         "type": "string",
         "metadata": {}
       },
       {
-        "key": "DataStartRow:",
-        "label": "DataStartRow:",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "4",
-        "label": "4",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
+        "key": "Hide From Employee Self Service",
+        "label": "Hide From Employee Self Service",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
+        "key": "Allow Employee Request",
+        "label": "Allow Employee Request",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
-      {
-        "key": "nan",
-        "label": "nan",
+      {
+        "key": "Country",
+        "label": "Country",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Enabled for Worker Type",
+        "label": "Enabled for Worker Type",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Employee",
+              "label": "Employee"
+            },
+            {
+              "value": "Contingent Worker",
+              "label": "Contingent Worker"
+            },
+            {
+              "value": "All Worker Types",
+              "label": "All Worker Types"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Eligibility Criteria",
+        "label": "Eligibility Criteria",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "(On Leave) Status Visibility Type",
+        "label": "(On Leave) Status Visibility Type",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Always Show",
+              "label": "Always Show"
+            },
+            {
+              "value": "Never Show",
+              "label": "Never Show"
+            },
+            {
+              "value": "Only Secured Users",
+              "label": "Only Secured Users"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Payroll Effect",
+        "label": "Payroll Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Absence Accrual Effect",
+        "label": "Absence Accrual Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Benefits Effect",
+        "label": "Benefits Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Stock Vesting Effect",
+        "label": "Stock Vesting Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Continous Service Effect",
+        "label": "Continous Service Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Inactivate Worker",
+        "label": "Inactivate Worker",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Professional Leave Effect",
+        "label": "Professional Leave Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Sabbatical Effect",
+        "label": "Sabbatical Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Tenure Effect",
+        "label": "Tenure Effect",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Track Leave Entitlement",
+        "label": "Track Leave Entitlement",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Units",
+        "label": "Units",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Hours",
+              "label": "Hours"
+            },
+            {
+              "value": "Days",
+              "label": "Days"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Entitlement Amount",
+        "label": "Entitlement Amount",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Entitlement Per Event",
+        "label": "Entitlement Per Event",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Balance Calendar",
+        "label": "Balance Calendar",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Anniversary-Based (Hire Date)",
+              "label": "Anniversary-Based (Hire Date)"
+            },
+            {
+              "value": "Fixed Calendar (Jan 1 - Dec 31)",
+              "label": "Fixed Calendar (Jan 1 - Dec 31)"
+            },
+            {
+              "value": "Rolling Forward 12 Months",
+              "label": "Rolling Forward 12 Months"
+            },
+            {
+              "value": "Rolling Backward 12 Months",
+              "label": "Rolling Backward 12 Months"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Days to Include as Taken",
+        "label": "Days to Include as Taken",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "All Days",
+              "label": "All Days"
+            },
+            {
+              "value": "Weekdays (Mon-Fri)",
+              "label": "Weekdays (Mon-Fri)"
+            },
+            {
+              "value": "Workdays (Non-Holiday)",
+              "label": "Workdays (Non-Holiday)"
+            },
+            {
+              "value": "Workdays (Work hours exceed Holiday hours)",
+              "label": "Workdays (Work hours exceed Holiday hours)"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Intermittent Time Off 1",
+        "label": "Intermittent Time Off 1",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Intermittent Time Off 2",
+        "label": "Intermittent Time Off 2",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Intermittent Time Off 3",
+        "label": "Intermittent Time Off 3",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Last Date for Which Paid",
+        "label": "Last Date for Which Paid",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Expected Due Date",
+        "label": "Expected Due Date",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Child's Birth Date",
+        "label": "Child's Birth Date",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Stillbirth/Baby Deceased",
+        "label": "Stillbirth/Baby Deceased",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Date Baby Arrived Home From Hospital",
+        "label": "Date Baby Arrived Home From Hospital",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Adoption Placement Date",
+        "label": "Adoption Placement Date",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Adoption Notification Date",
+        "label": "Adoption Notification Date",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Date Child Entered Country",
+        "label": "Date Child Entered Country",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Multiple Child Indicator",
+        "label": "Multiple Child Indicator",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Number of Babies/Adopted Children",
+        "label": "Number of Babies/Adopted Children",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Number of Previous Births",
+        "label": "Number of Previous Births",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Number of Previous Maternity Leaves",
+        "label": "Number of Previous Maternity Leaves",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Number of Child Dependents",
+        "label": "Number of Child Dependents",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Single Parent Indicator",
+        "label": "Single Parent Indicator",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Age of Dependent",
+        "label": "Age of Dependent",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Work Related",
+        "label": "Work Related",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Dependent Detail",
+        "label": "Dependent Detail",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Stop Payment Date",
+        "label": "Stop Payment Date",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Social Security Disability Code",
+        "label": "Social Security Disability Code",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Location During Leave",
+        "label": "Location During Leave",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Caesarean Section Birth",
+        "label": "Caesarean Section Birth",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Leave Percentage",
+        "label": "Leave Percentage",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Week of Confinement",
+        "label": "Week of Confinement",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Leave Entitlement Override",
+        "label": "Leave Entitlement Override",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "Date of Recall",
+        "label": "Date of Recall",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
+        "metadata": {}
+      },
+      {
+        "key": "LOA Validation Rule #1",
+        "label": "LOA Validation Rule #1",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Hard Stop for Employee #1",
+        "label": "Hard Stop for Employee #1",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Hard Stop for Non-Employee Initiator #1",
+        "label": "Hard Stop for Non-Employee Initiator #1",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "LOA Validation Rule #2",
+        "label": "LOA Validation Rule #2",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Hard Stop for Employee #2",
+        "label": "Hard Stop for Employee #2",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Hard Stop for Non-Employee Initiator #2",
+        "label": "Hard Stop for Non-Employee Initiator #2",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "LOA Validation Rule #3",
+        "label": "LOA Validation Rule #3",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Hard Stop for Employee #3",
+        "label": "Hard Stop for Employee #3",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Hard Stop for Non-Employee Initiator #3",
+        "label": "Hard Stop for Non-Employee Initiator #3",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Supporting Data",
+        "label": "Supporting Data",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Include all Leaves from Leave Family",
+        "label": "Include all Leaves from Leave Family",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Cascading Leave",
+        "label": "Cascading Leave",
+        "type": "string",
+        "metadata": {}
+      },
+      {
+        "key": "Please include any additional notes on the plan you'd like to have considered during implementation",
+        "label": "Please include any additional notes on the plan you'd like to have considered during implementation",
         "type": "string",
         "metadata": {}
       }
     ]
   },
   {
-    "name": "Validation Ref (Al Leaves)",
+    "name": "Validation Ref (AL Leaves)",
     "slug": "Validation Ref (AL Leaves)",
     "fields": [
       {
@@ -1898,7 +3078,7 @@
     ]
   },
   {
-    "name": "Supporting Data (Al Leaves)",
+    "name": "Supporting Data (AL Leaves)",
     "slug": "Supporting Data (AL Leaves)",
     "fields": [
       {
@@ -1984,7 +3164,7 @@
     ]
   },
   {
-    "name": "Valuationdateoverridedata",
+    "name": "ValuationDateOverrideData",
     "slug": "ValuationDateOverrideData",
     "fields": [
       {
@@ -2028,17 +3208,11 @@
         "label": "Country Reference ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Perioddata",
+    "name": "PeriodData",
     "slug": "PeriodData",
     "fields": [
       {
@@ -2300,29 +3474,11 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Usagereference",
+    "name": "UsageReference",
     "slug": "UsageReference",
     "fields": [
       {
@@ -2374,29 +3530,11 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Periodschedule",
+    "name": "PeriodSchedule",
     "slug": "PeriodSchedule",
     "fields": [
       {
@@ -2802,12 +3940,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -2850,18 +3982,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -2884,36 +4004,6 @@
       {
         "key": "Order",
         "label": "Order",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -2952,24 +4042,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3004,24 +4076,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3060,24 +4114,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3114,24 +4150,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3166,24 +4184,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3453,7 +4453,7 @@
     ]
   },
   {
-    "name": "Time Calc Tag Ref (To Al)",
+    "name": "Time Calc Tag Ref (TO AL)",
     "slug": "Time Calc Tag Ref (TO AL)",
     "fields": [
       {
@@ -3505,24 +4505,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3565,18 +4547,6 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3611,24 +4581,6 @@
       {
         "key": "Inactive",
         "label": "Inactive",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3679,12 +4631,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3733,12 +4679,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -3761,36 +4701,6 @@
       {
         "key": "Component Validation Set Add or Reference Key",
         "label": "Component Validation Set Add or Reference Key",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3833,18 +4743,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -3918,12 +4816,6 @@
       {
         "key": "WID",
         "label": "WID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -4070,30 +4962,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -4134,18 +5002,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -4210,18 +5066,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -4273,24 +5117,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -4319,30 +5145,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -4407,18 +5209,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -4461,18 +5251,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -4489,42 +5267,6 @@
       {
         "key": "Balance Transfer Defaults Key",
         "label": "Balance Transfer Defaults Key",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -5185,18 +5927,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -5270,12 +6000,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -5308,36 +6032,6 @@
       {
         "key": "Order",
         "label": "Order",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -5408,12 +6102,6 @@
         "label": "ID parent id",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -5474,18 +6162,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -5561,17 +6237,11 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Subtracts From Time Off Plan",
+    "name": "Subtracts from Time Off Plan",
     "slug": "Subtracts from Time Off Plan",
     "fields": [
       {
@@ -5594,42 +6264,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -5659,30 +6293,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -5747,23 +6357,11 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Adds To Time Off Plan - Accrual",
+    "name": "Adds to Time Off Plan - Accrual",
     "slug": "Adds to Time Off Plan - Accrual",
     "fields": [
       {
@@ -5832,17 +6430,11 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Adds To Time Off Plan",
+    "name": "Adds to Time Off Plan",
     "slug": "Adds to Time Off Plan",
     "fields": [
       {
@@ -5865,42 +6457,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -5964,18 +6520,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6027,24 +6571,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6079,24 +6605,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6135,24 +6643,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6181,30 +6671,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6249,23 +6715,11 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Days To Include Settings",
+    "name": "Days to Include Settings",
     "slug": "Days to Include Settings",
     "fields": [
       {
@@ -6323,18 +6777,6 @@
         "label": "Include Holidays from Holiday Calendar",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6369,24 +6811,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6425,24 +6849,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6477,24 +6883,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6533,24 +6921,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6579,30 +6949,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6641,24 +6987,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6695,24 +7023,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6747,24 +7057,6 @@
       {
         "key": "Calculation Name",
         "label": "Calculation Name",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6809,18 +7101,6 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -6837,42 +7117,6 @@
       {
         "key": "Time Calculation Tag Sets Reference Key",
         "label": "Time Calculation Tag Sets Reference Key",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -6924,24 +7168,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7004,18 +7230,6 @@
       {
         "key": "WID",
         "label": "WID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7287,24 +7501,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -7339,24 +7535,6 @@
       {
         "key": "Calculation Name",
         "label": "Calculation Name",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7395,24 +7573,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -7447,24 +7607,6 @@
       {
         "key": "Calculation Name",
         "label": "Calculation Name",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7527,18 +7669,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7614,12 +7744,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -7652,36 +7776,6 @@
       {
         "key": "Order",
         "label": "Order",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7726,18 +7820,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -7780,18 +7862,6 @@
         "label": "Calculation Name",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -7814,36 +7884,6 @@
       {
         "key": "Order",
         "label": "Order",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -7895,24 +7935,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -8435,12 +8457,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -8489,17 +8505,11 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Days To Include Settings (2)",
+    "name": "Days to Include Settings (2)",
     "slug": "Days to Include Settings (2)",
     "fields": [
       {
@@ -8557,18 +8567,6 @@
         "label": "Include Holidays from Holiday Calendar",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -8611,18 +8609,6 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -8663,18 +8649,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -8839,18 +8813,6 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -8879,30 +8841,6 @@
       {
         "key": "Leave of Absence Rule Reference ID",
         "label": "Leave of Absence Rule Reference ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -8973,12 +8911,6 @@
         "label": "ID parent id",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -9047,12 +8979,6 @@
         "label": "Hide from Employee Self Service",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -9093,18 +9019,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -9149,23 +9063,11 @@
         "label": "Inactive",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Day Of The Week Reference",
+    "name": "Day of the Week Reference",
     "slug": "Day of the Week Reference",
     "fields": [
       {
@@ -9201,18 +9103,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -9628,12 +9518,6 @@
         "label": "ID parent id",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -9702,17 +9586,11 @@
         "label": "ID parent id",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Day Of The Month Reference",
+    "name": "Day of the Month Reference",
     "slug": "Day of the Month Reference",
     "fields": [
       {
@@ -9748,18 +9626,6 @@
       {
         "key": "ID",
         "label": "ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -9804,18 +9670,6 @@
         "label": "ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -9850,18 +9704,6 @@
       {
         "key": "Calendar Rule Reference ID",
         "label": "Calendar Rule Reference ID",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -9900,24 +9742,6 @@
         "label": "Calendar Rule Reference ID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -9954,24 +9778,6 @@
         "label": "Comment",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -10006,24 +9812,6 @@
       {
         "key": "Comment",
         "label": "Comment",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -10422,24 +10210,6 @@
         "label": "Descriptor",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -10476,29 +10246,11 @@
         "label": "Descriptor",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
   {
-    "name": "Id",
+    "name": "ID",
     "slug": "ID",
     "fields": [
       {
@@ -10558,7 +10310,7 @@
     ]
   },
   {
-    "name": "Id (2)",
+    "name": "ID (2)",
     "slug": "ID (2)",
     "fields": [
       {
@@ -10756,36 +10508,6 @@
           }
         ],
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -10826,30 +10548,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -10888,36 +10586,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -11196,12 +10864,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -11240,36 +10902,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -11424,24 +11056,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -11504,18 +11118,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -11576,18 +11178,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -11663,12 +11253,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -11707,30 +11291,6 @@
       {
         "key": "Reference Type",
         "label": "Reference Type",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -11773,30 +11333,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -11835,36 +11371,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -12051,7 +11557,7 @@
     ]
   },
   {
-    "name": "Id (3)",
+    "name": "ID (3)",
     "slug": "ID (3)",
     "fields": [
       {
@@ -12120,12 +11626,6 @@
         "label": "ID parent id",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -12158,36 +11658,6 @@
       {
         "key": "Descriptor",
         "label": "Descriptor",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {}
       }
@@ -12228,36 +11698,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]
@@ -12451,24 +11891,6 @@
         "label": "Reference Type",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -12542,12 +11964,6 @@
         "label": "WID",
         "type": "string",
         "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
       }
     ]
   },
@@ -12586,36 +12002,6 @@
             "type": "required"
           }
         ],
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {}
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
         "metadata": {}
       }
     ]

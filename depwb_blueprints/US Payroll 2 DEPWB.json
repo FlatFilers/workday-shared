@@ -149,12 +149,24 @@
       {
         "key": "Supplemental Tax Method - Regular Check",
         "label": "Supplemental Tax Method - Regular Check",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Flat Rate",
+              "label": "Flat Rate"
+            },
+            {
+              "value": "Standard Withholding",
+              "label": "Standard Withholding"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -174,12 +186,24 @@
       {
         "key": "Supplemental Tax Method - Separate Check",
         "label": "Supplemental Tax Method - Separate Check",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Flat Rate",
+              "label": "Flat Rate"
+            },
+            {
+              "value": "Aggregate - Standard",
+              "label": "Aggregate - Standard"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -199,12 +223,24 @@
       {
         "key": "Third Party Provides W-2 for Sick Pay",
         "label": "Third Party Provides W-2 for Sick Pay",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -233,7 +269,31 @@
       {
         "key": "Kind of Employer?",
         "label": "Kind of Employer?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "501c non-govt",
+              "label": "501c non-govt"
+            },
+            {
+              "value": "State/local non-501c",
+              "label": "State/local non-501c"
+            },
+            {
+              "value": "State/local 501c",
+              "label": "State/local 501c"
+            },
+            {
+              "value": "Federal govt",
+              "label": "Federal govt"
+            },
+            {
+              "value": "None apply",
+              "label": "None apply"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -253,7 +313,19 @@
       {
         "key": "Does Company provide Dependent Benefits?",
         "label": "Does Company provide Dependent Benefits?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -273,7 +345,19 @@
       {
         "key": "On Going Multiple Work Jurisdictions Required?",
         "label": "On Going Multiple Work Jurisdictions Required?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -293,12 +377,24 @@
       {
         "key": "Exempt from FUI",
         "label": "Exempt from FUI",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -327,7 +423,19 @@
       {
         "key": "Exclude 1042-S Taxes from Tax Filing",
         "label": "Exclude 1042-S Taxes from Tax Filing",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -396,12 +504,228 @@
       {
         "key": "State",
         "label": "State",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "Alaska",
+              "label": "Alaska"
+            },
+            {
+              "value": "Arizona",
+              "label": "Arizona"
+            },
+            {
+              "value": "Arkansas",
+              "label": "Arkansas"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Connecticut",
+              "label": "Connecticut"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "District of Columbia",
+              "label": "District of Columbia"
+            },
+            {
+              "value": "Florida",
+              "label": "Florida"
+            },
+            {
+              "value": "Georgia",
+              "label": "Georgia"
+            },
+            {
+              "value": "Hawaii",
+              "label": "Hawaii"
+            },
+            {
+              "value": "Idaho",
+              "label": "Idaho"
+            },
+            {
+              "value": "Illinois",
+              "label": "Illinois"
+            },
+            {
+              "value": "Indiana",
+              "label": "Indiana"
+            },
+            {
+              "value": "Iowa",
+              "label": "Iowa"
+            },
+            {
+              "value": "Kansas",
+              "label": "Kansas"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Louisiana",
+              "label": "Louisiana"
+            },
+            {
+              "value": "Maine",
+              "label": "Maine"
+            },
+            {
+              "value": "Maryland",
+              "label": "Maryland"
+            },
+            {
+              "value": "Massachusetts",
+              "label": "Massachusetts"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Minnesota",
+              "label": "Minnesota"
+            },
+            {
+              "value": "Mississippi",
+              "label": "Mississippi"
+            },
+            {
+              "value": "Missouri",
+              "label": "Missouri"
+            },
+            {
+              "value": "Montana",
+              "label": "Montana"
+            },
+            {
+              "value": "Nebraska",
+              "label": "Nebraska"
+            },
+            {
+              "value": "Nevada",
+              "label": "Nevada"
+            },
+            {
+              "value": "New Hampshire",
+              "label": "New Hampshire"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New Mexico",
+              "label": "New Mexico"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "North Carolina",
+              "label": "North Carolina"
+            },
+            {
+              "value": "North Dakota",
+              "label": "North Dakota"
+            },
+            {
+              "value": "Ohio",
+              "label": "Ohio"
+            },
+            {
+              "value": "Oklahoma",
+              "label": "Oklahoma"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Pennsylvania",
+              "label": "Pennsylvania"
+            },
+            {
+              "value": "Puerto Rico",
+              "label": "Puerto Rico"
+            },
+            {
+              "value": "Rhode Island",
+              "label": "Rhode Island"
+            },
+            {
+              "value": "South Carolina",
+              "label": "South Carolina"
+            },
+            {
+              "value": "South Dakota",
+              "label": "South Dakota"
+            },
+            {
+              "value": "Tennessee",
+              "label": "Tennessee"
+            },
+            {
+              "value": "Texas",
+              "label": "Texas"
+            },
+            {
+              "value": "Utah",
+              "label": "Utah"
+            },
+            {
+              "value": "Vermont",
+              "label": "Vermont"
+            },
+            {
+              "value": "Virginia",
+              "label": "Virginia"
+            },
+            {
+              "value": "Virgin Islands",
+              "label": "Virgin Islands"
+            },
+            {
+              "value": "Washington",
+              "label": "Washington"
+            },
+            {
+              "value": "West Virginia",
+              "label": "West Virginia"
+            },
+            {
+              "value": "Wisconsin",
+              "label": "Wisconsin"
+            },
+            {
+              "value": "Wyoming",
+              "label": "Wyoming"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "StateTaxCheck",
@@ -473,12 +797,24 @@
       {
         "key": "Tax Type",
         "label": "Tax Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "State Withholding",
+              "label": "State Withholding"
+            },
+            {
+              "value": "State Unemployment",
+              "label": "State Unemployment"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -516,12 +852,24 @@
       {
         "key": "Use State (or Federal) EIN",
         "label": "Use State (or Federal) EIN",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Use State EIN",
+              "label": "Use State EIN"
+            },
+            {
+              "value": "Use Federal EIN",
+              "label": "Use Federal EIN"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -589,12 +937,24 @@
       {
         "key": "Exempt from SUI",
         "label": "Exempt from SUI",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -662,12 +1022,24 @@
       {
         "key": "Exclude From Tax Filling",
         "label": "Exclude From Tax Filling",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -777,12 +1149,80 @@
       {
         "key": "State",
         "label": "State",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "Illinois",
+              "label": "Illinois"
+            },
+            {
+              "value": "Indiana",
+              "label": "Indiana"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Maryland",
+              "label": "Maryland"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Missouri",
+              "label": "Missouri"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "Ohio",
+              "label": "Ohio"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Pennsylvania",
+              "label": "Pennsylvania"
+            },
+            {
+              "value": "West Virginia",
+              "label": "West Virginia"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -983,12 +1423,24 @@
       {
         "key": "Use State/Federal or Local EIN",
         "label": "Use State/Federal or Local EIN",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Use State/Federal EIN",
+              "label": "Use State/Federal EIN"
+            },
+            {
+              "value": "Use Local EIN",
+              "label": "Use Local EIN"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1091,12 +1543,160 @@
       {
         "key": "State",
         "label": "State",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "Arizona",
+              "label": "Arizona"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Connecticut",
+              "label": "Connecticut"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "District of Columbia",
+              "label": "District of Columbia"
+            },
+            {
+              "value": "Georgia",
+              "label": "Georgia"
+            },
+            {
+              "value": "Hawaii",
+              "label": "Hawaii"
+            },
+            {
+              "value": "Idaho",
+              "label": "Idaho"
+            },
+            {
+              "value": "Iowa",
+              "label": "Iowa"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Louisiana",
+              "label": "Louisiana"
+            },
+            {
+              "value": "Maine",
+              "label": "Maine"
+            },
+            {
+              "value": "Manitoba",
+              "label": "Manitoba"
+            },
+            {
+              "value": "Massachusetts",
+              "label": "Massachusetts"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Minnesota",
+              "label": "Minnesota"
+            },
+            {
+              "value": "Mississippi",
+              "label": "Mississippi"
+            },
+            {
+              "value": "Montana",
+              "label": "Montana"
+            },
+            {
+              "value": "Nebraska",
+              "label": "Nebraska"
+            },
+            {
+              "value": "Nevada",
+              "label": "Nevada"
+            },
+            {
+              "value": "New Hampshire",
+              "label": "New Hampshire"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New Mexico",
+              "label": "New Mexico"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "Newfoundland and Labrador",
+              "label": "Newfoundland and Labrador"
+            },
+            {
+              "value": "Ontario",
+              "label": "Ontario"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Puerto Rico",
+              "label": "Puerto Rico"
+            },
+            {
+              "value": "Rhode Island",
+              "label": "Rhode Island"
+            },
+            {
+              "value": "South Carolina",
+              "label": "South Carolina"
+            },
+            {
+              "value": "South Dakota",
+              "label": "South Dakota"
+            },
+            {
+              "value": "Texas",
+              "label": "Texas"
+            },
+            {
+              "value": "Washington",
+              "label": "Washington"
+            },
+            {
+              "value": "Wyoming",
+              "label": "Wyoming"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -1318,12 +1918,24 @@
       {
         "key": "Use State/Federal or Local EIN",
         "label": "Use State/Federal or Local EIN",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Use State/Federal EIN",
+              "label": "Use State/Federal EIN"
+            },
+            {
+              "value": "Use Local EIN",
+              "label": "Use Local EIN"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1397,7 +2009,19 @@
       {
         "key": "Exclude From Tax Filing",
         "label": "Exclude From Tax Filing",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -1629,12 +2253,28 @@
       {
         "key": "Federal WD - Tax Filing Marital Status",
         "label": "Federal WD - Tax Filing Marital Status",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Single",
+              "label": "Single"
+            },
+            {
+              "value": "Married",
+              "label": "Married"
+            },
+            {
+              "value": "Married but withhold at higher Single rate",
+              "label": "Married but withhold at higher Single rate"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -1706,12 +2346,28 @@
       {
         "key": "Federal WD - Tax Filing Marital Status (2020)",
         "label": "Federal WD - Tax Filing Marital Status (2020)",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Single or Married filing separately",
+              "label": "Single or Married filing separately"
+            },
+            {
+              "value": "Married filing jointly (or Qualifying widow(er))",
+              "label": "Married filing jointly (or Qualifying widow(er))"
+            },
+            {
+              "value": "Head of Household",
+              "label": "Head of Household"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -1800,7 +2456,19 @@
       {
         "key": "Multiple Jobs or Spouse Works",
         "label": "Multiple Jobs or Spouse Works",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -1849,7 +2517,19 @@
       {
         "key": "Federal Exemption [Yes/No]",
         "label": "Federal Exemption [Yes/No]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -1869,7 +2549,19 @@
       {
         "key": "Nonresident Alien [Yes/No]",
         "label": "Nonresident Alien [Yes/No]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -1889,7 +2581,19 @@
       {
         "key": "Exempt from NRA Additional Amount [Yes/No]",
         "label": "Exempt from NRA Additional Amount [Yes/No]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -1909,7 +2613,19 @@
       {
         "key": "Lock In Letter [Yes/No]",
         "label": "Lock In Letter [Yes/No]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -1929,7 +2645,19 @@
       {
         "key": "No Wage No Tax [Yes/No]",
         "label": "No Wage No Tax [Yes/No]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -1945,20 +2673,11 @@
             }
           ]
         }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
       }
     ]
   },
   {
-    "name": "Worker Fica Oasdi Exemption",
+    "name": "Worker FICA OASDI Exemption",
     "slug": "Worker FICA OASDI Exemption",
     "fields": [
       {
@@ -2186,12 +2905,32 @@
       {
         "key": "OASDI Reason for Exemption",
         "label": "OASDI Reason for Exemption",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "NRA Rule 3121(b)(19)",
+              "label": "NRA Rule 3121(b)(19)"
+            },
+            {
+              "value": "Other",
+              "label": "Other"
+            },
+            {
+              "value": "Student Rule 3121(b)(10)",
+              "label": "Student Rule 3121(b)(10)"
+            },
+            {
+              "value": "Totalization Agreement with Tax Residence Country",
+              "label": "Totalization Agreement with Tax Residence Country"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Matching",
@@ -2238,7 +2977,7 @@
     ]
   },
   {
-    "name": "Worker Fica Medicare Exemption",
+    "name": "Worker FICA Medicare Exemption",
     "slug": "Worker FICA Medicare Exemption",
     "fields": [
       {
@@ -2466,12 +3205,32 @@
       {
         "key": "Medicare Reason for Exemption",
         "label": "Medicare Reason for Exemption",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "NRA Rule 3121(b)(19)",
+              "label": "NRA Rule 3121(b)(19)"
+            },
+            {
+              "value": "Other",
+              "label": "Other"
+            },
+            {
+              "value": "Student Rule 3121(b)(10)",
+              "label": "Student Rule 3121(b)(10)"
+            },
+            {
+              "value": "Totalization Agreement with Tax Residence Country",
+              "label": "Totalization Agreement with Tax Residence Country"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Matching",
@@ -2518,7 +3277,7 @@
     ]
   },
   {
-    "name": "Worker Futa Exemption",
+    "name": "Worker FUTA Exemption",
     "slug": "Worker FUTA Exemption",
     "fields": [
       {
@@ -2742,24 +3501,6 @@
             }
           ]
         }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
       }
     ]
   },
@@ -2967,12 +3708,228 @@
       {
         "key": "State",
         "label": "State",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "Alaska",
+              "label": "Alaska"
+            },
+            {
+              "value": "Arizona",
+              "label": "Arizona"
+            },
+            {
+              "value": "Arkansas",
+              "label": "Arkansas"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Connecticut",
+              "label": "Connecticut"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "District of Columbia",
+              "label": "District of Columbia"
+            },
+            {
+              "value": "Florida",
+              "label": "Florida"
+            },
+            {
+              "value": "Georgia",
+              "label": "Georgia"
+            },
+            {
+              "value": "Hawaii",
+              "label": "Hawaii"
+            },
+            {
+              "value": "Idaho",
+              "label": "Idaho"
+            },
+            {
+              "value": "Illinois",
+              "label": "Illinois"
+            },
+            {
+              "value": "Indiana",
+              "label": "Indiana"
+            },
+            {
+              "value": "Iowa",
+              "label": "Iowa"
+            },
+            {
+              "value": "Kansas",
+              "label": "Kansas"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Louisiana",
+              "label": "Louisiana"
+            },
+            {
+              "value": "Maine",
+              "label": "Maine"
+            },
+            {
+              "value": "Maryland",
+              "label": "Maryland"
+            },
+            {
+              "value": "Massachusetts",
+              "label": "Massachusetts"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Minnesota",
+              "label": "Minnesota"
+            },
+            {
+              "value": "Mississippi",
+              "label": "Mississippi"
+            },
+            {
+              "value": "Missouri",
+              "label": "Missouri"
+            },
+            {
+              "value": "Montana",
+              "label": "Montana"
+            },
+            {
+              "value": "Nebraska",
+              "label": "Nebraska"
+            },
+            {
+              "value": "Nevada",
+              "label": "Nevada"
+            },
+            {
+              "value": "New Hampshire",
+              "label": "New Hampshire"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New Mexico",
+              "label": "New Mexico"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "North Carolina",
+              "label": "North Carolina"
+            },
+            {
+              "value": "North Dakota",
+              "label": "North Dakota"
+            },
+            {
+              "value": "Ohio",
+              "label": "Ohio"
+            },
+            {
+              "value": "Oklahoma",
+              "label": "Oklahoma"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Pennsylvania",
+              "label": "Pennsylvania"
+            },
+            {
+              "value": "Puerto Rico",
+              "label": "Puerto Rico"
+            },
+            {
+              "value": "Rhode Island",
+              "label": "Rhode Island"
+            },
+            {
+              "value": "South Carolina",
+              "label": "South Carolina"
+            },
+            {
+              "value": "South Dakota",
+              "label": "South Dakota"
+            },
+            {
+              "value": "Tennessee",
+              "label": "Tennessee"
+            },
+            {
+              "value": "Texas",
+              "label": "Texas"
+            },
+            {
+              "value": "Utah",
+              "label": "Utah"
+            },
+            {
+              "value": "Vermont",
+              "label": "Vermont"
+            },
+            {
+              "value": "Virginia",
+              "label": "Virginia"
+            },
+            {
+              "value": "Virgin Islands",
+              "label": "Virgin Islands"
+            },
+            {
+              "value": "Washington",
+              "label": "Washington"
+            },
+            {
+              "value": "West Virginia",
+              "label": "West Virginia"
+            },
+            {
+              "value": "Wisconsin",
+              "label": "Wisconsin"
+            },
+            {
+              "value": "Wyoming",
+              "label": "Wyoming"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckCompanyStateSetup_Formula",
@@ -3247,7 +4204,19 @@
       {
         "key": "Married Filing Jointly Optional Calculation?",
         "label": "Married Filing Jointly Optional Calculation?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -3267,7 +4236,19 @@
       {
         "key": "Veteran Exemption?",
         "label": "Veteran Exemption?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -3334,7 +4315,19 @@
       {
         "key": "Allowance on Special Deduction?",
         "label": "Allowance on Special Deduction?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -3372,7 +4365,31 @@
       {
         "key": "New Jersey Rate Table",
         "label": "New Jersey Rate Table",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "A",
+              "label": "A"
+            },
+            {
+              "value": "B",
+              "label": "B"
+            },
+            {
+              "value": "C",
+              "label": "C"
+            },
+            {
+              "value": "D",
+              "label": "D"
+            },
+            {
+              "value": "E",
+              "label": "E"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -3421,7 +4438,67 @@
       {
         "key": "Constant Percent for Arizona",
         "label": "Constant Percent for Arizona",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "0.005",
+              "label": "0.005"
+            },
+            {
+              "value": "0.008",
+              "label": "0.008"
+            },
+            {
+              "value": "0.01",
+              "label": "0.01"
+            },
+            {
+              "value": "0.013",
+              "label": "0.013"
+            },
+            {
+              "value": "0.015",
+              "label": "0.015"
+            },
+            {
+              "value": "0.018",
+              "label": "0.018"
+            },
+            {
+              "value": "0.02",
+              "label": "0.02"
+            },
+            {
+              "value": "0.025",
+              "label": "0.025"
+            },
+            {
+              "value": "0.027",
+              "label": "0.027"
+            },
+            {
+              "value": "0.03",
+              "label": "0.03"
+            },
+            {
+              "value": "0.035",
+              "label": "0.035"
+            },
+            {
+              "value": "0.036",
+              "label": "0.036"
+            },
+            {
+              "value": "0.042",
+              "label": "0.042"
+            },
+            {
+              "value": "0.051",
+              "label": "0.051"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -3504,7 +4581,7 @@
     ]
   },
   {
-    "name": "Worker Suta Exemption",
+    "name": "Worker SUTA Exemption",
     "slug": "Worker SUTA Exemption",
     "fields": [
       {
@@ -3689,12 +4766,24 @@
       {
         "key": "SUTA Exempt [Yes/No]",
         "label": "SUTA Exempt [Yes/No]",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -3723,12 +4812,228 @@
       {
         "key": "SUI Exempted From State",
         "label": "SUI Exempted From State",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "Alaska",
+              "label": "Alaska"
+            },
+            {
+              "value": "Arizona",
+              "label": "Arizona"
+            },
+            {
+              "value": "Arkansas",
+              "label": "Arkansas"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Connecticut",
+              "label": "Connecticut"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "District of Columbia",
+              "label": "District of Columbia"
+            },
+            {
+              "value": "Florida",
+              "label": "Florida"
+            },
+            {
+              "value": "Georgia",
+              "label": "Georgia"
+            },
+            {
+              "value": "Hawaii",
+              "label": "Hawaii"
+            },
+            {
+              "value": "Idaho",
+              "label": "Idaho"
+            },
+            {
+              "value": "Illinois",
+              "label": "Illinois"
+            },
+            {
+              "value": "Indiana",
+              "label": "Indiana"
+            },
+            {
+              "value": "Iowa",
+              "label": "Iowa"
+            },
+            {
+              "value": "Kansas",
+              "label": "Kansas"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Louisiana",
+              "label": "Louisiana"
+            },
+            {
+              "value": "Maine",
+              "label": "Maine"
+            },
+            {
+              "value": "Maryland",
+              "label": "Maryland"
+            },
+            {
+              "value": "Massachusetts",
+              "label": "Massachusetts"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Minnesota",
+              "label": "Minnesota"
+            },
+            {
+              "value": "Mississippi",
+              "label": "Mississippi"
+            },
+            {
+              "value": "Missouri",
+              "label": "Missouri"
+            },
+            {
+              "value": "Montana",
+              "label": "Montana"
+            },
+            {
+              "value": "Nebraska",
+              "label": "Nebraska"
+            },
+            {
+              "value": "Nevada",
+              "label": "Nevada"
+            },
+            {
+              "value": "New Hampshire",
+              "label": "New Hampshire"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New Mexico",
+              "label": "New Mexico"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "North Carolina",
+              "label": "North Carolina"
+            },
+            {
+              "value": "North Dakota",
+              "label": "North Dakota"
+            },
+            {
+              "value": "Ohio",
+              "label": "Ohio"
+            },
+            {
+              "value": "Oklahoma",
+              "label": "Oklahoma"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Pennsylvania",
+              "label": "Pennsylvania"
+            },
+            {
+              "value": "Puerto Rico",
+              "label": "Puerto Rico"
+            },
+            {
+              "value": "Rhode Island",
+              "label": "Rhode Island"
+            },
+            {
+              "value": "South Carolina",
+              "label": "South Carolina"
+            },
+            {
+              "value": "South Dakota",
+              "label": "South Dakota"
+            },
+            {
+              "value": "Tennessee",
+              "label": "Tennessee"
+            },
+            {
+              "value": "Texas",
+              "label": "Texas"
+            },
+            {
+              "value": "Utah",
+              "label": "Utah"
+            },
+            {
+              "value": "Vermont",
+              "label": "Vermont"
+            },
+            {
+              "value": "Virginia",
+              "label": "Virginia"
+            },
+            {
+              "value": "Virgin Islands",
+              "label": "Virgin Islands"
+            },
+            {
+              "value": "Washington",
+              "label": "Washington"
+            },
+            {
+              "value": "West Virginia",
+              "label": "West Virginia"
+            },
+            {
+              "value": "Wisconsin",
+              "label": "Wisconsin"
+            },
+            {
+              "value": "Wyoming",
+              "label": "Wyoming"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -4073,15 +5378,6 @@
       {
         "key": "Worker's Work City",
         "label": "Worker's Work City",
-        "type": "string",
-        "metadata": {
-          "validations": [],
-          "validation_criteria": []
-        }
-      },
-      {
-        "key": "nan",
-        "label": "nan",
         "type": "string",
         "metadata": {
           "validations": [],
@@ -4756,7 +6052,31 @@
       {
         "key": "WD - Work Michigan Constant Percent",
         "label": "WD - Work Michigan Constant Percent",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "0.25",
+              "label": "0.25"
+            },
+            {
+              "value": "0.4",
+              "label": "0.4"
+            },
+            {
+              "value": "0.6",
+              "label": "0.6"
+            },
+            {
+              "value": "0.8",
+              "label": "0.8"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "PrimaryKeyCondition",
@@ -4785,7 +6105,19 @@
       {
         "key": "Work City Exemption for Michigan/ Pennsylvania [Y/N]",
         "label": "Work City Exemption for Michigan/ Pennsylvania [Y/N]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "PrimaryKeyCondition"
@@ -5166,7 +6498,19 @@
       {
         "key": "Residence City Exemption Pennsylvania [Y/N]",
         "label": "Residence City Exemption Pennsylvania [Y/N]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "PrimaryKeyCondition"
@@ -5513,7 +6857,19 @@
       {
         "key": "School District Exemption Pennsylvania [Y/N]",
         "label": "School District Exemption Pennsylvania [Y/N]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "PrimaryKeyCondition"
@@ -5851,7 +7207,19 @@
       {
         "key": "Other Work Exemption  [Y/N]",
         "label": "Other Work Exemption  [Y/N]",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
