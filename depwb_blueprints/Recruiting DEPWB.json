@@ -564,7 +564,15 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "allCountries",
+              "label": "allCountries"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -623,55 +631,199 @@
       {
         "key": "Race/Ethnicity - Allow Multiple",
         "label": "Race/Ethnicity - Allow Multiple",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Race/Ethnicity - Single Select",
         "label": "Race/Ethnicity - Single Select",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Gender",
         "label": "Gender",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Gender Identity",
         "label": "Gender Identity",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Citzenship Status",
         "label": "Citzenship Status",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Date of Birth",
         "label": "Date of Birth",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Disability",
         "label": "Disability",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Marital Status",
         "label": "Marital Status",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
         "key": "Religion",
         "label": "Religion",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Use",
+              "label": "Use"
+            },
+            {
+              "value": "Require",
+              "label": "Require"
+            },
+            {
+              "value": "Don't Use",
+              "label": "Don't Use"
+            }
+          ]
+        },
         "metadata": {}
       }
     ]
@@ -906,23 +1058,72 @@
       {
         "key": "Mapped to Question",
         "label": "Mapped to Question",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Questions",
+          "key": "Question Name",
+          "relationship": "has-one"
+        },
         "metadata": {}
       },
       {
         "key": "Which Answer Triggers the Branching Question",
         "label": "Which Answer Triggers the Branching Question",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Answer 1",
+              "label": "Answer 1"
+            },
+            {
+              "value": "Answer 2",
+              "label": "Answer 2"
+            },
+            {
+              "value": "Answer 3",
+              "label": "Answer 3"
+            },
+            {
+              "value": "Answer 4",
+              "label": "Answer 4"
+            },
+            {
+              "value": "Answer 5",
+              "label": "Answer 5"
+            },
+            {
+              "value": "Answer 6",
+              "label": "Answer 6"
+            },
+            {
+              "value": "Answer 7",
+              "label": "Answer 7"
+            },
+            {
+              "value": "Answer 8",
+              "label": "Answer 8"
+            },
+            {
+              "value": "Answer 9",
+              "label": "Answer 9"
+            },
+            {
+              "value": "Answer 10",
+              "label": "Answer 10"
+            }
+          ]
+        },
         "metadata": {}
       },
       {
@@ -950,12 +1151,24 @@
       {
         "key": "Required",
         "label": "Required",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {}
       },
       {

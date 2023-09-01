@@ -556,12 +556,17 @@
       {
         "key": "Run Category Name",
         "label": "Run Category Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -581,12 +586,36 @@
       {
         "key": "Period Schedule",
         "label": "Period Schedule",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "BiWeekly1",
+              "label": "BiWeekly1"
+            },
+            {
+              "value": "BiWeekly2",
+              "label": "BiWeekly2"
+            },
+            {
+              "value": "Semimonthly",
+              "label": "Semimonthly"
+            },
+            {
+              "value": "Monthly",
+              "label": "Monthly"
+            },
+            {
+              "value": "Weekly",
+              "label": "Weekly"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -768,12 +797,308 @@
       {
         "key": "Region",
         "label": "Region",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Alberta",
+              "label": "Alberta"
+            },
+            {
+              "value": "British Columbia",
+              "label": "British Columbia"
+            },
+            {
+              "value": "Manitoba",
+              "label": "Manitoba"
+            },
+            {
+              "value": "New Brunswick",
+              "label": "New Brunswick"
+            },
+            {
+              "value": "Newfoundland and Labrador",
+              "label": "Newfoundland and Labrador"
+            },
+            {
+              "value": "Northwest Territories",
+              "label": "Northwest Territories"
+            },
+            {
+              "value": "Nova Scotia",
+              "label": "Nova Scotia"
+            },
+            {
+              "value": "Nunavut",
+              "label": "Nunavut"
+            },
+            {
+              "value": "Ontario",
+              "label": "Ontario"
+            },
+            {
+              "value": "Prince Edward Island",
+              "label": "Prince Edward Island"
+            },
+            {
+              "value": "Quebec",
+              "label": "Quebec"
+            },
+            {
+              "value": "Saskatchewan",
+              "label": "Saskatchewan"
+            },
+            {
+              "value": "Yukon",
+              "label": "Yukon"
+            },
+            {
+              "value": "Alabama",
+              "label": "Alabama"
+            },
+            {
+              "value": "Alaska",
+              "label": "Alaska"
+            },
+            {
+              "value": "American Samoa",
+              "label": "American Samoa"
+            },
+            {
+              "value": "Arizona",
+              "label": "Arizona"
+            },
+            {
+              "value": "Arkansas",
+              "label": "Arkansas"
+            },
+            {
+              "value": "Armed Forces Americas",
+              "label": "Armed Forces Americas"
+            },
+            {
+              "value": "Armed Forces Europe",
+              "label": "Armed Forces Europe"
+            },
+            {
+              "value": "Armed Forces Pacific",
+              "label": "Armed Forces Pacific"
+            },
+            {
+              "value": "California",
+              "label": "California"
+            },
+            {
+              "value": "Colorado",
+              "label": "Colorado"
+            },
+            {
+              "value": "Connecticut",
+              "label": "Connecticut"
+            },
+            {
+              "value": "Delaware",
+              "label": "Delaware"
+            },
+            {
+              "value": "District of Columbia",
+              "label": "District of Columbia"
+            },
+            {
+              "value": "Florida",
+              "label": "Florida"
+            },
+            {
+              "value": "Georgia",
+              "label": "Georgia"
+            },
+            {
+              "value": "Guam",
+              "label": "Guam"
+            },
+            {
+              "value": "Hawaii",
+              "label": "Hawaii"
+            },
+            {
+              "value": "Idaho",
+              "label": "Idaho"
+            },
+            {
+              "value": "Illinois",
+              "label": "Illinois"
+            },
+            {
+              "value": "Indiana",
+              "label": "Indiana"
+            },
+            {
+              "value": "Iowa",
+              "label": "Iowa"
+            },
+            {
+              "value": "Kansas",
+              "label": "Kansas"
+            },
+            {
+              "value": "Kentucky",
+              "label": "Kentucky"
+            },
+            {
+              "value": "Louisiana",
+              "label": "Louisiana"
+            },
+            {
+              "value": "Maine",
+              "label": "Maine"
+            },
+            {
+              "value": "Maryland",
+              "label": "Maryland"
+            },
+            {
+              "value": "Massachusetts",
+              "label": "Massachusetts"
+            },
+            {
+              "value": "Michigan",
+              "label": "Michigan"
+            },
+            {
+              "value": "Minnesota",
+              "label": "Minnesota"
+            },
+            {
+              "value": "Mississippi",
+              "label": "Mississippi"
+            },
+            {
+              "value": "Missouri",
+              "label": "Missouri"
+            },
+            {
+              "value": "Montana",
+              "label": "Montana"
+            },
+            {
+              "value": "Nebraska",
+              "label": "Nebraska"
+            },
+            {
+              "value": "Nevada",
+              "label": "Nevada"
+            },
+            {
+              "value": "New Hampshire",
+              "label": "New Hampshire"
+            },
+            {
+              "value": "New Jersey",
+              "label": "New Jersey"
+            },
+            {
+              "value": "New Mexico",
+              "label": "New Mexico"
+            },
+            {
+              "value": "New York",
+              "label": "New York"
+            },
+            {
+              "value": "North Carolina",
+              "label": "North Carolina"
+            },
+            {
+              "value": "North Dakota",
+              "label": "North Dakota"
+            },
+            {
+              "value": "Northern Mariana Islands",
+              "label": "Northern Mariana Islands"
+            },
+            {
+              "value": "Ohio",
+              "label": "Ohio"
+            },
+            {
+              "value": "Oklahoma",
+              "label": "Oklahoma"
+            },
+            {
+              "value": "Oregon",
+              "label": "Oregon"
+            },
+            {
+              "value": "Pennsylvania",
+              "label": "Pennsylvania"
+            },
+            {
+              "value": "Puerto Rico",
+              "label": "Puerto Rico"
+            },
+            {
+              "value": "Rhode Island",
+              "label": "Rhode Island"
+            },
+            {
+              "value": "South Carolina",
+              "label": "South Carolina"
+            },
+            {
+              "value": "South Dakota",
+              "label": "South Dakota"
+            },
+            {
+              "value": "Tennessee",
+              "label": "Tennessee"
+            },
+            {
+              "value": "Texas",
+              "label": "Texas"
+            },
+            {
+              "value": "United States Minor Outlying Islands",
+              "label": "United States Minor Outlying Islands"
+            },
+            {
+              "value": "Utah",
+              "label": "Utah"
+            },
+            {
+              "value": "Vermont",
+              "label": "Vermont"
+            },
+            {
+              "value": "Virgin Islands, U.S.",
+              "label": "Virgin Islands, U.S."
+            },
+            {
+              "value": "Virginia",
+              "label": "Virginia"
+            },
+            {
+              "value": "Washington",
+              "label": "Washington"
+            },
+            {
+              "value": "West Virginia",
+              "label": "West Virginia"
+            },
+            {
+              "value": "Wisconsin",
+              "label": "Wisconsin"
+            },
+            {
+              "value": "Wyoming",
+              "label": "Wyoming"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1142,12 +1467,17 @@
       {
         "key": "Institution Number",
         "label": "Institution Number",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Financial Institutions",
+          "key": "Financial Institution ID",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -1352,12 +1682,17 @@
       {
         "key": "Bank/Financial Institution",
         "label": "Bank/Financial Institution",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Financial Institutions",
+          "key": "Financial Institution Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -2225,12 +2560,20 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Canada",
+              "label": "Canada"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2239,12 +2582,17 @@
       {
         "key": "Run Category Eligibility",
         "label": "Run Category Eligibility",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -3881,12 +4229,24 @@
       {
         "key": "Do Not Recalculate Retro",
         "label": "Do Not Recalculate Retro",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3895,7 +4255,15 @@
       {
         "key": "Calculation Worktag",
         "label": "Calculation Worktag",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Province",
+              "label": "Province"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4108,12 +4476,20 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Canada",
+              "label": "Canada"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4122,12 +4498,17 @@
       {
         "key": "Run Category Eligibility",
         "label": "Run Category Eligibility",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -5396,7 +5777,15 @@
       {
         "key": "Calculation Worktag-2",
         "label": "Calculation Worktag-2",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Province",
+              "label": "Province"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -5438,12 +5827,17 @@
       {
         "key": "Deduction Name",
         "label": "Deduction Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Deductions",
+          "key": "Deduction Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -6030,12 +6424,20 @@
       {
         "key": "Pay Type",
         "label": "Pay Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "CAN Payroll Payment",
+              "label": "CAN Payroll Payment"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -6368,12 +6770,20 @@
       {
         "key": "Balance",
         "label": "Balance",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Y",
+              "label": "Y"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -6511,12 +6921,17 @@
       {
         "key": "Pay Group Org Name",
         "label": "Pay Group Org Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Pay Groups",
+          "key": "Pay Group Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",

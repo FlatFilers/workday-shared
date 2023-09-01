@@ -1063,7 +1063,31 @@
       {
         "key": "Suffix",
         "label": "Suffix",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "II",
+              "label": "II"
+            },
+            {
+              "value": "III",
+              "label": "III"
+            },
+            {
+              "value": "IV",
+              "label": "IV"
+            },
+            {
+              "value": "Jr.",
+              "label": "Jr."
+            },
+            {
+              "value": "Sr.",
+              "label": "Sr."
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckValueExist"
@@ -1112,12 +1136,24 @@
       {
         "key": "Is Dependent?",
         "label": "Is Dependent?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckValueExist"
@@ -1166,12 +1202,24 @@
       {
         "key": "Is Beneficiary?",
         "label": "Is Beneficiary?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckValueExist"
@@ -1220,12 +1268,24 @@
       {
         "key": "Is Individual or Entity?",
         "label": "Is Individual or Entity?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Individual",
+              "label": "Individual"
+            },
+            {
+              "value": "Entity",
+              "label": "Entity"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1234,12 +1294,24 @@
       {
         "key": "Is Emergency Contact?",
         "label": "Is Emergency Contact?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckValueExist"
@@ -1313,7 +1385,19 @@
       {
         "key": "Emergency Contact Primary?",
         "label": "Emergency Contact Primary?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1356,12 +1440,24 @@
       {
         "key": "Use Employee Address?",
         "label": "Use Employee Address?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckValueExist"
@@ -1381,12 +1477,24 @@
       {
         "key": "Use Employee Phone?",
         "label": "Use Employee Phone?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckValueExist",
@@ -1424,12 +1532,24 @@
       {
         "key": "Irrevocable?",
         "label": "Irrevocable?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2525,7 +2645,19 @@
       {
         "key": "Uses Tobacco?",
         "label": "Uses Tobacco?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2534,7 +2666,19 @@
       {
         "key": "Disabled?",
         "label": "Disabled?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2543,7 +2687,19 @@
       {
         "key": "Dependent for Payroll Purposes",
         "label": "Dependent for Payroll Purposes",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2552,7 +2708,19 @@
       {
         "key": "Could be Covered Elsewhere",
         "label": "Could be Covered Elsewhere",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "EnsureDataMultipleColumns"
@@ -2581,7 +2749,19 @@
       {
         "key": "Full-time Student?",
         "label": "Full-time Student?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4730,7 +4910,23 @@
       {
         "key": "Phone Type (Home)",
         "label": "Phone Type (Home)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Landline",
+              "label": "Landline"
+            },
+            {
+              "value": "Mobile",
+              "label": "Mobile"
+            },
+            {
+              "value": "Other",
+              "label": "Other"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4739,7 +4935,19 @@
       {
         "key": "Primary? (Home)",
         "label": "Primary? (Home)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4748,7 +4956,19 @@
       {
         "key": "Public? (Home)",
         "label": "Public? (Home)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -5805,7 +6025,23 @@
       {
         "key": "Phone Type (Work)",
         "label": "Phone Type (Work)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Landline",
+              "label": "Landline"
+            },
+            {
+              "value": "Mobile",
+              "label": "Mobile"
+            },
+            {
+              "value": "Other",
+              "label": "Other"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -5814,7 +6050,19 @@
       {
         "key": "Primary? (Work)",
         "label": "Primary? (Work)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -5823,7 +6071,19 @@
       {
         "key": "Public? (Work)",
         "label": "Public? (Work)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -6866,7 +7126,19 @@
       {
         "key": "Primary? (Work Mobile)",
         "label": "Primary? (Work Mobile)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -6875,7 +7147,19 @@
       {
         "key": "Public? (Work Mobile)",
         "label": "Public? (Work Mobile)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -7918,7 +8202,19 @@
       {
         "key": "Primary? (Personal Mobile)",
         "label": "Primary? (Personal Mobile)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -7927,7 +8223,19 @@
       {
         "key": "Public? (Personal Mobile)",
         "label": "Public? (Personal Mobile)",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -8026,12 +8334,24 @@
       {
         "key": "Worker or Dependent?",
         "label": "Worker or Dependent?",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Worker",
+              "label": "Worker"
+            },
+            {
+              "value": "Dependent",
+              "label": "Dependent"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -8117,12 +8437,24 @@
       {
         "key": "Participates in Wellness Program",
         "label": "Participates in Wellness Program",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "EnsureDataMultipleColumns"
@@ -8195,12 +8527,24 @@
       {
         "key": "Uses Tobacco",
         "label": "Uses Tobacco",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "EnsureDataMultipleColumns"
@@ -8328,12 +8672,620 @@
       {
         "key": "Currency",
         "label": "Currency",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "USD",
+              "label": "USD"
+            },
+            {
+              "value": "AFN",
+              "label": "AFN"
+            },
+            {
+              "value": "AED",
+              "label": "AED"
+            },
+            {
+              "value": "ALL",
+              "label": "ALL"
+            },
+            {
+              "value": "AMD",
+              "label": "AMD"
+            },
+            {
+              "value": "ANG",
+              "label": "ANG"
+            },
+            {
+              "value": "AOA",
+              "label": "AOA"
+            },
+            {
+              "value": "ARD",
+              "label": "ARD"
+            },
+            {
+              "value": "AUD",
+              "label": "AUD"
+            },
+            {
+              "value": "AWG",
+              "label": "AWG"
+            },
+            {
+              "value": "AZN",
+              "label": "AZN"
+            },
+            {
+              "value": "BAM",
+              "label": "BAM"
+            },
+            {
+              "value": "BBD",
+              "label": "BBD"
+            },
+            {
+              "value": "BDT",
+              "label": "BDT"
+            },
+            {
+              "value": "BGN",
+              "label": "BGN"
+            },
+            {
+              "value": "BHD",
+              "label": "BHD"
+            },
+            {
+              "value": "BIF",
+              "label": "BIF"
+            },
+            {
+              "value": "BMD",
+              "label": "BMD"
+            },
+            {
+              "value": "BND",
+              "label": "BND"
+            },
+            {
+              "value": "BOB",
+              "label": "BOB"
+            },
+            {
+              "value": "BRL",
+              "label": "BRL"
+            },
+            {
+              "value": "BSD",
+              "label": "BSD"
+            },
+            {
+              "value": "BTN",
+              "label": "BTN"
+            },
+            {
+              "value": "BWP",
+              "label": "BWP"
+            },
+            {
+              "value": "BYR",
+              "label": "BYR"
+            },
+            {
+              "value": "BZD",
+              "label": "BZD"
+            },
+            {
+              "value": "CAD",
+              "label": "CAD"
+            },
+            {
+              "value": "CDF",
+              "label": "CDF"
+            },
+            {
+              "value": "CHF",
+              "label": "CHF"
+            },
+            {
+              "value": "CLP",
+              "label": "CLP"
+            },
+            {
+              "value": "CNY",
+              "label": "CNY"
+            },
+            {
+              "value": "COP",
+              "label": "COP"
+            },
+            {
+              "value": "CRC",
+              "label": "CRC"
+            },
+            {
+              "value": "CUP",
+              "label": "CUP"
+            },
+            {
+              "value": "CVE",
+              "label": "CVE"
+            },
+            {
+              "value": "CZK",
+              "label": "CZK"
+            },
+            {
+              "value": "DJF",
+              "label": "DJF"
+            },
+            {
+              "value": "DKK",
+              "label": "DKK"
+            },
+            {
+              "value": "DOP",
+              "label": "DOP"
+            },
+            {
+              "value": "DZD",
+              "label": "DZD"
+            },
+            {
+              "value": "EGP",
+              "label": "EGP"
+            },
+            {
+              "value": "ERN",
+              "label": "ERN"
+            },
+            {
+              "value": "ETB",
+              "label": "ETB"
+            },
+            {
+              "value": "EUR",
+              "label": "EUR"
+            },
+            {
+              "value": "FJD",
+              "label": "FJD"
+            },
+            {
+              "value": "FKP",
+              "label": "FKP"
+            },
+            {
+              "value": "GBP",
+              "label": "GBP"
+            },
+            {
+              "value": "GEL",
+              "label": "GEL"
+            },
+            {
+              "value": "GHS",
+              "label": "GHS"
+            },
+            {
+              "value": "GMD",
+              "label": "GMD"
+            },
+            {
+              "value": "GNF",
+              "label": "GNF"
+            },
+            {
+              "value": "GTQ",
+              "label": "GTQ"
+            },
+            {
+              "value": "GYD",
+              "label": "GYD"
+            },
+            {
+              "value": "HKD",
+              "label": "HKD"
+            },
+            {
+              "value": "HNL",
+              "label": "HNL"
+            },
+            {
+              "value": "HRK",
+              "label": "HRK"
+            },
+            {
+              "value": "HUF",
+              "label": "HUF"
+            },
+            {
+              "value": "IDR",
+              "label": "IDR"
+            },
+            {
+              "value": "ILS",
+              "label": "ILS"
+            },
+            {
+              "value": "INR",
+              "label": "INR"
+            },
+            {
+              "value": "IQD",
+              "label": "IQD"
+            },
+            {
+              "value": "IRR",
+              "label": "IRR"
+            },
+            {
+              "value": "ISK",
+              "label": "ISK"
+            },
+            {
+              "value": "JMD",
+              "label": "JMD"
+            },
+            {
+              "value": "JOD",
+              "label": "JOD"
+            },
+            {
+              "value": "JPY",
+              "label": "JPY"
+            },
+            {
+              "value": "KES",
+              "label": "KES"
+            },
+            {
+              "value": "KGS",
+              "label": "KGS"
+            },
+            {
+              "value": "KHR",
+              "label": "KHR"
+            },
+            {
+              "value": "KMF",
+              "label": "KMF"
+            },
+            {
+              "value": "KPW",
+              "label": "KPW"
+            },
+            {
+              "value": "KRW",
+              "label": "KRW"
+            },
+            {
+              "value": "KWD",
+              "label": "KWD"
+            },
+            {
+              "value": "KYD",
+              "label": "KYD"
+            },
+            {
+              "value": "KZT",
+              "label": "KZT"
+            },
+            {
+              "value": "LAK",
+              "label": "LAK"
+            },
+            {
+              "value": "LBP",
+              "label": "LBP"
+            },
+            {
+              "value": "LKR",
+              "label": "LKR"
+            },
+            {
+              "value": "LRD",
+              "label": "LRD"
+            },
+            {
+              "value": "LTL",
+              "label": "LTL"
+            },
+            {
+              "value": "LVL",
+              "label": "LVL"
+            },
+            {
+              "value": "LYD",
+              "label": "LYD"
+            },
+            {
+              "value": "MAD",
+              "label": "MAD"
+            },
+            {
+              "value": "MDL",
+              "label": "MDL"
+            },
+            {
+              "value": "MGA",
+              "label": "MGA"
+            },
+            {
+              "value": "MKD",
+              "label": "MKD"
+            },
+            {
+              "value": "MMK",
+              "label": "MMK"
+            },
+            {
+              "value": "MNT",
+              "label": "MNT"
+            },
+            {
+              "value": "MOP",
+              "label": "MOP"
+            },
+            {
+              "value": "MRO",
+              "label": "MRO"
+            },
+            {
+              "value": "MUR",
+              "label": "MUR"
+            },
+            {
+              "value": "MVR",
+              "label": "MVR"
+            },
+            {
+              "value": "MWK",
+              "label": "MWK"
+            },
+            {
+              "value": "MXN",
+              "label": "MXN"
+            },
+            {
+              "value": "MYR",
+              "label": "MYR"
+            },
+            {
+              "value": "MZN",
+              "label": "MZN"
+            },
+            {
+              "value": "NGN",
+              "label": "NGN"
+            },
+            {
+              "value": "NIO",
+              "label": "NIO"
+            },
+            {
+              "value": "NOK",
+              "label": "NOK"
+            },
+            {
+              "value": "NPR",
+              "label": "NPR"
+            },
+            {
+              "value": "NZD",
+              "label": "NZD"
+            },
+            {
+              "value": "OMR",
+              "label": "OMR"
+            },
+            {
+              "value": "PEN",
+              "label": "PEN"
+            },
+            {
+              "value": "PGK",
+              "label": "PGK"
+            },
+            {
+              "value": "PHP",
+              "label": "PHP"
+            },
+            {
+              "value": "PKR",
+              "label": "PKR"
+            },
+            {
+              "value": "PLN",
+              "label": "PLN"
+            },
+            {
+              "value": "PYG",
+              "label": "PYG"
+            },
+            {
+              "value": "QAR",
+              "label": "QAR"
+            },
+            {
+              "value": "RON",
+              "label": "RON"
+            },
+            {
+              "value": "RSD",
+              "label": "RSD"
+            },
+            {
+              "value": "RUB",
+              "label": "RUB"
+            },
+            {
+              "value": "RWF",
+              "label": "RWF"
+            },
+            {
+              "value": "SAR",
+              "label": "SAR"
+            },
+            {
+              "value": "SBD",
+              "label": "SBD"
+            },
+            {
+              "value": "SCR",
+              "label": "SCR"
+            },
+            {
+              "value": "SDG",
+              "label": "SDG"
+            },
+            {
+              "value": "SEK",
+              "label": "SEK"
+            },
+            {
+              "value": "SGD",
+              "label": "SGD"
+            },
+            {
+              "value": "SLL",
+              "label": "SLL"
+            },
+            {
+              "value": "SOS",
+              "label": "SOS"
+            },
+            {
+              "value": "SRD",
+              "label": "SRD"
+            },
+            {
+              "value": "SSP",
+              "label": "SSP"
+            },
+            {
+              "value": "STD",
+              "label": "STD"
+            },
+            {
+              "value": "SYP",
+              "label": "SYP"
+            },
+            {
+              "value": "SZL",
+              "label": "SZL"
+            },
+            {
+              "value": "THB",
+              "label": "THB"
+            },
+            {
+              "value": "TJS",
+              "label": "TJS"
+            },
+            {
+              "value": "TMM",
+              "label": "TMM"
+            },
+            {
+              "value": "TND",
+              "label": "TND"
+            },
+            {
+              "value": "TOP",
+              "label": "TOP"
+            },
+            {
+              "value": "TRY",
+              "label": "TRY"
+            },
+            {
+              "value": "TTD",
+              "label": "TTD"
+            },
+            {
+              "value": "TWD",
+              "label": "TWD"
+            },
+            {
+              "value": "TZS",
+              "label": "TZS"
+            },
+            {
+              "value": "UAH",
+              "label": "UAH"
+            },
+            {
+              "value": "UGX",
+              "label": "UGX"
+            },
+            {
+              "value": "UYU",
+              "label": "UYU"
+            },
+            {
+              "value": "UZS",
+              "label": "UZS"
+            },
+            {
+              "value": "VEF",
+              "label": "VEF"
+            },
+            {
+              "value": "VND",
+              "label": "VND"
+            },
+            {
+              "value": "VUV",
+              "label": "VUV"
+            },
+            {
+              "value": "WST",
+              "label": "WST"
+            },
+            {
+              "value": "XAF",
+              "label": "XAF"
+            },
+            {
+              "value": "XCD",
+              "label": "XCD"
+            },
+            {
+              "value": "XOF",
+              "label": "XOF"
+            },
+            {
+              "value": "XPF",
+              "label": "XPF"
+            },
+            {
+              "value": "YER",
+              "label": "YER"
+            },
+            {
+              "value": "ZAR",
+              "label": "ZAR"
+            },
+            {
+              "value": "ZMK",
+              "label": "ZMK"
+            },
+            {
+              "value": "ZWD",
+              "label": "ZWD"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -8771,7 +9723,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9164,7 +10128,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9647,7 +10623,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10090,7 +11078,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10310,12 +11310,40 @@
       {
         "key": "Coverage Amount",
         "label": "Coverage Amount",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "310000",
+              "label": "310000"
+            },
+            {
+              "value": "315000",
+              "label": "315000"
+            },
+            {
+              "value": "320000",
+              "label": "320000"
+            },
+            {
+              "value": "325000",
+              "label": "325000"
+            },
+            {
+              "value": "330000",
+              "label": "330000"
+            },
+            {
+              "value": "500000",
+              "label": "500000"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -10335,12 +11363,620 @@
       {
         "key": "Currency Code",
         "label": "Currency Code",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "USD",
+              "label": "USD"
+            },
+            {
+              "value": "AFN",
+              "label": "AFN"
+            },
+            {
+              "value": "AED",
+              "label": "AED"
+            },
+            {
+              "value": "ALL",
+              "label": "ALL"
+            },
+            {
+              "value": "AMD",
+              "label": "AMD"
+            },
+            {
+              "value": "ANG",
+              "label": "ANG"
+            },
+            {
+              "value": "AOA",
+              "label": "AOA"
+            },
+            {
+              "value": "ARD",
+              "label": "ARD"
+            },
+            {
+              "value": "AUD",
+              "label": "AUD"
+            },
+            {
+              "value": "AWG",
+              "label": "AWG"
+            },
+            {
+              "value": "AZN",
+              "label": "AZN"
+            },
+            {
+              "value": "BAM",
+              "label": "BAM"
+            },
+            {
+              "value": "BBD",
+              "label": "BBD"
+            },
+            {
+              "value": "BDT",
+              "label": "BDT"
+            },
+            {
+              "value": "BGN",
+              "label": "BGN"
+            },
+            {
+              "value": "BHD",
+              "label": "BHD"
+            },
+            {
+              "value": "BIF",
+              "label": "BIF"
+            },
+            {
+              "value": "BMD",
+              "label": "BMD"
+            },
+            {
+              "value": "BND",
+              "label": "BND"
+            },
+            {
+              "value": "BOB",
+              "label": "BOB"
+            },
+            {
+              "value": "BRL",
+              "label": "BRL"
+            },
+            {
+              "value": "BSD",
+              "label": "BSD"
+            },
+            {
+              "value": "BTN",
+              "label": "BTN"
+            },
+            {
+              "value": "BWP",
+              "label": "BWP"
+            },
+            {
+              "value": "BYR",
+              "label": "BYR"
+            },
+            {
+              "value": "BZD",
+              "label": "BZD"
+            },
+            {
+              "value": "CAD",
+              "label": "CAD"
+            },
+            {
+              "value": "CDF",
+              "label": "CDF"
+            },
+            {
+              "value": "CHF",
+              "label": "CHF"
+            },
+            {
+              "value": "CLP",
+              "label": "CLP"
+            },
+            {
+              "value": "CNY",
+              "label": "CNY"
+            },
+            {
+              "value": "COP",
+              "label": "COP"
+            },
+            {
+              "value": "CRC",
+              "label": "CRC"
+            },
+            {
+              "value": "CUP",
+              "label": "CUP"
+            },
+            {
+              "value": "CVE",
+              "label": "CVE"
+            },
+            {
+              "value": "CZK",
+              "label": "CZK"
+            },
+            {
+              "value": "DJF",
+              "label": "DJF"
+            },
+            {
+              "value": "DKK",
+              "label": "DKK"
+            },
+            {
+              "value": "DOP",
+              "label": "DOP"
+            },
+            {
+              "value": "DZD",
+              "label": "DZD"
+            },
+            {
+              "value": "EGP",
+              "label": "EGP"
+            },
+            {
+              "value": "ERN",
+              "label": "ERN"
+            },
+            {
+              "value": "ETB",
+              "label": "ETB"
+            },
+            {
+              "value": "EUR",
+              "label": "EUR"
+            },
+            {
+              "value": "FJD",
+              "label": "FJD"
+            },
+            {
+              "value": "FKP",
+              "label": "FKP"
+            },
+            {
+              "value": "GBP",
+              "label": "GBP"
+            },
+            {
+              "value": "GEL",
+              "label": "GEL"
+            },
+            {
+              "value": "GHS",
+              "label": "GHS"
+            },
+            {
+              "value": "GMD",
+              "label": "GMD"
+            },
+            {
+              "value": "GNF",
+              "label": "GNF"
+            },
+            {
+              "value": "GTQ",
+              "label": "GTQ"
+            },
+            {
+              "value": "GYD",
+              "label": "GYD"
+            },
+            {
+              "value": "HKD",
+              "label": "HKD"
+            },
+            {
+              "value": "HNL",
+              "label": "HNL"
+            },
+            {
+              "value": "HRK",
+              "label": "HRK"
+            },
+            {
+              "value": "HUF",
+              "label": "HUF"
+            },
+            {
+              "value": "IDR",
+              "label": "IDR"
+            },
+            {
+              "value": "ILS",
+              "label": "ILS"
+            },
+            {
+              "value": "INR",
+              "label": "INR"
+            },
+            {
+              "value": "IQD",
+              "label": "IQD"
+            },
+            {
+              "value": "IRR",
+              "label": "IRR"
+            },
+            {
+              "value": "ISK",
+              "label": "ISK"
+            },
+            {
+              "value": "JMD",
+              "label": "JMD"
+            },
+            {
+              "value": "JOD",
+              "label": "JOD"
+            },
+            {
+              "value": "JPY",
+              "label": "JPY"
+            },
+            {
+              "value": "KES",
+              "label": "KES"
+            },
+            {
+              "value": "KGS",
+              "label": "KGS"
+            },
+            {
+              "value": "KHR",
+              "label": "KHR"
+            },
+            {
+              "value": "KMF",
+              "label": "KMF"
+            },
+            {
+              "value": "KPW",
+              "label": "KPW"
+            },
+            {
+              "value": "KRW",
+              "label": "KRW"
+            },
+            {
+              "value": "KWD",
+              "label": "KWD"
+            },
+            {
+              "value": "KYD",
+              "label": "KYD"
+            },
+            {
+              "value": "KZT",
+              "label": "KZT"
+            },
+            {
+              "value": "LAK",
+              "label": "LAK"
+            },
+            {
+              "value": "LBP",
+              "label": "LBP"
+            },
+            {
+              "value": "LKR",
+              "label": "LKR"
+            },
+            {
+              "value": "LRD",
+              "label": "LRD"
+            },
+            {
+              "value": "LTL",
+              "label": "LTL"
+            },
+            {
+              "value": "LVL",
+              "label": "LVL"
+            },
+            {
+              "value": "LYD",
+              "label": "LYD"
+            },
+            {
+              "value": "MAD",
+              "label": "MAD"
+            },
+            {
+              "value": "MDL",
+              "label": "MDL"
+            },
+            {
+              "value": "MGA",
+              "label": "MGA"
+            },
+            {
+              "value": "MKD",
+              "label": "MKD"
+            },
+            {
+              "value": "MMK",
+              "label": "MMK"
+            },
+            {
+              "value": "MNT",
+              "label": "MNT"
+            },
+            {
+              "value": "MOP",
+              "label": "MOP"
+            },
+            {
+              "value": "MRO",
+              "label": "MRO"
+            },
+            {
+              "value": "MUR",
+              "label": "MUR"
+            },
+            {
+              "value": "MVR",
+              "label": "MVR"
+            },
+            {
+              "value": "MWK",
+              "label": "MWK"
+            },
+            {
+              "value": "MXN",
+              "label": "MXN"
+            },
+            {
+              "value": "MYR",
+              "label": "MYR"
+            },
+            {
+              "value": "MZN",
+              "label": "MZN"
+            },
+            {
+              "value": "NGN",
+              "label": "NGN"
+            },
+            {
+              "value": "NIO",
+              "label": "NIO"
+            },
+            {
+              "value": "NOK",
+              "label": "NOK"
+            },
+            {
+              "value": "NPR",
+              "label": "NPR"
+            },
+            {
+              "value": "NZD",
+              "label": "NZD"
+            },
+            {
+              "value": "OMR",
+              "label": "OMR"
+            },
+            {
+              "value": "PEN",
+              "label": "PEN"
+            },
+            {
+              "value": "PGK",
+              "label": "PGK"
+            },
+            {
+              "value": "PHP",
+              "label": "PHP"
+            },
+            {
+              "value": "PKR",
+              "label": "PKR"
+            },
+            {
+              "value": "PLN",
+              "label": "PLN"
+            },
+            {
+              "value": "PYG",
+              "label": "PYG"
+            },
+            {
+              "value": "QAR",
+              "label": "QAR"
+            },
+            {
+              "value": "RON",
+              "label": "RON"
+            },
+            {
+              "value": "RSD",
+              "label": "RSD"
+            },
+            {
+              "value": "RUB",
+              "label": "RUB"
+            },
+            {
+              "value": "RWF",
+              "label": "RWF"
+            },
+            {
+              "value": "SAR",
+              "label": "SAR"
+            },
+            {
+              "value": "SBD",
+              "label": "SBD"
+            },
+            {
+              "value": "SCR",
+              "label": "SCR"
+            },
+            {
+              "value": "SDG",
+              "label": "SDG"
+            },
+            {
+              "value": "SEK",
+              "label": "SEK"
+            },
+            {
+              "value": "SGD",
+              "label": "SGD"
+            },
+            {
+              "value": "SLL",
+              "label": "SLL"
+            },
+            {
+              "value": "SOS",
+              "label": "SOS"
+            },
+            {
+              "value": "SRD",
+              "label": "SRD"
+            },
+            {
+              "value": "SSP",
+              "label": "SSP"
+            },
+            {
+              "value": "STD",
+              "label": "STD"
+            },
+            {
+              "value": "SYP",
+              "label": "SYP"
+            },
+            {
+              "value": "SZL",
+              "label": "SZL"
+            },
+            {
+              "value": "THB",
+              "label": "THB"
+            },
+            {
+              "value": "TJS",
+              "label": "TJS"
+            },
+            {
+              "value": "TMM",
+              "label": "TMM"
+            },
+            {
+              "value": "TND",
+              "label": "TND"
+            },
+            {
+              "value": "TOP",
+              "label": "TOP"
+            },
+            {
+              "value": "TRY",
+              "label": "TRY"
+            },
+            {
+              "value": "TTD",
+              "label": "TTD"
+            },
+            {
+              "value": "TWD",
+              "label": "TWD"
+            },
+            {
+              "value": "TZS",
+              "label": "TZS"
+            },
+            {
+              "value": "UAH",
+              "label": "UAH"
+            },
+            {
+              "value": "UGX",
+              "label": "UGX"
+            },
+            {
+              "value": "UYU",
+              "label": "UYU"
+            },
+            {
+              "value": "UZS",
+              "label": "UZS"
+            },
+            {
+              "value": "VEF",
+              "label": "VEF"
+            },
+            {
+              "value": "VND",
+              "label": "VND"
+            },
+            {
+              "value": "VUV",
+              "label": "VUV"
+            },
+            {
+              "value": "WST",
+              "label": "WST"
+            },
+            {
+              "value": "XAF",
+              "label": "XAF"
+            },
+            {
+              "value": "XCD",
+              "label": "XCD"
+            },
+            {
+              "value": "XOF",
+              "label": "XOF"
+            },
+            {
+              "value": "XPF",
+              "label": "XPF"
+            },
+            {
+              "value": "YER",
+              "label": "YER"
+            },
+            {
+              "value": "ZAR",
+              "label": "ZAR"
+            },
+            {
+              "value": "ZMK",
+              "label": "ZMK"
+            },
+            {
+              "value": "ZWD",
+              "label": "ZWD"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "EnsureDataMultipleColumns"
@@ -10473,7 +12109,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10830,7 +12478,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -11165,7 +12825,19 @@
       {
         "key": "Currently in Waiting Period?",
         "label": "Currently in Waiting Period?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []

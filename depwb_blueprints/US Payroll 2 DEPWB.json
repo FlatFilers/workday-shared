@@ -754,12 +754,17 @@
       {
         "key": "Company Name",
         "label": "Company Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1008,12 +1013,24 @@
       {
         "key": "Use Tax Override Rate",
         "label": "Use Tax Override Rate",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1251,12 +1268,17 @@
       {
         "key": "Company Name",
         "label": "Company Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1285,7 +1307,12 @@
       {
         "key": "Company ID",
         "label": "Company ID",
-        "type": "string",
+        "type": "reference",
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1725,12 +1752,17 @@
       {
         "key": "Company Name",
         "label": "Company Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1768,12 +1800,20 @@
       {
         "key": "Tax Type",
         "label": "Tax Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Other Withholding",
+              "label": "Other Withholding"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -2149,12 +2189,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -2785,12 +2830,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -2871,12 +2921,20 @@
       {
         "key": "Exempt From OASDI [Yes/No]",
         "label": "Exempt From OASDI [Yes/No]",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Matching",
@@ -2968,7 +3026,19 @@
       {
         "key": "Apply To Worker",
         "label": "Apply To Worker",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3085,12 +3155,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -3171,12 +3246,20 @@
       {
         "key": "Exempt From Medicare [Yes/No]",
         "label": "Exempt From Medicare [Yes/No]",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Matching",
@@ -3268,7 +3351,19 @@
       {
         "key": "Apply To Worker",
         "label": "Apply To Worker",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -3385,12 +3480,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -3471,12 +3571,20 @@
       {
         "key": "FUTA Exempt [Yes/No]",
         "label": "FUTA Exempt [Yes/No]",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -3604,12 +3712,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -4039,7 +4152,15 @@
       {
         "key": "Exempt From State Withholdings",
         "label": "Exempt From State Withholdings",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "CheckStateAttribute_Formula"
@@ -4295,7 +4416,19 @@
       {
         "key": "Entrepreneur Exemption?",
         "label": "Entrepreneur Exemption?",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match_Formula"
@@ -4545,7 +4678,19 @@
       {
         "key": "Massachusetts Head of Household",
         "label": "Massachusetts Head of Household",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -4680,12 +4825,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -5179,12 +5329,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -5486,12 +5641,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -5802,12 +5962,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -6292,12 +6457,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -6685,12 +6855,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -7044,12 +7219,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",

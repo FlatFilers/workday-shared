@@ -596,12 +596,17 @@
       {
         "key": "Company Name",
         "label": "Company Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -797,12 +802,24 @@
       {
         "key": "Bonus Tax Method",
         "label": "Bonus Tax Method",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Regular Bonus Tax Calculation",
+              "label": "Regular Bonus Tax Calculation"
+            },
+            {
+              "value": "YTD Bonus Tax Calculation",
+              "label": "YTD Bonus Tax Calculation"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -877,12 +894,44 @@
       {
         "key": "Start Year",
         "label": "Start Year",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "2020",
+              "label": "2020"
+            },
+            {
+              "value": "2021",
+              "label": "2021"
+            },
+            {
+              "value": "2022",
+              "label": "2022"
+            },
+            {
+              "value": "2023",
+              "label": "2023"
+            },
+            {
+              "value": "2024",
+              "label": "2024"
+            },
+            {
+              "value": "2025",
+              "label": "2025"
+            },
+            {
+              "value": "2026",
+              "label": "2026"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -891,7 +940,39 @@
       {
         "key": "Effective Until End of Year",
         "label": "Effective Until End of Year",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "2020",
+              "label": "2020"
+            },
+            {
+              "value": "2021",
+              "label": "2021"
+            },
+            {
+              "value": "2022",
+              "label": "2022"
+            },
+            {
+              "value": "2023",
+              "label": "2023"
+            },
+            {
+              "value": "2024",
+              "label": "2024"
+            },
+            {
+              "value": "2025",
+              "label": "2025"
+            },
+            {
+              "value": "2026",
+              "label": "2026"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -900,12 +981,17 @@
       {
         "key": "Company Name",
         "label": "Company Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -925,12 +1011,17 @@
       {
         "key": "Payroll Reference Number",
         "label": "Payroll Reference Number",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Payroll Reference #",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -984,12 +1075,17 @@
       {
         "key": "RPP or DPSP Registration Number",
         "label": "RPP or DPSP Registration Number",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "RPP or DPSP Registration Number",
+          "key": "Registration Number",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -1009,7 +1105,19 @@
       {
         "key": "Union",
         "label": "Union",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -1108,12 +1216,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "PrimaryKeyMatching",
@@ -1510,12 +1623,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "PrimaryKeyMatching",
@@ -2058,12 +2176,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -2270,12 +2393,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -2304,12 +2432,40 @@
       {
         "key": "Start Year",
         "label": "Start Year",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "2021",
+              "label": "2021"
+            },
+            {
+              "value": "2022",
+              "label": "2022"
+            },
+            {
+              "value": "2023",
+              "label": "2023"
+            },
+            {
+              "value": "2024",
+              "label": "2024"
+            },
+            {
+              "value": "2025",
+              "label": "2025"
+            },
+            {
+              "value": "2026",
+              "label": "2026"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -2329,7 +2485,35 @@
       {
         "key": "Effective Until End of Year",
         "label": "Effective Until End of Year",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "2021",
+              "label": "2021"
+            },
+            {
+              "value": "2022",
+              "label": "2022"
+            },
+            {
+              "value": "2023",
+              "label": "2023"
+            },
+            {
+              "value": "2024",
+              "label": "2024"
+            },
+            {
+              "value": "2025",
+              "label": "2025"
+            },
+            {
+              "value": "2026",
+              "label": "2026"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -2338,12 +2522,17 @@
       {
         "key": "RPP or DPSP Registration Number",
         "label": "RPP or DPSP Registration Number",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "RPP or DPSP Registration Number",
+          "key": "Registration Number",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -2363,12 +2552,17 @@
       {
         "key": "Payroll Reference Number",
         "label": "Payroll Reference Number",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Payroll Reference #",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -2478,12 +2672,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -2663,12 +2862,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -2862,12 +3066,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -3043,12 +3252,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -3246,12 +3460,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -3524,12 +3743,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -3646,12 +3870,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -3782,12 +4011,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -3904,12 +4138,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -4026,12 +4265,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -4136,12 +4380,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -4246,12 +4495,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -4368,12 +4622,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -4490,12 +4749,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -4612,12 +4876,17 @@
       {
         "key": "Company",
         "label": "Company",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Company Federal Tax Reporting",
+          "key": "Company Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",

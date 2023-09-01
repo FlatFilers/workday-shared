@@ -6,12 +6,32 @@
       {
         "key": "Usage",
         "label": "Usage",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Absence",
+              "label": "Absence"
+            },
+            {
+              "value": "Payroll",
+              "label": "Payroll"
+            },
+            {
+              "value": "Timesheets",
+              "label": "Timesheets"
+            },
+            {
+              "value": "Time Tracking",
+              "label": "Time Tracking"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing"
@@ -273,12 +293,20 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -298,12 +326,20 @@
       {
         "key": "Country Code",
         "label": "Country Code",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "USA",
+              "label": "USA"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -480,12 +516,20 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -1454,12 +1498,17 @@
       {
         "key": "Run Category Name",
         "label": "Run Category Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match",
@@ -1488,12 +1537,36 @@
       {
         "key": "Period Schedule",
         "label": "Period Schedule",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "BiWeeklyA",
+              "label": "BiWeeklyA"
+            },
+            {
+              "value": "BiWeeklyB",
+              "label": "BiWeeklyB"
+            },
+            {
+              "value": "Semimonthly",
+              "label": "Semimonthly"
+            },
+            {
+              "value": "Monthly",
+              "label": "Monthly"
+            },
+            {
+              "value": "Weekly",
+              "label": "Weekly"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -6787,12 +6860,17 @@
       {
         "key": "Bank/Financial Institution",
         "label": "Bank/Financial Institution",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Financial Institutions",
+          "key": "Financial Institution Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -8025,12 +8103,17 @@
       {
         "key": "OB Allowed Payment Types",
         "label": "OB Allowed Payment Types",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Payment Election Rules",
+          "key": "Payment Election Rule Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -8244,12 +8327,20 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -8258,12 +8349,17 @@
       {
         "key": "Run Category Eligibility",
         "label": "Run Category Eligibility",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -8725,7 +8821,15 @@
       {
         "key": "Calculation Worktag Reference ID",
         "label": "Calculation Worktag Reference ID",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "POSITION",
+              "label": "POSITION"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9321,7 +9425,12 @@
       {
         "key": "GL Expense Account",
         "label": "GL Expense Account",
-        "type": "string",
+        "type": "reference",
+        "config": {
+          "ref": "General Ledger Account Sets",
+          "key": "Ledger Account Identifier",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9330,7 +9439,19 @@
       {
         "key": "Exclude from Forward Accrual",
         "label": "Exclude from Forward Accrual",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9534,12 +9655,20 @@
       {
         "key": "Country",
         "label": "Country",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "United States of America",
+              "label": "United States of America"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9548,12 +9677,17 @@
       {
         "key": "Run Category Eligibility",
         "label": "Run Category Eligibility",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match"
@@ -9713,7 +9847,15 @@
       {
         "key": "Worker Eligibility Calculation Name",
         "label": "Worker Eligibility Calculation Name",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Payroll Input (Onetime or Ongoing) Exists for Pay Component (Sub Period)",
+              "label": "Payroll Input (Onetime or Ongoing) Exists for Pay Component (Sub Period)"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9722,7 +9864,15 @@
       {
         "key": "Worker Eligibility Calculation Type",
         "label": "Worker Eligibility Calculation Type",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "AND/OR",
+              "label": "AND/OR"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -9731,7 +9881,19 @@
       {
         "key": "Worker Eligibility Calculation Workday Owned",
         "label": "Worker Eligibility Calculation Workday Owned",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10469,7 +10631,12 @@
       {
         "key": "GL Expense Account",
         "label": "GL Expense Account",
-        "type": "string",
+        "type": "reference",
+        "config": {
+          "ref": "General Ledger Account Sets",
+          "key": "Ledger Account Identifier",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10478,7 +10645,12 @@
       {
         "key": "GL Liability Account",
         "label": "GL Liability Account",
-        "type": "string",
+        "type": "reference",
+        "config": {
+          "ref": "General Ledger Account Sets",
+          "key": "Ledger Account Identifier",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10487,7 +10659,19 @@
       {
         "key": "Exclude from Forward Accrual",
         "label": "Exclude from Forward Accrual",
-        "type": "string",
+        "type": "enum",
+        "config": {
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10576,12 +10760,17 @@
       {
         "key": "Pay Group",
         "label": "Pay Group",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Pay Groups",
+          "key": "Pay Group Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -10638,12 +10827,17 @@
       {
         "key": "Deduction Name",
         "label": "Deduction Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Deductions",
+          "key": "Deduction Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
@@ -11088,12 +11282,17 @@
       {
         "key": "Run Category",
         "label": "Run Category",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Run Categories",
+          "key": "Run Category Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Duplicatecolumn"
@@ -11113,12 +11312,24 @@
       {
         "key": "Allowed Payment Types for Payment Elections 1",
         "label": "Allowed Payment Types for Payment Elections 1",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -11127,12 +11338,24 @@
       {
         "key": "Allowed Payment Types for Payment Elections 2",
         "label": "Allowed Payment Types for Payment Elections 2",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -11141,12 +11364,24 @@
       {
         "key": "Allowed Payment Types for Payment Elections 3",
         "label": "Allowed Payment Types for Payment Elections 3",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Direct Deposit",
+              "label": "Direct Deposit"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -11155,12 +11390,24 @@
       {
         "key": "Override Payment Type",
         "label": "Override Payment Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -11169,12 +11416,24 @@
       {
         "key": "Default Payment Type",
         "label": "Default Payment Type",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Check/Cheque",
+              "label": "Check/Cheque"
+            },
+            {
+              "value": "Manual",
+              "label": "Manual"
+            }
+          ]
+        },
         "metadata": {
           "validations": [],
           "validation_criteria": []
@@ -12888,12 +13147,17 @@
       {
         "key": "Pay Type",
         "label": "Pay Type",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Payment Election Rules",
+          "key": "Payment Election Rule Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Match_Formula",
@@ -13315,12 +13579,20 @@
       {
         "key": "Balance",
         "label": "Balance",
-        "type": "string",
+        "type": "enum",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "options": [
+            {
+              "value": "Y",
+              "label": "Y"
+            }
+          ]
+        },
         "metadata": {
           "validations": [
             "amountpercentbalance_Formula"
@@ -13487,12 +13759,17 @@
       {
         "key": "Pay Group Org Name",
         "label": "Pay Group Org Name",
-        "type": "string",
+        "type": "reference",
         "constraints": [
           {
             "type": "required"
           }
         ],
+        "config": {
+          "ref": "Pay Groups",
+          "key": "Pay Group Name",
+          "relationship": "has-one"
+        },
         "metadata": {
           "validations": [
             "Missing",
