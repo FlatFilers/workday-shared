@@ -1,9 +1,9 @@
-import { RecordHook } from '@flatfile/plugin-record-hook'
+import { RecordHook } from './utilsRecordHookNoCache/RecordHook'
 import api from '@flatfile/api'
 import { blueprint } from './blueprint/blueprint'
 import { xlsxExtractorPlugin } from '@flatfile/plugin-xlsx-extractor'
 import { DedupeRecords } from './actions/dedupe.records'
-import { validateRecord } from './validationsDictionary/recordValidators'
+import { validateRecord } from './validationsDictionary/recordValidations/recordValidators'
 import { validateReportingStructure } from './actions/validateReportingStructure'
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
 require('dotenv').config()
@@ -22,6 +22,8 @@ const ExcelJS = require('exceljs')
 const path = require('path')
 const fs = require('fs')
 import { DelimiterExtractor } from '@flatfile/plugin-delimiter-extractor'
+import { validateBatch } from './validationsDictionary/datasetValidations/batchValidators'
+import axios from 'axios'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -471,7 +473,7 @@ export default function (listener) {
   listener.on('commit:created', async (event) => {
     try {
       console.log('commit:created event triggered')
-      console.log('Logging Entire Event for Colin: ', event.context)
+      console.log('Logging Event Context for Colin: ', event.context)
 
       // Retrieve the sheetId and workbookId from the event context
       const sheetId = event.context.sheetId
@@ -517,7 +519,95 @@ export default function (listener) {
         console.log("Exiting RecordHook's handler function")
         return record
       })
-      console.log('Finished calling RecordHook')
+
+      console.log('Fetching all records from the sheet...')
+
+      // Fetch all records from the sheet
+      const allRecords = await api.records.get(sheetId) // Use the appropriate method to fetch all records
+
+      // Log the sheet name
+      console.log(
+        `Checking records for sheet: ${sheet.data.name || 'Unknown Sheet'}`
+      )
+
+      // Check if all records have the processed metadata set to true
+      const recordsArray = allRecords.data.records || []
+      console.log('All records:', recordsArray) // <-- Added log for the complete records list
+
+      const processedRecords = recordsArray.filter(
+        (record) => record.metadata && record.metadata.processed
+      )
+      console.log('Processed records:', processedRecords) // <-- Added log for the processed records list
+
+      const allProcessed = processedRecords.length === recordsArray.length
+
+      // Log the count of processed records
+      console.log(
+        `${processedRecords.length} out of ${recordsArray.length} records have been processed.`
+      )
+
+      if (allProcessed) {
+        console.log(
+          'All records have been processed. Starting the next set of validations.'
+        )
+
+        // Use the already fetched records for validation
+        const recordsForValidation = allRecords.data.records
+
+        // Log the records for validation
+        //console.log('Records for validation:', recordsForValidation)
+
+        if (recordsForValidation && recordsForValidation.length > 0) {
+          const primaryKeyField = Object.keys(
+            recordsForValidation[0]?.values || {}
+          )[0]
+
+          // Log the determined primary key
+          console.log('Determined primary key field:', primaryKeyField)
+
+          console.log('Calling RecordHook for Batch Validations')
+
+          // Call the RecordHook function with event and a handler
+          await RecordHook(event, async (record, event) => {
+            console.log(
+              "Inside RecordHook's handler function for Batch Validations"
+            )
+            try {
+              await validateBatch(
+                record,
+                fields,
+                primaryKeyField,
+                recordsForValidation
+              )
+            } catch (error) {
+              console.error('Error in validateBatch:', error)
+            }
+            console.log(
+              "Exiting RecordHook's handler function for Batch Validations"
+            )
+            return record
+          })
+
+          try {
+            // trigger validations at the end of the commit:created event
+            if (
+              event.context.actorId &&
+              event.context.actorId.includes('_usr_' || '_jb_')
+            ) {
+              const validateSheet = await api.sheets.validate(sheetId)
+              console.log('Sheet validation triggered:', validateSheet)
+            }
+          } catch (error) {
+            console.error('Error triggering sheet validation:', error)
+          }
+        } else {
+          console.error('No records available for validation.')
+        }
+      } else {
+        console.log(
+          'Not all records have been processed. Skipping the next set of validations.'
+        )
+      }
     } catch (error) {
       console.error('Error in commit:created event handler:', error)
     }
