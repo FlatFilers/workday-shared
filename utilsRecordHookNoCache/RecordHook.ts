@@ -6,11 +6,19 @@ import { asyncBatch } from '@flatfile/util-common'
 
 export const RecordHook = async (
   event: FlatfileEvent,
-  handler: (record: FlatfileRecord, event?: FlatfileEvent) => any | Promise<any>
+  handler: (
+    record: FlatfileRecord,
+    event?: FlatfileEvent
+  ) => any | Promise<any>,
+  options: { stripMessages?: boolean } = { stripMessages: true }
 ) => {
-  return BulkRecordHook(event, async (records, event) => {
-    return records.map((record) => handler(record, event))
-  })
+  return BulkRecordHook(
+    event,
+    async (records, event) => {
+      return records.map((record) => handler(record, event))
+    },
+    options
+  )
 }
 
 export const BulkRecordHook = async (
@@ -19,13 +27,19 @@ export const BulkRecordHook = async (
     records: FlatfileRecord[],
     event?: FlatfileEvent
   ) => any | Promise<any>,
-  options: { chunkSize?: number; parallel?: number } = {}
+  options: {
+    chunkSize?: number
+    parallel?: number
+    stripMessages?: boolean
+  } = { stripMessages: true }
 ) => {
   try {
     const records = (await event.data).records
     if (!records) return
 
-    const batch = await prepareXRecords(records)
+    console.log('Strip messages: ', options.stripMessages)
+
+    const batch = await prepareXRecords(records, options.stripMessages)
 
     // run client defined data hooks
     await asyncBatch(batch.records, handler, options, event)
@@ -51,13 +65,18 @@ export const BulkRecordHook = async (
   return handler
 }
 
-const prepareXRecords = async (records: any): Promise<FlatfileRecords<any>> => {
+const prepareXRecords = async (
+  records: any,
+  stripMessages: boolean
+): Promise<FlatfileRecords<any>> => {
   const clearedMessages: Record_[] = records.map(
     (record: { values: { [x: string]: { messages: never[] } } }) => {
       // clear existing cell validation messages
-      Object.keys(record.values).forEach((k) => {
-        record.values[k].messages = []
-      })
+      if (stripMessages) {
+        Object.keys(record.values).forEach((k) => {
+          record.values[k].messages = []
+        })
+      }
       return record
     }
   )
