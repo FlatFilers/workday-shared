@@ -108,5 +108,5 @@ export const validateReportingStructure = (records) => {
 
   console.log('Reporting Errors: ' + JSON.stringify(reportingErrors))
 
-  return records
+  return reportingErrors
 }
