@@ -1,4 +1,4 @@
-export const validateReportingStructure = (records) => {
+export const validateReportingStructure = (records, returnErrors = false) => {
   const reportingErrors = [] // Array to store records with reporting errors
   const employees = {} // Object to store employee records by Applicant_ID
   const visited = new Set() // Set to keep track of visited Applicant_IDs
@@ -108,5 +108,8 @@ export const validateReportingStructure = (records) => {
 
   console.log('Reporting Errors: ' + JSON.stringify(reportingErrors))
 
-  return reportingErrors
+  if (returnErrors) {
+    return reportingErrors
+  }
+  return records
 }

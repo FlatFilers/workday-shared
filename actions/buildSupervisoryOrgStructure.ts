@@ -21,7 +21,12 @@ export class SupervisoryOrgStructureBuilder {
     try {
       // Retrieve the necessary data and perform the steps
       const allRecords = await this.getAllRecords()
-      const reportingErrors = validateReportingStructure(allRecords)
+
+      console.log('Number of records retrieved:', allRecords.length)
+
+      const reportingErrors = validateReportingStructure(allRecords, true)
+
+      console.log('Number of reporting errors:', reportingErrors.length)
 
       if (reportingErrors.length > 0) {
         console.error('Reporting structure is invalid:', reportingErrors)
@@ -40,7 +45,8 @@ export class SupervisoryOrgStructureBuilder {
       const recordMap = this.createRecordMap(allRecords)
       const newSheetData = this.orderedManagerIds.map((employeeId) => {
         const record = recordMap.get(employeeId)
-        console.log('Processing record:', record)
+
+        console.log('orderedManagerIds:', this.orderedManagerIds)
 
         return {
           managerId: record.values.Organization_Reference_ID.value,
@@ -186,15 +192,34 @@ export class SupervisoryOrgStructureBuilder {
         manager_name: { value: record.manager_name },
         manager_id: { value: record.managerId }, // Wrap managerId in an object
         manager_position: { value: `P-${record.managerId}` },
-        superior_code: { value: this.managerMap.get(record.managerId) }, // Wrap superior_code in an object
+        superior_code: {
+          value: `Sup_Org_${this.managerMap.get(String(record.managerId))}`,
+        },
         location: { value: record.location },
         // Include other relevant fields as needed
       }))
 
+      console.log('recordsToInsert length:', recordsToInsert.length)
+      console.log('recordsToInsert:', recordsToInsert)
+
       // Sort the records based on the hierarchy structure
       const sortedRecords = this.orderedManagerIds.map((employeeId) =>
-        recordsToInsert.find((record) => record.manager_id.value === employeeId)
+        recordsToInsert.find(
+          (record) => String(record.manager_id.value) === String(employeeId)
+        )
       )
+
+      console.log('sortedRecords length:', sortedRecords.length)
+      console.log('sortedRecords:', sortedRecords)
+
+      this.orderedManagerIds.forEach((employeeId) => {
+        const matchingRecord = recordsToInsert.find(
+          (record) => record.manager_id.value === employeeId
+        )
+        if (!matchingRecord) {
+          console.log('No matching record found for employeeId:', employeeId)
+        }
+      })
 
       // Filter out undefined values
       const finalRecords = sortedRecords.filter(
@@ -214,6 +239,9 @@ export class SupervisoryOrgStructureBuilder {
           }
         }
       })
+
+      console.log('finalRecords length:', finalRecords.length)
+      console.log('finalRecords:', finalRecords)
 
       await api.records.insert(sheet.id, finalRecords) // Insert the data into the existing sheet
     } catch (error) {
