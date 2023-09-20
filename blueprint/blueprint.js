@@ -528,45 +528,8 @@ export const blueprint = [
           'Builds the Employee to Manager reporting structure in Supervisory Orgs sheet',
         primary: false,
       },
-      {
-        //refresh locations from Workday
-        operation: 'refreshLocationsData',
-        mode: 'background',
-        label: 'Refresh Location Data from Workday',
-        description: 'Refreshs Locations sheet with values from Workday tenant',
-        primary: false,
-      },
     ],
   },
-  // {
-  //     name: 'Personal Data',
-  //     slug: 'personal',
-  //     fields: [
-  //         {
-  //             // I assume this is the same key as for Workers
-  //             key: 'Applicant_ID',
-  //             label: 'Worker ID',
-  //             type: 'reference',
-  //             description: 'This information will be copied over from the WORKER_DATA tab initially. If workers are added later the WORKER_DATA tab, they can be added manually on this tab. Any worker listed here must also be on the WORKER_DATA tab.',
-  //             constraints: [{ type: 'required' }],
-  //             config: {
-  //                 ref: 'workers',
-  //                 key: 'Applicant_ID',
-  //                 relationship: 'has-one',
-  //             },
-  //         },
-  //     ],
-  //     actions: [
-  //         {
-  //             //dedupe on worker ID
-  //             operation: 'dedupePersonal',
-  //             mode: 'foreground',
-  //             label: 'Merge Worker records',
-  //             description: 'This will merge duplicate worker IDs together, retaining the most recent value',
-  //             primary: false
-  //         },
-  //     ]
-  // },
   {
     name: 'Supervisory Orgs',
     slug: 'orgs',
@@ -649,13 +612,13 @@ export const blueprint = [
     fields: [
       {
         key: 'id',
-        label: 'Location ID',
+        label: 'Cost Center ID',
         type: 'string',
         constraints: [{ type: 'unique' }],
       },
       {
         key: 'name',
-        label: 'Location Name',
+        label: 'Cost Center Name',
         type: 'string',
         constraints: [{ type: 'unique' }],
       },
@@ -694,26 +657,34 @@ export const blueprint = [
       },
     ],
   },
-  // Leaving out security assignments for now
-  // {
-  //     name: 'Security Assignments',
-  //     slug: 'security',
-  //     readonly: false,
-  //     fields: [
-  //         {
-  //             key: '',
-  //             label: '',
-  //             description: '',
-  //             type: '',
-  //         }
-  //     ],
-  //     actions: [
-  //         {
-  //             slug: '',
-  //             label: '',
-  //             description: '',
-  //             primary: false
-  //         }
-  //     ]
-  // }
 ]
+
+// Step 1: Create a reusable function
+function addActionsToSheet(sheet) {
+  if (!sheet.actions) {
+    sheet.actions = []
+  }
+
+  // Define the actions you want to add based on the sheet's name
+  const actionToAdd = {
+    operation: `refresh${sheet.name.replace(/\s+/g, '')}Data`, // e.g., "refreshCompaniesData"
+    mode: 'background',
+    label: `Refresh ${sheet.name} Data from Workday`, // e.g., "Refresh Companies Data from Workday"
+    description: `Refreshes ${sheet.name} sheet with values from Workday tenant`,
+    primary: true,
+  }
+
+  // Merge the existing actions with the new one, avoiding duplicates.
+  if (!sheet.actions.some((a) => a.operation === actionToAdd.operation)) {
+    sheet.actions.push(actionToAdd)
+  }
+}
+
+// Iterate through the blueprint
+for (const sheet of blueprint) {
+  // Check the access property
+  if (Array.isArray(sheet.access) && sheet.access.length === 0) {
+    // Use the function to add the actions
+    addActionsToSheet(sheet)
+  }
+}

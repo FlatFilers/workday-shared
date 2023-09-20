@@ -7,7 +7,7 @@ import { validateRecord } from './validationsDictionary/recordValidators'
 import { validateReportingStructure } from './actions/validateReportingStructure'
 import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStructure'
 require('dotenv').config()
-import { clearAndPopulateLocations } from './actions/clearAndPopulateLocations'
+import { clearAndPopulateSheet } from './actions/clearAndPopulateSheet'
 import { createPage } from './workflow/welcome-page'
 import { retrieveBlueprint } from './workflow/retrieve-blueprint'
 import { isNil, isNotNil } from './validations/common/helpers'
@@ -611,26 +611,24 @@ export default function (listener) {
     })
   })
 
-  // REFRESH LOCATIONS SHEET WITH DATA
-  listener.filter({ job: 'sheet:refreshLocationsData' }, (configure) => {
+  listener.filter({ job: 'sheet:refresh*Data' }, (configure) => {
     configure.on('job:ready', async (event) => {
-      const { jobId, sheetId, workbookId } = event.context
+      const { jobId } = event.context
 
       try {
         await api.jobs.ack(jobId, {
-          info: 'Refreshing Locations Data...',
+          info: `Refreshing Data...`,
           progress: 10, // optional
         })
 
-        // Call the clearAndPopulateLocations function
-        await clearAndPopulateLocations(event)
+        // Call the clearAndPopulateSheet function
+        await clearAndPopulateSheet(event)
 
         await api.jobs.complete(jobId, {
           info: 'This job is now complete.',
         })
       } catch (error) {
         console.error('Error:', error)
-
         await api.jobs.fail(jobId, {
           info: 'This job did not work.',
         })
