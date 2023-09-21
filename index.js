@@ -116,10 +116,53 @@ export default function (listener) {
       }
 
       // Acknowledging that the Space is now set up
-      await api.jobs.complete(jobId, {
-        info: 'This space is completed.',
-      })
+      try {
+        const secrets = await fetchWorkdaySecrets(
+          event.context.spaceId,
+          event.context.environmentId
+        )
+        console.log(
+          'Fetched Workday secrets successfully in Space Acknowledgement:',
+          secrets
+        )
+
+        const allSecretsPresent =
+          secrets.username &&
+          secrets.password &&
+          secrets.tenantUrl &&
+          secrets.dataCenter
+
+        if (allSecretsPresent) {
+          // All secrets are present, space was created and seeded
+          console.log('Space Config Completed: Space was created and seeded.')
+          await api.jobs.complete(jobId, {
+            outcome: {
+              message: 'Space is completed and seeded with all secrets.',
+            },
+          })
+        } else {
+          // Secrets are missing, inform the user to update them manually
+          console.log(
+            'Space Config Completed: Secrets are missing. Please update them manually in the space and refresh all necessary sheets to get the reference data from Workday.'
+          )
+          await api.jobs.complete(jobId, {
+            outcome: {
+              message:
+                'Space is completed, but some secrets are missing. Please update them manually.',
+            },
+          })
+        }
+      } catch (error) {
+        console.error('Error fetching Workday secrets:', error)
+        await api.jobs.complete(jobId, {
+          outcome: {
+            message:
+              'Space is completed, but there was an error fetching Workday secrets.',
+          },
+        })
+      }
     })
+
     // Handle the 'job:failed' event
     configure.on('job:failed', async (event) => {
       console.log('Space Config Failed: ' + JSON.stringify(event))
@@ -159,6 +202,24 @@ export default function (listener) {
     if (!event.context || !event.context.workbookId) {
       console.error('Event context or workbookId missing')
       return
+    }
+
+    // Verify if all necessary secrets are present before proceeding
+    const secrets = await fetchWorkdaySecrets(
+      event.context.spaceId,
+      event.context.environmentId
+    )
+    const allSecretsPresent =
+      secrets &&
+      secrets.username &&
+      secrets.password &&
+      secrets.tenantUrl &&
+      secrets.dataCenter
+    if (!allSecretsPresent) {
+      console.error(
+        'Necessary secrets are missing. Aborting workbook data seeding.'
+      )
+      return // Exit early if secrets are not present
     }
 
     const workbookId = event.context.workbookId

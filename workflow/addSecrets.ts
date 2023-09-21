@@ -1,11 +1,17 @@
 import api from '@flatfile/api'
+import { mockFetchSecretsFromGUI } from './mockFetchSecrets'
 
-export function addSecrets(spaceId, environmentId) {
+export async function addSecrets(spaceId, environmentId) {
+  const mockedSecrets = await mockFetchSecretsFromGUI()
+
   const secrets = [
-    { name: 'Workday Username', value: 'cfrederickson-impl' },
-    { name: 'Workday Password ', value: 'rgx4uvr4bdk4KDA!yqy' },
-    { name: 'Workday Data Center', value: 'wd2-impl-services1' },
-    { name: 'Workday Tenant', value: 'flatfile_dpt1' },
+    { name: 'Workday Username', value: mockedSecrets['Workday Username'] },
+    { name: 'Workday Password', value: mockedSecrets['Workday Password'] },
+    {
+      name: 'Workday Data Center',
+      value: mockedSecrets['Workday Data Center'],
+    },
+    { name: 'Workday Tenant', value: mockedSecrets['Workday Tenant'] },
   ]
 
   const promises = secrets.map(async (secret) => {
