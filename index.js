@@ -9,8 +9,6 @@ import { SupervisoryOrgStructureBuilder } from './actions/buildSupervisoryOrgStr
 require('dotenv').config()
 import { clearAndPopulateSheet } from './actions/clearAndPopulateSheet'
 import { createPage } from './workflow/welcome-page'
-import { retrieveBlueprint } from './workflow/retrieve-blueprint'
-import { isNil, isNotNil } from './validations/common/helpers'
 import { createAndInviteGuests } from './guests/createAndInviteGuests'
 import csvZip from './actions/csvZip'
 import { locationsMetadata } from './soapRequest/soapMetadata'
@@ -102,7 +100,7 @@ export default function (listener) {
 
       const workbookId = createWorkbook.data?.id
 
-      // ADD WORKBOOK TO SPACE, SET THEME, AND SAVE CREDS
+      // ADD WORKBOOK TO SPACE, SET THEME, AND SAVE METADATA
       if (workbookId) {
         // Need to refresh until update to Spaces to poll for changes
         const updatedSpace = await api.spaces.update(spaceId, {
@@ -128,7 +126,31 @@ export default function (listener) {
     })
 
     configure.on('job:completed', async (event) => {
-      // can enter stuff here if job compeleted
+      try {
+        const secrets = await fetchWorkdaySecrets(
+          event.context.spaceId,
+          event.context.environmentId
+        )
+        console.log('Fetched Workday secrets successfully:', secrets)
+
+        const allSecretsPresent =
+          secrets.username &&
+          secrets.password &&
+          secrets.tenantUrl &&
+          secrets.dataCenter
+
+        if (allSecretsPresent) {
+          // All secrets are present, space was created and seeded
+          console.log('Space Config Completed: Space was created and seeded.')
+        } else {
+          // Secrets are missing, inform the user to update them manually
+          console.log(
+            'Space Config Completed: Secrets are missing. Please update them manually in the space and refresh all necessary sheets to get the reference data from Workday.'
+          )
+        }
+      } catch (error) {
+        console.error('Error fetching Workday secrets:', error)
+      }
     })
   })
 
