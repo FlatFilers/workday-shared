@@ -1,11 +1,11 @@
 // Metadata for fetching location data
 export const locationsMetadata = {
   serviceName: 'Get_Locations', // Name of the SOAP service to call
+  service: 'Human_Resources', // Service to call
   // SOAP endpoint to send requests to
-  soapEndpoint:
-    'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Human_Resources/v41.0',
+  soapEndpoint: '', // Leave this empty for now
   soapNamespace: 'urn:com.workday/bsvc', // SOAP namespace used in the service
-  version: 'v40.1', // Version of the SOAP service
+  version: 'v41.0', // Version of the SOAP service
   responseFilter: {
     pageTag: 'Page', // Tag that contains the page number in the response
     countTag: 'Count', // Tag that contains the count of records in the response
@@ -22,8 +22,8 @@ export const locationsMetadata = {
 export const costCentersMetadata = {
   serviceName: 'Get_Cost_Centers', // Name of the SOAP service to call
   // SOAP endpoint to send requests to
-  soapEndpoint:
-    'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Financial_Management/v41.0',
+  service: 'Financial_Management', // Service to call
+  soapEndpoint: '', // Leave this empty for now
   soapNamespace: 'urn:com.workday/bsvc', // SOAP namespace used in the service
   version: 'v41.0', // Version of the SOAP service
   responseFilter: {
@@ -61,8 +61,8 @@ export const costCentersMetadata = {
 export const companiesMetadata = {
   serviceName: 'Get_Company_Organizations', // Name of the SOAP service to call
   // SOAP endpoint to send requests to
-  soapEndpoint:
-    'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Financial_Management/v41.0',
+  service: 'Financial_Management', // Service to call
+  soapEndpoint: '', // Leave this empty for now
   soapNamespace: 'urn:com.workday/bsvc', // SOAP namespace used in the service
   version: 'v41.0', // Version of the SOAP service
   requestReferences: {
@@ -90,8 +90,8 @@ export const companiesMetadata = {
 export const jobsMetadata = {
   serviceName: 'Get_Job_Profiles', // Name of the SOAP service to call
   // SOAP endpoint to send requests to
-  soapEndpoint:
-    'https://wd2-impl-services1.workday.com/ccx/service/flatfile_dpt1/Human_Resources/v41.0',
+  service: 'Human_Resources', // Service to call
+  soapEndpoint: '', // Leave this empty for now
   soapNamespace: 'urn:com.workday/bsvc', // SOAP namespace used in the service
   version: 'v41.0', // Version of the SOAP service
   requestReferences: {

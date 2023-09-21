@@ -22,6 +22,9 @@ const ExcelJS = require('exceljs')
 const path = require('path')
 const fs = require('fs')
 import { DelimiterExtractor } from '@flatfile/plugin-delimiter-extractor'
+import theme from './workflow/theme'
+import { addSecrets } from './workflow/addSecrets'
+import { fetchWorkdaySecrets } from './workflow/fetchWorkdaySecrets'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -49,32 +52,20 @@ export default function (listener) {
       // ADD CUSTOM MARKDOWN PAGE TO SPACE
       const page = await createPage(spaceId)
 
-      // GET & SAVE CREDS FOR WORKDAY TENANT
-      // assumes username and password have been set on the space metadata
-      let username, password, tenantUrl
-      if (
-        isNil(space.data.metadata?.creds?.username) ||
-        isNil(space.data.metadata?.creds?.password) ||
-        isNil(space.data.metadata?.creds?.tenantUrl)
-      ) {
-        username = process.env.USERNAME.split('@')[0]
-        password = process.env.PASSWORD
-        tenantUrl = process.env.USERNAME.split('@')[1]
-      } else {
-        username = space.data.metadata?.creds?.username || {}
-        password = space.data.metadata?.creds?.password || {}
-        tenantUrl = space.data.metadata?.creds?.tenantUrl || {}
+      // ADD SECRETS TO SPACE
+      try {
+        await addSecrets(spaceId, environmentId)
+        console.log('Secrets added successfully to the space.')
+      } catch (error) {
+        console.error('Error adding secrets to the space:', error)
       }
 
-      // PLACEHOLDER FOR ANDY TO AUTOGEN THE BLUEPRINT
-      const dynamicBlueprint = retrieveBlueprint(
-        username,
-        password,
-        environmentId
-      )
-      // Safety check for the dynamic blueprint, else fall back to static blueprint
-      if (isNotNil(dynamicBlueprint)) {
-        blueprint = dynamicBlueprint
+      try {
+        const secrets = await fetchWorkdaySecrets(spaceId, environmentId)
+        console.log('Fetched Workday secrets successfully:', secrets)
+        // You can now use the fetched secrets for further operations
+      } catch (error) {
+        console.error('Error fetching Workday secrets:', error)
       }
 
       // CREATE WORKBOOK FROM BLUEPRINT
@@ -118,82 +109,7 @@ export default function (listener) {
           environmentId: environmentId,
           primaryWorkbookId: workbookId,
           metadata: {
-            creds: {
-              username: username,
-              password: password,
-              tenantUrl: tenantUrl,
-            },
-            theme: {
-              root: {
-                primaryColor: '#005CB9',
-                dangerColor: '#F44336',
-                warningColor: '#FF9800',
-              },
-              sidebar: {
-                logo: 'https://www.workday.com/content/dam/web/en-us/images/icons/general/workday-logo.svg',
-                textColor: '#fff',
-                titleColor: '#fff',
-                focusBgColor: '#E5832D',
-                focusTextColor: '#fff',
-                backgroundColor: '#005CB9',
-                footerTextColor: '#fff',
-                textUltralightColor: '#F6C84F',
-              },
-              table: {
-                inputs: {
-                  radio: {
-                    color: '#005CB9',
-                  },
-                  checkbox: {
-                    color: '#005CB9',
-                  },
-                },
-                filters: {
-                  color: '#000',
-                  active: {
-                    color: '#fff',
-                    backgroundColor: '#005CB9',
-                  },
-                  error: {
-                    activeBackgroundColor: '#F44336',
-                  },
-                },
-                column: {
-                  header: {
-                    fontSize: '14px',
-                    backgroundColor: '#F0F1F2',
-                    color: '#000',
-                    dragHandle: {
-                      idle: '#005CB9',
-                      dragging: '#005CB9',
-                    },
-                  },
-                },
-                fontFamily: "'Proxima Nova', 'Helvetica', sans-serif",
-                indexColumn: {
-                  backgroundColor: '#F0F1F2',
-                  selected: {
-                    color: '#000',
-                    backgroundColor: '#F0F1F2',
-                  },
-                },
-                cell: {
-                  selected: {
-                    backgroundColor: '#F9DB75',
-                  },
-                  active: {
-                    borderColor: '#E5832D',
-                    spinnerColor: '#E5832D',
-                  },
-                },
-                boolean: {
-                  toggleChecked: '#005CB9',
-                },
-                loading: {
-                  color: '#005CB9',
-                },
-              },
-            },
+            theme: theme,
           },
         })
 
