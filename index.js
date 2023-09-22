@@ -33,135 +33,141 @@ export default function (listener) {
     )
   })
 
-// Separate distinct actions into smaller functions
-async function addSecretsToSpace(spaceId, environmentId) {
-  await addSecrets(spaceId, environmentId);
-  console.log('Secrets added successfully to the space.');
-}
-
-async function fetchAndLogWorkdaySecrets(spaceId, environmentId) {
-  const secrets = await fetchWorkdaySecrets(spaceId, environmentId);
-  console.log('Fetched Workday secrets successfully:', secrets);
-  return secrets;
-}
-
-async function createWorkbookFromBlueprint(spaceId, environmentId) {
-  return await api.workbooks.create({
-    spaceId,
-    environmentId,
-    labels: ['primary'],
-    name: 'Worker + Org Import',
-    sheets: blueprint,
-    actions: [
-      {
-        operation: 'downloadCSV',
-        mode: 'foreground',
-        label: 'Download ZIP File of Workbook Data',
-        description: 'Downloads ZIP File of Workbook Data',
-        primary: true,
-      },
-      {
-        operation: 'downloadExcelWorkbook',
-        mode: 'foreground',
-        label: 'Download Excel Workbook',
-        description: 'Downloads Excel Workbook of Data',
-        primary: false,
-      },
-      {
-        operation: 'downloadExcelTemplate',
-        mode: 'foreground',
-        label: 'Download Excel Template',
-        description: 'Downloads Excel Templates of Workbook',
-        primary: false,
-      },
-    ],
-  });
-}
-
-async function handleSpaceConfiguration(event) {
-  const { spaceId, environmentId, jobId } = event.context;
-
-  await api.jobs.ack(jobId, {
-    info: 'Creating Space',
-    progress: 10,
-  });
-
-  await createPage(spaceId);
-
-  try {
-    await addSecretsToSpace(spaceId, environmentId);
-  } catch (error) {
-    console.error('Error adding secrets to the space:', error);
+  // Separate distinct actions into smaller functions
+  async function addSecretsToSpace(spaceId, environmentId) {
+    await addSecrets(spaceId, environmentId)
+    console.log('Secrets added successfully to the space.')
   }
 
-  let secrets;
-  try {
-    secrets = await fetchAndLogWorkdaySecrets(spaceId, environmentId);
-  } catch (error) {
-    console.error('Error fetching Workday secrets:', error);
+  async function fetchAndLogWorkdaySecrets(spaceId, environmentId) {
+    const secrets = await fetchWorkdaySecrets(spaceId, environmentId)
+    console.log('Fetched Workday secrets successfully:', secrets)
+    return secrets
   }
 
-  const createWorkbook = await createWorkbookFromBlueprint(spaceId, environmentId);
-  const workbookId = createWorkbook.data?.id;
-
-  if (workbookId) {
-    const updatedSpace = await api.spaces.update(spaceId, {
+  async function createWorkbookFromBlueprint(spaceId, environmentId) {
+    return await api.workbooks.create({
+      spaceId,
       environmentId,
-      primaryWorkbookId: workbookId,
-      metadata: {
-        theme: theme,
-      },
-    });
-
-    await createAndInviteGuests(updatedSpace, event);
+      labels: ['primary'],
+      name: 'Worker + Org Import',
+      sheets: blueprint,
+      actions: [
+        {
+          operation: 'downloadCSV',
+          mode: 'foreground',
+          label: 'Download ZIP File of Workbook Data',
+          description: 'Downloads ZIP File of Workbook Data',
+          primary: true,
+        },
+        {
+          operation: 'downloadExcelWorkbook',
+          mode: 'foreground',
+          label: 'Download Excel Workbook',
+          description: 'Downloads Excel Workbook of Data',
+          primary: false,
+        },
+        {
+          operation: 'downloadExcelTemplate',
+          mode: 'foreground',
+          label: 'Download Excel Template',
+          description: 'Downloads Excel Templates of Workbook',
+          primary: false,
+        },
+      ],
+    })
   }
 
-  if (secrets) {
-    const allSecretsPresent =
-      secrets.username &&
-      secrets.password &&
-      secrets.tenantUrl &&
-      secrets.dataCenter;
+  async function handleSpaceConfiguration(event) {
+    const { spaceId, environmentId, jobId } = event.context
 
-    if (allSecretsPresent) {
-      console.log('Space Config Completed: Space was created and seeded.');
-      await api.jobs.complete(jobId, {
-        outcome: {
-          message: `Space Configuration Completed: All secrets were provided, the space has been seeded with reference data from Workday Tenant: ${secrets.tenantUrl}.`,
+    await api.jobs.ack(jobId, {
+      info: 'Creating Space',
+      progress: 10,
+    })
+
+    await createPage(spaceId)
+
+    try {
+      await addSecretsToSpace(spaceId, environmentId)
+    } catch (error) {
+      console.error('Error adding secrets to the space:', error)
+    }
+
+    let secrets
+    try {
+      secrets = await fetchAndLogWorkdaySecrets(spaceId, environmentId)
+    } catch (error) {
+      console.error('Error fetching Workday secrets:', error)
+    }
+
+    const createWorkbook = await createWorkbookFromBlueprint(
+      spaceId,
+      environmentId
+    )
+    const workbookId = createWorkbook.data?.id
+
+    if (workbookId) {
+      const updatedSpace = await api.spaces.update(spaceId, {
+        environmentId,
+        primaryWorkbookId: workbookId,
+        metadata: {
+          theme: theme,
         },
-      });
+      })
+
+      await createAndInviteGuests(updatedSpace, event)
+    }
+
+    if (secrets) {
+      const allSecretsPresent =
+        secrets.username &&
+        secrets.password &&
+        secrets.tenantUrl &&
+        secrets.dataCenter
+
+      if (allSecretsPresent) {
+        console.log(
+          `Space Configuration Completed: All secrets were provided, the space has been seeded with reference data from Workday Tenant: ${secrets.tenantUrl}.`
+        )
+        await api.jobs.complete(jobId, {
+          outcome: {
+            acknowledge: true,
+            message: `Space Configuration Completed: All secrets were provided, the space has been seeded with reference data from Workday Tenant: ${secrets.tenantUrl}.`,
+          },
+        })
+      } else {
+        console.log(
+          'Space Config Completed: Secrets are missing. Please update them manually in the space and refresh all necessary sheets to get the reference data from Workday.'
+        )
+        await api.jobs.complete(jobId, {
+          outcome: {
+            acknowledge: true,
+            message:
+              'Space Configuration Completed: Secrets are missing. Please ensure that all secrets have been added to the space. Once all secrets have been added, please refresh all necessary sheets to get the reference data from Workday. Secrets necessary are: WORKDAY_USERNAME, WORKDAY_PASSWORD, WORKDAY_TENANT_URL, and WORKDAY_DATA_CENTER.',
+          },
+        })
+      }
     } else {
-      console.log(
-        'Space Config Completed: Secrets are missing. Please update them manually in the space and refresh all necessary sheets to get the reference data from Workday.'
-      );
       await api.jobs.complete(jobId, {
         outcome: {
           message:
-            'Space Configuration Completed: Secrets are missing. Please ensure that all secrets have been added to the space. Once all secrets have been added, please refresh all necessary sheets to get the reference data from Workday. Secrets necessary are: WORKDAY_USERNAME, WORKDAY_PASSWORD, WORKDAY_TENANT_URL, and WORKDAY_DATA_CENTER.',
+            'Space is completed, but there was an error fetching Workday secrets.',
         },
-      });
+      })
     }
-  } else {
-    await api.jobs.complete(jobId, {
-      outcome: {
-        message:
-          'Space is completed, but there was an error fetching Workday secrets.',
-      },
-    });
   }
-}
 
-// SET UP THE SPACE
-listener.filter({ job: 'space:configure' }, (configure) => {
-  configure.on('job:ready', handleSpaceConfiguration);
-  configure.on('job:failed', async (event) => {
-    console.log('Space Config Failed:', event);
-  });
-  configure.on('job:completed', async (event) => {
-    console.log('Space Config Completed:', event);
-  });
-});
-
+  // SET UP THE SPACE
+  listener.filter({ job: 'space:configure' }, (configure) => {
+    configure.on('job:ready', handleSpaceConfiguration)
+    configure.on('job:failed', async (event) => {
+      console.log('Space Config Failed:', event)
+    })
+    configure.on('job:completed', async (event) => {
+      console.log('Space Config Completed:', event)
+    })
+  })
 
   // SEED THE WORKBOOK WITH DATA workbook:created
   listener.on('workbook:created', async (event) => {
