@@ -137,7 +137,7 @@ export default function (listener) {
           console.log('Space Config Completed: Space was created and seeded.')
           await api.jobs.complete(jobId, {
             outcome: {
-              message: 'Space is completed and seeded with all secrets.',
+              message: `Space Configuration Completed: All secrets were provided, the space has been seeded with reference data from Workday Tenant: ${secrets.tenantUrl}.`,
             },
           })
         } else {
@@ -148,7 +148,7 @@ export default function (listener) {
           await api.jobs.complete(jobId, {
             outcome: {
               message:
-                'Space is completed, but some secrets are missing. Please update them manually.',
+                'Space Configuration Completed: Secrets are missing. Please ensure that all secrets have been added to the space. Once all secrets have been added, please refresh all necessary sheets to get the reference data from Workday. Secrets necessary are: WORKDAY_USERNAME, WORKDAY_PASSWORD, WORKDAY_TENANT_URL, and WORKDAY_DATA_CENTER.',
             },
           })
         }
@@ -169,31 +169,7 @@ export default function (listener) {
     })
 
     configure.on('job:completed', async (event) => {
-      try {
-        const secrets = await fetchWorkdaySecrets(
-          event.context.spaceId,
-          event.context.environmentId
-        )
-        console.log('Fetched Workday secrets successfully:', secrets)
-
-        const allSecretsPresent =
-          secrets.username &&
-          secrets.password &&
-          secrets.tenantUrl &&
-          secrets.dataCenter
-
-        if (allSecretsPresent) {
-          // All secrets are present, space was created and seeded
-          console.log('Space Config Completed: Space was created and seeded.')
-        } else {
-          // Secrets are missing, inform the user to update them manually
-          console.log(
-            'Space Config Completed: Secrets are missing. Please update them manually in the space and refresh all necessary sheets to get the reference data from Workday.'
-          )
-        }
-      } catch (error) {
-        console.error('Error fetching Workday secrets:', error)
-      }
+      console.log('Space Config Completed: ' + JSON.stringify(event))
     })
   })
 
