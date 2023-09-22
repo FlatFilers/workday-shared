@@ -143,6 +143,11 @@ export default function (listener) {
         await api.jobs.complete(jobId, {
           outcome: {
             acknowledge: true,
+            next: {
+              type: 'url',
+              url: `https://spaces.flatfile.com/space/${spaceId}/secrets`,
+              label: 'Go to Secrets',
+            },
             message:
               'Space Configuration Completed: Secrets are missing. Please ensure that all secrets have been added to the space. Once all secrets have been added, please refresh all necessary sheets to get the reference data from Workday. Secrets necessary are: WORKDAY_USERNAME, WORKDAY_PASSWORD, WORKDAY_TENANT_URL, and WORKDAY_DATA_CENTER.',
           },
