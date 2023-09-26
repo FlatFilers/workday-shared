@@ -174,18 +174,8 @@ export default function (listener) {
     })
   })
 
-  // SEED THE WORKBOOK WITH DATA workbook:created
-  listener.on('workbook:created', async (event) => {
-    if (!event.context || !event.context.workbookId) {
-      console.error('Event context or workbookId missing')
-      return
-    }
-
-    // Verify if all necessary secrets are present before proceeding
-    const secrets = await fetchWorkdaySecrets(
-      event.context.spaceId,
-      event.context.environmentId
-    )
+  async function fetchAndValidateSecrets(spaceId, environmentId) {
+    const secrets = await fetchWorkdaySecrets(spaceId, environmentId)
     const allSecretsPresent =
       secrets &&
       secrets.username &&
@@ -193,234 +183,141 @@ export default function (listener) {
       secrets.tenantUrl &&
       secrets.dataCenter
     if (!allSecretsPresent) {
-      console.error(
-        'Necessary secrets are missing. Aborting workbook data seeding.'
-      )
-      return // Exit early if secrets are not present
+      console.error('Necessary secrets are missing.')
+      return null
     }
+    return secrets
+  }
 
-    const workbookId = event.context.workbookId
-    let workbook
+  async function getWorkbook(workbookId) {
     try {
-      workbook = await api.workbooks.get(workbookId)
+      return await api.workbooks.get(workbookId)
     } catch (error) {
       console.error('Error getting workbook:', error.message)
+      return null
+    }
+  }
+
+  function mapCompanyData({ name, id }) {
+    return { name: { value: name }, id: { value: id } }
+  }
+
+  function mapCostCenterData({ name, id }) {
+    return { name: { value: name }, id: { value: id } }
+  }
+
+  function mapJobData({ jobCode, jobTitle, jobClassification, jobPayRate }) {
+    return {
+      code: { value: jobCode },
+      title: { value: jobTitle },
+      classification: { value: jobClassification },
+      pay_rate_type: { value: jobPayRate },
+    }
+  }
+
+  function mapLocationData({ name, id }) {
+    return { name: { value: name }, id: { value: id } }
+  }
+
+  async function processSheet(sheet, spaceId, mapFunc, metadata) {
+    console.log(`${sheet.config.slug} sheet found`)
+    try {
+      console.log(`Fetching ${sheet.config.slug} data...`)
+      const data = await authenticateAndFetchData(spaceId, metadata)
+      if (!data) {
+        console.error(`Error: Failed to fetch ${sheet.config.slug} data`)
+        return
+      }
+
+      console.log(
+        `Fetched ${data.length} ${sheet.config.slug} records successfully`
+      )
+      const request = data.map(mapFunc)
+      console.log(`Inserting ${sheet.config.slug} data...`)
+
+      const insertedRecords = await api.records.insert(sheet.id, request)
+
+      if (
+        !insertedRecords ||
+        !insertedRecords.data ||
+        !insertedRecords.data.success
+      ) {
+        console.error(
+          `Error: No records were inserted for ${sheet.config.slug}`
+        )
+        return
+      }
+
+      // Assume that if success is true, all records were inserted successfully.
+      console.log(
+        `Inserted ${data.length} ${sheet.config.slug} records successfully`
+      )
+    } catch (error) {
+      console.error(
+        `Error processing ${sheet.config.slug} sheet:`,
+        error.message
+      )
+    }
+  }
+
+  // SEED THE WORKBOOK WITH DATA workbook:created
+  listener.on('workbook:created', async (event) => {
+    if (!event.context || !event.context.workbookId) {
+      console.error('Event context or workbookId missing')
       return
     }
 
-    const workbookName =
-      workbook.data && workbook.data.name ? workbook.data.name : ''
-    const spaceId =
-      workbook.data && workbook.data.spaceId ? workbook.data.spaceId : ''
+    const secrets = await fetchAndValidateSecrets(
+      event.context.spaceId,
+      event.context.environmentId
+    )
+    if (!secrets) return
 
-    // console.log('Received workbook:created event')
-    // console.log('Workbook ID:', workbookId)
-    // console.log('Workbook Name:', workbookName)
+    const workbook = await getWorkbook(event.context.workbookId)
+    if (!workbook) return
 
-    if (workbookName.includes('Worker + Org Import')) {
-      // console.log('Workbook matches the expected name')
-
-      const sheets =
-        workbook.data && workbook.data.sheets ? workbook.data.sheets : []
-
-      // COMPANIES
-      const companiesSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('companies')
-      )
-
-      if (companiesSheet) {
-        console.log('Companies sheet found')
-        const companiesId = companiesSheet.id
-
-        try {
-          console.log('Fetching company data...')
-          const companyData = await authenticateAndFetchData(
-            spaceId,
-            companiesMetadata
-          ) // Fetch company data using the authenticateAndFetchData function
-
-          if (companyData) {
-            console.log(
-              `Fetched ${companyData.length} company records successfully`
-            )
-
-            const request = companyData.map(({ name, id }) => ({
-              name: { value: name },
-              id: { value: id },
-              // Include other fields if necessary
-            }))
-
-            try {
-              console.log('Inserting company data...')
-              const insertCompanies = await api.records.insert(
-                companiesId,
-                request
-              )
-              console.log(
-                `Inserted ${insertCompanies.length} company records successfully`
-              )
-            } catch (error) {
-              console.error('Error inserting company data:', error.message)
-            }
-          } else {
-            console.error('Error: Failed to fetch company data')
-          }
-        } catch (error) {
-          console.error('Error fetching company data:', error.message)
-        }
-      } else {
-        console.error('Error: Companies sheet not found')
-      }
-
-      // COST CENTERS
-      const costCentersSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('cost_centers')
-      )
-
-      if (costCentersSheet) {
-        console.log('Cost Centers sheet found')
-        const costCentersId = costCentersSheet.id
-
-        try {
-          console.log('Fetching cost center data...')
-          const costCenterData = await authenticateAndFetchData(
-            spaceId,
-            costCentersMetadata
-          ) // Fetch cost center data using the authenticateAndFetchData function
-
-          if (costCenterData) {
-            console.log(
-              `Fetched ${costCenterData.length} cost center records successfully`
-            )
-
-            const request = costCenterData.map(({ name, id }) => ({
-              name: { value: name },
-              id: { value: id },
-              // Include other fields if necessary
-            }))
-
-            try {
-              console.log('Inserting cost center data...')
-              const insertCostCenters = await api.records.insert(
-                costCentersId,
-                request
-              )
-              console.log(
-                `Inserted ${insertCostCenters.length} cost center records successfully`
-              )
-            } catch (error) {
-              console.error('Error inserting cost center data:', error.message)
-            }
-          } else {
-            console.error('Error: Failed to fetch cost center data')
-          }
-        } catch (error) {
-          console.error('Error fetching cost center data:', error.message)
-        }
-      } else {
-        console.error('Error: Cost Centers sheet not found')
-      }
-
-      // JOB PROFILES
-      const jobsSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('jobs')
-      )
-
-      if (jobsSheet) {
-        console.log('Jobs sheet found')
-        const jobsId = jobsSheet.id
-
-        try {
-          console.log('Fetching job profile data...')
-          const jobData = await authenticateAndFetchData(spaceId, jobsMetadata) // Fetch job profile data using the authenticateAndFetchData function
-
-          if (jobData) {
-            console.log(
-              `Fetched ${jobData.length} job profile records successfully`
-            )
-
-            const request = jobData.map(
-              ({ jobCode, jobTitle, jobClassification, jobPayRate }) => ({
-                code: { value: jobCode },
-                title: { value: jobTitle },
-                classification: { value: jobClassification },
-                pay_rate_type: { value: jobPayRate },
-                // Include other fields if necessary
-              })
-            )
-
-            try {
-              console.log('Inserting job profile data...')
-              const insertJobs = await api.records.insert(jobsId, request)
-              console.log(
-                `Inserted ${insertJobs.length} job profile records successfully`
-              )
-            } catch (error) {
-              console.error('Error inserting job profile data:', error.message)
-            }
-          } else {
-            console.error('Error: Failed to fetch job profile data')
-          }
-        } catch (error) {
-          console.error('Error fetching job profile data:', error.message)
-        }
-      } else {
-        console.error('Error: Jobs sheet not found')
-      }
-
-      //Locations
-
-      const locationsSheet = workbook.data.sheets.find((s) =>
-        s.config.slug.includes('locations')
-      )
-
-      if (locationsSheet) {
-        console.log('Locations sheet found')
-        const locationsId = locationsSheet.id
-
-        try {
-          // console.log('Fetching location data...')
-          const locationData = await authenticateAndFetchData(
-            spaceId,
-            locationsMetadata
-          ) // Fetch location data using the authenticateAndFetchLocations function
-          console.log('Location Data Prior to Preparing Request:', locationData)
-
-          if (locationData) {
-            console.log('Location data fetched successfully')
-            console.log('Location Data:', locationData)
-
-            const request = locationData.map(({ name, id }) => ({
-              name: { value: name },
-              id: { value: id },
-              // Include other fields if necessary
-            }))
-
-            console.log('Request:', request) // Log the prepared request
-
-            try {
-              // console.log('Inserting location data...')
-              const insertLocations = await api.records.insert(
-                locationsId,
-                request
-              )
-              // console.log('Location data inserted:', insertLocations)
-            } catch (error) {
-              console.error('Error inserting location data:', error.message)
-              console.error('Error Details:', error)
-            }
-          } else {
-            console.error('Error: Failed to fetch location data')
-          }
-        } catch (error) {
-          console.error('Error fetching location data:', error.message)
-        }
-      } else {
-        console.error('Error: Locations sheet not found')
-      }
-    } else {
+    const workbookName = workbook.data?.name || ''
+    const spaceId = workbook.data?.spaceId || ''
+    if (!workbookName.includes('Worker + Org Import')) {
       console.log('Workbook does not match the expected name')
+      return
     }
+
+    const sheets = workbook.data?.sheets || []
+    const companiesSheet = sheets.find((s) =>
+      s.config.slug.includes('companies')
+    )
+    const costCentersSheet = sheets.find((s) =>
+      s.config.slug.includes('cost_centers')
+    )
+    const jobsSheet = sheets.find((s) => s.config.slug.includes('jobs'))
+    const locationsSheet = sheets.find((s) =>
+      s.config.slug.includes('locations')
+    )
+
+    if (companiesSheet)
+      await processSheet(
+        companiesSheet,
+        spaceId,
+        mapCompanyData,
+        companiesMetadata
+      )
+    if (costCentersSheet)
+      await processSheet(
+        costCentersSheet,
+        spaceId,
+        mapCostCenterData,
+        costCentersMetadata
+      )
+    if (jobsSheet)
+      await processSheet(jobsSheet, spaceId, mapJobData, jobsMetadata)
+    if (locationsSheet)
+      await processSheet(
+        locationsSheet,
+        spaceId,
+        mapLocationData,
+        locationsMetadata
+      )
   })
 
   // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
