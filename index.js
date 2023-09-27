@@ -174,6 +174,8 @@ export default function (listener) {
     })
   })
 
+  // Separate distinct actions into smaller functions
+
   async function fetchAndValidateSecrets(spaceId, environmentId) {
     const secrets = await fetchWorkdaySecrets(spaceId, environmentId)
     const allSecretsPresent =

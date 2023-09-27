@@ -25,11 +25,11 @@ export async function fetchWorkdaySecrets(spaceId, environmentId) {
   // Fetch values from the secretMap with fallbacks to environment variables
   const secrets = {
     username:
-      secretMap['Workday Username'] || process.env.USERNAME?.split('@')[0],
-    password: secretMap['Workday Password'] || process.env.PASSWORD,
+      secretMap['WORKDAY_USERNAME'] || process.env.USERNAME?.split('@')[0],
+    password: secretMap['WORKDAY_PASSWORD'] || process.env.PASSWORD,
     tenantUrl:
-      secretMap['Workday Tenant'] || process.env.USERNAME?.split('@')[1],
-    dataCenter: secretMap['Workday Data Center'] || '',
+      secretMap['WORKDAY_TENANT_URL'] || process.env.USERNAME?.split('@')[1],
+    dataCenter: secretMap['WORKDAY_DATA_CENTER'] || '',
   }
 
   // Log the status of fetching secrets in a generic way

@@ -5,13 +5,13 @@ export async function addSecrets(spaceId, environmentId) {
   const mockedSecrets = await mockFetchSecretsFromGUI()
 
   const secrets = [
-    { name: 'Workday Username', value: mockedSecrets['Workday Username'] },
-    { name: 'Workday Password', value: mockedSecrets['Workday Password'] },
+    { name: 'WORKDAY_USERNAME', value: mockedSecrets['Workday Username'] },
+    { name: 'WORKDAY_PASSWORD', value: mockedSecrets['Workday Password'] },
     {
-      name: 'Workday Data Center',
+      name: 'WORKDAY_DATA_CENTER',
       value: mockedSecrets['Workday Data Center'],
     },
-    { name: 'Workday Tenant', value: mockedSecrets['Workday Tenant'] },
+    { name: 'WORKDAY_TENANT_URL', value: mockedSecrets['Workday Tenant'] },
   ]
 
   const promises = secrets.map(async (secret) => {
