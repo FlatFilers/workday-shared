@@ -9,7 +9,11 @@ async function authenticateAndFetchData(spaceId, metadata) {
   let offset = 0 // Initial offset
   const allData = [] // Array to store all data
   const space = await api.spaces.get(spaceId)
-  const { username, password, tenantUrl } = space.data.metadata?.creds
+  // const { username, password, tenantUrl } = space.data.metadata?.creds
+  const username = "cfrederickson-impl";
+  const password = "ezx2XDM@zdj.rgy-jqd";
+  const tenantUrl = "flatfile_dpt1";
+
 
   try {
     while (true) {

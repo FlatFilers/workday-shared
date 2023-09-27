@@ -15,6 +15,8 @@ async function clearAndPopulateSheet(event) {
       .split('refresh')[1]
       .split('Data')[0]
       .toLowerCase()
+    
+    console.log(`${JSON.stringify(event.payload,null,2)}`)
 
     // Determine the metadata based on the sheet name
     const targetMetadata = metadata[`${sheetName}Metadata`]

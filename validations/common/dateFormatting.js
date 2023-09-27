@@ -21,6 +21,14 @@ function formatDate(dateString) {
     // Format the date string as 'yyyy-MM-dd'
     return moment(dateString, 'MMDDYYYY').format('YYYY-MM-DD');
   }
+  if (
+    dateString.length > 8 &&
+    dateString.includes('T')
+  ) {
+    // Format the date string as 'yyyy-MM-dd'
+    dateString = dateString.split('T')[0]
+    return moment(dateString, 'YYYY-MM-DD').format('YYYY-MM-DD');
+  }
 
   // Iterate through all possible date formats and try to parse the date string
   for (const format of momentFormats) {
