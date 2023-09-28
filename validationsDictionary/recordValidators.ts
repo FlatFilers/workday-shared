@@ -1,35 +1,27 @@
 import * as validations from './validations'
 import * as fieldRules from './fieldRules'
-import { validateNationalID } from './validateNationalID'
+// import { validateNationalID } from './validateNationalID'
 
 function validateRecord(record, fields) {
-  const NATIONAL_ID_PATTERN = /.*National_ID_Country_Ref.*_ID$/
+  // const NATIONAL_ID_PATTERN = /.*National_ID_Country_Ref.*_ID$/
 
-  // Check if 'COUNTRY' is one of the field keys
-  const countryExists = fields.some((field) => field.key === 'COUNTRY')
-  const country = countryExists ? record.get('COUNTRY') : null
+  // // Check if 'COUNTRY' is one of the field keys
+  // const countryExists = fields.some((field) => field.key === 'COUNTRY')
+  // const country = countryExists ? record.get('COUNTRY') : null
 
-  // Check if NATIONAL_ID_PATTERN matches any field key
-  const shouldRunNationalIDValidations =
-    countryExists &&
-    fields.some(
-      (field) =>
-        field.key &&
-        typeof field.key === 'string' &&
-        field.key.match(NATIONAL_ID_PATTERN)
-    )
+  // // Check if NATIONAL_ID_PATTERN matches any field key
+  // const shouldRunNationalIDValidations =
+  //   countryExists &&
+  //   fields.some(
+  //     (field) =>
+  //       field.key &&
+  //       typeof field.key === 'string' &&
+  //       field.key.match(NATIONAL_ID_PATTERN)
+  //   )
 
   fields.forEach((field) => {
     const fieldValue = record.get(field.key)
     console.log(`Processing field: ${field.key}, value: ${fieldValue}`)
-
-    const errorCheckResult = validations.checkForError(fieldValue)
-    if (errorCheckResult.error) {
-      console.log(
-        `Error check message for ${field.key}: ${errorCheckResult.error}`
-      )
-      record.addError(field.key, errorCheckResult.error)
-    }
 
     const fieldTypeToValidationMap = {
       boolean: validations.checkBoolean,
@@ -87,15 +79,23 @@ function validateRecord(record, fields) {
       }
     }
 
-    if (
-      shouldRunNationalIDValidations &&
-      field.key.match(NATIONAL_ID_PATTERN)
-    ) {
-      console.log(`Validating national ID for ${field.key}`)
-      validateNationalID(record, field, country) // Pass the value to the validation function
-    } else {
-      console.log('National ID Validations will not run for ${field.key}')
+    const errorCheckResult = validations.checkForError(fieldValue)
+    if (errorCheckResult.error) {
+      console.log(
+        `Error check message for ${field.key}: ${errorCheckResult.error}`
+      )
+      record.addError(field.key, errorCheckResult.error)
     }
+
+    // if (
+    //   shouldRunNationalIDValidations &&
+    //   field.key.match(NATIONAL_ID_PATTERN)
+    // ) {
+    //   console.log(`Validating national ID for ${field.key}`)
+    //   validateNationalID(record, field, country) // Pass the value to the validation function
+    // } else {
+    //   console.log('National ID Validations will not run for ${field.key}')
+    // }
   })
 }
 

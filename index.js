@@ -18,6 +18,7 @@ import { authenticateAndFetchData } from './soapRequest/authenticateAndFetchData
 import { costCentersMetadata } from './soapRequest/soapMetadata'
 import { companiesMetadata } from './soapRequest/soapMetadata'
 import { jobsMetadata } from './soapRequest/soapMetadata'
+import { formatRecordDates } from './validations/common/dateFormatting'
 const ExcelJS = require('exceljs')
 const path = require('path')
 const fs = require('fs')
@@ -487,6 +488,7 @@ export default function (listener) {
           console.log("Inside RecordHook's handler function") // Log inside the handler function
           try {
             await validateRecord(record, fields) // Using the validateRecord function here
+            await formatRecordDates(record, sheet.data.config?.slug);
           } catch (error) {
             console.error('Error in validateRecord:', error)
           }
@@ -953,6 +955,4 @@ export default function (listener) {
   listener.use(csvZip)
   // PARSE XLSX FILES
   listener.use(xlsxExtractorPlugin({ rawNumbers: true }))
-  //PARSE PIPE-DELIMITED TXT FILES
-  listener.use(DelimiterExtractor('.txt', { delimiter: '|' }))
 }

@@ -8,6 +8,15 @@ function shouldValidateAsAlphanumeric(field): boolean {
 }
 
 /**
+ * Determines if a field should be validated as alphanumeric.
+ * @param {Object} field - The field to check.
+ * @returns {boolean} - Whether the field should be validated as alphanumeric.
+ */
+function shouldValidateAsDate(field): boolean {
+  return field.metadata?.validateAs === 'date'
+}
+
+/**
  * Determines if a field should undergo password complexity validation.
  * @param {Object} field - The field to check.
  * @returns {boolean} - Whether the field should undergo password complexity validation.
@@ -59,4 +68,5 @@ export {
   shouldValidateAsEmail,
   shouldValidateAsPhoneNumber,
   shouldValidateAsUrl,
+  shouldValidateAsDate
 }

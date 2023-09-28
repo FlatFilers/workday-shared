@@ -78,7 +78,11 @@ function checkDateFormat(value: string): ValidationResult {
   if (value === null) {
     return {}
   }
+  if (value.includes("T")) {
+    value = value.split("T")[0];
+  }
   if (!moment(value, 'YYYY-MM-DD', true).isValid()) {
+    console.log(JSON.stringify(value))
     return {
       error: formatError(
         value,

@@ -120,6 +120,9 @@ export const blueprint = [
         type: 'date',
         description: 'Provide the worker"s latest date of hire.',
         constraints: [{ type: 'required' }],
+        metadata: {
+          validateAs: 'date',
+        },
       },
       {
         key: 'End_Employment_Date_Reference',
@@ -133,6 +136,9 @@ export const blueprint = [
         type: 'date',
         description:
           'If the worker has been indicated as Terminated OR they are a contingent worker, a date for end of employemt should be provided here. If none is provided, an end date of 12-31-2099 will be defaulted in and can be manually fixed after loading.',
+        metadata: {
+          validateAs: 'date',
+        },
       },
       {
         key: 'Organization_Reference_ID',
@@ -490,6 +496,9 @@ export const blueprint = [
         description:
           'Enter the worker\'s date of birth formatted as "yyyy-mm-dd".',
         constraints: [{ type: 'required' }],
+        metadata: {
+          validateAs: 'date',
+        },
       },
       {
         key: 'USA_National_ID_Country_Ref_12345_ID',
