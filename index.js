@@ -455,7 +455,7 @@ export default function (listener) {
     })
   })
 
-  // CREATE SUPERVISORY ORG STRUCTURE FROM WORKERS SHEET
+  // Listener where job is being handled
   listener.filter({ job: 'sheet:buildSupOrgStructure' }, (configure) => {
     configure.on('job:ready', async (event) => {
       const { jobId, sheetId, workbookId } = event.context
@@ -463,10 +463,9 @@ export default function (listener) {
       try {
         await api.jobs.ack(jobId, {
           info: 'Building Supervisory Organization Structure...',
-          progress: 10, // optional
+          progress: 10,
         })
 
-        // Instantiate the SupervisoryOrgStructureBuilder and call the buildSupervisoryOrgStructure method
         const orgStructureBuilder = new SupervisoryOrgStructureBuilder(
           workbookId,
           sheetId
@@ -475,12 +474,20 @@ export default function (listener) {
 
         await api.jobs.complete(jobId, {
           info: 'This job is now complete.',
+          outcome: {
+            acknowledge: true,
+            message:
+              'Supervisory Organization Structure has been built successfully! Please navigate to the Supervisory Orgs sheet to view the results.',
+          },
         })
       } catch (error) {
         console.error('Error:', error)
-
         await api.jobs.fail(jobId, {
-          info: 'This job did not work.',
+          info: `Job failed due to error: ${error.message}`,
+          outcome: {
+            message: `Job failed due to error: ${error.message}`,
+            acknowledge: true,
+          },
         })
       }
     })

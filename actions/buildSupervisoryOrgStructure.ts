@@ -29,12 +29,8 @@ export class SupervisoryOrgStructureBuilder {
       console.log('Number of reporting errors:', reportingErrors.length)
 
       if (reportingErrors.length > 0) {
-        console.error('Reporting structure is invalid:', reportingErrors)
-        // Instead of stopping the process, you can handle the errors gracefully here
-        // For example, you can collect the errors and continue with the valid data
-        // const validRecords = allRecords.filter(record => !reportingErrors.includes(record))
-        // continue with validRecords...
-        return
+        const errorMessage = `Reporting structure is invalid with ${reportingErrors.length} error(s). Please run the "Validate Supervisory Org Structure" action to address these issues.`
+        throw new Error(errorMessage)
       }
 
       // Step 1: Validate the reporting structure
@@ -65,7 +61,7 @@ export class SupervisoryOrgStructureBuilder {
         'An error occurred while building the supervisory organizational structure:',
         error
       )
-      // You can handle the error or log it as needed
+      throw error // Rethrow the error to the caller
     }
   }
 
