@@ -15,7 +15,7 @@ async function authenticateAndFetchData(spaceId, metadata) {
   const { username, password, tenantUrl, dataCenter } = secrets
 
   // Dynamically construct the soapEndpoint
-  const soapEndpoint = `https://${dataCenter}.workday.com/ccx/service/${tenantUrl}/${metadata.service}/${metadata.version}`
+  const soapEndpoint = `https://${dataCenter}/ccx/service/${tenantUrl}/${metadata.service}/${metadata.version}`;
 
   try {
     while (true) {
