@@ -2,6 +2,7 @@ const axios = require('axios')
 const xml2js = require('xml2js')
 import api from '@flatfile/api'
 require('dotenv').config()
+import { fetchWorkdaySecrets } from '../workflow/fetchWorkdaySecrets'
 
 // Function to authenticate and fetch data
 async function authenticateAndFetchData(spaceId, metadata) {
@@ -9,7 +10,12 @@ async function authenticateAndFetchData(spaceId, metadata) {
   let offset = 0 // Initial offset
   const allData = [] // Array to store all data
   const space = await api.spaces.get(spaceId)
-  const { username, password, tenantUrl } = space.data.metadata?.creds
+  const environmentId = space.data.environmentId
+  const secrets = await fetchWorkdaySecrets(spaceId, environmentId)
+  const { username, password, tenantUrl, dataCenter } = secrets
+
+  // Dynamically construct the soapEndpoint
+  const soapEndpoint = `https://${dataCenter}/ccx/service/${tenantUrl}/${metadata.service}/${metadata.version}`;
 
   try {
     while (true) {
@@ -49,7 +55,7 @@ async function authenticateAndFetchData(spaceId, metadata) {
 
       console.log(`Step 2: Making the ${metadata.serviceName} request`)
       // Make SOAP request
-      const response = await axios.post(metadata.soapEndpoint, requestPayload, {
+      const response = await axios.post(soapEndpoint, requestPayload, {
         headers: { 'Content-Type': 'text/xml' },
       })
 

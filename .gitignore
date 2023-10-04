@@ -134,3 +134,6 @@ dist
 
 # Dependency directories
 node_modules/
+
+# Develop File
+.flatfile/develop.js
