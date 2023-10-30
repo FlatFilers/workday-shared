@@ -1,6 +1,6 @@
 {
   "name": "@flatfile/listener",
-  "version": "0.3.14",
+  "version": "0.3.15",
   "description": "A PubSub Listener for configuring and using Flatfile",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

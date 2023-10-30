@@ -1,6 +1,6 @@
 {
   "name": "@flatfile/utils-debugger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A helper for logging useful messages to the console",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
