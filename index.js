@@ -125,6 +125,9 @@ export default function (listener) {
         const createWorkbook = await api.workbooks.create({
           spaceId: spaceId,
           environmentId: environmentId,
+          settings: {
+            trackChanges: true,
+          },
           //labels: ['primary'],
           ...blueprint,
         })
@@ -441,6 +444,7 @@ export default function (listener) {
   // VALIDATION & TRANSFORMATION RULES WITH DATA HOOKS
 
   // Event listener for the 'commit:created' event
+
   listener.on('commit:created', async (event) => {
     try {
       // Log the initiation of the event
@@ -448,9 +452,7 @@ export default function (listener) {
       console.log('Logging Event Context for Colin: ', event.context)
 
       // Retrieve the sheetId and workbookId from the event context
-      const sheetId = event.context.sheetId
-      const workbookId = event.context.workbookId
-
+      const { sheetId, workbookId } = event.context
       console.log(`Retrieved sheetId from event: ${sheetId}`)
 
       // Fetch the workbook details
@@ -467,7 +469,6 @@ export default function (listener) {
 
       // Fetch the sheet details
       const sheet = await api.sheets.get(sheetId)
-      // Handle the situation where the sheet fetching failed
       if (!sheet) {
         console.log(`Failed to fetch sheet with id: ${sheetId}`)
         return
@@ -503,109 +504,271 @@ export default function (listener) {
         },
         { stripMessages: false }
       )
-
-      // Fetch all records associated with the sheet
-      const allRecords = await api.records.get(sheetId)
-
-      console.log(
-        `Checking records for sheet: ${
-          sheet.data.name || 'Unknown Sheet'
-        } on Event ID:`,
-        event.src.id
-      )
-
-      // Determine which records have been processed
-      const recordsArray = allRecords.data.records || []
-      const processedRecords = recordsArray.filter(
-        (record) => record.metadata && record.metadata.processed
-      )
-      const allProcessed = processedRecords.length === recordsArray.length
-      console.log(
-        `${processedRecords.length} out of ${recordsArray.length} records have been processed.`
-      )
-
-      // If all records are processed, initiate batch validation
-      if (allProcessed) {
-        console.log(
-          'All records have been processed. Starting the next set of validations.'
-        )
-
-        const recordsForValidation = allRecords.data.records
-
-        if (recordsForValidation && recordsForValidation.length > 0) {
-          // Determine the primary key for the records
-          const primaryKeyField = Object.keys(
-            recordsForValidation[0]?.values || {}
-          )[0]
-          console.log('Determined primary key field:', primaryKeyField)
-          console.log('Calling RecordHook for Batch Validations')
-
-          // Call the RecordHook function to handle batch validation
-          await RecordHook(
-            event,
-            async (record, event) => {
-              try {
-                await validateRecord(record, fields)
-              } catch (error) {
-                console.error('Error in validateRecord:', error)
-              }
-              console.log(
-                "Exiting RecordHook's handler function for Event: ",
-                event.src.id
-              )
-
-              console.log(
-                "Inside RecordHook's handler function for Batch Validations for Event: ",
-                event.src.id
-              )
-              try {
-                await validateBatch(
-                  record,
-                  fields,
-                  primaryKeyField,
-                  recordsForValidation
-                )
-              } catch (error) {
-                console.error('Error in validateBatch:', error)
-              }
-              console.log(
-                "Exiting RecordHook's handler function for Batch Validations For Event: ",
-                event.src.id
-              )
-              return record
-            },
-            { stripMessages: false }
-          )
-
-          // Optionally trigger sheet validations
-          try {
-            if (
-              event.context.actorId &&
-              event.context.actorId.includes('_usr_' || '_jb_')
-            ) {
-              const validateSheet = await api.sheets.validate(sheetId)
-              console.log(
-                'Sheet validation triggered:',
-                validateSheet,
-                'from event: ',
-                event.src.id
-              )
-            }
-          } catch (error) {
-            console.error('Error triggering sheet validation:', error)
-          }
-        } else {
-          console.error('No records available for validation.')
-        }
-      } else {
-        console.log(
-          'Not all records have been processed. Skipping the next set of validations.'
-        )
-      }
+      console.log('RecordHook for individual record validation completed.')
     } catch (error) {
       console.error('Error in commit:created event handler:', error)
     }
   })
+
+  // listener.on('commit:completed', async (event) => {
+  //   try {
+  //     const { sheetId, workbookId } = event.context
+
+  //     // Fetch all records associated with the sheet
+  //     const allRecords = await api.records.get(sheetId)
+  //     console.log(
+  //       `Checking records for sheet: ${sheetId} on Event ID:`,
+  //       event.src.id
+  //     )
+
+  //     // Determine which records have been processed
+  //     const recordsArray = allRecords.data.records || []
+  //     const processedRecords = recordsArray.filter(
+  //       (record) => record.metadata && record.metadata.processed
+  //     )
+  //     const allProcessed = processedRecords.length === recordsArray.length
+  //     console.log(
+  //       `${processedRecords.length} out of ${recordsArray.length} records have been processed.`
+  //     )
+
+  //     // If all records are processed, initiate batch validation
+  //     if (allProcessed) {
+  //       console.log(
+  //         'All records have been processed. Starting the next set of validations.'
+  //       )
+
+  //       const recordsForValidation = allRecords.data.records
+  //       if (recordsForValidation && recordsForValidation.length > 0) {
+  //         // Determine the primary key for the records
+  //         const primaryKeyField = Object.keys(
+  //           recordsForValidation[0]?.values || {}
+  //         )[0]
+  //         console.log('Determined primary key field:', primaryKeyField)
+  //         console.log('Calling RecordHook for Batch Validations')
+
+  //         // Call the RecordHook function to handle batch validation
+  //         await RecordHook(
+  //           event,
+  //           async (record, event) => {
+  //             console.log(
+  //               "Inside RecordHook's handler function for Batch Validations for Event: ",
+  //               event.src.id
+  //             )
+  //             try {
+  //               await validateRecord(record, fields)
+  //               await validateBatch(
+  //                 record,
+  //                 fields,
+  //                 primaryKeyField,
+  //                 recordsForValidation
+  //               )
+  //             } catch (error) {
+  //               console.error('Error in batch validations:', error)
+  //             }
+  //             console.log(
+  //               "Exiting RecordHook's handler function for Batch Validations For Event: ",
+  //               event.src.id
+  //             )
+  //             return record
+  //           },
+  //           { stripMessages: false }
+  //         )
+
+  //         // Optionally trigger sheet validations
+  //         try {
+  //           if (
+  //             event.context.actorId &&
+  //             event.context.actorId.includes('_usr_' || '_jb_')
+  //           ) {
+  //             const validateSheet = await api.sheets.validate(sheetId)
+  //             console.log(
+  //               'Sheet validation triggered:',
+  //               validateSheet,
+  //               'from event: ',
+  //               event.src.id
+  //             )
+  //           }
+  //         } catch (error) {
+  //           console.error('Error triggering sheet validation:', error)
+  //         }
+  //       } else {
+  //         console.error('No records available for validation.')
+  //       }
+  //     } else {
+  //       console.log(
+  //         'Not all records have been processed. Skipping the next set of validations.'
+  //       )
+  //     }
+  //   } catch (error) {
+  //     console.error('Error in commit:completed event handler:', error)
+  //   }
+  // })
+
+  // listener.on('commit:created', async (event) => {
+  //   try {
+  //     // Log the initiation of the event
+  //     console.log('commit:created event triggered')
+  //     console.log('Logging Event Context for Colin: ', event.context)
+
+  //     // Retrieve the sheetId and workbookId from the event context
+  //     const sheetId = event.context.sheetId
+  //     const workbookId = event.context.workbookId
+
+  //     console.log(`Retrieved sheetId from event: ${sheetId}`)
+
+  //     // Fetch the workbook details
+  //     const workbook = await api.workbooks.get(workbookId)
+  //     // Check if the workbook is file-based and decide whether to skip RecordHooks
+  //     if (
+  //       !workbook ||
+  //       workbook.data.name.startsWith('[file]') ||
+  //       workbook.data.labels.includes('file')
+  //     ) {
+  //       console.log('Skipping RecordHooks for file-based workbooks.')
+  //       return
+  //     }
+
+  //     // Fetch the sheet details
+  //     const sheet = await api.sheets.get(sheetId)
+  //     // Handle the situation where the sheet fetching failed
+  //     if (!sheet) {
+  //       console.log(`Failed to fetch sheet with id: ${sheetId}`)
+  //       return
+  //     }
+  //     console.log(`Sheet with id: ${sheetId} fetched successfully.`)
+
+  //     // Retrieve the fields configuration from the fetched sheet
+  //     const fields = sheet.data.config?.fields
+  //     if (!fields) {
+  //       console.log('No fields were fetched.')
+  //       return
+  //     }
+  //     console.log(`Successfully fetched ${fields.length} fields.`)
+
+  //     // Call the RecordHook function to handle individual record validation
+  //     await RecordHook(
+  //       event,
+  //       async (record, event) => {
+  //         console.log(
+  //           "Inside RecordHook's handler function for Event: ",
+  //           event.src.id
+  //         )
+  //         try {
+  //           await validateRecord(record, fields)
+  //         } catch (error) {
+  //           console.error('Error in validateRecord:', error)
+  //         }
+  //         console.log(
+  //           "Exiting RecordHook's handler function for Event: ",
+  //           event.src.id
+  //         )
+  //         return record
+  //       },
+  //       { stripMessages: false }
+  //     )
+
+  //     // Fetch all records associated with the sheet
+  //     const allRecords = await api.records.get(sheetId)
+
+  //     console.log(
+  //       `Checking records for sheet: ${
+  //         sheet.data.name || 'Unknown Sheet'
+  //       } on Event ID:`,
+  //       event.src.id
+  //     )
+
+  //     // Determine which records have been processed
+  //     const recordsArray = allRecords.data.records || []
+  //     const processedRecords = recordsArray.filter(
+  //       (record) => record.metadata && record.metadata.processed
+  //     )
+  //     const allProcessed = processedRecords.length === recordsArray.length
+  //     console.log(
+  //       `${processedRecords.length} out of ${recordsArray.length} records have been processed.`
+  //     )
+
+  //     // If all records are processed, initiate batch validation
+  //     if (allProcessed) {
+  //       console.log(
+  //         'All records have been processed. Starting the next set of validations.'
+  //       )
+
+  //       const recordsForValidation = allRecords.data.records
+
+  //       if (recordsForValidation && recordsForValidation.length > 0) {
+  //         // Determine the primary key for the records
+  //         const primaryKeyField = Object.keys(
+  //           recordsForValidation[0]?.values || {}
+  //         )[0]
+  //         console.log('Determined primary key field:', primaryKeyField)
+  //         console.log('Calling RecordHook for Batch Validations')
+
+  //         // Call the RecordHook function to handle batch validation
+  //         await RecordHook(
+  //           event,
+  //           async (record, event) => {
+  //             try {
+  //               await validateRecord(record, fields)
+  //             } catch (error) {
+  //               console.error('Error in validateRecord:', error)
+  //             }
+  //             console.log(
+  //               "Exiting RecordHook's handler function for Event: ",
+  //               event.src.id
+  //             )
+
+  //             console.log(
+  //               "Inside RecordHook's handler function for Batch Validations for Event: ",
+  //               event.src.id
+  //             )
+  //             try {
+  //               await validateBatch(
+  //                 record,
+  //                 fields,
+  //                 primaryKeyField,
+  //                 recordsForValidation
+  //               )
+  //             } catch (error) {
+  //               console.error('Error in validateBatch:', error)
+  //             }
+  //             console.log(
+  //               "Exiting RecordHook's handler function for Batch Validations For Event: ",
+  //               event.src.id
+  //             )
+  //             return record
+  //           },
+  //           { stripMessages: false }
+  //         )
+
+  //         // Optionally trigger sheet validations
+  //         try {
+  //           if (
+  //             event.context.actorId &&
+  //             event.context.actorId.includes('_usr_' || '_jb_')
+  //           ) {
+  //             const validateSheet = await api.sheets.validate(sheetId)
+  //             console.log(
+  //               'Sheet validation triggered:',
+  //               validateSheet,
+  //               'from event: ',
+  //               event.src.id
+  //             )
+  //           }
+  //         } catch (error) {
+  //           console.error('Error triggering sheet validation:', error)
+  //         }
+  //       } else {
+  //         console.error('No records available for validation.')
+  //       }
+  //     } else {
+  //       console.log(
+  //         'Not all records have been processed. Skipping the next set of validations.'
+  //       )
+  //     }
+  //   } catch (error) {
+  //     console.error('Error in commit:created event handler:', error)
+  //   }
+  // })
 
   // // RUN ACTIONS TRIGGERED BY USERS
 
