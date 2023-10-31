@@ -1,7 +1,7 @@
 import { FlatfileEvent, FlatfileListener } from '@flatfile/listener'
 import api from '@flatfile/api'
 
-export default function addActionsToFiles(listener: FlatfileListener) {
+export function addActionsToFiles(listener: FlatfileListener) {
   listener.on(
     'file:created',
     async ({ context: { fileId } }: FlatfileEvent) => {

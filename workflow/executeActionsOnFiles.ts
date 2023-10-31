@@ -21,7 +21,7 @@ const getFileBufferFromApi = async (fileId) => {
   return Buffer.concat(chunks)
 }
 
-export default function executeActionsOnFiles(listener: FlatfileListener) {
+export function executeActionsOnFiles(listener: FlatfileListener) {
   listener.on(
     'job:ready',
     { job: 'file:logFileContents' },
