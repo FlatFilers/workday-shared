@@ -23,6 +23,8 @@ import { DelimiterExtractor } from '@flatfile/plugin-delimiter-extractor'
 import theme from './workflow/theme'
 import { addSecrets } from './workflow/addSecrets'
 import { fetchWorkdaySecrets } from './workflow/fetchWorkdaySecrets'
+import { executeActionsOnFiles } from './workflow/executeActionsOnFiles'
+import { addActionsToFiles } from './workflow/addActionsToFiles'
 
 export default function (listener) {
   // LOG ALL EVENTS IN THE ENVIRONMENT
@@ -830,6 +832,11 @@ export default function (listener) {
       }
     })
   })
+
+  // Add Actions to Files
+
+  listener.use(addActionsToFiles)
+  listener.use(executeActionsOnFiles)
 
   //Download Data to Zipped CSV
   listener.use(csvZip)
