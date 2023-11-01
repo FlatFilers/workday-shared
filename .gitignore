@@ -132,5 +132,8 @@ dist
 
 *.code-workspace
 
-.flatfile/
-node_modules
+# Dependency directories
+node_modules/
+
+# Develop File
+.flatfile/develop.js
