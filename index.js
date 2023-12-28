@@ -835,6 +835,6 @@ export default function (listener) {
   listener.use(csvZip)
   // PARSE XLSX FILES
   listener.use(xlsxExtractorPlugin({ rawNumbers: true }))
-  //PARSE PIPE-DELIMITED TXT FILES
-  listener.use(DelimiterExtractor('.txt', { delimiter: '|' }))
+  // //PARSE PIPE-DELIMITED TXT FILES
+  // listener.use(DelimiterExtractor('.txt', { delimiter: '|' }))
 }
